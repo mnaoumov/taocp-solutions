@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.2.8. Fibonacci Numbers/1.2.8-35.md",
-                "mode": "preview",
+                "file": "README.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "1.2.8-35"
+              "title": "README"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1.2.8. Fibonacci Numbers/1.2.8-35.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1.2.8-35"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -182,18 +182,19 @@
   },
   "active": "dfefa07d6553ce75",
   "lastOpenFiles": [
-    "node_modules/path-scurry/package.json",
-    "node_modules/minimatch/package.json",
-    "node_modules/minipass/package.json",
-    "node_modules/commander/package.json",
-    "node_modules/lru-cache/package.json",
-    "node_modules/katex/package.json",
-    "node_modules/balanced-match/package.json",
-    "scripts/lint-latex.ts",
+    "1.2.8. Fibonacci Numbers/1.2.8-29.tex",
+    "1.2.2. Numbers, Powers, and Logarithms/1.2.2-14.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-09.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-08.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-07.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-06.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-05.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-04.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-03.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-02.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-01.tex",
+    "1.2.8. Fibonacci Numbers/1.2.8-35.md",
     "node_modules/jiti/README.md",
-    "node_modules/jiti/package.json",
-    "node_modules/jiti/lib/types.d.ts",
-    "node_modules/jiti/lib/jiti.mjs",
     "node_modules/katex/contrib/mhchem/README.md",
     "node_modules/katex/contrib/mathtex-script-type/README.md",
     "node_modules/katex/contrib/copy-tex/README.md",

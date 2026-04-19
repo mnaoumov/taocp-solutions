@@ -10,23 +10,23 @@ $n^4 + 4 = n^4 + 4 + 4n^2 - 4n^2 = (n^2 + 2)^2 - (2n)^2 = (n^2 - 2n + 2)(n^2 + 2
 
 $a_n := \frac{n^3}{n^4+4} = \frac{An+B}{n^2-2n+2} + \frac{Cn+D}{n^2+2n+2} = \frac{(An+B)(n^2+2n+2)+(Cn+D)(n^2-2n+2)}{n^4+4} = \frac{An^3+2An^2+2An+Bn^2+2Bn+2B+Cn^3-2Cn^2+2Cn+Dn^2-2Dn+2D}{n^4+4} = \frac{n^3(A+C) + n^2(2A+B-2C+D) + n(2A+2B+2C-2D)+(2B+2D)}{n^4+4}$
 
-$A+C=1\ (1)$
+\[A+C=1 \tag{1}\label{eq:1}\]
 
-$2A+B-2C+D = 0\ (2)$
+\[2A+B-2C+D = 0 \tag{2}\label{eq:2}\]
 
-$2A+2B+2C-2D=0\ (3)$
+\[2A+2B+2C-2D=0 \tag{3}\label{eq:3}\]
 
-$2B+2D=0\ (4)$
+\[2B+2D=0 \tag{4}\label{eq:4}\]
 
-$(4) \implies B + D = 0$
+$\eqref{eq:4} \implies B + D = 0$
 
-$(3) \implies A + C = D - B$
+$\eqref{eq:3} \implies A + C = D - B$
 
-$(1) \implies D - B = 1$
+$\eqref{eq:1} \implies D - B = 1$
 
 $\implies D = \frac{1}{2}, B = -\frac{1}{2}$
 
-$(2) \implies 2(A-C) + (B+D) = 0 \implies A - C = 0 \implies A = C = \frac{1}{2}$
+$\eqref{eq:2} \implies 2(A-C) + (B+D) = 0 \implies A - C = 0 \implies A = C = \frac{1}{2}$
 
 $\frac{n^3}{n^4+4} = \frac{\frac{1}{2}n-\frac{1}{2}}{n^2-2n+2} + \frac{\frac{1}{2}n+\frac{1}{2}}{n^2+2n+2} = \frac{1}{2} (\frac{n-1}{n^2-2n+2} + \frac{n+1}{n^2+2n+2}) = \frac{1}{2} (\frac{n-1}{(n-1)^2+1} + \frac{n+1}{(n+1)^2+1})$
 

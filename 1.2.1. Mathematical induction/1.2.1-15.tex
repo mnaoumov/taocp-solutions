@@ -146,13 +146,13 @@ $x^{(n)} := (a,a,\ldots,a,b) \in T_n$
 
 $A := \{ x^{(1)}, x^{(2)}, \ldots \} \neq \varnothing$
 
-Assume $\exists x \in A \forall y \in A: x \prec y\ (1)$
+Assume \[\exists x \in A \forall y \in A: x \prec y \tag{1}\label{eq:1e}\]
 
 $x = x^{(n)} = (a,a,\ldots,a,b) \in T_n$
 
 Take $y = x^{(n+1)} = (a,a,\ldots,a,a,b) \in T_{n+1}$
 
-$\forall j, 1 \leq j < n: x_j = y_j = a, x_n = b, y_n = a \implies y \prec x$ - contradicts to $(1)$
+$\forall j, 1 \leq j < n: x_j = y_j = a, x_n = b, y_n = a \implies y \prec x$ - contradicts to \eqref{eq:1e}
 
 $\implies S$ is not well-ordered.
 
@@ -164,13 +164,14 @@ Assume exists sequence: $\cdots \prec x_3 \prec x_2 \prec x_1$
 
 $A := \{ x_1, x_2, x_3, \ldots \}$
 
-(iii) $\implies \exists x \in A \forall y \in A: x \prec y\ (1)$
+(iii) $\implies$
+\[\exists x \in A \forall y \in A: x \prec y \tag{1}\label{eq:1f}\]
 
 $x = x_n$
 
 Take $y = x_{n+1}$
 
-By definition: $x_{n+1} \prec x_n \implies y \prec x$ - contradicts to $(1)$
+By definition: $x_{n+1} \prec x_n \implies y \prec x$ - contradicts to \eqref{eq:1f}
 
 $\implies$ such sequence doesn't exist
 

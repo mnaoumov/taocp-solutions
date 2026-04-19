@@ -22,11 +22,11 @@ $1 = (0.11)_\phi = (0.1011)_\phi = (0.101011)_\phi = \cdots = (0.101010\ldots 10
 
 We need to prove that $\forall x \geq 0 \exists m \in \mathbb{Z} \forall k \geq m \exists! \alpha_k \in \{ 0, 1 \}: x = \sum_{k}\alpha_k \phi^{-k}$
 
-$\exists m \in \mathbb{Z} \forall k < m: \alpha_k = 0 \quad (1)$
+\[\exists m \in \mathbb{Z} \forall k < m: \alpha_k = 0 \tag{1}\label{eq:1}\]
 
-$\nexists k: \alpha_k=\alpha_{k+1} = 1 \quad (2)$
+\[\nexists k: \alpha_k=\alpha_{k+1} = 1 \tag{2}\label{eq:2}\]
 
-$\nexists n \forall l\geq 0: \alpha_{n+2l} = 1, \alpha_{n+2l + 1} = 0 \quad (3)$
+\[\nexists n \forall l\geq 0: \alpha_{n+2l} = 1, \alpha_{n+2l + 1} = 0 \tag{3}\label{eq:3}\]
 
 \section*{Existence}
 
@@ -34,7 +34,7 @@ Let $x \geq 0$
 
 If $x = 0$, we take $\alpha_k = 0, k \in \mathbb{Z}$
 
-If $x > 0 \exists m \in \mathbb{Z}: \phi^{-m} \leq x < \phi^{-m + 1}$. Let $\alpha_m := 1, \alpha_k := 0, k < m \implies (1)$
+If $x > 0 \exists m \in \mathbb{Z}: \phi^{-m} \leq x < \phi^{-m + 1}$. Let $\alpha_m := 1, \alpha_k := 0, k < m$ $\implies$ \eqref{eq:1}
 
 $x_n := \sum_{k \leq n} \alpha_k \phi^{-k}$
 
@@ -74,13 +74,13 @@ $\implies \lim_{k \to \infty} x_k = x$
 
 $x = \sum_{k} \alpha_k \phi^{-k}$
 
-Now let's prove $(2)$
+Now let's prove \eqref{eq:2}
 
 Assume $k = \min \{ s: \alpha_s = \alpha_{s+1} = 1 \}$
 
 As $k$ is minimal $\implies \alpha_{k-1} = 0$
 
-$x - x_{k-2} < \phi^{-(k-1)} \quad (4)$
+\[x - x_{k-2} < \phi^{-(k-1)} \tag{4}\label{eq:4}\]
 
 $x_{k-1} = x_{k-2}$
 
@@ -94,15 +94,15 @@ $x - (x_{k-2} + \phi^{-k}) \geq \phi^{-(k+1)}$
 
 $x - x_{k-2} \geq \phi^{-k} + \phi^{-(k+1)} = \phi^{-(k+1)}(\phi + 1) =  \phi^{-(k+1)} \cdot \phi^2 = \phi^{-(k-1)}$
 
-Contradicts to $(4) \implies \perp \implies (2)$
+Contradicts to \eqref{eq:4} $\implies \perp \implies$ \eqref{eq:2}
 
-Now let's prove $(3)$
+Now let's prove \eqref{eq:3}
 
 Assume $\exists n \forall l\geq 0: \alpha_{n+2l} = 1, \alpha_{n+2l + 1} = 0$
 
-$\alpha_n = 1 \overset{(2)}{\implies} \alpha_{n-1} = 0$
+$\alpha_n = 1 \overset{\eqref{eq:2}}{\implies} \alpha_{n-1} = 0$
 
-$x - x_{n-2} < \phi^{-(n-1)} \quad (5)$
+\[x - x_{n-2} < \phi^{-(n-1)} \tag{5}\label{eq:5}\]
 
 $x_{n-1} = x_{n-2}$
 
@@ -114,7 +114,7 @@ $x = x_{n-2} + \phi^{-(n-1)}$
 
 $x - x_{n-2} = \phi^{-(n-1)}$
 
-Contradicts to $(5) \implies \perp \implies (3)$
+Contradicts to \eqref{eq:5} $\implies \perp \implies$ \eqref{eq:3}
 
 \section*{Uniqueness}
 
@@ -130,7 +130,7 @@ $\forall k<m: \alpha_k = \beta_k \implies x_{m-1} = \sum_{k<m} \alpha_k \phi^{-k
 
 $\implies y = x - x_{m-1} = \sum_{k \geq m} \alpha_k \phi^{-k} = \sum_{k \geq m} \beta_k \phi^{-k}$
 
-$y \geq \alpha_{m} \phi^{-m} = \phi^{-m} \quad (6)$
+\[y \geq \alpha_{m} \phi^{-m} = \phi^{-m} \tag{6}\label{eq:6}\]
 
 Let $B := \{ k \geq m + 1: \beta_k = 1 \} = \{ k_1, k_2, \ldots, k_r \}, 0 \leq r \leq \infty, k_1 < k_2 < \cdots < k_r$
 
@@ -142,15 +142,15 @@ $y = \sum_{j = 1}^r \phi^{-k_j} \leq \sum_{j = 1}^r \phi^{-(m-1+2j)}$
 
 If $r < \infty \implies y < \sum_{j = 1}^\infty \phi^{-(m-1+2j)} = \frac{\phi^{-(m+1)}}{1-\phi^{-2}} = \phi^{-m}$
 
-If $r = \infty, (3) \implies y < \sum_{j = 1}^\infty \phi^{-(m-1+2j)} = \phi^{-m}$
+If $r = \infty$, \eqref{eq:3} $\implies y < \sum_{j = 1}^\infty \phi^{-(m-1+2j)} = \phi^{-m}$
 
-In both cases $y < \phi^{-m}$, contradicts to $(6) \implies \perp$
+In both cases $y < \phi^{-m}$, contradicts to \eqref{eq:6} $\implies \perp$
 
 $\implies$ uniqueness.
 
 \section*{Representation of integers}
 
-We proved $\forall n \in \mathbb{N} \exists!$ expansion $n = \sum_{k} \alpha_{nk} \phi^k$, that satisfies $(1) - (3)$
+We proved $\forall n \in \mathbb{N} \exists!$ expansion $n = \sum_{k} \alpha_{nk} \phi^k$, that satisfies \eqref{eq:1}--\eqref{eq:3}
 
 $\phi^p = F_p \phi + F_{p-1}$
 
