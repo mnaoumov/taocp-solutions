@@ -1,0 +1,13 @@
+{
+  "name": "taocp-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My solutions to exercises from The Art of Computer Programming by Donald E. Knuth.",
+  "scripts": {
+    "lint:latex": "node scripts/lint-latex.mjs"
+  },
+  "devDependencies": {
+    "glob": "latest",
+    "katex": "latest"
+  }
+}
