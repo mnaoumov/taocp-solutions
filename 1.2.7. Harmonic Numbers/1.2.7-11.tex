@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.7-11}
+
+\begin{document}
+\maketitle
+
+$\sum_{1<k\leq n} \frac{1}{k(k-1)}H_k = \sum_{2 \leq k < n + 1} \frac{1}{k(k-1)}H_k = \sum_{2 \leq k < n + 1} (\frac{1}{k-1} - \frac{1}{k}) H_k =$
+
+$= - \sum_{2 \leq k < n + 1} (\frac{1}{k} - \frac{1}{k-1}) H_k =: A$
+
+$a_k = \frac{1}{k-1}, b_k = H_k$
+
+$A = -(a_{n+1}b_{n+1} - a_2b_2 - \sum_{2\leq k < n + 1} a_{k+1}(b_{k+1}-b_k)) =$
+
+$= -\frac{1}{n} \cdot H_{n+1} + \frac{1}{1} \cdot H_2 + \sum_{2\leq k < n + 1} \frac{1}{k}(H_{k+1}-H_k) = -\frac{H_{n+1}}{n} + \frac{3}{2} + \sum_{2\leq k < n+1}\frac{1}{k} \cdot \frac{1}{k+1} =$
+
+$= -\frac{H_{n+1}}{n} + \frac{3}{2} + \sum_{2\leq k < n+1}(\frac{1}{k} - \frac{1}{k+1}) = -\frac{H_{n+1}}{n} + \frac{3}{2} + \frac{1}{2} - \frac{1}{n+1} = 2 - \frac{H_{n+1}}{n} - \frac{1}{n+1} =$
+
+$= 2 - \frac{H_n}{n} - \frac{1}{n(n+1)} - \frac{1}{n+1} = 2 - \frac{H_n}{n} - \frac{1}{n}$
+
+
+\end{document}

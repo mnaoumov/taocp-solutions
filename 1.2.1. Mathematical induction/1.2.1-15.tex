@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.1-15}
+
+\begin{document}
+\maketitle
+
+\subsubsection*{a)}
+
+iii) $A = \mathbb{Z} \neq \varnothing$
+
+Assume $\exists x \in A \forall y \in A: x \leq y$
+
+Take $y = x - 1, y \in A,$ but $x \not\leq y$
+
+Contradiction $\implies (\mathbb{Z}, <)$ is not well-ordered.
+
+\subsubsection*{b)}
+
+Let's define ordering as $0, -1, 1, -2, 2, -3, 3, \cdots$
+
+Namely, $x \prec y \overset{def}{\iff} |x| < |y|$ or $|x|=|y|, x < 0, y > 0$
+
+i) $\forall x, y, z \in \mathbb{Z}, x \prec y, y \prec z$
+
+\item $|x|<|y|, |y|<|z| \implies |x|<|z| \implies x \prec z$
+\item $|x|=|y|, x < 0, y > 0, |y| < |z| \implies |x| < |z| \implies x \prec z$
+\item $|x|<|y|, |y| = |z|, y < 0, z > 0, \implies |x| < |z| \implies x \prec z$
+\item $|x|=|y|, x < 0,  y > 0, |y| = |z|, y < 0, z > 0 \implies y > 0$ and $y < 0$ - contradiction
+
+ii) $\forall x, y \in \mathbb{Z}$
+
+\item $|x|<|y| \implies x \prec y$
+\item $|x|>|y| \implies y \prec x$
+\item $|x|=|y|, x < 0, y < 0 \implies x = y$
+\item $|x|=|y|, x < 0, y > 0 \implies x \prec y$
+\item $|x|=|y|, x > 0, y < 0 \implies y \prec x$
+\item $|x|=|y|, x > 0, y > 0 \implies x = y$
+
+iii) Let $A \subset \mathbb{Z}, B \neq \varnothing, B = \{ |n|: n \in A \} \subset \mathbb{N}, B \neq \varnothing$
+
+$\mathbb{N}$ - well-ordered $\implies \exists x \in B \forall y \in B: x \leq y$
+
+$x \in B \implies -x \in A$ or $x \in A$
+
+\item $z := -x \in A. \forall y \in A: |y| \in B \implies x \leq |y| \implies |-x| \leq |y|$
+\item $|-x| < |y| \implies -x \prec y$
+\item $|-x|=|y|, -x < 0, y < 0 \implies x = y$
+\item $|-x|=|y|, -x < 0, y > 0 \implies x \prec y$
+\item $-x \notin A, z := x \in A. \forall y \in A: |y| \in B \implies x \leq |y| \implies |x| \leq |y|$
+\item $|x| < |y| \implies x \prec y$
+\item $|x|=|y|, x > 0, y > 0 \implies x = y$
+\item $|x|=|y|, x > 0, y < 0 \implies y=-x \in S$ - contradiction.
+
+$\implies \exists z \in A \forall y \in A: z \preceq y$
+
+\subsubsection*{c)}
+
+No. Let's $A = \{ x \in \mathbb{R}: x > 0 \}$
+
+Assume $\exists x \in A \forall y \in A: x \leq y$
+
+Take $A = \frac{x}{2} \in A, y < x \implies x \not\leq y$ - contradiction.
+
+\subsubsection*{d)}
+
+$\forall x, y, z \in T_n$
+
+$x = (x_1,x_2,\ldots,x_n)$
+
+$y = (y_1,y_2,\ldots,y_n)$
+
+$z = (z_1,z_2,\ldots,z_n)$
+
+i) $x \prec y, y \prec z$
+
+$\exists k, 1 \leq k \leq n: x_j = y_j, 1 \leq j < k, x_k < y_k$
+
+$\exists l, 1 \leq l \leq n: y_j = z_j, 1 \leq j < l, y_l < z_l$
+
+\item $k = l \implies x_j = y_j = z_j, 1 \leq j < k, x_k < y_k = y_l < z_l = z_k \implies x \prec z$
+\item $k < l \implies x_j=y_j=z_j, 1 \leq j < k, x_k < y_k = z_k \implies x \prec z$
+\item $k > l \implies x_j = y_j = z_j, 1 \leq j < l, x_l=y_l < z_l \implies x \prec z$
+
+ii) $\forall x, y \in T_n$
+
+\item $\forall j, 1 \leq j \leq n: x_j=y_j \implies x=y$
+\item $\exists k, 1 \leq k \leq n \forall j, 1 \leq j < k: x_j = y_j, x_k \neq y_k$
+\item $x_k < y_k \implies x \prec y$
+\item $x_k > y_k \implies y \prec x$
+
+iii) $A \subset T_n, A \neq \varnothing$
+
+$A_0 := A \neq \varnothing$
+
+$B_1 := \{ x_1: x \in A_0 \} \subset S, B_1 \neq \varnothing \implies \exists a_1 \in B_1 \forall b_1 \in B_1: a_1 \leq b_1$
+
+$A_1 := \{ x \in A_0: x_1 = a_1 \}$
+
+$a_1 \in B_1 \implies \exists x \in A_0: x_1 = a_1 \implies A_1 \neq \varnothing$
+
+$\cdots$
+
+$\forall j, 1 \leq j \leq n$
+
+$B_j := \{ x_j: x \in A_{j-1} \} \neq \varnothing \implies \exists a_j \in B_j \forall b_j \in B_j: a_j \leq b_j$
+
+$A_j := \{ x \in A_{j-1}: x_1 = a_j \}$
+
+$\cdots$
+
+$a := (a_1, a_2, \ldots, a_n)$
+
+$A=A_0 \supset A_1 \supset A_2 \supset \cdots \supset A_n$
+
+$a \in A_n \implies a \in A$
+
+$\forall b \in A$
+
+Assume $b \prec a \implies \exists k, 1 \leq k \leq n \forall j, 1\leq j < k: b_j = a_j, b_k < a_k$
+
+$b_1 = a_1 \implies b \in A_1$
+
+$b_2 = a_2 \implies b \in A_2$
+
+$b_{k-1} = a_{k-1} \implies b \in A_{k-1}$
+
+$\implies B_k \ni b_k \implies a_k \leq b_k$ - contradiction
+
+$\implies a \preceq b$
+
+\subsubsection*{e)}
+
+No, Let's $S = \{ a, b \}, a \prec b$
+
+$x^{(1)} := (b) \in T_1$
+
+$x^{(2)} := (a, b) \in T_2$
+
+$x^{(3)} := (a, a, b) \in T_3$
+
+$\cdots$
+
+$x^{(n)} := (a,a,\ldots,a,b) \in T_n$
+
+$A := \{ x^{(1)}, x^{(2)}, \ldots \} \neq \varnothing$
+
+Assume $\exists x \in A \forall y \in A: x \prec y\ (1)$
+
+$x = x^{(n)} = (a,a,\ldots,a,b) \in T_n$
+
+Take $y = x^{(n+1)} = (a,a,\ldots,a,a,b) \in T_{n+1}$
+
+$\forall j, 1 \leq j < n: x_j = y_j = a, x_n = b, y_n = a \implies y \prec x$ - contradicts to $(1)$
+
+$\implies S$ is not well-ordered.
+
+\subsubsection*{f)}
+
+$(\implies)$ $S$ satisfies (i)-(iii)
+
+Assume exists sequence: $\cdots \prec x_3 \prec x_2 \prec x_1$
+
+$A := \{ x_1, x_2, x_3, \ldots \}$
+
+(iii) $\implies \exists x \in A \forall y \in A: x \prec y\ (1)$
+
+$x = x_n$
+
+Take $y = x_{n+1}$
+
+By definition: $x_{n+1} \prec x_n \implies y \prec x$ - contradicts to $(1)$
+
+$\implies$ such sequence doesn't exist
+
+$(\Longleftarrow)$ $S$ satisfies (i)-(ii) and doesn't exist sequence: $\cdots \prec x_3 \prec x_2 \prec x_1$
+
+Assume (iii) doesn't hold $\implies$ for some $A \subset S, A \neq \varnothing, \nexists x \in A \forall y \in A: x \prec y$
+
+$A \neq \varnothing \implies \exists x_1 \in A$
+
+$x_1 \neq \min A \implies \exists x_2 \in A: x_2 \prec x_1$
+
+$x_2 \neq \min A \implies \exists x_3 \in A: x_3 \prec x_2$
+
+$\cdots$
+
+Got sequence: $\cdots \prec x_3 \prec x_2 \prec x_1$ - contradiction
+
+$\implies$ (iii)
+
+\subsubsection*{g)}
+
+Assume $P(x)$ doesn't hold for all $x \in S$.
+
+$A := \{ x \in S: P(x)$ - does not hold $\} \implies A \neq \varnothing$
+
+$\exists x \in A \forall y \in A: x \prec y$
+
+$\forall y \prec x \implies y \notin A \implies P(y) \implies P(x) \implies x \in A$ - contradiction.
+
+
+\end{document}

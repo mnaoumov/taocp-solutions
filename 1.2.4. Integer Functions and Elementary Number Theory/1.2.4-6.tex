@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.4-6}
+
+\begin{document}
+\maketitle
+
+\subsubsection*{(a)}
+
+$n = \lfloor \sqrt{\lfloor x\rfloor} \rfloor \iff n \leq \sqrt{\lfloor x\rfloor} < n + 1 \iff n^2 \leq \lfloor x\rfloor < (n+1)^2 \iff n^2 \leq x < (n+1)^2 \iff n \leq \sqrt{x} < n + 1 \iff n = \lfloor \sqrt{x} \rfloor$
+
+\subsubsection*{(b)}
+
+$n = \lceil \sqrt{\lceil x\rceil} \rceil \iff n - 1 < \sqrt{\lceil x\rceil} \leq n \iff (n-1)^2 < \lceil x\rceil \leq n^2 \iff (n-1)^2 < x \leq n^2 \iff n - 1 < \sqrt{x} \leq n \iff n = \lceil \sqrt{x} \rceil$
+
+\subsubsection*{(c)}
+
+Take $x = 1.21$
+
+$\lceil \sqrt{\lfloor x\rfloor} \rceil = \lceil \sqrt{1} \rceil = 1$
+
+$\lceil \sqrt{x} \rceil = \lceil \sqrt{1.21} \rceil = \lceil 1.1 \rceil = 2$
+
+
+\end{document}

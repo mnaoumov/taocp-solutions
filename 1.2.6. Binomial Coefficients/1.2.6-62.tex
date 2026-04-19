@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-62}
+
+\begin{document}
+\maketitle
+
+[1.2.6-31](<./1.2.6-31.md>): $\sum_k \binom{m-r+s}{k}\binom{n+r-s}{n-k}\binom{r+k}{m+n} = \binom{r}{m}\binom{s}{n}$
+
+$\sum_k (-1)^k\binom{l+m}{l+k}\binom{m+n}{m+k}\binom{n+l}{n+k} = \sum_k (-1)^k\binom{l+m}{l+k}\binom{m+n}{m+k}\binom{n+l}{l-k} =: A$
+
+$31: (r,m,s,n) \leftarrow (m+n, m+k, n+l, l-k)$
+
+$\binom{m+n}{m+k} \binom{n+l}{l-k} = \sum_j \binom{l+k}{j}\binom{m-k}{l-k-j}\binom{m+n+j}{m+l}$
+
+$A = \sum_k (-1)^k\binom{l+m}{l+k}\sum_j \binom{l+k}{j}\binom{m-k}{l-k-j}\binom{m+n+j}{m+l} = \sum_{j,k} (-1)^k \frac{(l+m)!}{(l+k)!(m-k)!} \cdot \frac{(l+k)!}{j!(l+k-j)!} \cdot \frac{(m-k)!}{(l-k-j)!(m+j-l)!} \cdot \frac{(m+n+j)!}{(m+l)!(n+j-l)!} =$
+
+$= \sum_{j} \frac{(m+n+j)!}{(2l-2j)!j!(n+j-l)!(m+j-l)!} \sum_k (-1)^k \binom{2l-2j}{l-j+k} = \sum_{j} \frac{(m+n+j)!}{(2l-2j)!j!(n+j-l)!(m+j-l)!} \delta_{2l-2j, 0} (-1)^{l-j} = \frac{(m+n+l)!}{l!n!m!}$
+
+
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.4-48}
+
+\begin{document}
+\maketitle
+
+\subsubsection*{(a)}
+
+\paragraph*{1. \$\{\} n < 0 \{\}\$}
+
+Counterexample: $m = 0, n = -1$
+
+$\lfloor{\frac{m+n-1}{n}}\rfloor = \lfloor{\frac{0-1-1}{-1}}\rfloor = 2$
+
+$\lceil{\frac{m}{n}}\rceil = \lceil{\frac{0}{-1}}\rceil = 0$
+
+\paragraph*{2. \$\{\} n = 1 \{\}\$}
+
+$\lfloor{\frac{m+n-1}{n}}\rfloor = \lfloor{\frac{m}{1}}\rfloor = m$
+
+$\lceil{\frac{m}{n}}\rceil = \lceil{\frac{m}{1}}\rceil = m$
+
+\paragraph*{3. \$\{\} n \textbackslash\{\}geq 2 \{\}\$}
+
+Let $m = qn+r, 0 \leq r \leq n - 1$
+
+$\lfloor{\frac{m+n-1}{n}}\rfloor = \lfloor{\frac{qn+r+n-1}{n}}\rfloor = q + 1 + \lfloor{\frac{r-1}{n}}\rfloor$
+
+##### 3.1. $r = 0$
+
+$\lfloor{\frac{m+n-1}{n}}\rfloor = q + 1 + \lfloor{-\frac{1}{n}}\rfloor = q + 1 - 1 = q$
+
+$\lceil{\frac{m}{n}}\rceil = \lceil{\frac{qn}{n}}\rceil = q$
+
+##### 3.2. $1 \leq r \leq n - 1$
+
+$\lfloor{\frac{m+n-1}{n}}\rfloor = q + 1 + \lfloor{\frac{r-1}{n}}\rfloor = q + 1$
+
+$\lceil{\frac{m}{n}}\rceil = \lceil{\frac{qn+r}{n}}\rceil = q + \lceil{\frac{r}{n}}\rceil = q + 1$
+
+\subsubsection*{(b)}
+
+$\lfloor{\frac{n+2 - \lfloor{\frac{n}{25}}\rfloor}{3}}\rfloor = \lceil{\frac{n - \lfloor{\frac{n}{25}}\rfloor}{3}}\rceil = \lceil{\frac{n + \lceil{-\frac{n}{25}}\rceil}{3}}\rfloor = \lceil{\frac{n + \lceil{-\frac{n}{25}}\rceil}{3}}\rceil = \lceil{\frac{\lceil{n-\frac{n}{25}}\rceil}{3}}\rceil = \lceil{\frac{\lceil{\frac{24n}{25}}\rceil}{3}}\rceil = \lceil{\frac{8n}{25}}\rceil = \lfloor{\frac{8n+24}{25}}\rfloor$
+
+
+\end{document}

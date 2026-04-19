@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { globSync } from "glob";
 import katex from "katex";
 
-const files = globSync("**/*.md", { ignore: ["node_modules/**"] });
+const files = globSync("**/*.tex", { ignore: ["node_modules/**"] });
 let errorCount = 0;
 
 for (const file of files) {
@@ -11,7 +11,8 @@ for (const file of files) {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const regex = /\$\{\}\s*(.*?)\s*\{\}\$/g;
+    // Match inline math $...$ (but not \$ escaped dollars)
+    const regex = /(?<!\\)\$((?:[^$\\]|\\.)+)\$/g;
     let match;
 
     while ((match = regex.exec(line)) !== null) {

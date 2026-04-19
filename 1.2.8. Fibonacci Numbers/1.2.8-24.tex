@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-24}
+
+\begin{document}
+\maketitle
+
+$a_1 = \left|\begin{matrix}1\end{matrix}\right|$
+
+$a_2 = \left|\begin{matrix}1 & -1 \\ 1 & 1\end{matrix}\right|$
+
+$a_3 = \left|\begin{matrix}1 & -1 & 0 \\ 1 & 1 & -1 \\ 0 & 1 & 1\end{matrix}\right|$
+
+$a_4 = \left|\begin{matrix}1 & -1 & 0 & 0\\ 1 & 1 & -1 & 0\\ 0 & 1 & 1 & -1 \\ 0 & 0 & 1 & 1\end{matrix}\right|$
+
+$a_n = \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^n$
+
+$a_1 = 1 = F_2, a_2 = 1 \cdot 1 - (-1) \cdot 1 = 2 = F_3$
+
+$a_n \overset{\textrm{Expand by row 1}}{=} \overbrace{\left|\begin{matrix} \cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{1} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^n + \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ 1 & \cancel{1} & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & \cancel{1} & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & \cancel{0} & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & \cancel{0} & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^n =$
+
+$= \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} + \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} \overset{\textrm{Expand by column 1}}{=}$
+
+$= a_{n-1} + \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{0} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} = a_{n-1} + \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-2} = a_{n-1} + a_{n-2} = F_{n+1}$
+
+
+\end{document}

@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.3-39}
+
+\begin{document}
+\maketitle
+
+[1.2.3-36](<./1.2.3-36.md>)
+
+$C = C(n,x,y) = \left(\begin{matrix}x + y & y & y & \cdots & y \\ y & x + y & y & \cdots & y \\ y & y & x + y & \cdots & y \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ y & y & y & \cdots & x + y \end{matrix}\right)$
+
+$|C| = x^{n-1}(x+ny)$
+
+$b_{ij} = \frac{(-1)^{i+j}}{C(n,x,y)} \hat{C}_{ji}$
+
+$\hat{C}_{ij} = \left|\begin{matrix} & & & & & (i) & & (j) \\ & x + y & y & y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & y & x + y & y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & y & y & x + y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ (i) & \cancel{y} & \cancel{y} & \cancel{y} & \cdots & \cancel{x+y} & \cdots & \cancel{y} & \cdots & \cancel{y}\\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ (j) & y & y & y & \cdots & y & \cdots & \cancel{x+y} & \cdots & y \\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ & y & y & y & \cdots & y & \cdots & \cancel{y} & \cdots & x + y \end{matrix}\right|$
+
+If $i=j, \hat{C}_{ii} = |C(n-1,x,y)| = x^{n-2}(x+(n-1)y)$
+
+$b_{ii} = \frac{(-1)^{2i}x^{n-2}(x+ny-y)}{x^{n-1}(x+ny)} = \frac{-y+x+ny}{x(x+ny)}$
+
+$i \neq j$
+
+\section*{\$\{\} i < j \{\}\$}
+
+Let $r(k)$ - index of the $k$-th row, after removing $i$-th row
+
+Let $c(l)$ - index of the $l$-th row, after removing $j$-th column
+
+$r(k) = k, 1 \leq k \leq i - 1$
+
+$r(k) = k - 1, i + 1 \leq k \leq n$
+
+$c(l) = l, 1 \leq l \leq j - 1$
+
+$c(l) = l - 1, j + 1 \leq l \leq n$
+
+$r(j) = j - 1, r(j+1) = j, \ldots, r(n) = n - 1$
+
+$c(i) = i, c(i+1) = i + 1, \ldots, c(j-1) = j - 1, c(j+1) = j, \ldots, c(n) = n - 1$
+
+Let's reorder rows and columns to put $r(j)$-th row to $n-1$ row, and $c(i)$-th column to $n-1$-column
+
+For that you need,
+
+$R_{j-1} \leftrightarrow R_{j}, R_{j} \leftrightarrow R_{j+1}, \ldots, R_{n-2} \leftrightarrow R_{n-1}$
+
+$C_{i} \leftrightarrow C_{i+1}, C_{i+1} \leftrightarrow C_{i+2}, \ldots, C_{n-2} \leftrightarrow C_{n-1}$
+
+In total you have to make $n-j$ row swaps and $n-i+1$ column swaps
+
+$D(n-1,x,y) := \left|\begin{matrix}x + y & y & y & \cdots & y & y \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right|$
+
+$\hat{C}_{ij} = (-1)^{n-j+n-i+1} D(n-1, x, y)$
+
+$D(n-1,x,y) \overset{R_1 \leftarrow R_1 - R_{n-1}}{=} \left|\begin{matrix}x  & 0 & 0 & \cdots & 0 & 0 \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \overset{\text{Expand by}\ R_1}{=} xD(n-2,x,y)$
+
+$D(1,x,y) = |y| = y$
+
+By induction $D(n-1,x,y) = x^{n-2}y$
+
+$\hat{C}_{ij} = (-1)^{i+j+1}x^{n-2}y$
+
+$b_{ij} = \frac{(-1)^{i+j}}{x^{n-1}(x+ny)} (-1)^{i+j+1}x^{n-2}y = \frac{-y}{x(x+ny)}$
+
+\section*{\$\{\} i > j \{\}\$}
+
+By transposing
+
+$\hat{C}_{ij} = \hat{C}_{ji}, j < i$
+
+\section*{v2}
+
+$A = A(x,y) = \left(\begin{matrix}x + y & y & y & \cdots & y \\ y & x + y & y & \cdots & y \\ y & y & x + y & \cdots & y \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ y & y & y & \cdots & x + y \end{matrix}\right)$
+
+$A - \lambda I = A(x-\lambda, y)$
+
+$|A(x-\lambda,y)| = (x-\lambda)^{n-1}(x-\lambda + ny) = 0$
+
+$\lambda_1 = \lambda_2 = \cdots = \lambda_{n-1} = x, \lambda_n = x + ny$
+
+$e := (1,1,1,\ldots,1)$
+
+$Ae = (x+ny) e$
+
+$A = (x+ny)P_{<e>} + x P_{<e>^\perp}$
+
+$A^{-1} = \frac{1}{x+ny}P_{<e>} + \frac{1}{x} P_{<e>^\perp}$
+
+$\forall v: v = P_{<e>}v + P_{<e>^\perp}$
+
+$v-P_{<e>}v \perp e \implies (v_1-P_{<e>}v) + (v_2-P_{<e>}v) + \cdots + (v_2-P_{<e>}v) = 0 \implies P_{<e>}v = \frac{v_1+v_2+\cdots v_n}{n}e$
+
+$P_{<e>} = \frac{1}{n} J$
+
+$J = \left(\begin{matrix}1 & 1 & \cdots & 1 \\ 1 & 1 & \cdots & 1 \\ \vdots & \vdots & \ddots & \vdots \\ 1 & 1 & \cdots & 1 \end{matrix}\right)$
+
+$P_{<e>^\perp} = I - P_{<e>} = I - \frac{1}{n} J$
+
+$A^{-1} = \frac{1}{x+ny} \cdot \frac{1}{n} J + \frac{1}{x} (I - \frac{1}{n} J) = \frac{1}{(x+ny)nx} (xJ + (x+ny)nI - (x+ny)J) = \frac{1}{(x+ny)nx} (-nyJ + (x-ny)nI) =$
+
+$= \frac{1}{(x+ny)x}(-yJ + (x+ny)I)$
+
+$(A^{-1})_{ij} = \frac{-y+(x+ny)\delta_{ij}}{(x+ny)x}$
+
+
+\end{document}

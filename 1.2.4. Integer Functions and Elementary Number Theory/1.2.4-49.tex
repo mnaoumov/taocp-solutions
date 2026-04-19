@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.4-49}
+
+\begin{document}
+\maketitle
+
+$\forall x \in \mathbb{Q}, n \in \mathbb{N}, m \in \mathbb{Z}$
+
+$f(x+n) = f((x+(n-1))+1) = f(x+(n-1)) + 1 = f(x+(n-2)) + 2 = \cdots = f(x) + n$
+
+$f(x+0) = f(x) = f(x) + 0$
+
+$f(x) = f((x-n)+n) = f(x-n) + n \implies f(x-n) = f(x) - n \implies f(x+(-n)) = f(x) + (-n)$
+
+$\implies f(x+m) = f(x) + m$
+
+$\implies f(x) = \lfloor{x}\rfloor + f(\{ x \})$
+
+$f(0) = f(\frac{f(1 \cdot 0)}{1}) = f(f(0)) = f(0 + f(0)) \overset{f(0) \in \mathbb{Z}}{=} f(0) + f(0) \implies f(0) = 0$
+
+$f(m) = f(0+m) = f(0) + m = 0 + m = m$
+
+If $f(x) = 0 \implies f(\frac{x}{n}) = f(\frac{f(x)}{n}) = f(0) = 0\ (1)$
+
+\section*{1}
+
+$f(\frac{1}{2}) = k \leq 0$
+
+$f(\frac{1}{2}-k) = f(\frac{1}{2}) - k = k - k = 0$
+
+$\frac{1}{2} - k = \frac{1-2k}{2}$
+
+$f(\frac{1-2k}{2}) = 0$
+
+$k = f(\frac{1}{2}) = f(\frac{\frac{1-2k}{2}}{1-2k}) \overset{(1)}{=} 0$
+
+\subsubsection*{1.1. Let's prove by induction \$\{\} f(\textbackslash\{\}frac\{1\}\{n\}) = 0, n \textbackslash\{\}geq 2 \{\}\$}
+
+$n = 2 \implies f(\frac{1}{2}) = k = 0$
+
+$(n \implies n + 1)$
+
+$f(\frac{1}{n+1}) = f(\frac{1+f(\frac{1}{n})}{n+1}) = f(\frac{f(1+\frac{1}{n})}{n+1}) = f(\frac{f(\frac{n+1}{n})}{n+1}) = f(\frac{1}{n}) = 0$
+
+\subsubsection*{1.2. Let's prove by induction for \$\{\} m \{\}\$ and fixed \$\{\} n: f(\textbackslash\{\}frac\{m\}\{n\}) = 0, 0 \textbackslash\{\}leq m < n \{\}\$}
+
+$m = 0 \implies f(\frac{m}{n}) = 0$
+
+$(m \implies m + 1)$
+
+$n > m + 1$
+
+Let $-n = q(m+1) + r, 0 \leq r \leq m$
+
+$q = -\frac{n+r}{m+1} < 0, q \in \mathbb{Z} \implies (-q) \geq 1$
+
+$f(\frac{m+1}{n}) = f(\frac{f(\frac{(-q)(m+1)}{n})}{(-q)}) = f(\frac{\frac{n+r}{n}}{(-q)}) = f(\frac{1+ \frac{r}{n}}{(-q)}) = f(\frac{1+f(\frac{r}{n})}{(-q)})$
+
+$r \leq m \implies$ by induction $f(\frac{r}{n}) =0$
+
+$\implies f(\frac{m+1}{n}) = f(\frac{1+0}{(-q)}) = 0$
+
+\subsubsection*{1.3}
+
+$\implies \forall q \in (0,1) \cap \mathbb{Q}: f(q) = 0$
+
+$\implies \forall q \in \mathbb{Q}: f(q) = \lfloor{q}\rfloor$
+
+\section*{2. \$\{\} f(\textbackslash\{\}frac\{1\}\{2\}) = k \textbackslash\{\}geq 1 \{\}\$}
+
+$f(-\frac{1}{2}) = f(\frac{1}{2}-1)=f(\frac{1}{2})-1= k-1 \geq 0$
+
+$g(x) := -f(-x)$
+
+$g(\frac{1}{2}) = -f(\frac{1}{2}) \leq 0$
+
+$g(x+1) = -f(-(x+1)) = -f(-x-1) = -(f(-x) - 1) = -f(-x) + 1 = g(x) + 1$
+
+$g(x) = -f(-x) = -f(\frac{f(-nx)}{n}) = g(\frac{-f(-nx)}{n}) = g(\frac{g(nx)}{n})$
+
+[1](<#1>) $\implies g(q) = \lfloor{q}\rfloor, q \in \mathbb{Q}$
+
+$f(q) = -f(-q) = -\lfloor{-q}\rfloor = \lceil{q}\rceil$
+
+
+\end{document}

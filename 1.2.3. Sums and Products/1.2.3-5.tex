@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.3-5}
+
+\begin{document}
+\maketitle
+
+$(\sum_{R(i)}a_i)(\sum_{S(j)}b_j) = \sum_{R(i)}(\sum_{S(j)}{a_ib_j})$
+
+$\sum_{R(i)}a_i = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}a_i + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}a_i$
+
+$\sum_{S(j)}b_j = \lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}b_j + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}b_j$
+
+$\sum_{S(j)}a_ib_j = \lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}a_ib_j + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}a_ib_j = a_i (\lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}b_j + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}b_j) = a_i \sum_{S(j)}b_j$
+
+$\sum_{R(i)}(\sum_{S(j)}{a_ib_j}) = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(\sum_{S(j)}{a_ib_j}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(\sum_{S(j)}{a_ib_j}) = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(a_i\sum_{S(j)}{b_j}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(a_i\sum_{S(j)}{b_j}) {} =$
+
+$= (\lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}a_i + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}a_i)\sum_{S(j)}{b_j} = (\sum_{R(i)}a_i)(\sum_{S(j)}b_j)$
+
+
+\end{document}

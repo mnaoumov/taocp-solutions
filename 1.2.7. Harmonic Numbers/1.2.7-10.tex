@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.7-10}
+
+\begin{document}
+\maketitle
+
+$\sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = a_nb_n - a_1b_1$
+
+$a_{k+1}b_{k+1} - a_{k}b_{k} = a_{k+1}b_{k+1} - a_{k+1}b_k + a_{k+1}b_k - a_{k}b_{k} = a_{k+1}(b_{k+1}-b_k) + (a_{k+1}-a_k)b_{k}$
+
+$a_nb_n - a_1b_1 = \sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = \sum_{1\leq k < n} (a_{k+1}(b_{k+1}-b_k) + (a_{k+1}-a_k)b_{k})$
+
+$\sum_{1\leq k < n}(a_{k+1}-a_k)b_k = a_nb_n - a_1b_1 - \sum_{1\leq k < n} a_{k+1}(b_{k+1}-b_k)$
+
+
+\end{document}

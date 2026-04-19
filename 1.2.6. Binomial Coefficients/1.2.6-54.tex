@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-54}
+
+\begin{document}
+\maketitle
+
+$p_{ij} = \binom{i}{j}$
+
+$P = (p_{ij})$
+
+$P = \left(\begin{matrix}1\\1 & 1\\1& 2 & 1\\1 & 3 & 3 & 1 \\ 1 & 4 & 6 & 4 & 1 \\ \vdots & \vdots & \vdots & \vdots & \ddots  \end{matrix}\right)$
+
+$P^{-1} = (q_{ij})$
+
+$\sum_{k} p_{ik}q_{kj} = \delta_{ij}$
+
+$p_{00} q_{0j} = \delta_{0j} \implies q_{0j} = \delta_{0j}$
+
+$p_{10} q_{0j} + p_{11} q_{1j} = \delta_{1j} \implies q_{1j} = \delta_{1j} - q_{0j} = \delta_{1j} - \delta_{0j}$
+
+$p_{20} q_{0j} + p_{21} q_{1j} + p_{22} q_{2j} = \delta_{2j} \implies q_{2j} = \delta_{2j} - q_{0j} - 2q_{1j} = \delta_{2j} - 2(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{2j} - 2\delta_{1j} + \delta_{0j}$
+
+$p_{30} q_{0j} + p_{31} q_{1j} + p_{32} q_{2j} + p_{33} q_{3j} = \delta_{3j} \implies q_{3j} = \delta_{3j} - q_{0j} - 3 q_{1j} - 3 q_{2j} =$
+
+$= \delta_{3j} - 3(\delta_{2j} - 2\delta_{1j} + \delta_{0j}) - 3(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{3j} - 3 \delta_{2j} + 3 \delta_{1j} - \delta_{0j}$
+
+$\implies q_{ij} = (-1)^{i-j} \binom{i}{j}$
+
+Prove by induction
+
+$i = 0$
+
+$q_{0j} = \delta_{0j} = (-1)^{0-j} \binom{0}{j}, j \geq 0$
+
+$(i \implies i + 1)$
+
+$\sum_k p_{i+1,k}q_{kj} = \delta_{i+1,j}$
+
+$\sum_{k=0}^i p_{i+1,k}q_{kj} + p_{i+1,i+1}q_{i+1,j} = \delta_{i+1,j}$
+
+$\sum_{k=0}^i \binom{i+1}{k}(-1)^{k-j} \binom{k}{j} + q_{i+1,j} = \delta_{i+1,j}$
+
+$q_{i+1,j} = \delta_{i+1,j} - \sum_{k=0}^i \binom{i+1}{k}(-1)^{k-j} \binom{k}{j} = \delta_{i+1,j} - \sum_{k=0}^i \binom{i+1}{j}\binom{i+1-j}{k-j}(-1)^{k-j} =$
+
+$= \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=-j}^{i-j} \binom{i+1-j}{k}(-1)^{k} = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=0}^{i+1-j} \binom{i+1-j}{k}(-1)^{k} + \binom{i+1}{j} \binom{i+1-j}{i+1-j}(-1)^{i+1-j} =$
+
+$= \delta_{i+1,j} - \binom{i+1}{j}(1-1)^{i+1-j} + \binom{i+1}{j}(-1)^{(i+1)-j} = \delta_{i+1,j} - \delta_{i+1,j} + \binom{i+1}{j}(-1)^{(i+1)-j} = \binom{i+1}{j}(-1)^{(i+1)-j}$
+
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.2-7}
+
+\begin{document}
+\maketitle
+
+$b^0 = 1, b^{n} = b^{n-1} \cdot b, n > 0, b^{n} = \frac{b^{n + 1}}{b}, n < 0$
+
+$b^1 = b^0 \cdot b = 1 \cdot b = b$
+
+$b^{-1} = \frac{b^0}{b} = \frac{1}{b}$
+
+Let's fix $x \in \mathbb{Z}$
+
+Let's prove $\forall n \geq 0: b^{x+n} = b^x \cdot b^n, b^{x+(-n)} = b^{x} \cdot b^{-n}$
+
+Base $n = 0: b^{x+0} = b^x = b^x \cdot 1 = b^x \cdot b^n, b^{x-0} = b^x = b^x \cdot 1 = b^x \cdot b^{-0}$
+
+$n = 1$
+
+\item $x + 1 = 0 \implies x = -1, b^{x+1}=b^0 = 1 = \frac{1}{b} \cdot b = b^{-1} \cdot b^1 = b^x \cdot b^1$
+\item $x + 1 > 0 \implies b^{x+1} = b^{(x+1)-1} \cdot b = b^x \cdot b^1$
+\item $x + 1 < 0 \implies x < 0 \implies b^{x} = \frac{b^{x+1}}{x} \implies b^{x+1} = b^x \cdot b^1$
+
+$(n \implies n + 1)$
+
+$b^{x+(n+1)} = b^{(x+1)+n} = b^{x+1} \cdot b^n = b^x \cdot b^1 \cdot b^n = b^x \cdot (b^{n} \cdot b^{1}) = b^x \cdot b^{n+1}$
+
+$b^{x-(n+1)} = b^{(x-1)-n} = b^{x-1} \cdot b^{-n} = (b^{x-1} \cdot b^1) \cdot b^{-n} \cdot \frac{1}{b} = b^{x} \cdot b^{-n} \cdot b^{-1} = b^{x} \cdot (b^{-1} \cdot b^{-n}) = b^x \cdot b^{-1-n} = b^x \cdot b^{-(n+1)}$
+
+$\implies \forall x,y \in \mathbb{Z}: b^{x+y} = b^x \cdot b^y$
+
+Let's prove $\forall n \geq 0: b^{x \cdot n} = (b^x)^n, b^{x\cdot(-n)} = (b^{x})^{-n}$
+
+$n = 0: b^{x \cdot 0} = b^0 = 1 = (b^x)^0, b^{x \cdot (-0)} = b^0 = 1 = (b^x)^{-0}$
+
+$(n \implies n + 1)$
+
+$b^{x \cdot (n+1)} = b^{xn + x} = b^{xn} \cdot b^x = (b^x)^n \cdot b^x = (b^x)^{n + 1}$
+
+$b^{x \cdot (-(n+1))} = b^{(-x)\cdot(n+1)} = (b^{-x})^{n+1} = (b^{-x})^n \cdot b^{-x} = b^{-xn} \cdot b^{-x} = (b^x)^{-n} \cdot b^{-x} =: A$
+
+$1 = b^0 = b^{x+(-x)}=b^x\cdot b^{-x} \implies b^{-x} = \frac{1}{b^x}$
+
+$A = (b^x){-n} \cdot \frac{1}{b^x} = (b^x){-n} \cdot (b^x){-1} = (b^x)^{-n-1} = (b^x)^{-(n+1)}$
+
+
+\end{document}

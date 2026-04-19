@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.3-8}
+
+\begin{document}
+\maketitle
+
+$a_{i,i+1} := 1, a_{i+1,i} := -1, a_{ij} := 0$ for other $(i,j)$
+
+$R(i), S(i) := \{ i \geq 0 \}$
+
+$\sum_{i}\sum_{j} a_{ij} = \sum_{i>0}(a_{i,i+1} + a_{i,i-1}) + \sum_{i=0} (a_{0,1}) = 1$
+
+$\sum_{j}\sum_{i} a_{ij} = \sum_{j>0}(a_{j-1,j} + a_{j+1,j}) + \sum_{j=0} (a_{1,0}) = -1$
+
+
+\end{document}

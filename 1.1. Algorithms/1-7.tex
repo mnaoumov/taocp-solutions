@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1-7}
+
+\begin{document}
+\maketitle
+
+$U_m = \lim_{N \to \infty} \frac{1}{N}\sum_{n=1}^N E_{mn}$
+
+$\forall n > m: E_{mn} = 1 + E_{nm}$
+
+$V_N = \sum_{n=1}^N E_{mn} = \sum_{n=1}^m E_{mn} + \sum_{n=m+1}^N E_{mn} = V_m + \sum_{n=m+1}^N (1 + E_{nm}) = V_m + N - m + \sum_{n=m+1}^NE_{nm} = V_m + N - m + \sum_{n=1}^NE_{nm} - \sum_{n=1}^m E_{nm}$
+
+$\forall n < m: E_{nm} = 1 + E_{mn}$
+
+$V_N = V_m + N - m + \sum_{n=1}^N E_{nm} - \sum_{n=1}^{m-1} (1 + E_{mn}) - E_{mm} = V_{m - 1} + E_{mm} + N - m + \sum_{n=1}^N E_{nm} - (m - 1) - V_{m-1} - E_{mm} = N + 1 - 2m + \sum_{n=1}^NE_{nm}$
+
+$U_m = \lim_{N\to\infty}\frac{1}{N}V_N = 1 + T_m$
+
+
+\end{document}

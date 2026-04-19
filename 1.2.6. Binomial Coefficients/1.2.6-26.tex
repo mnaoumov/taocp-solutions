@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-26}
+
+\begin{document}
+\maketitle
+
+$\sum_k A_k(r,t)z^k = x^r$
+
+$\frac{d}{dz} \implies \sum_k A_k(r,t)kz^{k-1} = \frac{d(x^r)}{dz}$
+
+$\sum_{k}kA_k(r,t)z^k = z\frac{d(x^r)}{dz}$
+
+$z\frac{d(x^r)}{dz} = \frac{zrx^{r-1}}{\frac{dz}{dx}} = \frac{zrx^{r-1}}{(t+1)x^t - tx^{t-1}} = \frac{(x^{t+1}-x^t)rx^{r-1}}{x^{t-1}((t+1)x - t)} = \frac{x^t(x-1)rx^{r-1}}{x^{t-1} ((t+1)x - t)} = \frac{r(x-1)x^r}{(t+1)x - t}$
+
+$\sum_k \binom{r-tk}{k}z^k = \sum_k A_k(r, t) \frac{r-tk}{r}z^k = \sum_k A_k(r,t)z^k - \frac{t}{r} \sum_k kA_k(r,t)z^k = x^r - \frac{t}{r} \cdot \frac{r(x-1)x^r}{(t+1)x - t} =$
+
+$= \frac{(t+1)x^{r+1} - tx^r - tx^{r+1} + tx^r }{(t+1)x-t} = \frac{x^{r+1}}{(t+1)x-t}$
+
+
+\end{document}

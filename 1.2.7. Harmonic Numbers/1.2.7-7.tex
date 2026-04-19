@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.7-7}
+
+\begin{document}
+\maketitle
+
+$T(m, n) = H_m + H_n − H_{mn}$
+
+\section*{a}
+
+$T(m+1,n) - T(m,n) = H_{m+1} + H_n - H_{(m+1)n} - H_m - H_n + H_{mn} = (H_{m+1} - H_m) - (H_{mn+n} + H_{mn}) =$
+
+$= \frac{1}{m+1} - (\frac{1}{mn+1} + \frac{1}{mn+2} + \cdots + \frac{1}{mn+n}) \leq \frac{1}{m+1} - n \cdot \frac{1}{mn+n} = 0$
+
+Symmetrically, $T(m, n + 1) - T(m,n) \leq 0$
+
+\section*{b}
+
+$T(\cdot, n), T(m, \cdot) \downarrow \implies \max T(m,n) = T(1,1) = 1$
+
+$\nexists \min T(m,n)$
+
+$\inf T(m,n) = \lim_{m,n \to \infty} T(m,n) = \lim_{m,n \to \infty} (\ln m + \gamma + \ln{n} + \gamma - \ln{mn} -\gamma) = \gamma$
+
+
+\end{document}

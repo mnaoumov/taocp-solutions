@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-44}
+
+\begin{document}
+\maketitle
+
+$\binom{r}{\frac{1}{2}} = \frac{\Gamma(r+1)}{\Gamma(\frac{1}{2}+1)\Gamma(r-\frac{1}{2}+1)} = \frac{\Gamma(r+1)}{\Gamma(\frac{3}{2})\Gamma(r+\frac{1}{2})} =: A$
+
+$\Gamma(\frac{3}{2}) = \frac{1}{2} \Gamma(\frac{1}{2}) = \frac{1}{2} \sqrt{\pi}$
+
+$A = \lim_{m \to \infty} \overbrace{\frac{2\Gamma(r + 1)}{\sqrt{\pi} \Gamma_m(r + \frac{1}{2})}}^{A_m}$
+
+$A_m = \frac{2\Gamma(r + 1)}{\sqrt{\pi}} \cdot \frac{(r+\frac{1}{2})(r+\frac{1}{2}+1)\cdots(r+\frac{1}{2}+m)}{m^{r+\frac{1}{2}}m!} = \frac{2\Gamma(r + 1)}{\sqrt{\pi}} \cdot \frac{(2r+1)(2r+3)\cdots(2r+2m+1)}{m^{r+\frac{1}{2}}m!2^{m+1}} =$
+
+$= \frac{2\Gamma(r+1)}{\sqrt{\pi}} \cdot \frac{(2r+1)(2r+2)\cdots(2r+2m)(2r+2m+1)}{(2r+2)(2r+4)\cdots(2r+2m)} \cdot \frac{1}{m^{r+\frac{1}{2}}m!2^{m+1}} = \frac{2\Gamma(r+1)}{\sqrt{\pi}} \cdot \frac{(2m)^{2r+1}(2m)!}{\Gamma_{2m}(2r+1)} \cdot \frac{1}{2^m (r+1)(r+2)\cdots(r+m)} \cdot \frac{1}{m^{r+\frac{1}{2}}m!2^{m+1}} =$
+
+$= \frac{2\Gamma(r+1)}{\sqrt{\pi} \Gamma_{2m}(2r+1)} \cdot \frac{\Gamma_m(r+1) (r+m+1)}{m^{r+1} m! 2^m} \cdot \frac{2^{2r+1} m^{2r+1}(2m)!}{m^{r+\frac{1}{2}}m!2^{m+1}} = \frac{2^{2r+2}\Gamma(r+1)\Gamma_m(r+1)}{\sqrt{\pi}\Gamma_{2m}(2r+1)} \cdot \frac{r+m+1}{\sqrt{m} 2^{2m+1}} \cdot \frac{(2m)!}{m!m!}$
+
+$\frac{(2m)!}{m!m!} = \frac{\sqrt{2\pi \cdot 2m} (\frac{2m}{e})^{2m} (1+o(1))}{(\sqrt{2\pi m} (\frac{m}{e})^{m} (1+o(1)))^2} = \frac{2^{2m}(1+o(1))}{\sqrt{\pi m}}$
+
+$A_m = \frac{2^{2r+2}\Gamma(r+1)\Gamma_m(r+1)}{\sqrt{\pi}\Gamma_{2m}(2r+1)} \cdot \frac{r+m+1}{\sqrt{m} 2^{2m+1}} \cdot \frac{2^{2m}o(1)}{\sqrt{\pi m}} = \frac{2^{2r+1}\Gamma(r+1)\Gamma_m(r+1)}{\pi \Gamma_{2m}(2r+1)} \cdot \frac{r+m+1}{m} \cdot (1+o(1))$
+
+$A = \lim_{m \to \infty} A_m = \frac{2^{2r+1}\Gamma(r+1)\Gamma(r+1)}{\pi \Gamma(2r+1)} = \frac{2^{2r+1}}{\pi \binom{2r}{r}}$
+
+
+\end{document}

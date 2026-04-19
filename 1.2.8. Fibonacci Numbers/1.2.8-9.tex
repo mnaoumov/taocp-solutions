@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-9}
+
+\begin{document}
+\maketitle
+
+\section*{(4)}
+
+$F_{n + 1}F_{n-1} - (F_n)^2 = (-1)^n, n \geq 1 \quad (4)$
+
+To prove for all $n \in \mathbb{Z}$, we need to do reverse induction
+
+$(n \implies n - 1)$
+
+$F_{n}F_{n-2} - (F_{n-1})^2 = F_n(F_n - F_{n-1}) - (F_{n-1})^2 = (F_n)^2 - F_nF_{n-1} - (F_{n-1})^2 = (F_n)^2 - F_{n-1}(F_n + F_{n-1}) =$
+
+$= (F_n)^2 - F_{n-1}F_{n+1} = -(F_{n+1}F_{n-1} - (F_n)^2) = -(-1)^n = (-1)^{n-1}$
+
+\section*{(6)}
+
+$F_{n+m} = F_mF_{n+1} + F_{m-1}F_n, n \geq 0, m \geq 1 \quad (6)$
+
+First, let's prove for $m \in \mathbb{Z}$ via reverse induction.
+
+$(m \implies m - 1)$
+
+$F_{m-1}F_{n+1} + F_{m-2}F_n = F_{m-1}F_{n+1} + (F_{m} - F_{m-1})F_n = F_{m-1}F_{n+1} + F_mF_n - F_{m-1}F_{n} =$
+
+$= F_mF_n + F_{m-1}(F_{n+1} - F_n) = F_mF_n + F_{m-1}F_{n-1} =: A$
+
+If $n - 1 \geq 0$, we can use (6) for $(m, n -1)$
+
+$A = F_{(n-1)+m} = F_{n + (m-1)}$
+
+Case $n = 0$ we need check separately
+
+$A = F_mF_0 + F_{m-1}F_{-1} = F_m \cdot 0 + F_{m-1} \cdot 1 = F_{m-1} = F_{n + (m-1)}$
+
+By reverse induction we proved (6) for $n \geq 0, m \in \mathbb{Z}$
+
+Now, via reverse induction for $n$ we will prove for $n \in \mathbb{Z}$
+
+$(n \implies n - 1)$
+
+$F_mF_{n} + F_{m-1}F_{n-1} = F_mF_{n} + F_{m-1}(F_{n+1} - F_n) = F_mF_{n} + F_{m-1}F_{n+1} - F_{m-1}F_n =$
+
+$= F_{m-1}F_{n+1} + (F_m-F_{m-1})F_n = F_{m-1}F_{n+1} + F_{m-2}F_{n} \overset{\textrm{Induction step for } (m-1, n)}{=} F_{n+(m-1)} = F_{(n-1) + m}$
+
+Now (6) is proven for $m,n \in \mathbb{Z}$
+
+\section*{(14)}
+
+$F_{n} = \frac{1}{\sqrt{5}}(\phi^n - \widehat{\phi}^n), n \geq 0 \quad (14)$
+
+Let's prove by reverse induction
+
+$(n \implies n - 1)$
+
+$F_{n-1} = F_{n+1} - F_n = \frac{1}{\sqrt{5}}(\phi^{n+1} - \widehat{\phi}^{n+1}) - \frac{1}{\sqrt{5}}(\phi^n - \widehat{\phi}^n) =$
+
+$= \frac{1}{\sqrt{5}}(\phi^n(\phi -1) - \widehat{\phi}^n(\widehat{\phi} - 1)) =: A$
+
+$\phi, \widehat{\phi}$ are solutions of $x^2-x-1 = 0$
+
+$x - 1 = \frac{1}{x}$
+
+$\phi - 1 = \frac{1}{\phi}$
+
+$\widehat{\phi} - 1 = \frac{1}{\widehat{\phi}}$
+
+$A = \frac{1}{\sqrt{5}}(\phi^{n-1} - \widehat{\phi}^{n-1})$
+
+\section*{(15)}
+
+$F_n = \frac{\phi^n}{\sqrt{5}}$ rounded to the nearest integer $\quad (15)$
+
+This doesn't hold for $n < 0$
+
+$F_{_1} = 1$
+
+$\frac{\phi^{-1}}{\sqrt{5}} \approx 0.3$, nearest integer is $0$
+
+$F_{_2} = -1$
+
+$\frac{\phi^{-2}}{\sqrt{5}} \approx 0.2$, nearest integer is $0$
+
+
+\end{document}

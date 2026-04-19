@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-3}
+
+\begin{document}
+\maketitle
+
+```csharp
+const n = 1000;
+var fib = new BigInteger[0];
+BigInteger prev2 = 0;
+BigInteger prev = 1;
+Console.WriteLine("F_1 = 1");
+for (var i = 2; i <= n; i++)
+{
+    var value = prev + prev2;
+    Console.WriteLine($"F_{i} = {value}");
+    (prev2, prev) = (prev, value);
+}
+```
+
+
+\end{document}

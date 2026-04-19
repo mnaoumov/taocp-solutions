@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-66}
+
+\begin{document}
+\maketitle
+
+Let's consider $y, x = x(z)$
+
+Denote $x = x_k(z)$ is such that $\binom{x_k(z)}{k} = \binom{y}{k} + \binom{z}{k-1}$
+
+From now on, we will use $x = x_n(z)$
+
+$X := \binom{x}{n}$
+
+$Y := \binom{y}{n}$
+
+$Z := \binom{z}{n-1}$
+
+$X = Y + Z$
+
+\section*{Case \$\{\} n + 1 \{\}\$}
+
+$\bar{X} := \binom{x}{n+1}$
+
+$\bar{Y} := \binom{y}{n+1}$
+
+$\bar{Z} := \binom{z}{n}$
+
+We need to prove
+
+$\bar{X} \leq \bar{Y} + \bar{Z} \iff y \leq z$
+
+We will prove a bit stronger statement
+
+$\left\{\begin{array}{l}\bar{X} \leq \bar{Y} + \bar{Z} \iff y \leq z\\\bar{X} \geq \bar{Y} + \bar{Z} \iff y \geq z\\\end{array}\right.$
+
+$F(z) := \bar{X} - \bar{Y} - \bar{Z}$
+
+We need to prove
+
+$\begin{cases}F(z)>0 & z\in(n-1,y)\\ F(z)=0 & z=y\\ F(z)<0 & z>y\end{cases}$
+
+\subsubsection*{Lemma 1}
+
+Let $F \in C^1((a, +\infty)), \exists y > a: F(y) = 0, \forall z > a, F(z) = 0 \rightarrow F'(z) < 0$
+
+Then
+
+$\begin{cases}F(z)>0 & z\in(a,y)\\ F(z)=0 & z=y\\ F(z)<0 & z>y\end{cases} (1)$
+
+\bigskip\hrule\bigskip
+
+$F(y) = 0 \implies F'(y) < 0 \implies \exists \varepsilon \in (0, y - a): \forall z \in [y-\varepsilon,y): F(z) > 0, \forall z \in (y, y + \varepsilon]: F(z) < 0$
+
+Consider $B = \{ z \in (a, y): F(z) = 0 \}, C = \{ z > y: F(z) = 0 \}$
+
+We will prove $B = C = \varnothing$
+
+Assume $B \neq \varnothing, b := \sup B \implies F(b) = 0 \implies b < y - \varepsilon$
+
+$F(b) = 0 \implies F'(b) < 0 \implies \exists \delta \in (0, y - \varepsilon - b) \forall z \in (b, b + \delta]: F(z) < 0$
+
+$F(b+\delta) < 0, F(y - \varepsilon) > 0, b + \delta < y - \varepsilon, F \in C([b+\delta, y - \varepsilon]) \implies \exists d \in [b+\delta, y - \varepsilon]: F(d) = 0$
+
+$\implies d \in B, d > \sup B \implies \perp \implies B = \varnothing$
+
+Similarly, we prove $C = \varnothing$, using $c = \inf C$
+
+$F \in C((a, +\infty)) \implies (1)$
+
+QED
+
+\subsubsection*{Lemma 2}
+
+$\frac{d}{dt}\binom{t}{k} = \binom{t}{k} g_k(t)$, where $g_k(t) := \sum_{j=0}^{k-1} \frac{1}{t-j}$
+
+\bigskip\hrule\bigskip
+
+$\frac{d}{dt} \binom{t}{k} = \frac{d}{dt} \frac{t(t-1)\cdots(t-k+1)}{k!} = \frac{d}{dt} e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} = e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} \cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k}\cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k} g_k(t)$
+
+QED
+
+\subsubsection*{Continue}
+
+By Lemma 1, for us it's enough to prove that $F(y) = 0, \forall z > n - 1, F(z) = 0 \rightarrow F'(z) < 0$
+
+$\forall k\ \binom{y}{k} + \binom{y}{k-1} = \binom{y+1}{k} \implies x_k(y) = y + 1$
+
+$F(y) = \binom{x_n(y)}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = \binom{y+1}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = 0$
+
+Now we need to prove that $F(z) = 0 \to F'(z) < 0$
+
+$X = Y + Z$
+
+$\frac{dX}{dz} = \frac{dY}{dz} + \frac{dZ}{dz}$
+
+$\frac{dX}{dz} = \frac{dZ}{dz}$
+
+$\frac{dX}{dz} = \frac{dX}{dx} \cdot \frac{dx}{dz}$
+
+$Z g_{n-1}(z) = X g_n(x) \frac{dx}{dz}$
+
+$\frac{dx(z)}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_n(x)}$
+
+$F(z) = 0 \implies \bar{X} = \bar{Y} + \bar{Z}$
+
+$\bar{X} = X \frac{x-n}{n+1}$
+
+$\bar{Y} = Y \frac{y-n}{n+1}$
+
+$\bar{Z} = Z \frac{z-n+1}{n}$
+
+$X \frac{x-n}{n+1} = Y \frac{y-n}{n+1} + Z \frac{z-n+1}{n}$
+
+$(Y + Z) \frac{x-n}{n+1} = Y \frac{y-n}{n+1} + Z \frac{z-n+1}{n}$
+
+$Y(\frac{x-n}{n+1} - \frac{y-n}{n+1}) + Z(\frac{x-n}{n+1} - \frac{z-n+1}{n}) = 0$
+
+$Y \frac{x-y}{n+1} + Z(\frac{x-n}{n+1} - \frac{z-n+1}{n}) = 0$
+
+$Y > 0, Z > 0, x - y > 0 \implies \frac{x-n}{n+1} - \frac{z-n+1}{n} < 0$
+
+$\frac{x-n}{n+1} < \frac{z-n+1}{n}$
+
+$\frac{i}{n+1} < \frac{i}{n}$
+
+$\forall i: \frac{x-n}{n+1} + \frac{i}{n+1} < \frac{z-n+1}{n} + \frac{i}{n}$
+
+$\frac{x-(n-i)}{n+1} < \frac{z-(n-1-i)}{n}$
+
+$j := n - 1 - i$
+
+$\frac{x-1-j}{n+1} < \frac{z-j}{n}$
+
+$\frac{1}{x-1-j} > \frac{n}{n+1}\frac{1}{z-j}$
+
+$\sum_{j=0}^{n-2}\frac{1}{x-1-j} > \frac{n}{n+1}\sum_{j=0}^{n-2}\frac{1}{z-j}$
+
+$g_n(x) - \frac{1}{x} > \frac{n}{n+1} g_{n-1}(z)$
+
+$g_n(x) > \frac{n}{n+1} g_{n-1}(z)$
+
+$\frac{dx}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_n(x)} < \frac{n+1}{n} \frac{Z}{X}$
+
+$F'(z) = \frac{d}{dz}(\bar{X} - \bar{Y} - \bar{Z}) = \frac{d}{dz}(X\frac{x-n}{n+1}) - \frac{d}{dz}(Z\frac{z-n+1}{n}) = \frac{dX}{dz} \cdot \frac{x-n}{n+1} + \frac{X}{n+1} \cdot \frac{dx_n(z)}{dz} - \frac{dZ}{dz} \cdot \frac{z-n+1}{n} - \frac{Z}{n}$
+
+$F'(z) = \frac{dZ}{dz}(\frac{x-n}{n+1} - \frac{z-n+1}{n}) + \frac{X}{n+1} \cdot \frac{dx}{dz} - \frac{Z}{n} < \frac{dZ}{dz} \cdot 0 + \frac{X}{n+1} \cdot \frac{n+1}{n} \frac{Z}{X} - \frac{Z}{n} = 0$
+
+QED
+
+\section*{Case \$\{\} n - 1 \{\}\$}
+
+$\binom{x_{n-1}(z)}{n - 1} = \binom{y}{n-1} + \binom{z}{n-2}$
+
+From case $n + 1$ we know
+
+$\binom{x_{n-1}(z)}{(n - 1) + 1} \leq \binom{y}{(n - 1) + 1} + \binom{z}{n - 1} \iff y \leq z$
+
+$y \geq z \iff \binom{x_{n - 1}(z)}{n} \geq \binom{y}{n} + \binom{z}{n - 1} = \binom{x_n(z)}{n} \iff x_{n-1}(z) \geq x_n(z) \iff x_n(z) \leq x_{n-1}(z) \iff \binom{x_n(z)}{n - 1} \leq \binom{x_{n-1}(z)}{n - 1} = \binom{y}{n - 1} + \binom{z}{n - 2}$
+
+QED
+
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.2-29}
+
+\begin{document}
+\maketitle
+
+\subsubsection*{(a)}
+
+$f(b) = b \log_b{x} = \frac{b\ln{x}}{\ln{b}}$
+
+$f'(b) = \ln{x} \frac{1 \cdot \ln{b} - b \cdot \frac{1}{b}}{(\ln{b})^2} = \ln{x} \frac{1 \cdot \ln{b} - b \cdot \frac{1}{b}}{(\ln{b})^2} = \ln{x} \frac{\ln{b} - 1}{(\ln{b})^2} = 0$
+
+$b_{\min} = e$
+
+\subsubsection*{(b)}
+
+$2 < e < 3$
+
+$f(2) = \frac{2}{\ln{2}}\ln{x}$
+
+$f(3) = \frac{3}{\ln{3}}\ln{x}$
+
+$3^2 > 2^3 \implies 2\ln{3} > 3\ln{2} \implies \frac{2}{\ln{2}} > \frac{3}{\ln{3}}$
+
+$b_{\min} = 3$
+
+\subsubsection*{(c)}
+
+$g(b) = (b+1)\log_b{x} = \frac{(b+1)\ln{x}}{\ln{b}}$
+
+$g'(b)=\ln{x}\frac{\ln{b} - \frac{b+1}{b}}{(\ln{b})^2} = \ln{x}\frac{b\ln{b} - b - 1}{b(\ln{b})^2}$
+
+$h(b) = b\ln{b} - b - 1$
+
+$h'(b) = \ln{b} + 1 - 1 = \ln{b} > 0 \implies h \uparrow \uparrow$
+
+$h(3) = 3\ln{3} - 4 \approx -0.7 < 0$
+
+$h(4) = 4\ln{4} - 5 \approx 0.5 > 0$
+
+$g'(3) < 0, g'(4) > 0$
+
+$g(3) = \frac{4\ln{x}}{\ln{3}}$
+
+$g(4) = \frac{5\ln{x}}{\ln{4}}$
+
+$4^4 > 3^5 \implies 4 \ln{4} > 5 \ln{3} \implies \frac{4}{\ln{3}} > \frac{5}{\ln{4}}$
+
+$b_{\min} = 4$
+
+
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-33}
+
+\begin{document}
+\maketitle
+
+$z = \frac{\pi}{2} + i \ln \phi$
+
+$iz = -\ln\phi + i\frac{\pi}{2}$
+
+$e^{iz} = e^{-\ln\phi} + e^{i\frac{\pi}{2}} = \frac{i}{\phi} = -i\hat{\phi}$
+
+$e^{-iz} = \frac{1}{e^{iz}} = \frac{1}{-i\hat{\phi}} = -i\phi$
+
+$\sin z = \frac{e^{iz} - e^{-iz}}{2i} = \frac{-i\hat{\phi} + i\phi}{2i} = \frac{\phi - \hat{\phi}}{2} = \frac{\sqrt{5}}{2}$
+
+$e^{inz} = (-i\hat{\phi})^n = (-i)^n\hat{\phi}^n$
+
+$e^{inz} = (-i\phi)^n = (-i)^n\phi^n$
+
+$\sin nz = \frac{e^{inz} - e^{-inz}}{2i} = \frac{(-i)^n\hat{\phi}^n - (-i)^n\phi^n}{2i} = \frac{\phi^n - \hat{\phi}^n}{\sqrt{5}}\cdot\frac{\sqrt{5}}{2}(-i)^{n-1} = \frac{\sqrt{5}}{2} (-i)^{n-1} F_n$
+
+$\frac{\sin nz}{\sin z} = (-i)^{n-1}F_n = i^{1-n}F_n$
+
+
+\end{document}

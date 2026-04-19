@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.6-64}
+
+\begin{document}
+\maketitle
+
+$(46)\quad \{{{n+1} \atop m}\} = m\{{{n} \atop m}\} + \{{{n} \atop m - 1}\}$
+
+Let $P_{nm} = \{ B = \{ B_1, \ldots B_m \}, B_1\sqcup B_2\sqcup \cdots \sqcup B_m = \{ 1, 2, \ldots, n + 1 \}, B_i \neq \varnothing, 1 \leq i \leq m \}$ - partitions of $\{ 1, 2, \ldots, n\}$ in $m$ non-empty parts.
+
+As order of $B_i$ is not relevant, we can assume $n \in B_m$
+
+Consider $B \in P_{n+1,m}$
+
+Let
+
+If $B_m = \{ n + 1 \} \implies B' = \{ B_1, B_2, \ldots, B_{m-1} \} \in P_{n,m-1}$
+
+If $B_m \neq \{ n + 1 \} \implies B'' = \{ B_1, B_2, \ldots, B_{m-1}, B_m \setminus \{ n + 1 \} \} \in P_{nm}$
+
+Reverse, $\forall B \in P_{n, m-1}: B \sqcup \{ \{ n + 1 \} \} \in P_{n+1,m}$
+
+$\forall B \in P_{n, m}: B^{(k)} := \{ B_1, B_2, \ldots, B_k \sqcup \{ n + 1 \}, \ldots, B_m \} \in P_{n+1,m}, 1 \leq k \leq m$
+
+$\implies \#P_{n+1,m} = m \#P_{nm} + \#P_{n,m-1}$
+
+$\{{0 \atop 0}\} = \#P_{00} = 1$
+
+$\{{0 \atop m}\} = \#P_{0m} = 0, m \geq 1$
+
+$\{{n \atop 0}\} = \#P_{n0} = 0, n \geq 1$
+
+$\{{n \atop m}\} = \#P_{nm}, n \geq 0, m \geq 0$
+
+
+\end{document}

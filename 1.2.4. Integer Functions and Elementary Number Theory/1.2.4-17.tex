@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.4-17}
+
+\begin{document}
+\maketitle
+
+\subsubsection*{Law A}
+
+$a \equiv b, x \equiv y\ (\mathrm{modulo}\ m)$
+
+$a \mod m = b \mod m, x \mod m = y \mod m$
+
+$(a \pm x) \mod m = (a \pm x) - \lfloor \frac{a \pm x}{m} \rfloor m = a \pm x - \lfloor \frac{(\lfloor\frac{a}{m}\rfloor m + (a \mod m)) \pm (\lfloor\frac{x}{m}\rfloor m + (x \mod m))}{m} \rfloor m =$
+
+$= a \pm x - \lfloor \lfloor\frac{a}{m}\rfloor \pm \lfloor\frac{x}{m} \rfloor + \frac{(a \mod m) \pm (x \mod m)}{m} \rfloor m = a \pm x - (\lfloor\frac{a}{m}\rfloor \pm \lfloor\frac{x}{m} \rfloor + \lfloor \frac{(a \mod m) \pm (x \mod m)}{m} \rfloor) m =$
+
+$= (a - \lfloor\frac{a}{m} \rfloor m) \pm (x - \lfloor\frac{x}{m} \rfloor m) - \lfloor \frac{(a \mod m) \pm (x \mod m)}{m} \rfloor m = (a \mod m) \pm (x \mod m) - \lfloor \frac{(a \mod m) \pm (x \mod m)}{m} \rfloor m =$
+
+$= (b \mod m) \pm (y \mod m) - \lfloor \frac{(b \mod m) \pm (y \mod m)}{m} \rfloor m = (b \pm y) \mod m \implies (a \pm x) \equiv (b \pm y)\ (\mathrm{modulo}\ m)$
+
+$(ax) \mod m = ax - \lfloor \frac{ax}{m} \rfloor m = ax - \lfloor \frac{(\lfloor\frac{a}{m}\rfloor m + (a \mod m))(\lfloor\frac{x}{m}\rfloor m + (x \mod m))}{m} \rfloor m =$
+
+$= ax - \lfloor \lfloor\frac{a}{m}\rfloor \lfloor\frac{x}{m}\rfloor m + \lfloor\frac{a}{m}\rfloor (x \mod m) + \lfloor\frac{x}{m}\rfloor (a \mod m) + \frac{(a \mod m))(x \mod m))}{m} \rfloor m =$
+
+$= ax - (\lfloor\frac{a}{m}\rfloor \lfloor\frac{x}{m}\rfloor m + \lfloor\frac{a}{m}\rfloor (x \mod m) + \lfloor\frac{x}{m}\rfloor (a \mod m) + \lfloor \frac{(a \mod m))(x \mod m))}{m} \rfloor) m =$
+
+= $(\lfloor\frac{a}{m}\rfloor m + (a \mod m))(\lfloor\frac{x}{m}\rfloor m + (x \mod m)) - (\lfloor\frac{a}{m}\rfloor \lfloor\frac{x}{m}\rfloor m^2 + \lfloor\frac{a}{m}\rfloor (x \mod m) m + \lfloor\frac{x}{m} \rfloor (a \mod m)) m - \lfloor \frac{(a \mod m))(x \mod m))}{m} \rfloor m =$
+
+$= (a \mod m) (x \mod m) -  \lfloor \frac{(a \mod m))(x \mod m))}{m} \rfloor m = (b \mod m) (y \mod m) -  \lfloor \frac{(b \mod m))(y \mod m))}{m} \rfloor m = (by) \mod m$
+
+$\implies (ax) \equiv (by)\ (\mathrm{modulo}\ m)$
+
+\subsubsection*{Half of Law D}
+
+$a \equiv b\ (\mathrm{modulo}\ rs)$
+
+$a \mod r = a - \lfloor \frac{a}{r} \rfloor r = a - \lfloor \frac{\lfloor\frac{a}{rs} \rfloor rs + (a \mod rs)}{r} \rfloor r = a - \lfloor \lfloor\frac{a}{rs} \rfloor s +  \frac{a \mod rs}{r} \rfloor r = a - (\lfloor\frac{a}{rs} \rfloor s + \lfloor \frac{a \mod rs}{r} \rfloor)r$
+
+$= a - \lfloor\frac{a}{rs} \rfloor rs - \lfloor \frac{a \mod rs}{r} \rfloor r = a \mod rs - \lfloor \frac{a \mod rs}{r} \rfloor r = b \mod rs - \lfloor \frac{b \mod rs}{r} \rfloor r = b \mod r \implies a \equiv b\ (\mathrm{modulo}\ r)$
+
+Similarly, $a \equiv b\ (\mathrm{modulo}\ s)$
+
+
+\end{document}

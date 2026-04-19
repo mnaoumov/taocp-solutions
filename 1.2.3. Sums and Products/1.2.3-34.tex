@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.3-34}
+
+\begin{document}
+\maketitle
+
+$S = \sum_{k=1}^n \frac{\prod_{1 \leq r \leq n, r \neq m} (x + k - r)}{\prod_{1 \leq r \leq n, r \neq k} (k - r)}$
+
+$x_k := k$
+
+$f(t) := \prod_{1 \leq r \leq n, r \neq m} (x + t - r) = \sum_{i=0}^{n-1} a_it^i$
+
+$p(t) = \prod_{1 \leq r \leq n} (t-x_r)$
+
+$\prod_{1 \leq r \leq n, r \neq k} (x_k - x_r) = p'(x_k)$
+
+$S = \sum_{k=1}^n \frac{f(x_k)}{p'(x_k)} = \sum_{i=0}^{n-1} a_i \sum_{k=1}^n \frac{x_k^i}{p'(x_k)}$
+
+By [1.2.3-33](<./1.2.3-33.md>):
+
+$S = a_0 \cdot 0 + a_1 \cdot 0 + \cdots + a_{n-2} \cdot 0 + a_{n-1} \cdot 1 = a_{n-1}$
+
+$f(t) = t^{n-1} + g(t), \deg d \leq n - 1 \implies a_{n-1} = 1$
+
+$S = 1$
+
+
+\end{document}

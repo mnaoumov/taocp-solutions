@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.7-17}
+
+\begin{document}
+\maketitle
+
+$H_{p-1} = \sum_{k=1}^{p-1}\frac{1}{k} = \frac{\sum_{k=1}^{p-1}\frac{(p-1)!}{k}}{(p-1)!}$
+
+$a := \sum_{k=1}^{p-1}\frac{(p-1)!}{k}$
+
+$d := (a, (p-1)!)$
+
+$b := \frac{a}{d}$
+
+$c := \frac{(p-1)!}{d}$
+
+$H_{p-1} = \frac{a}{(p-1)!} = \frac{b}{c}$
+
+We need to prove $p \mid b$
+
+$p \not\mid d \implies p \mid b \iff p \mid a$
+
+$a_k := \frac{(p-1)!}{k} \pmod p$
+
+$k a_k \equiv (p-1)! \equiv -1 \pmod p$
+
+$a_k \neq a_l, k,l=\overline{0,p-1}, k \neq l$
+
+$\{ a_1, a_2, \ldots, a_{p-1} \} = \{ 1,2,\ldots, p - 1\}$
+
+$a \equiv \sum_{k=1}^{p-1} a_k \equiv \sum_{k=1}^{p-1} k = \frac{p(p-1)}{2} = p \cdot \frac{p-1}{2} \equiv 0 \pmod p$
+
+
+\end{document}

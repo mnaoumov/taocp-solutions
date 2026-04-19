@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-17}
+
+\begin{document}
+\maketitle
+
+$(x^{n+k} - y^{n+k})(x^{m-k} - y^{m-k}) -(x^{n} - y^{n})(x^{m} - y^{m}) =$
+
+$= (x^{n+m}-x^{n+k}y^{m-k}-x^{m-k}y^{n+k}+y^{n+m}) - (x^{n+m}-x^{n}y^{m}-x^{m}y^{n}+y^{n+m}) =$
+
+$= x^{m}y^{n} - x^{n+k}y^{m-k} - x^{m-k}y^{n+k} + x^ny^m = (xy)^n (x^{m-n} - x^ky^{m-n-k} -x^{m-n-k}y^k + y^{m-n}) =$
+
+$= (xy)^n(x^{k}-y^k)(x^{m-n-k} - y^{m-n-k})$
+
+$x := \phi, y := \hat\phi \implies xy = -1$
+
+$5F_{n+k}F_{m-k} - 5F_nF_m = (-1)^n \cdot 5F_{k}F_{m-n-k}$
+
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1-3}
+
+\begin{document}
+\maketitle
+
+Algorithm F
+
+\item $F1$. \[ Eliminate trivial assignment \] If $m < n, m \leftrightarrow n$.
+\item $F2$. \[ Find remainder \] $r := m \mod n$.
+\item $F3$. \[ Is it zero? \] If $r = 0$, terminate, answer is $n$.
+\item $F4$. \[ Reduce \] $m \leftarrow n, n \leftarrow r$. Go to F2.
+
+
+\end{document}

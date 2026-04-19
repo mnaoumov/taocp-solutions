@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.8-11}
+
+\begin{document}
+\maketitle
+
+$\phi^{n} = F_n \phi + F_{n-1}$
+
+$\widehat{\phi}^{n} = F_n \widehat{\phi} + F_{n-1}$
+
+$n = 0$
+
+$F_0 \phi + F_{-1} = 1 = \phi^0$
+
+$F_0 \widehat{\phi} + F_{-1} = 1 = \widehat{\phi}^0$
+
+$(n \implies n + 1)$
+
+For $x \in \{ \phi, \widehat{\phi} \}: x + 1 = x^2, x - 1 = \frac{1}{x}$
+
+$F_{n+1} x + F_{n} = (F_n + F_{n-1})x + F_{n} = F_n(x+1) + F_{n-1} x = F_nx^2 + F_{n-1}x =$
+
+$= (F_nx + F_{n-1})x = x^{n} \cdot x = x^{n+1}$
+
+$(n \implies n - 1)$
+
+$F_{n-1} x + F_{n-2} = F_{n-1} x + (F_{n} - F_{n-1}) = F_n + F_{n-1} (x - 1) = F_n + \frac{F_{n-1}}{x}$
+
+$= \frac{F_nx + F_{n-1}}{x} = \frac{x^{n}}{x} = x^{n-1}$
+
+
+\end{document}

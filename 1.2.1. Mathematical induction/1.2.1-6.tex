@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+
+\title{1.2.1-6}
+
+\begin{document}
+\maketitle
+
+$a'm+b'n = c (1)$
+
+$am + bn = d (2)$
+
+Before $E4$: $c \leftarrow d, d \leftarrow r, t \leftarrow a', a' \leftarrow a, a \leftarrow t - qa, t \leftarrow b', b' \leftarrow b, b \leftarrow t - qb$
+
+We need to check the equalities hold after $E4$.
+
+For simplicity we will use index $1$ for values after.
+
+So we need to verify
+
+$a_1'm+b_1'n = c_1 (1')$
+
+$a_1m + b_1n = d_1 (2')$
+
+Let's substitute new values using $E4$ assignments.
+
+$c_1=d, d_1=r, a'_1=a,a_1=a'-qa,b_1'=b,b_1=b'-qb$
+
+$a_1'm+b_1'n=am+bn\overset{(2)}{=}d=c' \implies (1')$
+
+$a_1m+b_1n=(a'-qa)m+(b'-qb)n=(a'm+b'n)-q(am+bn)\overset{(1), (2)}{=}c-qd = r = d_1 \implies (2')$
+
+
+\end{document}
