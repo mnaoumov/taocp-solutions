@@ -4,10 +4,11 @@
   "private": true,
   "description": "My solutions to exercises from The Art of Computer Programming by Donald E. Knuth.",
   "scripts": {
-    "lint:latex": "node scripts/lint-latex.mjs"
+    "lint:latex": "jiti scripts/lint-latex.ts"
   },
   "devDependencies": {
     "glob": "latest",
+    "jiti": "latest",
     "katex": "latest"
   }
 }

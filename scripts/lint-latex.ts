@@ -20,7 +20,8 @@ for (const file of files) {
         katex.renderToString(latex, { throwOnError: true });
       } catch (err) {
         errorCount++;
-        console.error(`${file}:${i + 1}: ${err.message}`);
+        const message = err instanceof Error ? err.message : String(err);
+        console.error(`${file}:${i + 1}: ${message}`);
         console.error(`  ${latex}\n`);
       }
     }
