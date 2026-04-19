@@ -4,6 +4,7 @@
 - Exercises: p. 41 (PDF p. 63)
 - Answers: p. 476 (PDF p. 498)
 
+
 ## Exercises
 
 - [1.2.4-1](1.2.4-1.tex)

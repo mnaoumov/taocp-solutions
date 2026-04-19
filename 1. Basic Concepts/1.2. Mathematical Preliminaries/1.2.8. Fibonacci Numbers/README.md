@@ -4,6 +4,7 @@
 - Exercises: p. 84 (PDF p. 106)
 - Answers: p. 493 (PDF p. 515)
 
+
 ## Exercises
 
 - [1.2.8-1](1.2.8-1.tex)
