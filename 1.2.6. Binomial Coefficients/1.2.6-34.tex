@@ -6,13 +6,13 @@
 \begin{document}
 \maketitle
 
-$(x+y)^{\overline{n}} = \sum_k \binom{n}{k} x(x-kz+1)^{\overline{k-1}}(y+kz)^{\overline{n-k}}$
+\( (x+y)^{\overline{n}} = \sum_k \binom{n}{k} x(x-kz+1)^{\overline{k-1}}(y+kz)^{\overline{n-k}} \)
 
-$\sum_k \binom{n}{k} x(x-kz+1)^{\overline{k-1}}(y+kz)^{\overline{n-k}} = \sum_k \frac{n!}{k!(n-k!)}x(k-1)!\binom{x-kz+1+k-1-1}{k-1}(n-k)!\binom{y+kz+n-k-1}{n-k} =$
+\( \sum_k \binom{n}{k} x(x-kz+1)^{\overline{k-1}}(y+kz)^{\overline{n-k}} = \sum_k \frac{n!}{k!(n-k!)}x(k-1)!\binom{x-kz+1+k-1-1}{k-1}(n-k)!\binom{y+kz+n-k-1}{n-k} = \)
 
-$= n! \sum_k \binom{x-1-(z-1)k}{k-1}\frac{x}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} = n! \sum_k \binom{x - (z-1)k}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} \frac{x}{x - (z-1)k} =$
+\( = n! \sum_k \binom{x-1-(z-1)k}{k-1}\frac{x}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} = n! \sum_k \binom{x - (z-1)k}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} \frac{x}{x - (z-1)k} = \)
 
-$= n! \cdot \binom{x+(y+zn-1)-(z-1)n}{n} = n! \binom{x+y+n-1}{n} = (x+y)^{\overline{n}}$
+\( = n! \cdot \binom{x+(y+zn-1)-(z-1)n}{n} = n! \binom{x+y+n-1}{n} = (x+y)^{\overline{n}} \)
 
 
 \end{document}

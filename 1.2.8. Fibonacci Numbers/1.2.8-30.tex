@@ -6,65 +6,65 @@
 \begin{document}
 \maketitle
 
-$m = 1$
+\( m = 1 \)
 
-$\binom{1}{0}(-1)^{\lceil\frac{1-0}{2}\rceil} F_{n}^0 + \binom{1}{1}(-1)^{\lceil\frac{1-1}{2}\rceil} F_{n+1}^0 = 0$
+\( \binom{1}{0}(-1)^{\lceil\frac{1-0}{2}\rceil} F_{n}^0 + \binom{1}{1}(-1)^{\lceil\frac{1-1}{2}\rceil} F_{n+1}^0 = 0 \)
 
-$(m \implies m + 1)$
+\( (m \implies m + 1) \)
 
-$\sum_{k}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = 0$
+\( \sum_{k}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = 0 \)
 
-$a_{mkn} := \binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1}$
+\( a_{mkn} := \binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} \)
 
 \[\sum_k a_{mkn} = 0 \tag{1}\label{eq:1}\]
 
-$\binom{m+1}{k+1}_{\mathcal{F}} = \frac{F_{m+1}F_m\cdots F_{m-k+1}}{F_{k+1}F_k\cdots F_1} = \frac{F_{m+1}}{F_{k+1}} \binom{m}{k}_{\mathcal{F}}$
+\( \binom{m+1}{k+1}_{\mathcal{F}} = \frac{F_{m+1}F_m\cdots F_{m-k+1}}{F_{k+1}F_k\cdots F_1} = \frac{F_{m+1}}{F_{k+1}} \binom{m}{k}_{\mathcal{F}} \)
 
-$F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{k+1} \binom{m+1}{k+1}_{\mathcal{F}}$
+\( F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{k+1} \binom{m+1}{k+1}_{\mathcal{F}} \)
 
-$\eqref{eq:1} \implies \sum_k a_{mkn}F_{m+1} = 0$
+\( \eqref{eq:1} \implies \sum_k a_{mkn}F_{m+1} = 0 \)
 
-$0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{k+1}\binom{m+1}{k+1}_{\mathcal{F}}(-1)^{\lceil\frac{(m+1)-(k+1)}{2}\rceil}F_{(n-1)+(k+1)}^{m-1} =$
+\( 0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{k+1}\binom{m+1}{k+1}_{\mathcal{F}}(-1)^{\lceil\frac{(m+1)-(k+1)}{2}\rceil}F_{(n-1)+(k+1)}^{m-1} = \)
 
-$= \sum_{k} \binom{m+1}{k}_{\mathcal{F}}(-1)^{\lceil\frac{(m+1)-k)}{2}\rceil}F_{(n-1)+k}^{m-1}F_{k} = \sum_k a_{m+1,k,n-1}\frac{F_k}{F_{n-1+k}}$
+\( = \sum_{k} \binom{m+1}{k}_{\mathcal{F}}(-1)^{\lceil\frac{(m+1)-k)}{2}\rceil}F_{(n-1)+k}^{m-1}F_{k} = \sum_k a_{m+1,k,n-1}\frac{F_k}{F_{n-1+k}} \)
 
 \[(n \to n + 1) \implies \sum_k a_{m+1,k,n}\frac{F_k}{F_{n+k}} = 0 \tag{2}\label{eq:2}\]
 
-$\binom{m+1}{k}_{\mathcal{F}} = \frac{F_{m+1}F_m\cdots F_{m-k+2}}{F_k\cdots F_1} = \frac{F_{m+1}}{F_{m-k+1}} \binom{m}{k}_{\mathcal{F}}$
+\( \binom{m+1}{k}_{\mathcal{F}} = \frac{F_{m+1}F_m\cdots F_{m-k+2}}{F_k\cdots F_1} = \frac{F_{m+1}}{F_{m-k+1}} \binom{m}{k}_{\mathcal{F}} \)
 
-$F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{m-k+1} \binom{m+1}{k+1}_{\mathcal{F}}$
+\( F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{m-k+1} \binom{m+1}{k+1}_{\mathcal{F}} \)
 
-$\lceil \frac{t}{2} \rceil + \lceil \frac{t+1}{2} \rceil = t+1$
+\( \lceil \frac{t}{2} \rceil + \lceil \frac{t+1}{2} \rceil = t+1 \)
 
-$\lceil \frac{m-k}{2} \rceil + \lceil \frac{m+1-k}{2} \rceil = m-k+1$
+\( \lceil \frac{m-k}{2} \rceil + \lceil \frac{m+1-k}{2} \rceil = m-k+1 \)
 
-$(-1)^{\lceil \frac{m-k}{2} \rceil} = (-1)^{m-k+1} (-1)^{\lceil \frac{m + 1 -k}{2} \rceil}$
+\( (-1)^{\lceil \frac{m-k}{2} \rceil} = (-1)^{m-k+1} (-1)^{\lceil \frac{m + 1 -k}{2} \rceil} \)
 
-$\eqref{eq:1} \implies \sum_k a_{mkn}F_{m+1} = 0$
+\( \eqref{eq:1} \implies \sum_k a_{mkn}F_{m+1} = 0 \)
 
-$0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{m-k+1}\binom{m+1}{k}_{\mathcal{F}}(-1)^{m-k+1} (-1)^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1} =$
+\( 0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}(-1)^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{m-k+1}\binom{m+1}{k}_{\mathcal{F}}(-1)^{m-k+1} (-1)^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1} = \)
 
-$(-1)^{m+1} \sum_{k} \binom{m+1}{k}_{\mathcal{F}} (-1)^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1}(-1)^kF_{m-k+1} = (-1)^{m+1} \sum_{k} a_{m+1,k,n}\frac{(-1)^kF_{m-k+1}}{F_n+k}$
+\( (-1)^{m+1} \sum_{k} \binom{m+1}{k}_{\mathcal{F}} (-1)^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1}(-1)^kF_{m-k+1} = (-1)^{m+1} \sum_{k} a_{m+1,k,n}\frac{(-1)^kF_{m-k+1}}{F_n+k} \)
 
 \[\implies \sum_{k} a_{m+1,k,n}\frac{(-1)^kF_{m-k+1}}{F_n+k} = 0 \tag{3}\label{eq:3}\]
 
-$F_{k+(-1)}F_{m-(-1)}-F_{k}F_m = (-1)^kF_{-1}F_{m-k-(-1)}$
+\( F_{k+(-1)}F_{m-(-1)}-F_{k}F_m = (-1)^kF_{-1}F_{m-k-(-1)} \)
 
-$F_{k-1}F_{m+1} - F_kF_m = (-1)^kF_{-1}F_{m-k+1}$
+\( F_{k-1}F_{m+1} - F_kF_m = (-1)^kF_{-1}F_{m-k+1} \)
 
-$(-1)^kF_{m-k+1} + F_k F_m = F_{k-1}F_{m+1}$
+\( (-1)^kF_{m-k+1} + F_k F_m = F_{k-1}F_{m+1} \)
 
-$\eqref{eq:3} + F_m \cdot \eqref{eq:2}: \sum_k a_{m+1,k,n}\frac{F_{k-1}F_{m+1}}{F_{n+k}} = 0$
+\( \eqref{eq:3} + F_m \cdot \eqref{eq:2}: \sum_k a_{m+1,k,n}\frac{F_{k-1}F_{m+1}}{F_{n+k}} = 0 \)
 
-$F_{m+1} \neq 0$
+\( F_{m+1} \neq 0 \)
 
 \[\sum_k a_{m+1,k,n}\frac{F_{k-1}}{F_{n+k}} = 0 \tag{4}\label{eq:4}\]
 
-$F_{n+k} = F_kF_{n+1} + F_{k-1}F_n$
+\( F_{n+k} = F_kF_{n+1} + F_{k-1}F_n \)
 
-$\eqref{eq:2}\cdot F_{n+1} + \eqref{eq:4} \cdot F_{n}: \sum_k a_{m+1,k,n}\frac{F_{n+k}}{F_{n+k}} = 0$
+\( \eqref{eq:2}\cdot F_{n+1} + \eqref{eq:4} \cdot F_{n}: \sum_k a_{m+1,k,n}\frac{F_{n+k}}{F_{n+k}} = 0 \)
 
-$\sum_k a_{m+1,k,n} = 0$
+\( \sum_k a_{m+1,k,n} = 0 \)
 
 
 \end{document}

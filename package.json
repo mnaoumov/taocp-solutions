@@ -7,8 +7,6 @@
     "lint:latex": "jiti scripts/lint-latex.ts"
   },
   "devDependencies": {
-    "glob": "latest",
-    "jiti": "latest",
-    "katex": "latest"
+    "jiti": "latest"
   }
 }

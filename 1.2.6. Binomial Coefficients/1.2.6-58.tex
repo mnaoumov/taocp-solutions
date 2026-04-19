@@ -6,47 +6,47 @@
 \begin{document}
 \maketitle
 
-$(1+x)(1+qx)\cdots(1+q^{n-1}x) = \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k$
+\( (1+x)(1+qx)\cdots(1+q^{n-1}x) = \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k \)
 
-$n = 1$
+\( n = 1 \)
 
-$LHS = 1 + x$
+\( LHS = 1 + x \)
 
-$RHS = \binom{1}{0}_q x^0 + \binom{1}{1}_q x^q$
+\( RHS = \binom{1}{0}_q x^0 + \binom{1}{1}_q x^q \)
 
-$\binom{1}{0}_q = 1$
+\( \binom{1}{0}_q = 1 \)
 
-$\binom{1}{1}_1 = \frac{1-q}{1-q} = 1$
+\( \binom{1}{1}_1 = \frac{1-q}{1-q} = 1 \)
 
-$LHS = RHS$
+\( LHS = RHS \)
 
-$(n \implies n + 1)$
+\( (n \implies n + 1) \)
 
-$LHS = (1+x)(1+qx)\cdots(1+q^{n-1}x)(1+q^nx) = (\sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k)(1 + q^n x) = \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k + \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}+n} x^{k+1} =$
+\( LHS = (1+x)(1+qx)\cdots(1+q^{n-1}x)(1+q^nx) = (\sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k)(1 + q^n x) = \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k + \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}+n} x^{k+1} = \)
 
-$\sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k + \sum_k \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n} x^{k} = \sum_k x^k(\binom{n}{k}_q q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n}) =: A$
+\( \sum_k \binom{n}{k}_q q^{\frac{k(k-1)}{2}} x^k + \sum_k \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n} x^{k} = \sum_k x^k(\binom{n}{k}_q q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n}) =: A \)
 
-$\binom{n}{k}_q q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n} = \frac{\prod_{j=n-k+1}^{n} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} + \frac{\prod_{j=n-k+2}^{n} (1-q^{j})}{\prod_{j=1}^{k-1} (1-q^{j})} \cdot q^{\frac{(k-1)(k-2)}{2} + n} =$
+\( \binom{n}{k}_q q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_q q^{\frac{(k-1)(k-2)}{2}+n} = \frac{\prod_{j=n-k+1}^{n} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} + \frac{\prod_{j=n-k+2}^{n} (1-q^{j})}{\prod_{j=1}^{k-1} (1-q^{j})} \cdot q^{\frac{(k-1)(k-2)}{2} + n} = \)
 
-$= \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot (\frac{1-q^{n+1-k}}{1-q^{n+1}} + \frac{1-q^k}{1-q^{n+1}}\cdot q^{n-k+1}) = \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot 1 = \binom{n+1}{k}_q \cdot q^{\frac{k(k-1)}{2}}$
+\( = \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot (\frac{1-q^{n+1-k}}{1-q^{n+1}} + \frac{1-q^k}{1-q^{n+1}}\cdot q^{n-k+1}) = \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot 1 = \binom{n+1}{k}_q \cdot q^{\frac{k(k-1)}{2}} \)
 
-$A = \sum_k x^k \binom{n+1}{k}_q \cdot q^{\frac{k(k-1)}{2}}$
+\( A = \sum_k x^k \binom{n+1}{k}_q \cdot q^{\frac{k(k-1)}{2}} \)
 
-$(17)\quad \binom{r}{k} = (-1)^k \binom{k-r-1}{k}$
+\( (17)\quad \binom{r}{k} = (-1)^k \binom{k-r-1}{k} \)
 
-$\binom{k-r-1}{k}_q = \frac{\prod_{j=-r}^{k-r-1} (1-q^j)}{\prod_{j=1}^k (1-q^j)} = \frac{\prod_{j=-r}^{k-r-1} (-q^j)(1-q^{-j})}{\prod_{j=1}^k (1-q^j)} = \frac{(-1)^kq^{\sum_{j=-r}^{k-r-1} j}\prod_{j=-r}^{k-r-1} (1-q^{-j})}{\prod_{j=1}^k (1-q^j)} = \frac{(-1)^kq^{-kr + \frac{k(k-1)}{2}}\prod_{j=-k+r+1}^{r} (1-q^{j})}{\prod_{j=1}^k (1-q^j)} = (-1)^kq^{-kr + \frac{k(k-1)}{2}} \binom{r}{k}_q$
+\( \binom{k-r-1}{k}_q = \frac{\prod_{j=-r}^{k-r-1} (1-q^j)}{\prod_{j=1}^k (1-q^j)} = \frac{\prod_{j=-r}^{k-r-1} (-q^j)(1-q^{-j})}{\prod_{j=1}^k (1-q^j)} = \frac{(-1)^kq^{\sum_{j=-r}^{k-r-1} j}\prod_{j=-r}^{k-r-1} (1-q^{-j})}{\prod_{j=1}^k (1-q^j)} = \frac{(-1)^kq^{-kr + \frac{k(k-1)}{2}}\prod_{j=-k+r+1}^{r} (1-q^{j})}{\prod_{j=1}^k (1-q^j)} = (-1)^kq^{-kr + \frac{k(k-1)}{2}} \binom{r}{k}_q \)
 
-$\binom{r}{k}_q = (-1)^kq^{kr - \frac{k(k-1)}{2}} \binom{k-r-1}{k}_q$
+\( \binom{r}{k}_q = (-1)^kq^{kr - \frac{k(k-1)}{2}} \binom{k-r-1}{k}_q \)
 
-$(21)\quad \sum_{k}\binom{r}{k}\binom{s}{n-k} = \binom{r+s}{n}$
+\( (21)\quad \sum_{k}\binom{r}{k}\binom{s}{n-k} = \binom{r+s}{n} \)
 
-$\prod_{j=0}^{r+s-1} (1 + q^j x) = \sum_n \binom{r+s}{n}_q q^{\frac{n(n-1)}{2}} x^n$
+\( \prod_{j=0}^{r+s-1} (1 + q^j x) = \sum_n \binom{r+s}{n}_q q^{\frac{n(n-1)}{2}} x^n \)
 
-$\prod_{j=0}^{r+s-1} (1 + q^j x) = \prod_{j=0}^{r-1} (1 + q^j x) \cdot \prod_{j=0}^{s-1} (1 + q^j (q^r x)) = \sum_n \binom{r}{n}_q q^{\frac{n(n-1)}{2}} x^n \cdot \sum_n \binom{s}{n}_q q^{\frac{n(n-1)}{2}} (q^rx)^n =$
+\( \prod_{j=0}^{r+s-1} (1 + q^j x) = \prod_{j=0}^{r-1} (1 + q^j x) \cdot \prod_{j=0}^{s-1} (1 + q^j (q^r x)) = \sum_n \binom{r}{n}_q q^{\frac{n(n-1)}{2}} x^n \cdot \sum_n \binom{s}{n}_q q^{\frac{n(n-1)}{2}} (q^rx)^n = \)
 
-$= \sum_n x^n \sum_k \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k)}$
+\( = \sum_n x^n \sum_k \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k)} \)
 
-$\binom{r+s}{n}_q = \sum_k \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k) - \frac{n(n-1)}{2}} = \sum_k \binom{r}{k}\binom{s}{n-k}q^{(r-k)(n-k)}$
+\( \binom{r+s}{n}_q = \sum_k \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k) - \frac{n(n-1)}{2}} = \sum_k \binom{r}{k}\binom{s}{n-k}q^{(r-k)(n-k)} \)
 
 
 \end{document}

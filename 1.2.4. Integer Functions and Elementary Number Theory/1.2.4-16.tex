@@ -6,13 +6,13 @@
 \begin{document}
 \maketitle
 
-$n := \frac{x-z}{y}$
+\( n := \frac{x-z}{y} \)
 
-$0 \leq \frac{z}{y} < 1 \implies \lfloor \frac{z}{y} \rfloor = 0$
+\( 0 \leq \frac{z}{y} < 1 \implies \lfloor \frac{z}{y} \rfloor = 0 \)
 
-$\lfloor\frac{x}{y}\rfloor = \lfloor\frac{x-z+z}{y}\rfloor = \lfloor\frac{x-z}{y} + \frac{z}{y} \rfloor = \lfloor n + \frac{z}{y} \rfloor = n + \lfloor \frac{z}{y} \rfloor = n$
+\( \lfloor\frac{x}{y}\rfloor = \lfloor\frac{x-z+z}{y}\rfloor = \lfloor\frac{x-z}{y} + \frac{z}{y} \rfloor = \lfloor n + \frac{z}{y} \rfloor = n + \lfloor \frac{z}{y} \rfloor = n \)
 
-$x \mod y = x - \lfloor\frac{x}{y}\rfloor \cdot y = x - ny = z$
+\( x \mod y = x - \lfloor\frac{x}{y}\rfloor \cdot y = x - ny = z \)
 
 
 \end{document}

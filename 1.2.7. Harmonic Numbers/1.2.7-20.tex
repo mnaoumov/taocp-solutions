@@ -6,9 +6,9 @@
 \begin{document}
 \maketitle
 
-$H_k = \sum_{i=1}^k \frac{1}{i} = \sum_{i=1}^{k} \int_0^1 y^{i-1}dy = \int_0^1 (\sum_{i=1}^k y^{i-1}) dy = \int_0^1 \frac{1-y^k}{1-y} dy$
+\( H_k = \sum_{i=1}^k \frac{1}{i} = \sum_{i=1}^{k} \int_0^1 y^{i-1}dy = \int_0^1 (\sum_{i=1}^k y^{i-1}) dy = \int_0^1 \frac{1-y^k}{1-y} dy \)
 
-$\sum_{k \geq 0} a_kx_0^k H_k = \sum_{k \geq 0} a_kx_0^k \int_0^1 \frac{1-y^k}{1-y} dy = \int_0^1 \sum_{k \geq 0} \frac{a_kx_0^k - a_kx_0^ky^k}{1-y} dy = \int_0^1 \frac{\sum_{k \geq 0}a_kx_0^k - \sum_{k \geq 0}a_kx_0^ky^k}{1-y} dy = \int_0^1 \frac{f(x_0) - f(x_0y)}{1-y} dy$
+\( \sum_{k \geq 0} a_kx_0^k H_k = \sum_{k \geq 0} a_kx_0^k \int_0^1 \frac{1-y^k}{1-y} dy = \int_0^1 \sum_{k \geq 0} \frac{a_kx_0^k - a_kx_0^ky^k}{1-y} dy = \int_0^1 \frac{\sum_{k \geq 0}a_kx_0^k - \sum_{k \geq 0}a_kx_0^ky^k}{1-y} dy = \int_0^1 \frac{f(x_0) - f(x_0y)}{1-y} dy \)
 
 
 \end{document}

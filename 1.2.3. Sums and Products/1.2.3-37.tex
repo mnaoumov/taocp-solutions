@@ -6,17 +6,17 @@
 \begin{document}
 \maketitle
 
-$V = V(x_1, x_2, \ldots x_n) = \left(\begin{matrix} x_1 & x_2 & \cdots & x_n \\ x_1^2 & x_2^2 & \cdots & x_n^2 \\ \vdots & \vdots & \ddots & \vdots \\ x_1^n & x_2^n & \cdots & x_n^n \end{matrix}\right)$
+\( V = V(x_1, x_2, \ldots x_n) = \left(\begin{matrix} x_1 & x_2 & \cdots & x_n \\ x_1^2 & x_2^2 & \cdots & x_n^2 \\ \vdots & \vdots & \ddots & \vdots \\ x_1^n & x_2^n & \cdots & x_n^n \end{matrix}\right) \)
 
-$|V| \overset{\substack{R_n \leftarrow R_n - x_1 R_{n-1}\\ R_{n-1} \leftarrow R_{n-1} - x_1 R_{n-2}\\ \vdots\\ R_2 \leftarrow R_2 - x_1 R_1}}{=} \left|\begin{matrix} x_1 & x_2 & \cdots & x_n \\ 0 & x_2^2 - x_1x_2 & \cdots & x_n^2-x_1x_n \\ \vdots & \vdots & \ddots & \vdots \\ 0 & x_2^n - x_1x_2^{n-1} & \cdots & x_n^n-x_1 x_2^{n-1} \end{matrix}\right| = \left|\begin{matrix} x_1 & x_2 & \cdots & x_n \\ 0 & (x_2-x_1)x_2 & \cdots & (x_n-x_1)x_n \\ \vdots & \vdots & \ddots & \vdots \\ 0 & (x_2-x_1)x_2^{n-1} & \cdots & (x_n-x_1)x_n^{n-1} x_2^{n-1} \end{matrix}\right| \overset{\text{Expand by}\ C_1}{=}$
+\( |V| \overset{\substack{R_n \leftarrow R_n - x_1 R_{n-1}\\ R_{n-1} \leftarrow R_{n-1} - x_1 R_{n-2}\\ \vdots\\ R_2 \leftarrow R_2 - x_1 R_1}}{=} \left|\begin{matrix} x_1 & x_2 & \cdots & x_n \\ 0 & x_2^2 - x_1x_2 & \cdots & x_n^2-x_1x_n \\ \vdots & \vdots & \ddots & \vdots \\ 0 & x_2^n - x_1x_2^{n-1} & \cdots & x_n^n-x_1 x_2^{n-1} \end{matrix}\right| = \left|\begin{matrix} x_1 & x_2 & \cdots & x_n \\ 0 & (x_2-x_1)x_2 & \cdots & (x_n-x_1)x_n \\ \vdots & \vdots & \ddots & \vdots \\ 0 & (x_2-x_1)x_2^{n-1} & \cdots & (x_n-x_1)x_n^{n-1} x_2^{n-1} \end{matrix}\right| \overset{\text{Expand by}\ C_1}{=} \)
 
-$= x_1 \left|\begin{matrix} (x_2-x_1)x_2 & \cdots & (x_n-x_1)x_n \\ \vdots & \ddots & \vdots \\ (x_2 - x_1)x_2^{n-1} & \cdots & (x_n-x_1)x_n^{n-1} \end{matrix}\right| \overset{\substack{C_1 \leftarrow \frac{C_1}{x_2-x_1} \\ C_2 \leftarrow \frac{C_1}{x_3-x_1} \\ \vdots \\ C_{n-1} \leftarrow \frac{C_{n-1}}{x_n-x_1}}}{=} x_1(x_2-x_1)(x_3-x_1)\cdot\ldots\cdot(x_n-x_1) \left|\begin{matrix} x_2 & \cdots & x_n \\ \vdots & \ddots & \vdots \\ x_2^{n-1} & \cdots & x_n^{n-1} \end{matrix}\right| = x_1(x_2-x_1)(x_3-x_1)\cdot\ldots\cdot(x_n-x_1) |V(x_2, x_3, \ldots, x_n)|$
+\( = x_1 \left|\begin{matrix} (x_2-x_1)x_2 & \cdots & (x_n-x_1)x_n \\ \vdots & \ddots & \vdots \\ (x_2 - x_1)x_2^{n-1} & \cdots & (x_n-x_1)x_n^{n-1} \end{matrix}\right| \overset{\substack{C_1 \leftarrow \frac{C_1}{x_2-x_1} \\ C_2 \leftarrow \frac{C_1}{x_3-x_1} \\ \vdots \\ C_{n-1} \leftarrow \frac{C_{n-1}}{x_n-x_1}}}{=} x_1(x_2-x_1)(x_3-x_1)\cdot\ldots\cdot(x_n-x_1) \left|\begin{matrix} x_2 & \cdots & x_n \\ \vdots & \ddots & \vdots \\ x_2^{n-1} & \cdots & x_n^{n-1} \end{matrix}\right| = x_1(x_2-x_1)(x_3-x_1)\cdot\ldots\cdot(x_n-x_1) |V(x_2, x_3, \ldots, x_n)| \)
 
-$|V(x_1)| = |(x_1)| = x_1$
+\( |V(x_1)| = |(x_1)| = x_1 \)
 
 Then by induction
 
-$|V| = \prod_{j=1}^n x_j \prod_{1\leq i < j \leq n} (x_j - x_i)$
+\( |V| = \prod_{j=1}^n x_j \prod_{1\leq i < j \leq n} (x_j - x_i) \)
 
 
 \end{document}

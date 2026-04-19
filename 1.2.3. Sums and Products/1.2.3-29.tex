@@ -8,45 +8,45 @@
 
 \subsubsection*{(a)}
 
-$\sum_{i=0}^n\sum_{j=0}^i\sum_{k=0}^j a_ia_ja_k = \sum_{0 \leq k \leq j \leq i \leq n } a_ia_ja_k$
+\( \sum_{i=0}^n\sum_{j=0}^i\sum_{k=0}^j a_ia_ja_k = \sum_{0 \leq k \leq j \leq i \leq n } a_ia_ja_k \)
 
 \subsubsection*{(b)}
 
-$S_k := \sum_{i=0}^n a_i^k$
+\( S_k := \sum_{i=0}^n a_i^k \)
 
-$X:= \sum_{i=0}^n\sum_{j=0}^i\sum_{k=0}^j a_ia_ja_k$
+\( X:= \sum_{i=0}^n\sum_{j=0}^i\sum_{k=0}^j a_ia_ja_k \)
 
-$T(B) := \sum_{0\leq i,j,k \leq n} a_ia_ja_k[B]$
+\( T(B) := \sum_{0\leq i,j,k \leq n} a_ia_ja_k[B] \)
 
-$(S_1)^3 = T(\{\text{always}\}) = T(B_1) + T(B_2) + T(B_3)$
+\( (S_1)^3 = T(\{\text{always}\}) = T(B_1) + T(B_2) + T(B_3) \)
 
-$B_s = \{ \#\{ i,j,k \} = s \}$
+\( B_s = \{ \#\{ i,j,k \} = s \} \)
 
-$T(B_1) = \sum_{i=0}^n a_i^3 = S_3$
+\( T(B_1) = \sum_{i=0}^n a_i^3 = S_3 \)
 
-$T(B_2) = T(B_2 \land \{i = j \neq k\}) + T(B_2 \land \{j = k \neq i\}) + T(\overbrace{B_2 \land \{k = i \neq j\}}^{B_2'}) = 3T(B_2')$
+\( T(B_2) = T(B_2 \land \{i = j \neq k\}) + T(B_2 \land \{j = k \neq i\}) + T(\overbrace{B_2 \land \{k = i \neq j\}}^{B_2'}) = 3T(B_2') \)
 
-Because all triplets that come to each summands bijective to $B_2'$
+Because all triplets that come to each summands bijective to \( B_2' \)
 
-$T(B_2') = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i \neq j }} a_i^2a_j = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n }} a_i^2a_j - \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i = j }} a_i^2a_j = S_1S_2 - S_3$
+\( T(B_2') = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i \neq j }} a_i^2a_j = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n }} a_i^2a_j - \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i = j }} a_i^2a_j = S_1S_2 - S_3 \)
 
-$T(B_2) = 3(S_1S_2-S_3)$
+\( T(B_2) = 3(S_1S_2-S_3) \)
 
-$T(B_3) = T(\overbrace{B_3 \land \{ i < j < k \}}^{B_3'}) + T(B_3 \land \{ j < i < k \}) + T(B_3 \land \{ i < k < j \}) + T(B_3 \land \{ j < k < i \}) + T(B_3 \land \{ k < i < j \}) + T(B_3 \land \{ k < j < i \}) = 6 T(B_3')$
+\( T(B_3) = T(\overbrace{B_3 \land \{ i < j < k \}}^{B_3'}) + T(B_3 \land \{ j < i < k \}) + T(B_3 \land \{ i < k < j \}) + T(B_3 \land \{ j < k < i \}) + T(B_3 \land \{ k < i < j \}) + T(B_3 \land \{ k < j < i \}) = 6 T(B_3') \)
 
-Because all triplets that come to each summands bijective to $B_3'$
+Because all triplets that come to each summands bijective to \( B_3' \)
 
-$T(B_3) = (S_1)^3-T(B_1)-T(B_2) = (S_1)^3 - S_3 - 3(S_2S_1 - S_3) = (S_1)^3 - 3S_1S_2 + 2S_3$
+\( T(B_3) = (S_1)^3-T(B_1)-T(B_2) = (S_1)^3 - S_3 - 3(S_2S_1 - S_3) = (S_1)^3 - 3S_1S_2 + 2S_3 \)
 
-$T(B_3') = \frac{1}{6}((S_1)^3 - 3S_1S_2 + 2S_3)$
+\( T(B_3') = \frac{1}{6}((S_1)^3 - 3S_1S_2 + 2S_3) \)
 
-$C := \{ i \leq j \leq k \}$
+\( C := \{ i \leq j \leq k \} \)
 
-$X = T(C) = T(C \land B_1) + T(C \land B_2) + T(C \land B_3) = T(B_1) + T(C \land B_2) + T(\{ i < j < k \}) = T(B_1) + T(C \land B_2) + T(B_3')$
+\( X = T(C) = T(C \land B_1) + T(C \land B_2) + T(C \land B_3) = T(B_1) + T(C \land B_2) + T(\{ i < j < k \}) = T(B_1) + T(C \land B_2) + T(B_3') \)
 
-$T(C \land B_2) = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i \neq j}}{a_i^2 a_j} = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n }}{a_i^2 a_j} - \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i = j}}{a_i^2 a_j} = S_1S_2 - S_3$
+\( T(C \land B_2) = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i \neq j}}{a_i^2 a_j} = \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n }}{a_i^2 a_j} - \sum_{\substack{0 \leq i \leq n \\ 0 \leq j \leq n \\ i = j}}{a_i^2 a_j} = S_1S_2 - S_3 \)
 
-$X = S_3 + S_1S_2 - S_3 + \frac{1}{6}((S_1)^3 - 3S_1S_2 + 2S_3) = \frac{1}{6} ((S_1)^3 + 3S_1S_2 + 2S_3)$
+\( X = S_3 + S_1S_2 - S_3 + \frac{1}{6}((S_1)^3 - 3S_1S_2 + 2S_3) = \frac{1}{6} ((S_1)^3 + 3S_1S_2 + 2S_3) \)
 
 
 \end{document}

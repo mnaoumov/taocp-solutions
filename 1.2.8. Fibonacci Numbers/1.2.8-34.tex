@@ -6,64 +6,64 @@
 \begin{document}
 \maketitle
 
-Let's prove by induction each $n \geq 1$ has representation $P(n)$.
+Let's prove by induction each \( n \geq 1 \) has representation \( P(n) \).
 
-$P(1)$
+\( P(1) \)
 
-$n = 1 = F_2, 2 \gg 0$
+\( n = 1 = F_2, 2 \gg 0 \)
 
-Assume $P(m)$ holds for $1 \leq m < n$
+Assume \( P(m) \) holds for \( 1 \leq m < n \)
 
 Let
 \[k_1 \geq 2: F_{k_1} \leq n < F_{k_1+1} \tag{*}\label{eq:star}\]
 
-If $n = F_{k_1}$ - representation
+If \( n = F_{k_1} \) - representation
 
-If $n > F_{k_1} \implies m := n - F_{k_1}, 1 \leq m < n$
+If \( n > F_{k_1} \implies m := n - F_{k_1}, 1 \leq m < n \)
 
-$P(m) \implies m = F_{k_2} + F_{k_3} + \cdots + F_{k_r}, k_2 \gg k_3 \gg \cdots \gg k_r$
+\( P(m) \implies m = F_{k_2} + F_{k_3} + \cdots + F_{k_r}, k_2 \gg k_3 \gg \cdots \gg k_r \)
 
-$n = F_{k_1} + F_{k_2} + F_{k_3} + \cdots + F_{k_r}$
+\( n = F_{k_1} + F_{k_2} + F_{k_3} + \cdots + F_{k_r} \)
 
-We need to prove $k_1 \gg k_2$
+We need to prove \( k_1 \gg k_2 \)
 
-Assume $k_1 \not\gg k_2 \implies k_2 \geq k_1 - 1$
+Assume \( k_1 \not\gg k_2 \implies k_2 \geq k_1 - 1 \)
 
-$n \geq F_{k_1} + F_{k_2} \geq F_{k_1} + F_{k_1-1} = F_{k_1 + 1} \implies$ contradicts to \eqref{eq:star} $\implies \perp$
+\( n \geq F_{k_1} + F_{k_2} \geq F_{k_1} + F_{k_1-1} = F_{k_1 + 1} \implies \) contradicts to \eqref{eq:star} \( \implies \perp \)
 
-$\implies k_1 \gg k_2$
+\( \implies k_1 \gg k_2 \)
 
-$P(n)$ proven.
+\( P(n) \) proven.
 
 Now let's prove uniqueness
 
-Let $n$ be the smallest number with two representations.
+Let \( n \) be the smallest number with two representations.
 
-Assume $n = F_{k_1} + F_{k_2} + \cdots + F_{k_r} = F_{l_1} + F_{l_2} + \cdots + F_{l_s}$
+Assume \( n = F_{k_1} + F_{k_2} + \cdots + F_{k_r} = F_{l_1} + F_{l_2} + \cdots + F_{l_s} \)
 
-$k_1 \gg k_2 \gg \cdots \gg k_r$
+\( k_1 \gg k_2 \gg \cdots \gg k_r \)
 
-$l_1 \gg l_2 \gg \cdots \gg l_s$
+\( l_1 \gg l_2 \gg \cdots \gg l_s \)
 
-$n = F_{k_1} + F_{k_2} + \cdots + F_{k-r} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + F_{k_1 - 2r + 2}$
+\( n = F_{k_1} + F_{k_2} + \cdots + F_{k-r} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + F_{k_1 - 2r + 2} \)
 
-$n + F_{k-1-2r+1} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 2} + F_{k_1 - 2r + 1}) =$
+\( n + F_{k-1-2r+1} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 2} + F_{k_1 - 2r + 1}) = \)
 
-$= F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 4} + F_{k_1 - 2r + 3}) = \cdots = F_{k_1 + 1}$
+\( = F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 4} + F_{k_1 - 2r + 3}) = \cdots = F_{k_1 + 1} \)
 
-$F_{k_1} \leq n < F_{k_1 + 1}$
+\( F_{k_1} \leq n < F_{k_1 + 1} \)
 
-$F_{l_1} \leq n < F_{l_1 + 1}$
+\( F_{l_1} \leq n < F_{l_1 + 1} \)
 
-$\implies k_1 = l_1$
+\( \implies k_1 = l_1 \)
 
-$m = n - F_{k_1} = n - F_{l_1}$
+\( m = n - F_{k_1} = n - F_{l_1} \)
 
-$m = F_{k_2} + F_{k_3} + \cdots + F_{k_r} = F_{l_2} + F_{l_3} + \cdots + F_{l_s}$
+\( m = F_{k_2} + F_{k_3} + \cdots + F_{k_r} = F_{l_2} + F_{l_3} + \cdots + F_{l_s} \)
 
-$m = 0 \lor 1 \leq m < n$
+\( m = 0 \lor 1 \leq m < n \)
 
-In both cases, the representation of $m$ is unique $\implies$ for $n$ it's unique.
+In both cases, the representation of \( m \) is unique \( \implies \) for \( n \) it's unique.
 
 
 \end{document}

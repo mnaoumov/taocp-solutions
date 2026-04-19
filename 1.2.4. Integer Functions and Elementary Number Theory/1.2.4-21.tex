@@ -8,63 +8,63 @@
 
 [1.2.1-5](<../1.2.1. Mathematical induction/1.2.1-5.md>)
 
-$\forall n > 1: n = p_1p_2 \cdot\ \cdots\ \cdot p_k, p_1 \leq p_2 \leq \cdots \leq p_k$
+\( \forall n > 1: n = p_1p_2 \cdot\ \cdots\ \cdot p_k, p_1 \leq p_2 \leq \cdots \leq p_k \)
 
-Assume that not all $n$ have such an unique expansion.
+Assume that not all \( n \) have such an unique expansion.
 
-Let $n$ be the smallest n with non-unique expansion.
+Let \( n \) be the smallest n with non-unique expansion.
 
-$n = p_1p_2 \cdot\ \cdots\ \cdot p_k = q_1q_2 \cdot\ \cdots\ \cdot q_l, p_1 \leq p_2 \leq \cdots p_k, q_1 \leq q_2 \leq \cdots \leq q_l$
+\( n = p_1p_2 \cdot\ \cdots\ \cdot p_k = q_1q_2 \cdot\ \cdots\ \cdot q_l, p_1 \leq p_2 \leq \cdots p_k, q_1 \leq q_2 \leq \cdots \leq q_l \)
 
-Where $(p_1,p_2,\ldots,p_k) \neq (q_1,q_2,\ldots,q_l)$
+Where \( (p_1,p_2,\ldots,p_k) \neq (q_1,q_2,\ldots,q_l) \)
 
 \section*{1}
 
-If $p_1 = q_1$
+If \( p_1 = q_1 \)
 
-$m = \frac{n}{p_1} = \frac{n}{q_1} < n$
+\( m = \frac{n}{p_1} = \frac{n}{q_1} < n \)
 
-$m = p_2 \cdot\ \cdots\ \cdot p_k = q_2 \cdot\ \cdots\ \cdot q_l$
+\( m = p_2 \cdot\ \cdots\ \cdot p_k = q_2 \cdot\ \cdots\ \cdot q_l \)
 
-$m < n \implies m$ has an unique expansion $\implies k = l, p_j = q_j, 2 \leq j \leq k$
+\( m < n \implies m \) has an unique expansion \( \implies k = l, p_j = q_j, 2 \leq j \leq k \)
 
-And also $p_j = q_j$ for $j = 1$
+And also \( p_j = q_j \) for \( j = 1 \)
 
-$\implies (p_1,p_2,\ldots,p_k) = (q_1,q_2,\ldots,q_l)$
+\( \implies (p_1,p_2,\ldots,p_k) = (q_1,q_2,\ldots,q_l) \)
 
 Contradiction
 
 \section*{2}
 
-If $p_1 \neq q_1$.
+If \( p_1 \neq q_1 \).
 
-We can assume $p_1 < q_1$
+We can assume \( p_1 < q_1 \)
 
-Otherwise we just change notations $(p_1, p_2, \ldots, p_k) \leftrightarrow (q_1, q_2, \ldots, q_l)$
+Otherwise we just change notations \( (p_1, p_2, \ldots, p_k) \leftrightarrow (q_1, q_2, \ldots, q_l) \)
 
-$\forall j, 1 \leq j \leq l: q_j > p_1$
+\( \forall j, 1 \leq j \leq l: q_j > p_1 \)
 
-Let $d = \gcd(q_j, p_1)$
+Let \( d = \gcd(q_j, p_1) \)
 
-$d \backslash  q_j$
+\( d \backslash  q_j \)
 
-$q_j$ - prime $\implies d = 1 \lor d = q_j$
+\( q_j \) - prime \( \implies d = 1 \lor d = q_j \)
 
-$q_j > p_1 \implies \lnot(q_j \backslash p_1) \implies d = 1$
+\( q_j > p_1 \implies \lnot(q_j \backslash p_1) \implies d = 1 \)
 
-$\implies q_j \perp p_1$
+\( \implies q_j \perp p_1 \)
 
-$q_1q_2 \cdot\ \cdots\ \cdot q_l = n \equiv 0 = q_1 \cdot 0\ (\mathrm{modulo}\ p_1)$
+\( q_1q_2 \cdot\ \cdots\ \cdot q_l = n \equiv 0 = q_1 \cdot 0\ (\mathrm{modulo}\ p_1) \)
 
-Law B $\implies q_2 \cdot\ \cdots\ \cdot q_l \equiv 0 = q_2 \cdot 0\ (\mathrm{modulo}\ p_1)$
+Law B \( \implies q_2 \cdot\ \cdots\ \cdot q_l \equiv 0 = q_2 \cdot 0\ (\mathrm{modulo}\ p_1) \)
 
-Law B $\implies q_3 \cdot\ \cdots\ \cdot q_l \equiv 0 = q_3 \cdot 0\ (\mathrm{modulo}\ p_1)$
+Law B \( \implies q_3 \cdot\ \cdots\ \cdot q_l \equiv 0 = q_3 \cdot 0\ (\mathrm{modulo}\ p_1) \)
 
-$\vdots$
+\( \vdots \)
 
-$q_l = q_l \cdot 1 \equiv 0 = q_l \cdot 0\ (\mathrm{modulo}\ p_1)$
+\( q_l = q_l \cdot 1 \equiv 0 = q_l \cdot 0\ (\mathrm{modulo}\ p_1) \)
 
-Law B $\implies 1 \equiv 0\ (\mathrm{modulo}\ p_1) \implies p_1 \backslash 1$ - Contradiction
+Law B \( \implies 1 \equiv 0\ (\mathrm{modulo}\ p_1) \implies p_1 \backslash 1 \) - Contradiction
 
 
 \end{document}

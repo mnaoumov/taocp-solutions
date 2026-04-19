@@ -8,19 +8,19 @@
 
 \section*{v1}
 
-Let $Q_1' = \{ x_1 \in Q_1 | \exists y_1 \in I_1, \exists n_1 \geq 0: f^{(n_1)}(y_1) = x_1 \}$ - all reachable states.
+Let \( Q_1' = \{ x_1 \in Q_1 | \exists y_1 \in I_1, \exists n_1 \geq 0: f^{(n_1)}(y_1) = x_1 \} \) - all reachable states.
 
-$C_2$ simulates $C_1$ $\overset{def}{\iff} \exists \phi: Q_1' \to Q_2, \phi(I_1) \subset I_2, \exists n_2: I_1 \times \mathbb{N}_0 \to \mathbb{N}_0, \forall x_1 \in I_1 \forall n_1 \geq 0: \phi(f_1^{(n_1)}(x_1)) = f_2^{(n_2)}(\phi(x_1)), \forall x_1 \in I_1 \forall n_1, n_1' \in \mathbb{N}_0, n_1 \leq n_1': n_2(x, n_1) \leq n_2(x, n_1')$
+\( C_2 \) simulates \( C_1 \) \( \overset{def}{\iff} \exists \phi: Q_1' \to Q_2, \phi(I_1) \subset I_2, \exists n_2: I_1 \times \mathbb{N}_0 \to \mathbb{N}_0, \forall x_1 \in I_1 \forall n_1 \geq 0: \phi(f_1^{(n_1)}(x_1)) = f_2^{(n_2)}(\phi(x_1)), \forall x_1 \in I_1 \forall n_1, n_1' \in \mathbb{N}_0, n_1 \leq n_1': n_2(x, n_1) \leq n_2(x, n_1') \)
 
-Wrong, because it doesn't maintain the possible additional state in $C_2$
+Wrong, because it doesn't maintain the possible additional state in \( C_2 \)
 
 \section*{v2}
 
-$\exists g_1: I_1 \to I_2, h_2: Q_2 \to Q_1, n_2 : Q_2 \to \mathbb{N}_0$
+\( \exists g_1: I_1 \to I_2, h_2: Q_2 \to Q_1, n_2 : Q_2 \to \mathbb{N}_0 \)
 
-\item $\forall x_1 \in I_1: h_2(g_1(x_1)) = x_1$
-\item $\forall q_2 \in Q_2: f_1(h_2(q_2)) = h_2(f_2^{(n_2(q_2))} (q_2))$
-\item $\forall q_2 \in Q_2: h_2(q_2) \in \Omega_1 \iff q_2 \in \Omega_2$
+\item \( \forall x_1 \in I_1: h_2(g_1(x_1)) = x_1 \)
+\item \( \forall q_2 \in Q_2: f_1(h_2(q_2)) = h_2(f_2^{(n_2(q_2))} (q_2)) \)
+\item \( \forall q_2 \in Q_2: h_2(q_2) \in \Omega_1 \iff q_2 \in \Omega_2 \)
 
 
 \end{document}

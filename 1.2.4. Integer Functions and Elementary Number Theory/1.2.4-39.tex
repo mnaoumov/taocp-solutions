@@ -8,193 +8,193 @@
 
 \subsubsection*{a)}
 
-$f(x) = x - \frac{1}{2}$
+\( f(x) = x - \frac{1}{2} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} (x+\frac{k}{n}-\frac{1}{2}) = (x-\frac{1}{2})n + \frac{(n-1)n}{2n} = nx - \frac{1}{2} = f(nx) - \frac{1}{2}$
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} (x+\frac{k}{n}-\frac{1}{2}) = (x-\frac{1}{2})n + \frac{(n-1)n}{2n} = nx - \frac{1}{2} = f(nx) - \frac{1}{2} \)
 
 \subsubsection*{b)}
 
-$f(x) = [x \in \mathbb{Z}]$
+\( f(x) = [x \in \mathbb{Z}] \)
 
-If $f(nx) = 1 \implies x = \frac{m}{n}, m \in \mathbb{Z}$
+If \( f(nx) = 1 \implies x = \frac{m}{n}, m \in \mathbb{Z} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{m+k}{n} \in \mathbb{Z}] = 1 = f(nx)$ as only one summand with $k = (-m) \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{m+k}{n} \in \mathbb{Z}] = 1 = f(nx) \) as only one summand with \( k = (-m) \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = s \in \mathbb{Z}$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = s \in \mathbb{Z} \)
 
-$\implies nx = ns - k \in \mathbb{Z} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = ns - k \in \mathbb{Z} \implies f(nx) = 1 \) - contradiction.
 
 \subsubsection*{c)}
 
-$f(x) = [x \in \mathbb{N}]$
+\( f(x) = [x \in \mathbb{N}] \)
 
-If $f(nx) = 1 \implies x = \frac{m}{n}, m \in \mathbb{N}$
+If \( f(nx) = 1 \implies x = \frac{m}{n}, m \in \mathbb{N} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{m+k}{n} \in \mathbb{N}] = 1 = f(nx)$ as only one summand with $k = (-m) \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{m+k}{n} \in \mathbb{N}] = 1 = f(nx) \) as only one summand with \( k = (-m) \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = s \in \mathbb{N}$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = s \in \mathbb{N} \)
 
-$\implies nx = ns - k \in \mathbb{N} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = ns - k \in \mathbb{N} \implies f(nx) = 1 \) - contradiction.
 
 \subsubsection*{d)}
 
-$f(x) = [x = r \pi + m, r \in \mathbb{Q}, m \in \mathbb{Z}]$
+\( f(x) = [x = r \pi + m, r \in \mathbb{Q}, m \in \mathbb{Z}] \)
 
-If $f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q}, m' \in \mathbb{Z}$
+If \( f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q}, m' \in \mathbb{Z} \)
 
-$x = \frac{r'}{n} \pi + \frac{m'}{n}$
+\( x = \frac{r'}{n} \pi + \frac{m'}{n} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q}, m \in \mathbb{Z}] = 1 = f(nx)$ as only one summand with $k = (-m') \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q}, m \in \mathbb{Z}] = 1 = f(nx) \) as only one summand with \( k = (-m') \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m, r \in \mathbb{Q}, m \in \mathbb{Z}$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m, r \in \mathbb{Q}, m \in \mathbb{Z} \)
 
-$\implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q}, nm - k \in \mathbb{Z} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q}, nm - k \in \mathbb{Z} \implies f(nx) = 1 \) - contradiction.
 
 \subsubsection*{e)}
 
 \paragraph*{1}
 
-$f(x) = [x = r \pi + m, r\ \in \mathbb{Q_+}, m \in \mathbb{Z}]$
+\( f(x) = [x = r \pi + m, r\ \in \mathbb{Q_+}, m \in \mathbb{Z}] \)
 
-If $f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q_+}, m' \in \mathbb{Z}$
+If \( f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q_+}, m' \in \mathbb{Z} \)
 
-$x = \frac{r'}{n} \pi + \frac{m'}{n}$
+\( x = \frac{r'}{n} \pi + \frac{m'}{n} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q_+)}, m \in \mathbb{Z}] = 1 = f(nx)$ as only one summand with $k = (-m') \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q_+)}, m \in \mathbb{Z}] = 1 = f(nx) \) as only one summand with \( k = (-m') \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m \)
 
-$\implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q_+}, nm - k \in \mathbb{Z} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q_+}, nm - k \in \mathbb{Z} \implies f(nx) = 1 \) - contradiction.
 
 \paragraph*{2}
 
-$f(x) = [x = r \pi + m, r\ \in \mathbb{Q}, m \in \mathbb{N}]$
+\( f(x) = [x = r \pi + m, r\ \in \mathbb{Q}, m \in \mathbb{N}] \)
 
-If $f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q}, m' \in \mathbb{N}$
+If \( f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q}, m' \in \mathbb{N} \)
 
-$x = \frac{r'}{n} \pi + \frac{m'}{n}$
+\( x = \frac{r'}{n} \pi + \frac{m'}{n} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q)}, m \in \mathbb{N}] = 1 = f(nx)$ as only one summand with $k = (-m') \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q)}, m \in \mathbb{N}] = 1 = f(nx) \) as only one summand with \( k = (-m') \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m \)
 
-$\implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q}, nm - k \in \mathbb{N} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q}, nm - k \in \mathbb{N} \implies f(nx) = 1 \) - contradiction.
 
 \paragraph*{3}
 
-$f(x) = [x = r \pi + m, r\ \in \mathbb{Q_+}, m \in \mathbb{N}]$
+\( f(x) = [x = r \pi + m, r\ \in \mathbb{Q_+}, m \in \mathbb{N}] \)
 
-If $f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q_+}, m' \in \mathbb{N}$
+If \( f(nx) = 1 \implies nx = r' \pi + m', r' \in \mathbb{Q_+}, m' \in \mathbb{N} \)
 
-$x = \frac{r'}{n} \pi + \frac{m'}{n}$
+\( x = \frac{r'}{n} \pi + \frac{m'}{n} \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q_+)}, m \in \mathbb{N}] = 1 = f(nx)$ as only one summand with $k = (-m') \mod n$ gives 1.
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} [\frac{r'}{n} \pi + \frac{m'+k}{n} = r\pi + m, r \in \mathbb{Q_+)}, m \in \mathbb{N}] = 1 = f(nx) \) as only one summand with \( k = (-m') \mod n \) gives 1.
 
-If $f(nx) = 0$
+If \( f(nx) = 0 \)
 
-All $f(x+\frac{k}{n}) = 0$
+All \( f(x+\frac{k}{n}) = 0 \)
 
-Assume $f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m$
+Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m \)
 
-$\implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q_+}, nm - k \in \mathbb{N} \implies f(nx) = 1$ - contradiction.
+\( \implies nx = (nr)\pi + (nm - k), nr \in \mathbb{Q_+}, nm - k \in \mathbb{N} \implies f(nx) = 1 \) - contradiction.
 
 \subsubsection*{f)}
 
-$f(x) = \log |2 \sin \pi x |$
+\( f(x) = \log |2 \sin \pi x | \)
 
-$\sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} \log |2 \sin \pi (x + \frac{k}{n}| = \log |\prod_{k=0}^{n-1}(2\sin \pi (x + \frac{k}{n}))| =: A$
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} \log |2 \sin \pi (x + \frac{k}{n}| = \log |\prod_{k=0}^{n-1}(2\sin \pi (x + \frac{k}{n}))| =: A \)
 
-$\omega_k := e^{-\frac{2\pi i k}{n}}$
+\( \omega_k := e^{-\frac{2\pi i k}{n}} \)
 
-$2\sin \pi t = \frac{e^{\pi i t}-e^{-\pi i t}}{i} = e^{\pi i (t - \frac{1}{2})}(1-e^{-2\pi i t}) = e^{\pi i (t - \frac{1}{2})}(1-e^{-2\pi i t})$
+\( 2\sin \pi t = \frac{e^{\pi i t}-e^{-\pi i t}}{i} = e^{\pi i (t - \frac{1}{2})}(1-e^{-2\pi i t}) = e^{\pi i (t - \frac{1}{2})}(1-e^{-2\pi i t}) \)
 
-$A = \overbrace{e^{i \pi \sum_{k=0}^{n-1}(x+\frac{k}{n}-\frac{1}{2})}}^B \overbrace{\prod_{k=0}^{n-1} (1-e^{-2\pi i x}\omega_k)}^C$
+\( A = \overbrace{e^{i \pi \sum_{k=0}^{n-1}(x+\frac{k}{n}-\frac{1}{2})}}^B \overbrace{\prod_{k=0}^{n-1} (1-e^{-2\pi i x}\omega_k)}^C \)
 
-a) $\implies B = e^{i \pi (nx - \frac{1}{2})}$
+a) \( \implies B = e^{i \pi (nx - \frac{1}{2})} \)
 
-$g(t) := \prod_{k=0}^{n-1} (1-t\omega_k)$
+\( g(t) := \prod_{k=0}^{n-1} (1-t\omega_k) \)
 
-$\forall k, 0 \leq k \leq n - 1: g(\frac{1}{\omega_k}) = 0$
+\( \forall k, 0 \leq k \leq n - 1: g(\frac{1}{\omega_k}) = 0 \)
 
-$h(t) = 1-t^n$
+\( h(t) = 1-t^n \)
 
-$\forall k, 0 \leq k \leq n - 1: h(\frac{1}{\omega_k}) = 0$
+\( \forall k, 0 \leq k \leq n - 1: h(\frac{1}{\omega_k}) = 0 \)
 
-$g, h$ have the same coefficient to $t^0$
+\( g, h \) have the same coefficient to \( t^0 \)
 
-$\implies g(t) = h(t)$
+\( \implies g(t) = h(t) \)
 
-$C = g(e^{-2\pi i x}) = 1 - e^{-2\pi i n x}$
+\( C = g(e^{-2\pi i x}) = 1 - e^{-2\pi i n x} \)
 
-$\implies A = f(nx)$
+\( \implies A = f(nx) \)
 
 \subsubsection*{g)}
 
-$f, g$ - replicative
+\( f, g \) - replicative
 
-$h(x) = f(x) + g(x)$
+\( h(x) = f(x) + g(x) \)
 
-$\sum_{k=0}^{n-1} h(x+\frac{k}{n}) = \sum_{k=0}^{n-1} f(x+\frac{k}{n}) + \sum_{k=0}^{n-1} g(x+\frac{k}{n}) = f(nx) + g(nx) = h(nx)$
+\( \sum_{k=0}^{n-1} h(x+\frac{k}{n}) = \sum_{k=0}^{n-1} f(x+\frac{k}{n}) + \sum_{k=0}^{n-1} g(x+\frac{k}{n}) = f(nx) + g(nx) = h(nx) \)
 
 \subsubsection*{h)}
 
-$f$ - replicative, $c \in \mathbb{R}$
+\( f \) - replicative, \( c \in \mathbb{R} \)
 
-$g(x) = cf(x)$
+\( g(x) = cf(x) \)
 
-$\sum_{k=0}^{n-1} g(x+\frac{k}{n}) = \sum_{k=0}^{n-1} cf(x+\frac{k}{n}) = cf(nx) = g(nx)$
+\( \sum_{k=0}^{n-1} g(x+\frac{k}{n}) = \sum_{k=0}^{n-1} cf(x+\frac{k}{n}) = cf(nx) = g(nx) \)
 
 \subsubsection*{i)}
 
-$f$ - replicative
+\( f \) - replicative
 
-$g(x) = f(x - \lfloor x \rfloor)$
+\( g(x) = f(x - \lfloor x \rfloor) \)
 
-$\sum_{k=0}^{n-1} g(x+\frac{k}{n}) = \sum_{k=0}^{n-1} f(x+\frac{k}{n} - \lfloor x+\frac{k}{n} \rfloor) =: A$
+\( \sum_{k=0}^{n-1} g(x+\frac{k}{n}) = \sum_{k=0}^{n-1} f(x+\frac{k}{n} - \lfloor x+\frac{k}{n} \rfloor) =: A \)
 
-Let $m := \lfloor nx \rfloor$
+Let \( m := \lfloor nx \rfloor \)
 
-$m = nq + r, 0 \leq r \leq m - 1$
+\( m = nq + r, 0 \leq r \leq m - 1 \)
 
-$m \leq nx < m + 1 \implies \frac{m}{n} \leq x < \frac{m+1}{n}$
+\( m \leq nx < m + 1 \implies \frac{m}{n} \leq x < \frac{m+1}{n} \)
 
-$\frac{m+k}{n} \leq x + \frac{k}{n} < \frac{m+k+1}{n}$
+\( \frac{m+k}{n} \leq x + \frac{k}{n} < \frac{m+k+1}{n} \)
 
-$\frac{nq+r+k}{n} \leq x + \frac{k}{n} < \frac{nq+r+k+1}{n}$
+\( \frac{nq+r+k}{n} \leq x + \frac{k}{n} < \frac{nq+r+k+1}{n} \)
 
-$q + \frac{r+k}{n} \leq x + \frac{k}{n} < q + \frac{r+k+1}{n}$
+\( q + \frac{r+k}{n} \leq x + \frac{k}{n} < q + \frac{r+k+1}{n} \)
 
-$q + \lfloor \frac{r+k}{n} \rfloor \leq \lfloor x + \frac{k}{n} \rfloor < q + \lfloor \frac{r+k+1}{n} \rfloor$
+\( q + \lfloor \frac{r+k}{n} \rfloor \leq \lfloor x + \frac{k}{n} \rfloor < q + \lfloor \frac{r+k+1}{n} \rfloor \)
 
-For $k \leq n - r - 1: \lfloor x + \frac{k}{n} \rfloor = q$
+For \( k \leq n - r - 1: \lfloor x + \frac{k}{n} \rfloor = q \)
 
-For $k \geq n - r: \lfloor x + \frac{k}{n} \rfloor = q + 1$
+For \( k \geq n - r: \lfloor x + \frac{k}{n} \rfloor = q + 1 \)
 
-$A = \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=n-r}^{n-1} f(x+\frac{k}{n} - q - 1) = \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=n-r}^{n-1} f(x+\frac{k-n}{n} - q) =$
+\( A = \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=n-r}^{n-1} f(x+\frac{k}{n} - q - 1) = \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=n-r}^{n-1} f(x+\frac{k-n}{n} - q) = \)
 
-$= \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=-r}^{-1} f(x+\frac{k-n}{n} - q) = \sum_{k=-r}^{n-r-1} f(x+\frac{k}{n} - q) =$
+\( = \sum_{k=0}^{n-r-1} f(x+\frac{k}{n} - q) + \sum_{k=-r}^{-1} f(x+\frac{k-n}{n} - q) = \sum_{k=-r}^{n-r-1} f(x+\frac{k}{n} - q) = \)
 
-$= \sum_{k=-r}^{n-r-1} f(x+\frac{k+r}{n} - q-\frac{r}{n}) = \sum_{k=0}^{n-1} f(x-q-\frac{r}{n}+\frac{k}{n}) = f(n(x-q-\frac{r}{n})) = f(nx - nq - r) = f(nx - m) = fr(nx - \lfloor nx \rfloor) = g(nx)$
+\( = \sum_{k=-r}^{n-r-1} f(x+\frac{k+r}{n} - q-\frac{r}{n}) = \sum_{k=0}^{n-1} f(x-q-\frac{r}{n}+\frac{k}{n}) = f(n(x-q-\frac{r}{n})) = f(nx - nq - r) = f(nx - m) = fr(nx - \lfloor nx \rfloor) = g(nx) \)
 
 
 \end{document}

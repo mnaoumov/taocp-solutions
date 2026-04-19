@@ -6,55 +6,55 @@
 \begin{document}
 \maketitle
 
-Let $d = \gcd(m,n), m = ds, n = dt, s \perp t$
+Let \( d = \gcd(m,n), m = ds, n = dt, s \perp t \)
 
-$A := \sum_{0 \leq k < n} \lfloor \frac{mk+x}{n} \rfloor = \overbrace{\sum_{0 \leq k < n} \frac{mk+x}{n}}^B - \overbrace{\sum_{0 \leq k < n} \{ \frac{mk+x}{n} \}}^C$
+\( A := \sum_{0 \leq k < n} \lfloor \frac{mk+x}{n} \rfloor = \overbrace{\sum_{0 \leq k < n} \frac{mk+x}{n}}^B - \overbrace{\sum_{0 \leq k < n} \{ \frac{mk+x}{n} \}}^C \)
 
-$B = \frac{m}{n} \sum_{0\leq k < n} k + \frac{x}{n} \sum_{0\leq k < n} 1 = \frac{m}{n}\cdot \frac{(n-1)n}{2} + \frac{x}{n}\cdot n = \frac{m(n-1)}{2} + x$
+\( B = \frac{m}{n} \sum_{0\leq k < n} k + \frac{x}{n} \sum_{0\leq k < n} 1 = \frac{m}{n}\cdot \frac{(n-1)n}{2} + \frac{x}{n}\cdot n = \frac{m(n-1)}{2} + x \)
 
-$C = \sum_{0\leq k < n} \{ \frac{dsk+x}{dt} \} = \sum_{0\leq k < n} \{ \frac{sk+\frac{x}{d}}{t} \} = \sum_{0\leq k < n} \{ \lfloor \frac{sk}{t} \rfloor + \lfloor \frac{\frac{x}{d}}{t} \rfloor + \frac{((sk) \mod t) + (\frac{x}{d} \mod t)}{t} \} =$
+\( C = \sum_{0\leq k < n} \{ \frac{dsk+x}{dt} \} = \sum_{0\leq k < n} \{ \frac{sk+\frac{x}{d}}{t} \} = \sum_{0\leq k < n} \{ \lfloor \frac{sk}{t} \rfloor + \lfloor \frac{\frac{x}{d}}{t} \rfloor + \frac{((sk) \mod t) + (\frac{x}{d} \mod t)}{t} \} = \)
 
-$= \sum_{0\leq k < n} \{ \frac{((sk) \mod t) + \lfloor \frac{x}{d} \mod t \rfloor + \{ \frac{x}{d} \mod t \} }{t} \}$
+\( = \sum_{0\leq k < n} \{ \frac{((sk) \mod t) + \lfloor \frac{x}{d} \mod t \rfloor + \{ \frac{x}{d} \mod t \} }{t} \} \)
 
-$a := \lfloor \frac{x}{d} \mod t \rfloor, a \in \mathbb{Z}$
+\( a := \lfloor \frac{x}{d} \mod t \rfloor, a \in \mathbb{Z} \)
 
-$y := \{ \frac{x}{d} \mod t \}, 0 \leq y < 1$
+\( y := \{ \frac{x}{d} \mod t \}, 0 \leq y < 1 \)
 
-$C = \sum_{0\leq k < n} \{ \frac{((sk) \mod t) + a + y }{t} \} = \sum_{\substack{0\leq r < t\\0 \leq k < n \\ sk \mod t = r}} \{ \frac{r + a + y }{t} \}$
+\( C = \sum_{0\leq k < n} \{ \frac{((sk) \mod t) + a + y }{t} \} = \sum_{\substack{0\leq r < t\\0 \leq k < n \\ sk \mod t = r}} \{ \frac{r + a + y }{t} \} \)
 
-$s \perp t \implies \exists s': ss' \mod t = 1, 0 \leq s' \leq t - 1$
+\( s \perp t \implies \exists s': ss' \mod t = 1, 0 \leq s' \leq t - 1 \)
 
-$\forall r, 0 \leq r < t, \forall u, 0 \leq u < d$
+\( \forall r, 0 \leq r < t, \forall u, 0 \leq u < d \)
 
-Consider $k = k_{ur} = ut + ((s'r) \mod t)$
+Consider \( k = k_{ur} = ut + ((s'r) \mod t) \)
 
-$sk = sut + ((ss'r) \mod t)$
+\( sk = sut + ((ss'r) \mod t) \)
 
-$sk \mod t = r$
+\( sk \mod t = r \)
 
-$0 \leq k \leq (d-1)t + (t-1) = dt - 1 = n - 1$
+\( 0 \leq k \leq (d-1)t + (t-1) = dt - 1 = n - 1 \)
 
-For each $r, 0 \leq r \leq t - 1, \exists k_{0r}, k_{1r}, \ldots k_{d-1,r}: sk_{ir} \mod = r$
+For each \( r, 0 \leq r \leq t - 1, \exists k_{0r}, k_{1r}, \ldots k_{d-1,r}: sk_{ir} \mod = r \)
 
-$\implies C = d\sum_{0 \leq r < t} \{ \frac{r + a + y }{t} \} = d\sum_{0 \leq r < t} \{ \lfloor \frac{r+a}{t} \rfloor + \frac{((r + a) \mod t)  + y }{t} \} = d\sum_{0 \leq r < t} \{ \frac{((r + a) \mod t)  + y }{t} \} =$
+\( \implies C = d\sum_{0 \leq r < t} \{ \frac{r + a + y }{t} \} = d\sum_{0 \leq r < t} \{ \lfloor \frac{r+a}{t} \rfloor + \frac{((r + a) \mod t)  + y }{t} \} = d\sum_{0 \leq r < t} \{ \frac{((r + a) \mod t)  + y }{t} \} = \)
 
-$= d\sum_{\substack{0 \leq v < t \\ 0 \leq r < t \\ (r + a) \mod t = v}} \{ \frac{v + y}{t} \} = d\sum_{0 \leq v < t} \{ \frac{v + y}{t} \}$
+\( = d\sum_{\substack{0 \leq v < t \\ 0 \leq r < t \\ (r + a) \mod t = v}} \{ \frac{v + y}{t} \} = d\sum_{0 \leq v < t} \{ \frac{v + y}{t} \} \)
 
-$0 \leq v \leq t - 1, 0 \leq y < 1 \implies 0 \leq v + y < t \implies 0 \leq \frac{v+y}{t} < 1 \implies \lfloor \frac{v + y} {t} \rfloor = \frac{v + y}{t}$
+\( 0 \leq v \leq t - 1, 0 \leq y < 1 \implies 0 \leq v + y < t \implies 0 \leq \frac{v+y}{t} < 1 \implies \lfloor \frac{v + y} {t} \rfloor = \frac{v + y}{t} \)
 
-$C = d\sum_{v=0}^t \frac{v+y}{t} = d(\frac{t(t-1)}{2t} + y) = \frac{d(t-1)}{2} + dy = \frac{dt-d}{2} + dy = \frac{n-d}{2} + dy$
+\( C = d\sum_{v=0}^t \frac{v+y}{t} = d(\frac{t(t-1)}{2t} + y) = \frac{d(t-1)}{2} + dy = \frac{dt-d}{2} + dy = \frac{n-d}{2} + dy \)
 
-$A = B - C = \frac{m(n-1)}{2} + x - \frac{n-d}{2} - dy = \frac{(m-1)(n-1)}{2} + \frac{n-1}{2} + x - \frac{n-d}{2} - dy =$
+\( A = B - C = \frac{m(n-1)}{2} + x - \frac{n-d}{2} - dy = \frac{(m-1)(n-1)}{2} + \frac{n-1}{2} + x - \frac{n-d}{2} - dy = \)
 
-$= \frac{(m-1)(n-1)}{2} + \frac{d-1}{2} + x - dy$
+\( = \frac{(m-1)(n-1)}{2} + \frac{d-1}{2} + x - dy \)
 
-$\frac{x}{d} \mod t = \frac{x}{d} - \lfloor \frac{\frac{x}{d}}{t} \rfloor t = \frac{x}{d} - \lfloor \frac{x}{n} \rfloor t$
+\( \frac{x}{d} \mod t = \frac{x}{d} - \lfloor \frac{\frac{x}{d}}{t} \rfloor t = \frac{x}{d} - \lfloor \frac{x}{n} \rfloor t \)
 
-$y = \{ \frac{x}{d} \mod t \} = \{ \frac{x}{d} - \lfloor \frac{x}{n} \rfloor t \} = \{ \frac{x}{d} \} = \frac{x}{d} - \lfloor \frac{x}{d} \rfloor$
+\( y = \{ \frac{x}{d} \mod t \} = \{ \frac{x}{d} - \lfloor \frac{x}{n} \rfloor t \} = \{ \frac{x}{d} \} = \frac{x}{d} - \lfloor \frac{x}{d} \rfloor \)
 
-$x - dy = d \lfloor \frac{x}{d} \rfloor$
+\( x - dy = d \lfloor \frac{x}{d} \rfloor \)
 
-$A = \frac{(m-1)(n-1)}{2} + \frac{n-1}{2} + d \lfloor \frac{x}{d} \rfloor$
+\( A = \frac{(m-1)(n-1)}{2} + \frac{n-1}{2} + d \lfloor \frac{x}{d} \rfloor \)
 
 
 \end{document}

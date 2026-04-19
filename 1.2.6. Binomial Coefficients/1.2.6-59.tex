@@ -6,29 +6,29 @@
 \begin{document}
 \maketitle
 
-$A_{0k} = \delta_{0k} = \binom{0}{k}$
+\( A_{0k} = \delta_{0k} = \binom{0}{k} \)
 
-$k > 0: A_{1k} = A_{0k} + A_{0,k-1} + \binom{1}{k} = \binom{0}{k} + \binom{0}{k - 1} + \binom{1}{k} = 2 \binom{1}{k}$
+\( k > 0: A_{1k} = A_{0k} + A_{0,k-1} + \binom{1}{k} = \binom{0}{k} + \binom{0}{k - 1} + \binom{1}{k} = 2 \binom{1}{k} \)
 
-For $k \geq 0: A_{1k} = 2\binom{1}{k} - \binom{1}{k + 1}$
+For \( k \geq 0: A_{1k} = 2\binom{1}{k} - \binom{1}{k + 1} \)
 
-$k > 0: A_{2k} = A_{1k} + A_{1,k-1} + \binom{2}{k} = 2\binom{1}{k} - \binom{1}{k+1} + 2\binom{1}{k-1} - \binom{1}{k} + \binom{2}{k} =$
+\( k > 0: A_{2k} = A_{1k} + A_{1,k-1} + \binom{2}{k} = 2\binom{1}{k} - \binom{1}{k+1} + 2\binom{1}{k-1} - \binom{1}{k} + \binom{2}{k} = \)
 
-$= 2\binom{2}{k} - \binom{2}{k+1} + \binom{2}{k} = 3 \binom{2}{k} - \binom{2}{k+1}$
+\( = 2\binom{2}{k} - \binom{2}{k+1} + \binom{2}{k} = 3 \binom{2}{k} - \binom{2}{k+1} \)
 
-This formula works for $k = 0$ as well
+This formula works for \( k = 0 \) as well
 
-It seems: $A_{nk} = (n+1) \binom{n}{k} - \binom{n}{k+1}$
+It seems: \( A_{nk} = (n+1) \binom{n}{k} - \binom{n}{k+1} \)
 
-$A_{0k} = (0+1)\binom{0}{k} - \binom{0}{k+1} = \delta_{0k}$
+\( A_{0k} = (0+1)\binom{0}{k} - \binom{0}{k+1} = \delta_{0k} \)
 
-$(n \implies n + 1)$
+\( (n \implies n + 1) \)
 
-$A_{n+1,0} = (n+1+1)\binom{n+1}{0} - \binom{n+1}{0+1} = (n+2)\cdot 1 - (n + 1) = 1$
+\( A_{n+1,0} = (n+1+1)\binom{n+1}{0} - \binom{n+1}{0+1} = (n+2)\cdot 1 - (n + 1) = 1 \)
 
-$A_{n+1,k} = A_{nk} + A_{n,k-1} + \binom{n+1}{k} = (n+1) \binom{n}{k} - \binom{n}{k+1} + (n+1) \binom{n}{k - 1} - \binom{n}{k} + \binom{n+1}{k} =$
+\( A_{n+1,k} = A_{nk} + A_{n,k-1} + \binom{n+1}{k} = (n+1) \binom{n}{k} - \binom{n}{k+1} + (n+1) \binom{n}{k - 1} - \binom{n}{k} + \binom{n+1}{k} = \)
 
-$= (n+1)\binom{n+1}{k} - \binom{n+1}{k+1} + \binom{n+1}{k} = ((n+1)+1)\binom{n+1}{k} - \binom{n+1}{k+1}$
+\( = (n+1)\binom{n+1}{k} - \binom{n+1}{k+1} + \binom{n+1}{k} = ((n+1)+1)\binom{n+1}{k} - \binom{n+1}{k+1} \)
 
 
 \end{document}
