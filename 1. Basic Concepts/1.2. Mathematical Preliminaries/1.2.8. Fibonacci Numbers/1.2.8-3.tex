@@ -6,7 +6,7 @@
 \begin{document}
 \maketitle
 
-```csharp
+\begin{verbatim}
 const n = 1000;
 var fib = new BigInteger[0];
 BigInteger prev2 = 0;
@@ -18,7 +18,7 @@ for (var i = 2; i <= n; i++)
     Console.WriteLine($"F_{i} = {value}");
     (prev2, prev) = (prev, value);
 }
-```
+\end{verbatim}
 
 
 \end{document}

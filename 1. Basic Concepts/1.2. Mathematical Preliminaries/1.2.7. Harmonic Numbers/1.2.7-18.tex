@@ -8,7 +8,7 @@
 
 \( S = \sum_{k=1}^{n} \frac{1}{2k-1} \)
 
-Let \( v_p(m) := \max \{ k \in \mathbb{N}_0: p^k \mid m \}, m \in \mathbb{Z} \implies p^{v_p(m)} \mid m, p^{v_p(m) + 1} \not\mid m \)
+Let \( v_p(m) := \max \{ k \in \mathbb{N}_0: p^k \mid m \}, m \in \mathbb{Z} \implies p^{v_p(m)} \mid m, p^{v_p(m) + 1} \nmid m \)
 
 \( \forall r\in\mathbb{Q} \exists! x\in\mathbb{Z}, y\in\mathbb{N}: r = \frac{x}{y}, (x,y)=1 \)
 
@@ -22,7 +22,7 @@ We'll prove \( v_2(S) = 2 v_2(n) \)
 
 \section*{\( v_2(n) = 0 \)}
 
-\( 2 \not\mid n \)
+\( 2 \nmid n \)
 
 \( D := \prod_{j=1}^n (2j-1) \)
 
@@ -34,7 +34,7 @@ We'll prove \( v_2(S) = 2 v_2(n) \)
 
 Let \( C = ea(S), D = eb(S) \)
 
-\( 2 \not\mid D \implies 2 \not\mid e \implies v_2(C) = v_2(ea(S)) = v_2(e) + v_2(a(S)) = v_2(a(S)) \)
+\( 2 \nmid D \implies 2 \nmid e \implies v_2(C) = v_2(ea(S)) = v_2(e) + v_2(a(S)) = v_2(a(S)) \)
 
 \( v_2(S) = v_2(C) \)
 
@@ -46,7 +46,7 @@ Let \( C = ea(S), D = eb(S) \)
 
 \( v_2(n) = f > 0 \)
 
-\( n = 2^f g, 2 \not\mid g \)
+\( n = 2^f g, 2 \nmid g \)
 
 \( S = \sum_{k=1}^{\frac{n}{2}}(\frac{1}{2k-1} + \frac{1}{2n-(2k-1)}) = \sum_{k=1}^{\frac{n}{2}}\frac{2n}{(2k-1)(2n-2k+1)} = 2n \overbrace{\sum_{k=1}^{\frac{n}{2}}\frac{1}{(2k-1)(2n-2k+1)}}^{T} = 2nT \)
 
@@ -60,9 +60,9 @@ We need to prove \( v_2(T) = f - 1 \)
 
 \( T = \frac{H}{I} \)
 
-\( 2 \not\mid I \implies \) similarly to \( (*): v_2(T) = v_2(H) \)
+\( 2 \nmid I \implies \) similarly to \( (*): v_2(T) = v_2(H) \)
 
-\( n=2^fg, \frac{n}{2} = 2^{f-1}g, 2 \not\mid g \)
+\( n=2^fg, \frac{n}{2} = 2^{f-1}g, 2 \nmid g \)
 
 \( H = \sum_{i=0}^{g-1}\sum_{j=1}^{2^{f-1}} \frac{I}{(2(2^{f-1} i + j) - 1)(2n-2(2^{f-1} i + j) + 1)} = \sum_{i=0}^{g-1}\overbrace{\sum_{j=1}^{2^{f-1}} \underbrace{\frac{I}{(2^{f} i + 2j - 1)(2^{f+1}g-2^{f} i + 2j + 1)}}_{h_{ij}}}^{H_i} = \sum_{i=0}^{g-1} H_i \)
 

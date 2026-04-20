@@ -18,7 +18,7 @@
 
 \( N = TQ(N) + R(N), 0 \leq R(N) < T \)
 
-\( S_N = \sum_{n=1}^T a_n + \sum_{n = T + 1}^N a_n = S_T + \sum_{n = 1}^{N-T} a_{n+T} = S_T + \sum_{n=1}^{N-T} a_n = S_T + S_{N-T} = S_T + S_T + S_{N-2T} = 2S_N + S_{N-2T} = \ldots = Q(N)S_T + S_{N - TQ(N)} = Q(N)S_T + S_{R(N)} \)
+\( S_N = \sum_{n=1}^T a_n + \sum_{n = T + 1}^N a_n = S_T + \sum_{n = 1}^{N-T} a_{n+T} = S_T + \sum_{n=1}^{N-T} a_n = S_T + S_{N-T} = S_T + S_T + S_{N-2T} = 2S_N + S_{N-2T} = \cdots = Q(N)S_T + S_{N - TQ(N)} = Q(N)S_T + S_{R(N)} \)
 
 \( \frac{1}{N}S_N = \frac{Q(N)}{N}S_T + \frac{1}{N} S_{R(N)} = \frac{\frac{N-R(N)}{T}}{N} S_T + \frac{1}N S_{R(N)} = \frac{S_T}{T}(1-\frac{R(N)}{N}) + \frac{1}{N} S_{R(N)} \)
 

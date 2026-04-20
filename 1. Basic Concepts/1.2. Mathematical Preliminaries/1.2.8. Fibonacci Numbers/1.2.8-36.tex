@@ -8,7 +8,7 @@
 
 \section{Length}\label{sec:length}
 
-\( S_1 = \text{"a"}, S_2 = \text{"b"}, S_{n+2} = S_{n+1}S_n, n \geq 1 \)
+\( S_1 = \text{``a''}, S_2 = \text{``b''}, S_{n+2} = S_{n+1}S_n, n \geq 1 \)
 
 \( l(S_1) = 1 = F_1 \)
 
@@ -18,11 +18,11 @@
 
 \( \implies l(S_n) = F_n \)
 
-\section{Count of "a" and "b"}\label{sec:count}
+\section{Count of ``a'' and ``b''}\label{sec:count}
 
-Let \( a_n - \) amount of \text{"a"} in \( S_n \).
+Let \( a_n - \) amount of \text{``a''} in \( S_n \).
 
-\( b_n - \) amount of \text{"b"} in \( S_n \).
+\( b_n - \) amount of \text{``b''} in \( S_n \).
 
 \( a_1 = 1 = F_{-1} \)
 
@@ -40,111 +40,111 @@ Let \( a_n - \) amount of \text{"a"} in \( S_n \).
 
 \( \implies b_n = F_{n-1} \)
 
-\section{Density of "b"}\label{sec:density}
+\section{Density of ``b''}\label{sec:density}
 
 \( db_n = \frac{b_n}{l(S_n)} = \frac{F_{n-1}}{F_n} \to \phi^{-1}, n \to \infty \)
 
 \section{First letter}\label{sec:first-letter}
 
-For \( n \geq 2: S_n[1] = \text{"b"} \).
+For \( n \geq 2: S_n[1] = \text{``b''} \).
 
-\( n = 2: S_2[1] = \text{"b"}[1] = \text{"b"} \implies \) (\ref{sec:first-letter})
+\( n = 2: S_2[1] = \text{``b''}[1] = \text{``b''} \implies \) (\ref{sec:first-letter})
 
-\( \forall n \geq 3: S_n[1] = (S_{n-1}S_{n-2})[1] = S_{n-1}[1] = \text{"b"} \implies \) (\ref{sec:first-letter})
+\( \forall n \geq 3: S_n[1] = (S_{n-1}S_{n-2})[1] = S_{n-1}[1] = \text{``b''} \implies \) (\ref{sec:first-letter})
 
 \section{Last letter}\label{sec:last-letter}
 
-\( S_n[F_n] = \text{"a"} \iff 2 \not| n \).
+\( S_n[F_n] = \text{``a''} \iff 2 \nmid n \).
 
 Consider \( c_k := S_{2k-1}[F_{2k-1}], d_k := S_{2k}[F_{2k}] \)
 
-Let's prove \( c_k = \text{"a"}, d_k = \text{"b"} \).
+Let's prove \( c_k = \text{``a''}, d_k = \text{``b''} \).
 
-\( c_1 = S_1[1] = \text{"a"}[1] = \text{"a"} \)
+\( c_1 = S_1[1] = \text{``a''}[1] = \text{``a''} \)
 
-\( c_{k+1} = S_{2k+1}[F_{2k+1}] = (S_{2k}S_{2k-1})[F_{2k+1}] = S_{2k-1}[F_{2k-1}] = c_k = \text{"a"} \)
+\( c_{k+1} = S_{2k+1}[F_{2k+1}] = (S_{2k}S_{2k-1})[F_{2k+1}] = S_{2k-1}[F_{2k-1}] = c_k = \text{``a''} \)
 
-\( d_1 = S_2[1] = \text{"b"}[1] = \text{"b"} \)
+\( d_1 = S_2[1] = \text{``b''}[1] = \text{``b''} \)
 
-\( d_{k+1} = S_{2k+2}[F_{2k+2}] = (S_{2k+1}S_{2k})[F_{2k+2}] = S_{2k}[F_{2k}] = d_k = \text{"b"} \)
+\( d_{k+1} = S_{2k+2}[F_{2k+2}] = (S_{2k+1}S_{2k})[F_{2k+2}] = S_{2k}[F_{2k}] = d_k = \text{``b''} \)
 
-\section{No "aa"}\label{sec:no-aa}
+\section{No ``aa''}\label{sec:no-aa}
 
-No "aa" appears in \( S_n \).
+No ``aa'' appears in \( S_n \).
 
-\( n = 1: S_1 = \text{"a"} \implies \) (\ref{sec:no-aa})
+\( n = 1: S_1 = \text{``a''} \implies \) (\ref{sec:no-aa})
 
-\( n = 2: S_2 = \text{"b"} \implies \) (\ref{sec:no-aa})
+\( n = 2: S_2 = \text{``b''} \implies \) (\ref{sec:no-aa})
 
-\( n = 3: S_3 = \text{"ba"} \implies \) (\ref{sec:no-aa})
+\( n = 3: S_3 = \text{``ba''} \implies \) (\ref{sec:no-aa})
 
 \( n \geq 4: S_n = S_{n-1}S_{n-2} \)
 
-By inductive assumption, \( S_{n-1} \) and \( S_{n-2} \) do not contain "aa".
+By inductive assumption, \( S_{n-1} \) and \( S_{n-2} \) do not contain ``aa''.
 
-The only possible way to get "aa" in \( S_n \) is to have "a" at the end of \( S_{n-1} \) and "a" at the beginning of \( S_{n-2} \).
+The only possible way to get ``aa'' in \( S_n \) is to have ``a'' at the end of \( S_{n-1} \) and ``a'' at the beginning of \( S_{n-2} \).
 
-But \( n - 2 \geq 2 \implies S_{n-2} \) starts with "b".
+But \( n - 2 \geq 2 \implies S_{n-2} \) starts with ``b''.
 
 \( \implies \) (\ref{sec:no-aa})
 
-\section{New "bb"}\label{sec:new-bb}
+\section{New ``bb''}\label{sec:new-bb}
 
-New "bb" appears in \( S_n \) for \( n = 3 + 2k, k \geq 1 \).
+New ``bb'' appears in \( S_n \) for \( n = 3 + 2k, k \geq 1 \).
 
-New "bb" appears in \( S_n \) if and only if \( S_{n-1} \) ends with "b" and \( S_{n-2} \) starts with "b".
+New ``bb'' appears in \( S_n \) if and only if \( S_{n-1} \) ends with ``b'' and \( S_{n-2} \) starts with ``b''.
 
-\( S_{n-1} \) ends with "b" \( \iff 2 | (n-1) \)
+\( S_{n-1} \) ends with ``b'' \( \iff 2 | (n-1) \)
 
-\( S_{n-2} \) starts with "b" \( \iff n - 2 \geq 2 \)
+\( S_{n-2} \) starts with ``b'' \( \iff n - 2 \geq 2 \)
 
 \( \implies \) (\ref{sec:new-bb})
 
-\section{Letter "a" at position \( k \)}\label{sec:a-at-k}
+\section{Letter ``a'' at position \( k \)}\label{sec:a-at-k}
 
-\( S_n[k] = \text{"a"} \iff k - 1 = F_{m_1} + F_{m_2} + \cdots + F_{m_r}, m_1 \gg m_2 \gg \cdots \gg m_r = 2 \)
+\( S_n[k] = \text{``a''} \iff k - 1 = F_{m_1} + F_{m_2} + \cdots + F_{m_r}, m_1 \gg m_2 \gg \cdots \gg m_r = 2 \)
 
 \( S_n[k] = S_{m_r+1}[F_{m_r}+1] = (S_{m_r}S_{m_r-1})[F_{m_r}+1] = S_{m_r-1}[1] \)
 
-\( S_{m_r-1}[1] = \text{"a"} \iff m_r-1 = 1 \iff m_r = 2 \)
+\( S_{m_r-1}[1] = \text{``a''} \iff m_r-1 = 1 \iff m_r = 2 \)
 
-\section{No starting "bb"}\label{sec:no-starting-bbb}
+\section{No starting ``bb''}\label{sec:no-starting-bbb}
 
-No starting "bb" appears in \( S_n \).
+No starting ``bb'' appears in \( S_n \).
 
-\( n = 1: S_1 = \text{"a"} \implies \) (\ref{sec:no-starting-bbb})
+\( n = 1: S_1 = \text{``a''} \implies \) (\ref{sec:no-starting-bbb})
 
-\( n = 2: S_2 = \text{"b"} \implies \) (\ref{sec:no-starting-bbb})
+\( n = 2: S_2 = \text{``b''} \implies \) (\ref{sec:no-starting-bbb})
 
-\( n = 3: S_3 = \text{"ba"} \implies \) (\ref{sec:no-starting-bbb})
+\( n = 3: S_3 = \text{``ba''} \implies \) (\ref{sec:no-starting-bbb})
 
-\( n \geq 4: S_n[1..2] = (S_{n-1}S_{n-2})[1..2] = S_{n-1}[1..2] \neq \text{"bb"} \implies \) (\ref{sec:no-starting-bbb})
+\( n \geq 4: S_n[1..2] = (S_{n-1}S_{n-2})[1..2] = S_{n-1}[1..2] \neq \text{``bb''} \implies \) (\ref{sec:no-starting-bbb})
 
-\section{No ending "bb"}\label{sec:no-ending-bbb}
+\section{No ending ``bb''}\label{sec:no-ending-bbb}
 
-No ending "bb" appears in \( S_n \).
+No ending ``bb'' appears in \( S_n \).
 
-\( n = 1: S_1 = \text{"a"} \implies \) (\ref{sec:no-ending-bbb})
+\( n = 1: S_1 = \text{``a''} \implies \) (\ref{sec:no-ending-bbb})
 
-\( n = 2: S_2 = \text{"b"} \implies \) (\ref{sec:no-ending-bbb})
+\( n = 2: S_2 = \text{``b''} \implies \) (\ref{sec:no-ending-bbb})
 
-\( n = 3: S_3 = \text{"ba"} \implies \) (\ref{sec:no-ending-bbb})
+\( n = 3: S_3 = \text{``ba''} \implies \) (\ref{sec:no-ending-bbb})
 
-\( n = 4: S_4 = \text{"bab"} \implies \) (\ref{sec:no-ending-bbb})
+\( n = 4: S_4 = \text{``bab''} \implies \) (\ref{sec:no-ending-bbb})
 
-\( n \geq 5: S_n[(F_n-1)..F_n] = (S_{n-1}S_{n-2})[(F_n-1)..F_n] = S_{n-2}[(F_{n_2}-1)..F_{n-2}] \neq \text{"bb"} \implies \) (\ref{sec:no-ending-bbb})
+\( n \geq 5: S_n[(F_n-1)..F_n] = (S_{n-1}S_{n-2})[(F_n-1)..F_n] = S_{n-2}[(F_{n_2}-1)..F_{n-2}] \neq \text{``bb''} \implies \) (\ref{sec:no-ending-bbb})
 
-\section{No "bbb"}\label{sec:no-bbb}
+\section{No ``bbb''}\label{sec:no-bbb}
 
-No "bbb" appears in \( S_n \).
+No ``bbb'' appears in \( S_n \).
 
-In order to get "bbb" you have have to have
+In order to get ``bbb'' you have have to have
 
 either
 
-- "bb" at the ending of \( S_{n-1} \) and "b" at the beginning of \( S_{n-2} \).
+- ``bb'' at the ending of \( S_{n-1} \) and ``b'' at the beginning of \( S_{n-2} \).
 
-- "b" at the ending of \( S_{n-1} \) and "bb" at the beginning of \( S_{n-2} \).
+- ``b'' at the ending of \( S_{n-1} \) and ``bb'' at the beginning of \( S_{n-2} \).
 
 By sections \ref{sec:no-starting-bbb} and \ref{sec:no-ending-bbb} both cases are impossible.
 
