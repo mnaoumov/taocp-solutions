@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath, amssymb}
+\input{../../../template}
 
 \title{1.2.6-65}
 
@@ -66,7 +66,7 @@ Let's prove that if it holds for \( r \), it also holds for \( r + 1 \)
 
 \( \ln z^{\underline{r}} = \ln \Gamma(z+1) - \ln \Gamma(z-r+1) = - \ln\Gamma(z+1-t) \Big|_0^r = \int_0^r \psi(z+1-t) dt \)
 
-Striling's formula:
+Stirling's formula:
 
 \( \ln \Gamma(z) = (z-\frac{1}{2})\ln{z} - z + \sum_{k=0}^m \frac{c_k}{k! z^k} + O(\frac{1}{z^{m+1}}), z \to \infty \)
 

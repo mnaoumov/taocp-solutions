@@ -4,10 +4,16 @@
   "private": true,
   "description": "My solutions to exercises from The Art of Computer Programming by Donald E. Knuth.",
   "scripts": {
-    "lint:latex": "jiti scripts/lint-latex.ts"
+    "format": "dprint fmt",
+    "format:check": "dprint check",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
+    "lint:spelling": "cspell --no-progress \"**\""
   },
   "devDependencies": {
+    "cspell": "^10.0.0",
+    "dprint": "^0.54.0",
     "glob": "^13.0.6",
-    "jiti": "latest"
+    "jiti": "latest",
+    "markdownlint-cli2": "^0.22.0"
   }
 }

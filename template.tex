@@ -1,0 +1,12 @@
+\usepackage{amsmath, amssymb}
+\usepackage{amsthm}
+
+\newcounter{stmt}
+\newcommand{\stmt}[1]{\refstepcounter{stmt}\textbf{(\thestmt)}\label{#1}}
+
+\let\originaltitle\title
+\renewcommand{\title}[1]{\originaltitle{TAOCP #1}}
+\author{Michael Naumov}
+\date{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}

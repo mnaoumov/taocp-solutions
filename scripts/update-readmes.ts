@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
-import { join, dirname, basename } from "node:path";
 import { globSync } from "glob";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { basename, dirname, join } from "node:path";
 
 const readmes = globSync("**/README.md", {
   ignore: ["node_modules/**", "README.md", ".obsidian/**"],

@@ -1,0 +1,23 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "*.aux",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.log",
+    "*.pdf",
+    "*.synctex.gz",
+    "node_modules",
+    "package-lock.json"
+  ],
+  "words": [
+    "bijective",
+    "Binet",
+    "latexmk",
+    "Stirling",
+    "summands",
+    "synctex",
+    "TAOCP"
+  ]
+}

@@ -4,7 +4,6 @@
 - Exercises: p. 9 (PDF p. 31)
 - Answers: p. 466 (PDF p. 488)
 
-
 ## Exercises
 
 - [1-1](1-1.tex)

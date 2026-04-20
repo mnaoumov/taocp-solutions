@@ -1,2 +1,10 @@
 .claude/settings.local.json
 node_modules/
+
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.synctex.gz
