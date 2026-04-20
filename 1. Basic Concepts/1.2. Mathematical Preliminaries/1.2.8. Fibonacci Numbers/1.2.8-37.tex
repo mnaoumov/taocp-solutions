@@ -6,6 +6,18 @@
 \begin{document}
 \maketitle
 
-Let \( f(n, k) = [\text{Can player 1 win the game with } n \text{ chips with up to } k \text{ chips can be taken this move} \text{ piles}] \).
+Let \( f(n, m) = [\text{Can player 1 win the game with } n \text{ chips with up to } m \text{ chips can be taken this move} \text{ piles}] \).
+
+To solve the problem, we need to find \( f(n, n - 1) \).
+
+Notice that \( f(n, m) = 1, n \leq m \).
+
+\( f(n, m) = 1 - \prod_{k=1}^{m} f(n - k, 2k) \)
+
+Let \( n = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{nr_n}}, s_1 \gg s_2 \gg \cdots \gg s_{r_n} \gg 0 \).
+
+
+Let's prove by induction that \( f(n, n - 1) = [r_n = 1] \).
+
 
 \end{document}
