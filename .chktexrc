@@ -17,11 +17,9 @@
 #  35  You should use \gcd, \min, \max, etc.
 #  36  You should put a space in front of parenthesis
 #
-# Warning 15 is globally suppressed because it cannot be suppressed inline.
-#
 # IMPORTANT: Run chktex from each file's directory (or use the provided script)
 # so that \input{../../../template} resolves correctly with -I.
 CmdLine
 {
-    -n15 -I
+    -I
 }
