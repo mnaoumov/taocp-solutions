@@ -6,17 +6,28 @@
 \begin{document}
 \maketitle
 
-\( A := \sum_{k=1}^{n} \frac{H_{k}}{k} = \sum_{1\leq k \leq n+1} (H_{k} - H_{k-1}) H_{k} = H_{k-1}H_{k}\mid_{1}^{n+1} - \sum_{1 \leq k \leq n+1} H_{k} (H_{k+1}-H_{k}) = H_{n} H_{n+1} - H_{0} H_{1} - \sum_{1 \leq k < n+1} \frac{H_{k}}{k+1} = \)
+\begin{multline*}
+A := \sum_{k=1}^{n} \frac{H_{k}}{k} = \sum_{1\leq k \leq n+1} (H_{k} - H_{k-1}) H_{k} \\
+= H_{k-1}H_{k}\mid_{1}^{n+1} - \sum_{1 \leq k \leq n+1} H_{k} (H_{k+1}-H_{k}) \\
+= H_{n} H_{n+1} - H_{0} H_{1} - \sum_{1 \leq k < n+1} \frac{H_{k}}{k+1} =
+\end{multline*}
 
-\( = H_{n}(H_{n} + \frac{1}{n+1}) - \sum_{l=2}^{n+1} \frac{H_{l-1}}{l} = {(H_{n})}^{2} + \frac{H_{n}}{n+1} - \sum_{l=1}^{n} \frac{H_{l-1}}{l} - \frac{H_{n}}{n+1} = {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l} - \frac{1}{l}}{l} = \)
+\begin{multline*}
+= H_{n}(H_{n} + \frac{1}{n+1}) - \sum_{l=2}^{n+1} \frac{H_{l-1}}{l} \\
+= {(H_{n})}^{2} + \frac{H_{n}}{n+1} - \sum_{l=1}^{n} \frac{H_{l-1}}{l} - \frac{H_{n}}{n+1} \\
+= {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l} - \frac{1}{l}}{l} =
+\end{multline*}
 
-\( = {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l}}{l} + \sum{l=1}{n}\frac{1}{l^{2}} = {(H_{n})}^{2} + H_{n}^{(2)} - A \)
+\[ = {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l}}{l} + \sum{l=1}{n}\frac{1}{l^{2}} = {(H_{n})}^{2} + H_{n}^{(2)} - A \]
 
 \( A = \frac{1}{2}({(H_{n})}^{2} + H_{n}^{(2)}) \)
 
 \(  \)
 
-\( B := \sum_{k=1}^{n} \frac{H_{k}}{k+1} = \sum_{k=2}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k} - \frac{1}{k}}{k} = \sum_{k=1}^{n+1} \frac{H_{k}}{k} - \sum_{k=1}^{n+1} \frac{1}{k^{2}} = \frac{1}{2}({(H_{n+1})}^{2} + H_{n+1}^{(2)}) - H_{n+1}^{(2)} = \frac{1}{2}({(H_{n+1})}^{2} - H_{n+1}^{(2)}) \)
+\begin{multline*}
+B := \sum_{k=1}^{n} \frac{H_{k}}{k+1} = \sum_{k=2}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k} - \frac{1}{k}}{k} \\
+= \sum_{k=1}^{n+1} \frac{H_{k}}{k} - \sum_{k=1}^{n+1} \frac{1}{k^{2}} = \frac{1}{2}({(H_{n+1})}^{2} + H_{n+1}^{(2)}) - H_{n+1}^{(2)} = \frac{1}{2}({(H_{n+1})}^{2} - H_{n+1}^{(2)})
+\end{multline*}
 
 
 \end{document}

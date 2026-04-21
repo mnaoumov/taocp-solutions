@@ -12,19 +12,29 @@
 
 \( = z + A(z)(z+z^{2}) + \sum_{n \geq -m}\binom{n+m}{m} z^{n+m+2} = \)
 
-\( = z + A(z)(z+z^{2}) + \sum_{n \geq 0}\binom{n+m}{m} z^{n+m+2} = z+A(z)(z+z^{2})+z^{m+2}\frac{1}{{(1-z)}^{m+1}} \)
+\[ = z + A(z)(z+z^{2}) + \sum_{n \geq 0}\binom{n+m}{m} z^{n+m+2} = z+A(z)(z+z^{2})+z^{m+2}\frac{1}{{(1-z)}^{m+1}} \]
 
-\( A(z) = \frac{z + \frac{z^{m+2}}{{(1-z)}^{m+1}}}{1-z-z^{2}} = \frac{z}{1-z-z^{2}} + \frac{z}{1-z-z^{2}} \cdot \frac{z^{m+1}}{{(1-z)}^{m+1}} = F(z) + z^{m+1} \frac{1}{{(1-z)}^{m+1}} F(z) \)
+\begin{multline*}
+A(z) = \frac{z + \frac{z^{m+2}}{{(1-z)}^{m+1}}}{1-z-z^{2}} = \frac{z}{1-z-z^{2}} + \frac{z}{1-z-z^{2}} \cdot \frac{z^{m+1}}{{(1-z)}^{m+1}} \\
+= F(z) + z^{m+1} \frac{1}{{(1-z)}^{m+1}} F(z)
+\end{multline*}
 
 \( F(z) = \frac{z}{1-z-z^{2}} \)
 
-\( a_{n} = [z^{n}]A(z) = F_{n} + [z^{n-m-1}] \frac{1}{{(1-z)}^{m+1}}F(z) = F_{n} + \sum_{k=0}^{n-m-1} \binom{k+m}{m}F_{n-m-1-k} \)
+\begin{multline*}
+a_{n} = [z^{n}]A(z) = F_{n} + [z^{n-m-1}] \frac{1}{{(1-z)}^{m+1}}F(z) \\
+= F_{n} + \sum_{k=0}^{n-m-1} \binom{k+m}{m}F_{n-m-1-k}
+\end{multline*}
 
 \section*{version (2)}
 
 \( b_{n} := \sum_{k=0}^{m} \binom{m+n-k}{k} \)
 
-\( b_{n+2} - b_{n+1} = \sum_{k=0}^{m} (\binom{m+n+2-k}{k} - \binom{m+n+1-k}{k}) = \sum_{k=0}^{m} \binom{m+n-(k-1)}{k-1} = \sum_{k=-1}^{m-1}\binom{m+n-k}{k} = \sum_{k=0}^{m-1}\binom{m+n-k}{k} \)
+\begin{multline*}
+b_{n+2} - b_{n+1} = \sum_{k=0}^{m} (\binom{m+n+2-k}{k} - \binom{m+n+1-k}{k}) \\
+= \sum_{k=0}^{m} \binom{m+n-(k-1)}{k-1} \\
+= \sum_{k=-1}^{m-1}\binom{m+n-k}{k} = \sum_{k=0}^{m-1}\binom{m+n-k}{k}
+\end{multline*}
 
 \( b_{n+2} - b_{n+1} - b_{n} = -\binom{n}{m} \)
 
@@ -34,7 +44,10 @@
 
 \( c_{0} = a_{0} + b_{0} = 0 + \sum_{k=0}^{m}\binom{m-k}{k} \overset{1.2.8-16}{=} F_{m+1} = F_{0} + F_{0+m+1} \)
 
-\( c_{1} = a_{1} + b_{1} = 1 + \sum_{k=0}^{m}\binom{m+1-k}{k} = 1 + \sum_{k=0}^{m+1}\binom{m+1-k}{k} - \binom{0}{m+1} \overset{1.2.8-16}{=} 1 + F_{m+2} = F_{1} + F_{1 + m + 1} \)
+\begin{multline*}
+c_{1} = a_{1} + b_{1} = 1 + \sum_{k=0}^{m}\binom{m+1-k}{k} = 1 + \sum_{k=0}^{m+1}\binom{m+1-k}{k} - \binom{0}{m+1} \\
+\overset{1.2.8-16}{=} 1 + F_{m+2} = F_{1} + F_{1 + m + 1}
+\end{multline*}
 
 \( c_{n} = F_{n} + F_{n+m+1} \)
 

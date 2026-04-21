@@ -8,9 +8,12 @@
 
 \( F(x) = \sum_{k=0}^{n} F_{k}x^{k} \)
 
-\( F(x)(1-x-x^{2}) = \sum_{k=0}^{n} F_{k}x^{k} - \sum_{k=1}^{n+1} F_{k-1}x^{k} - \sum_{k=2}^{n+2} F_{k-2}x^{k} = \)
+\[ F(x)(1-x-x^{2}) = \sum_{k=0}^{n} F_{k}x^{k} - \sum_{k=1}^{n+1} F_{k-1}x^{k} - \sum_{k=2}^{n+2} F_{k-2}x^{k} = \]
 
-\( = 0 + x + \sum_{k=2}^{n}(F_{k} - F_{k-1}-F_{k-2})x^{k} - F_{n}x^{n+1} - F_{n-1}x^{n+1} - F_{n}x^{n+2} = x - (F_{n}+F_{n-1})x^{n+1} - F_{n}x^{n+2} = \)
+\begin{multline*}
+= 0 + x + \sum_{k=2}^{n}(F_{k} - F_{k-1}-F_{k-2})x^{k} - F_{n}x^{n+1} - F_{n-1}x^{n+1} - F_{n}x^{n+2} \\
+= x - (F_{n}+F_{n-1})x^{n+1} - F_{n}x^{n+2} =
+\end{multline*}
 
 \( = x - F_{n+1}x^{n+1} - F_{n}x^{n+2} \)
 
@@ -18,7 +21,10 @@
 
 When \( x = \frac{1}{\phi} \) or \( x = \frac{1}{\hat\phi}: 1-x-x^{2} = 0 \)
 
-\( F(x) = \frac{(x-F_{n+1}x^{n+1}-F_{n}x^{n+2})'}{(1-x-x^{2})'} = \frac{1-(n+1)F_{n+1}x^{n} -(n+2)F_{n}x^{n+1}}{-1-2x} = \frac{-1+(n+1)F_{n+1}x^{n}+(n+2)F_{n}x^{n+1}}{1+2x} \)
+\begin{multline*}
+F(x) = \frac{(x-F_{n+1}x^{n+1}-F_{n}x^{n+2})'}{(1-x-x^{2})'} = \frac{1-(n+1)F_{n+1}x^{n} -(n+2)F_{n}x^{n+1}}{-1-2x} \\
+= \frac{-1+(n+1)F_{n+1}x^{n}+(n+2)F_{n}x^{n+1}}{1+2x}
+\end{multline*}
 1
 
 

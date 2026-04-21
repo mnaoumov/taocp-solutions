@@ -14,15 +14,24 @@
 
 \( a_{4} = \left|\begin{matrix}1 & -1 & 0 & 0\\ 1 & 1 & -1 & 0\\ 0 & 1 & 1 & -1 \\ 0 & 0 & 1 & 1\end{matrix}\right| \)
 
-\( a_{n} = \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} \)
+\[ a_{n} = \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} \]
 
 \( a_{1} = 1 = F_{2}, a_{2} = 1 \cdot 1 - (-1) \cdot 1 = 2 = F_{3} \)
 
-\( a_{n} \overset{\textrm{Expand by row 1}}{=} \overbrace{\left|\begin{matrix} \cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{1} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} + \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ 1 & \cancel{1} & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & \cancel{1} & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & \cancel{0} & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & \cancel{0} & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} = \)
+\begin{multline*}
+a_{n} \overset{\textrm{Expand by row 1}}{=} \overbrace{\left|\begin{matrix} \cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{1} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} \\
++ \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ 1 & \cancel{1} & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & \cancel{1} & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & \cancel{0} & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & \cancel{0} & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n} =
+\end{multline*}
 
-\( = \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} + \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} \overset{\textrm{Expand by column 1}}{=} \)
+\begin{multline*}
+= \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} \\
++ \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} \overset{\textrm{Expand by column 1}}{=}
+\end{multline*}
 
-\( = a_{n-1} + \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{0} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} = a_{n-1} + \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-2} = a_{n-1} + a_{n-2} = F_{n+1} \)
+\begin{multline*}
+= a_{n-1} + \overbrace{\left|\begin{matrix}\cancel{1} & \cancel{-1} & \cancel{0} & \cancel{0} & \cdots & \cancel{0} & \cancel{0} & \cancel{0} \\ \cancel{0} & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ \cancel{0} & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ \cancel{0} & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ \cancel{0} & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-1} \\
+= a_{n-1} + \overbrace{\left|\begin{matrix}1 & -1 & 0 & 0 & \cdots & 0 & 0 & 0 \\ 1 & 1 & -1 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 1 & 1 & -1 & \cdots & 0 & 0 & 0 \\ \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\ 0 & 0 & 0 & 0 & \cdots & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 & \cdots & 0 & 1 & 1\end{matrix}\right|}^{n-2} = a_{n-1} + a_{n-2} = F_{n+1}
+\end{multline*}
 
 
 \end{document}

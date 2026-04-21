@@ -6,7 +6,9 @@
 \begin{document}
 \maketitle
 
-Let \( f(n, m) = [\text{Can player 1 win the game with } n \text{ chips with up to } m \text{ chips can be taken this move} \text{ piles}] \).
+Let \( f(n, m) = [\text{Can player 1 win the game with } n \text{ chips} \)
+
+\( \text{with up to } m \text{ chips can be taken this move piles}] \).
 
 To solve the problem, we need to find \( f(n, n - 1) \).
 
@@ -16,7 +18,18 @@ Notice that \( f(n, m) = 1, n \leq m \).
 
 Let \( n = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{nr_{n}}}, s_{1} \gg s_{2} \gg \cdots \gg s_{r_{n}} \gg 0 \).
 
-Let's prove by induction that \( f(n, n - 1) = [r_{n} = 1] \).
+Let's prove by induction that \( f(n, n - 1) = [r_{n} > 1] \).
+
+\( n = 2: f(2, 1) = 1 - f(2 - 1, 2 \cdot 1) = 1 - f(1, 2) = 1 - 1 = 0 = [r_{2} > 1] \)
+
+Let \( n \geq 3 \).
+
+Assume \( r_{n} = 1 \implies n = F_{s_{n1}} \).
+
+We need to prove \( \forall k, 1 \leq k \leq n - 1: f(n - k, 2k) = 1 \)
+
+If \( k \geq \frac{n}{3} \implies n - k \leq 2k \implies f(n - k, 2k) = 1 \)
+
 
 
 \end{document}

@@ -6,9 +6,12 @@
 \begin{document}
 \maketitle
 
-\( H_{k} = \sum_{i=1}^{k} \frac{1}{i} = \sum_{i=1}^{k} \int_{0}^{1} y^{i-1}dy = \int_{0}^{1} (\sum_{i=1}^{k} y^{i-1}) dy = \int_{0}^{1} \frac{1-y^{k}}{1-y} dy \)
+\[ H_{k} = \sum_{i=1}^{k} \frac{1}{i} = \sum_{i=1}^{k} \int_{0}^{1} y^{i-1}dy = \int_{0}^{1} (\sum_{i=1}^{k} y^{i-1}) dy = \int_{0}^{1} \frac{1-y^{k}}{1-y} dy \]
 
-\( \sum_{k \geq 0} a_{k}x_{0}^{k} H_{k} = \sum_{k \geq 0} a_{k}x_{0}^{k} \int_{0}^{1} \frac{1-y^{k}}{1-y} dy = \int_{0}^{1} \sum_{k \geq 0} \frac{a_{k}x_{0}^{k} - a_{k}x_{0}^{k}y^{k}}{1-y} dy = \int_{0}^{1} \frac{\sum_{k \geq 0}a_{k}x_{0}^{k} - \sum_{k \geq 0}a_{k}x_{0}^{k}y^{k}}{1-y} dy = \int_{0}^{1} \frac{f(x_{0}) - f(x_{0}y)}{1-y} dy \)
+\begin{multline*}
+\sum_{k \geq 0} a_{k}x_{0}^{k} H_{k} = \sum_{k \geq 0} a_{k}x_{0}^{k} \int_{0}^{1} \frac{1-y^{k}}{1-y} dy = \int_{0}^{1} \sum_{k \geq 0} \frac{a_{k}x_{0}^{k} - a_{k}x_{0}^{k}y^{k}}{1-y} dy \\
+= \int_{0}^{1} \frac{\sum_{k \geq 0}a_{k}x_{0}^{k} - \sum_{k \geq 0}a_{k}x_{0}^{k}y^{k}}{1-y} dy = \int_{0}^{1} \frac{f(x_{0}) - f(x_{0}y)}{1-y} dy
+\end{multline*}
 
 
 \end{document}

@@ -12,9 +12,15 @@
 
 \( H_{n}^{(u,0)} = H_{n}^{(u-1)} \)
 
-\( H_{n}^{(u,v)} + H_{n}^{(v,u)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{v}k^{u}} \overset{j \leftrightarrow k\ \textrm{in second sum}}{=} \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq k \leq j \leq n} \frac{1}{j^{u}k^{v}} = \)
+\begin{multline*}
+H_{n}^{(u,v)} + H_{n}^{(v,u)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{v}k^{u}} \\
+\overset{j \leftrightarrow k\ \textrm{in second sum}}{=} \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq k \leq j \leq n} \frac{1}{j^{u}k^{v}} =
+\end{multline*}
 
-\( = \sum_{1 \leq j, k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j=k \leq n} \frac{1}{j^{u}k^{v}} = \sum_{j=1}^{n} \frac{1}{j^{u}} \cdot \sum_{k=1}^{n} \frac{1}{k^{v}} + \sum_{j=1}^{n} \frac{1}{j^{u+v}} = H_{n}^{(u)} H_{n}^{(v)} + H_{n}^{(u+v)} \)
+\begin{multline*}
+= \sum_{1 \leq j, k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j=k \leq n} \frac{1}{j^{u}k^{v}} \\
+= \sum_{j=1}^{n} \frac{1}{j^{u}} \cdot \sum_{k=1}^{n} \frac{1}{k^{v}} + \sum_{j=1}^{n} \frac{1}{j^{u+v}} = H_{n}^{(u)} H_{n}^{(v)} + H_{n}^{(u+v)}
+\end{multline*}
 
 
 \end{document}

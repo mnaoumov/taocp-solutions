@@ -6,23 +6,34 @@
 \begin{document}
 \maketitle
 
-\( \sum_{k=0}^{n} H_{k}H_{n-k} = \sum_{k=0}^{n} \sum_{i=1}^{k} \sum_{j=1}^{n-k} \frac{1}{ij} \overset{\substack{s=i+j\\2 \leq s \leq n\\1 \leq i \leq k\\j = s - i\\1 \leq s -i \leq n-k\\1\leq i \leq s -1\\k \geq i\\k \leq n+i-s }}{=} \sum_{s=2}^{n} \sum_{i=1}^{s-1} \sum_{k=i}^{n+i-s}\frac{1}{i(s-i)} = \)
+\begin{multline*}
+\sum_{k=0}^{n} H_{k}H_{n-k} = \sum_{k=0}^{n} \sum_{i=1}^{k} \sum_{j=1}^{n-k} \frac{1}{ij} \overset{\substack{s=i+j\\2 \leq s \leq n\\1 \leq i \leq k\\j = s - i\\1 \leq s -i \leq n-k\\1\leq i \leq s -1\\k \geq i\\k \leq n+i-s }}{=} \sum_{s=2}^{n} \sum_{i=1}^{s-1} \sum_{k=i}^{n+i-s}\frac{1}{i(s-i)} =
+\end{multline*}
 
-\( = \sum_{s=2}^{n}\sum_{i=1}^{s-1} \frac{n+1-s}{i(s-i)} = \sum_{s=2}^{n} (n+1-s) \sum_{i=1}^{s-1} (\frac{1}{i} + \frac{1}{s-i})\frac{1}{s} = \sum_{s=2}^{n} \frac{n+1-s}{s}\sum_{i=1}^{s-1}(\frac{1}{i} + \frac{1}{s-i}) = \)
+\begin{multline*}
+= \sum_{s=2}^{n}\sum_{i=1}^{s-1} \frac{n+1-s}{i(s-i)} = \sum_{s=2}^{n} (n+1-s) \sum_{i=1}^{s-1} (\frac{1}{i} + \frac{1}{s-i})\frac{1}{s} \\
+= \sum_{s=2}^{n} \frac{n+1-s}{s}\sum_{i=1}^{s-1}(\frac{1}{i} + \frac{1}{s-i}) =
+\end{multline*}
 
-\( = \sum_{s=2}^{n} \frac{n+1-s}{s} \cdot 2H_{s-1} = 2(n+1) \sum_{s=2}^{n} \frac{H_{s-1}}{s} - \sum_{s=2}^{n} H_{s-1} \overset{t=s-1}{=} 2(n+1) (\sum_{s=2}^{n} \frac{H_{s-1}}{s} + \frac{H_{0}}{1}) - 2\sum_{t=1}^{n-1} H_{t} = \)
+\begin{multline*}
+= \sum_{s=2}^{n} \frac{n+1-s}{s} \cdot 2H_{s-1} = 2(n+1) \sum_{s=2}^{n} \frac{H_{s-1}}{s} - \sum_{s=2}^{n} H_{s-1} \\
+\overset{t=s-1}{=} 2(n+1) (\sum_{s=2}^{n} \frac{H_{s-1}}{s} + \frac{H_{0}}{1}) - 2\sum_{t=1}^{n-1} H_{t} =
+\end{multline*}
 
-\( = 2(n+1)\sum_{s=1}^{n}\frac{H_{s-1}}{s} - 2\sum_{t=1}^{n-1} H_{t} = 2(n+1)\sum_{s=1}^{n}\frac{H_{s} - \frac{1}{s}}{s} - 2\sum_{t=1}^{n-1} H_{t} = \)
+\[ = 2(n+1)\sum_{s=1}^{n}\frac{H_{s-1}}{s} - 2\sum_{t=1}^{n-1} H_{t} = 2(n+1)\sum_{s=1}^{n}\frac{H_{s} - \frac{1}{s}}{s} - 2\sum_{t=1}^{n-1} H_{t} = \]
 
-\( = 2(n+1)\sum_{s=1}^{n}\frac{H_{s}}{s} - 2(n+1)\sum_{s=1}^{n} \frac{1}{s^{2}} - \sum_{t=1}^{n-1} H_{t} = 2(n+1)\sum_{s=1}^{n}\frac{H_{s}}{s} - 2(n+1)H_{n}^{(2)} - 2\sum_{t=1}^{n-1} H_{t} =: A \)
+\begin{multline*}
+= 2(n+1)\sum_{s=1}^{n}\frac{H_{s}}{s} - 2(n+1)\sum_{s=1}^{n} \frac{1}{s^{2}} - \sum_{t=1}^{n-1} H_{t} \\
+= 2(n+1)\sum_{s=1}^{n}\frac{H_{s}}{s} - 2(n+1)H_{n}^{(2)} - 2\sum_{t=1}^{n-1} H_{t} =: A
+\end{multline*}
 
 \href{./1.2.7-21.pdf}{1.2.7\mbox{-}21} \( \implies \sum_{k=1}^{n} \frac{H_{k}}{k} = \frac{1}{2}({(H_{n})}^{2} + H_{n}^{(2)}) \)
 
 \( \sum_{k=1}^{n} H_{k} = (n+1)H_{n} - n \)
 
-\( A = 2(n+1)\cdot \frac{1}{2}({(H_{n})}^{2} + H_{n}^{(2)}) - 2(n+1)H_{n}^{(2)} - 2nH_{n-1} + 2(n - 1) = \)
+\[ A = 2(n+1)\cdot \frac{1}{2}({(H_{n})}^{2} + H_{n}^{(2)}) - 2(n+1)H_{n}^{(2)} - 2nH_{n-1} + 2(n - 1) = \]
 
-\( = (n+1)({(H_{n})}^{2} - H_{n}^{(2)}) - 2n(H_{n} - \frac{1}{n}) + 2n - 2 = (n+1)({(H_{n})}^{2} - H_{n}^{(2)}) - 2n(H_{n} - 1) \)
+\[ = (n+1)({(H_{n})}^{2} - H_{n}^{(2)}) - 2n(H_{n} - \frac{1}{n}) + 2n - 2 = (n+1)({(H_{n})}^{2} - H_{n}^{(2)}) - 2n(H_{n} - 1) \]
 
 
 \end{document}

@@ -18,19 +18,22 @@
 
 \[\sum_{k} a_{mkn} = 0 \tag{1}\label{eq:1}\]
 
-\( \binom{m+1}{k+1}_{\mathcal{F}} = \frac{F_{m+1}F_{m}\cdots F_{m-k+1}}{F_{k+1}F_{k}\cdots F_{1}} = \frac{F_{m+1}}{F_{k+1}} \binom{m}{k}_{\mathcal{F}} \)
+\[ \binom{m+1}{k+1}_{\mathcal{F}} = \frac{F_{m+1}F_{m}\cdots F_{m-k+1}}{F_{k+1}F_{k}\cdots F_{1}} = \frac{F_{m+1}}{F_{k+1}} \binom{m}{k}_{\mathcal{F}} \]
 
 \( F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{k+1} \binom{m+1}{k+1}_{\mathcal{F}} \)
 
 \(~\eqref{eq:1} \implies \sum_{k} a_{mkn}F_{m+1} = 0 \)
 
-\( 0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{k+1}\binom{m+1}{k+1}_{\mathcal{F}}{(-1)}^{\lceil\frac{(m+1)-(k+1)}{2}\rceil}F_{(n-1)+(k+1)}^{m-1} = \)
+\begin{multline*}
+0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} \\
+= \sum_{k} F_{k+1}\binom{m+1}{k+1}_{\mathcal{F}}{(-1)}^{\lceil\frac{(m+1)-(k+1)}{2}\rceil}F_{(n-1)+(k+1)}^{m-1} =
+\end{multline*}
 
-\( = \sum_{k} \binom{m+1}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{(m+1)-k}{2}\rceil}F_{(n-1)+k}^{m-1}F_{k} = \sum_{k} a_{m+1,k,n-1}\frac{F_{k}}{F_{n-1+k}} \)
+\[ = \sum_{k} \binom{m+1}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{(m+1)-k}{2}\rceil}F_{(n-1)+k}^{m-1}F_{k} = \sum_{k} a_{m+1,k,n-1}\frac{F_{k}}{F_{n-1+k}} \]
 
 \[(n \to n + 1) \implies \sum_{k} a_{m+1,k,n}\frac{F_{k}}{F_{n+k}} = 0 \tag{2}\label{eq:2}\]
 
-\( \binom{m+1}{k}_{\mathcal{F}} = \frac{F_{m+1}F_{m}\cdots F_{m-k+2}}{F_{k}\cdots F_{1}} = \frac{F_{m+1}}{F_{m-k+1}} \binom{m}{k}_{\mathcal{F}} \)
+\[ \binom{m+1}{k}_{\mathcal{F}} = \frac{F_{m+1}F_{m}\cdots F_{m-k+2}}{F_{k}\cdots F_{1}} = \frac{F_{m+1}}{F_{m-k+1}} \binom{m}{k}_{\mathcal{F}} \]
 
 \( F_{m+1} \binom{m}{k}_{\mathcal{F}} = F_{m-k+1} \binom{m+1}{k+1}_{\mathcal{F}} \)
 
@@ -42,9 +45,15 @@
 
 \(~\eqref{eq:1} \implies \sum_{k} a_{mkn}F_{m+1} = 0 \)
 
-\( 0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} = \sum_{k} F_{m-k+1}\binom{m+1}{k}_{\mathcal{F}}{(-1)}^{m-k+1} {(-1)}^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1} = \)
+\begin{multline*}
+0 = \sum_{k} F_{m+1}\binom{m}{k}_{\mathcal{F}}{(-1)}^{\lceil\frac{m-k}{2}\rceil}F_{n+k}^{m-1} \\
+= \sum_{k} F_{m-k+1}\binom{m+1}{k}_{\mathcal{F}}{(-1)}^{m-k+1} {(-1)}^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1} =
+\end{multline*}
 
-\( {(-1)}^{m+1} \sum_{k} \binom{m+1}{k}_{\mathcal{F}} {(-1)}^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1}{(-1)}^{k}F_{m-k+1} = {(-1)}^{m+1} \sum_{k} a_{m+1,k,n}\frac{{(-1)}^{k}F_{m-k+1}}{F_{n}+k} \)
+\begin{multline*}
+{(-1)}^{m+1} \sum_{k} \binom{m+1}{k}_{\mathcal{F}} {(-1)}^{\lceil \frac{m + 1 -k}{2}\rceil}F_{n+k}^{m-1}{(-1)}^{k}F_{m-k+1} \\
+= {(-1)}^{m+1} \sum_{k} a_{m+1,k,n}\frac{{(-1)}^{k}F_{m-k+1}}{F_{n}+k}
+\end{multline*}
 
 \[\implies \sum_{k} a_{m+1,k,n}\frac{{(-1)}^{k}F_{m-k+1}}{F_{n}+k} = 0 \tag{3}\label{eq:3}\]
 
