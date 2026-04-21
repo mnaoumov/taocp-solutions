@@ -1,5 +1,14 @@
-.claude/settings.local.json
-node_modules/
+.vscode
+*.iml
+.idea
+node_modules
+*.map
+.DS_Store
+dist
+coverage
+/tsconfig.tsbuildinfo
+/.env
+/.claude/settings.local.json
 
 # LaTeX build artifacts
 *.aux

@@ -11,13 +11,31 @@
     "node_modules",
     "package-lock.json"
   ],
+  "ignorePaths": [
+    "*.aux",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.log",
+    "*.pdf",
+    "*.synctex.gz",
+    ".husky",
+    "node_modules",
+    "package-lock.json"
+  ],
   "words": [
     "bijective",
     "Binet",
+    "chktex",
+    "chktexrc",
+    "commitlint",
+    "huskyrc",
     "latexmk",
+    "nonstopmode",
+    "Pdflatex",
     "Stirling",
     "summands",
     "synctex",
-    "TAOCP"
+    "TAOCP",
+    "TSES"
   ]
 }

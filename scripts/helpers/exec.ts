@@ -1,87 +1,60 @@
+import type { ChildProcessWithoutNullStreams } from 'node:child_process';
+
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
-import {
-  dirname,
-  join
-} from 'node:path/posix';
 import process from 'node:process';
 
 export type CommandPart = ExecArg | string;
 
 export interface ExecArg {
-  batchedArgs: string[];
+  readonly batchedArgs: readonly string[];
 }
 
-interface ExecDetailedOptions extends ExecOption {
-  withDetails: true;
+export interface ExecDetailedOptions extends ExecOption {
+  readonly shouldIncludeDetails: true;
 }
 
-interface ExecOption {
+export interface ExecOption {
   readonly cwd?: string;
   readonly isQuiet?: boolean;
-  readonly shouldFailIfCalledFromOutsideRoot?: boolean;
   readonly shouldIgnoreExitCode?: boolean;
   readonly shouldIncludeDetails?: boolean;
   readonly stdin?: string;
-  readonly stdout?: string;
 }
 
-interface ExecResult {
-  exitCode: null | number;
-  exitSignal: NodeJS.Signals | null;
-  stderr: string;
-  stdout: string;
+export interface ExecResult {
+  readonly exitCode: null | number;
+  readonly exitSignal: NodeJS.Signals | null;
+  readonly stderr: string;
+  readonly stdout: string;
 }
 
-interface ExecSimpleOptions extends ExecOption {
-  withDetails?: false;
+export interface ExecSimpleOptions extends ExecOption {
+  readonly shouldIncludeDetails?: false;
 }
 
-export async function execFromRoot(command: CommandPart[] | string, options?: ExecSimpleOptions): Promise<string>;
-export function execFromRoot(command: CommandPart[] | string, options: ExecDetailedOptions): Promise<ExecResult>;
-export function execFromRoot(command: CommandPart[] | string, options: ExecOption = {}): Promise<ExecResult | string> {
-  let root = getRootFolder(options.cwd);
-
-  if (!root) {
-    if (options.shouldFailIfCalledFromOutsideRoot ?? true) {
-      throw new Error('Could not find root folder');
-    }
-
-    root = options.cwd ?? process.cwd();
-  }
-
-  if (options.shouldIncludeDetails) {
-    return exec(command, { ...options, cwd: root, shouldIncludeDetails: true });
-  }
-
-  return exec(command, { ...options, cwd: root, shouldIncludeDetails: false });
-}
-
-export function getRootFolder(cwd?: string): null | string {
-  let currentFolder = toPosixPath(cwd ?? process.cwd());
-  while (currentFolder !== '.' && currentFolder !== '/') {
-    if (existsSync(join(currentFolder, 'package.json'))) {
-      return toPosixPath(currentFolder);
-    }
-    currentFolder = dirname(currentFolder);
-  }
-
-  return null;
-}
-
-export function toPosixPath(path: string): string {
-  return path.replaceAll('\\', '/');
-}
-
-async function exec(command: CommandPart[] | string, options?: ExecSimpleOptions): Promise<string>;
-async function exec(command: CommandPart[] | string, options: ExecDetailedOptions): Promise<ExecResult>;
-async function exec(command: CommandPart[] | string, options: ExecOption = {}): Promise<ExecResult | string> {
+export async function exec(command: CommandPart[] | string, options?: ExecSimpleOptions): Promise<string>;
+export function exec(command: CommandPart[] | string, options: ExecDetailedOptions): Promise<ExecResult>;
+export function exec(command: CommandPart[] | string, options: ExecOption = {}): Promise<ExecResult | string> {
   if (Array.isArray(command)) {
     const batchResult = handleBatchedCommand(command, options);
     if (batchResult) {
       return batchResult;
     }
-    command = toCommandLine(command.filter((part): part is string => typeof part === 'string'));
+    const args = command.filter((part): part is string => typeof part === 'string');
+    const commandLine = toCommandLine(args);
+
+    const maxCommandLength = getMaxCommandLength();
+    if (commandLine.length > maxCommandLength) {
+      return Promise.reject(
+        new Error(
+          `Command line is too long (${String(commandLine.length)} chars, max ${
+            String(maxCommandLength)
+          } on ${process.platform}). Consider using ExecArg with batchedArgs.`
+        )
+      );
+    }
+
+    return execString(commandLine, options, args);
   }
 
   const maxCommandLength = getMaxCommandLength();
@@ -98,25 +71,63 @@ async function exec(command: CommandPart[] | string, options: ExecOption = {}): 
   return execString(command, options);
 }
 
-function execString(command: string, options: ExecOption = {}): Promise<ExecResult | string> {
+function argvQuote(arg: string): string {
+  if (arg.length > 0 && !/[\s\t\n\v"]/.test(arg)) {
+    return arg;
+  }
+
+  const BACKSLASH_ESCAPE_FACTOR = 2;
+  let result = '"';
+  for (let i = 0; i < arg.length; i++) {
+    let numBackslashes = 0;
+    while (i < arg.length && arg[i] === '\\') {
+      i++;
+      numBackslashes++;
+    }
+
+    if (i === arg.length) {
+      result += '\\'.repeat(numBackslashes * BACKSLASH_ESCAPE_FACTOR);
+      break;
+    }
+
+    const ch = arg.charAt(i);
+    if (ch === '"') {
+      result += `${'\\'.repeat(numBackslashes * BACKSLASH_ESCAPE_FACTOR + 1)}"`;
+    } else {
+      result += '\\'.repeat(numBackslashes) + ch;
+    }
+  }
+
+  result += '"';
+  return result;
+}
+
+function toCommandLine(args: string[]): string {
+  return args.map((arg) => argvQuote(arg)).join(' ');
+}
+
+const CMD_META_RE = /[()%!^"<>&|]/g;
+
+const CHILD_ENV = {
+  DEBUG_COLORS: '1',
+  ...process.env
+};
+
+function cmdEscapeCommandLine(commandLine: string): string {
+  return commandLine.replace(CMD_META_RE, '^$&');
+}
+
+function execString(command: string, options: ExecOption = {}, rawArgs?: string[]): Promise<ExecResult | string> {
   const {
     cwd = process.cwd(),
     isQuiet: quiet = false,
     shouldIgnoreExitCode: ignoreExitCode = false,
-    shouldIncludeDetails: withDetails = false,
+    shouldIncludeDetails = false,
     stdin = ''
   } = options;
 
   return new Promise((resolve, reject) => {
-    const child = spawn(command, [], {
-      cwd,
-      env: {
-        DEBUG_COLORS: '1',
-        ...process.env
-      },
-      shell: true,
-      stdio: 'pipe'
-    });
+    const child = spawnViaShell(command, cwd, rawArgs);
 
     let stdout = '';
     let stderr = '';
@@ -148,11 +159,11 @@ function execString(command: string, options: ExecOption = {}): Promise<ExecResu
 
     child.on('close', (exitCode, exitSignal) => {
       if (exitCode !== 0 && !ignoreExitCode) {
-        reject(new Error(`Command failed with exit code ${exitCode ? String(exitCode) : '(null)'}`));
+        reject(new Error(`Command failed with exit code ${exitCode ? String(exitCode) : '(null)'}\n${stderr}`));
         return;
       }
 
-      if (!withDetails) {
+      if (!shouldIncludeDetails) {
         resolve(stdout);
         return;
       }
@@ -161,7 +172,7 @@ function execString(command: string, options: ExecOption = {}): Promise<ExecResu
         exitSignal,
         stderr,
         stdout
-      } as ExecResult);
+      });
     });
 
     child.on('error', (err) => {
@@ -170,7 +181,7 @@ function execString(command: string, options: ExecOption = {}): Promise<ExecResu
         return;
       }
 
-      if (!withDetails) {
+      if (!shouldIncludeDetails) {
         resolve(stdout);
         return;
       }
@@ -180,7 +191,7 @@ function execString(command: string, options: ExecOption = {}): Promise<ExecResu
         exitSignal: null,
         stderr,
         stdout
-      } as ExecResult);
+      });
     });
   });
 }
@@ -264,28 +275,34 @@ function isExecArg(part: CommandPart): part is ExecArg {
   return typeof part === 'object' && 'batchedArgs' in part;
 }
 
-function toCommandLine(args: string[]): string {
-  return args
-    .map((arg) => {
-      if (/[\s"\n]/.test(arg)) {
-        let escapedArg = arg;
-        escapedArg = escapedArg.replaceAll(/"/g, '\\"');
-        escapedArg = escapedArg.replaceAll(/\n/g, '\\n');
-        return `"${escapedArg}"`;
-      }
-      return arg;
-    })
-    .join(' ');
+function spawnViaShell(command: string, cwd: string, rawArgs?: string[]): ChildProcessWithoutNullStreams {
+  if (process.platform === 'win32' && command.includes('\n')) {
+    if (!rawArgs) {
+      throw new Error('Commands containing newlines cannot be executed through cmd.exe on Windows. Pass an argument array instead of a string.');
+    }
+    const [program, ...args] = rawArgs;
+    if (!program) {
+      throw new Error('Command array must not be empty');
+    }
+    return spawn(program, args, {
+      cwd,
+      env: CHILD_ENV,
+      stdio: 'pipe'
+    });
+  }
+
+  const shellCommand = process.platform === 'win32' ? cmdEscapeCommandLine(command) : command;
+  return spawn(shellCommand, [], {
+    cwd,
+    env: CHILD_ENV,
+    shell: true,
+    stdio: 'pipe'
+  });
 }
 
-function trimEnd(str: string, suffix: string, shouldValidate?: boolean): string {
+function trimEnd(str: string, suffix: string): string {
   if (str.endsWith(suffix)) {
     return str.slice(0, -suffix.length);
   }
-
-  if (shouldValidate) {
-    throw new Error(`String ${str} does not end with suffix ${suffix}`);
-  }
-
   return str;
 }

@@ -1,7 +1,41 @@
 import { spawn } from 'node:child_process';
-import { readdir, mkdtemp, rm } from 'node:fs/promises';
+import {
+  mkdtemp,
+  readdir,
+  rm
+} from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, dirname, resolve } from 'node:path';
+import {
+  dirname,
+  join,
+  resolve
+} from 'node:path';
+
+interface PdflatexResult {
+  exitCode: number;
+  output: string;
+}
+
+async function findTexFiles(dir: string): Promise<string[]> {
+  const results: string[] = [];
+
+  const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.name === 'node_modules' || entry.name === 'template.tex') {
+      continue;
+    }
+
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const subResults = await findTexFiles(fullPath);
+      results.push(...subResults);
+    } else if (entry.name.endsWith('.tex')) {
+      results.push(fullPath);
+    }
+  }
+
+  return results;
+}
 
 async function main(): Promise<void> {
   const rootDir = resolve('.');
@@ -31,7 +65,7 @@ async function main(): Promise<void> {
         }
       }
     } finally {
-      await rm(outDir, { recursive: true, force: true });
+      await rm(outDir, { force: true, recursive: true });
     }
   }
 
@@ -46,29 +80,8 @@ async function main(): Promise<void> {
   }
 }
 
-async function findTexFiles(dir: string): Promise<string[]> {
-  const results: string[] = [];
-
-  const entries = await readdir(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    if (entry.name === 'node_modules' || entry.name === 'template.tex') {
-      continue;
-    }
-
-    const fullPath = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      const subResults = await findTexFiles(fullPath);
-      results.push(...subResults);
-    } else if (entry.name.endsWith('.tex')) {
-      results.push(fullPath);
-    }
-  }
-
-  return results;
-}
-
-function runPdflatex(fileName: string, cwd: string, outDir: string): Promise<{ exitCode: number; output: string }> {
-  return new Promise((resolve) => {
+function runPdflatex(fileName: string, cwd: string, outDir: string): Promise<PdflatexResult> {
+  return new Promise((pdfResolve) => {
     const child = spawn(
       'pdflatex',
       ['-interaction=nonstopmode', '-halt-on-error', `-output-directory=${outDir}`, fileName],
@@ -86,12 +99,12 @@ function runPdflatex(fileName: string, cwd: string, outDir: string): Promise<{ e
     });
 
     child.on('close', (exitCode) => {
-      resolve({ exitCode: exitCode ?? 1, output });
+      pdfResolve({ exitCode: exitCode ?? 1, output });
     });
 
     child.on('error', (err) => {
       output += err.message;
-      resolve({ exitCode: 1, output });
+      pdfResolve({ exitCode: 1, output });
     });
   });
 }

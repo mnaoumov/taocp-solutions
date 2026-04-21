@@ -1,6 +1,32 @@
-import { readdir, stat } from 'node:fs/promises';
-import { join, dirname, resolve } from 'node:path';
-import { execFromRoot } from './root.ts';
+import { readdir } from 'node:fs/promises';
+import {
+  dirname,
+  join,
+  resolve
+} from 'node:path';
+
+import { exec } from './helpers/exec.ts';
+
+async function findTexFiles(dir: string): Promise<string[]> {
+  const results: string[] = [];
+
+  const entries = await readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.name === 'node_modules') {
+      continue;
+    }
+
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const subResults = await findTexFiles(fullPath);
+      results.push(...subResults);
+    } else if (entry.name.endsWith('.tex')) {
+      results.push(fullPath);
+    }
+  }
+
+  return results;
+}
 
 async function main(): Promise<void> {
   const rootDir = resolve('.');
@@ -14,9 +40,9 @@ async function main(): Promise<void> {
     const fileDir = dirname(texFile);
     const fileName = texFile.slice(fileDir.length + 1);
 
-    const result = await execFromRoot(
+    const result = await exec(
       `chktex -l "${rcFile}" "${fileName}"`,
-      { cwd: fileDir, isQuiet: true, shouldIgnoreExitCode: true, shouldIncludeDetails: true, shouldFailIfCalledFromOutsideRoot: false }
+      { cwd: fileDir, isQuiet: true, shouldIgnoreExitCode: true, shouldIncludeDetails: true }
     );
 
     const output = result.stdout + result.stderr;
@@ -38,27 +64,6 @@ async function main(): Promise<void> {
   } else {
     console.log(`All ${String(texFiles.length)} .tex files pass chktex.`);
   }
-}
-
-async function findTexFiles(dir: string): Promise<string[]> {
-  const results: string[] = [];
-
-  const entries = await readdir(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    if (entry.name === 'node_modules') {
-      continue;
-    }
-
-    const fullPath = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      const subResults = await findTexFiles(fullPath);
-      results.push(...subResults);
-    } else if (entry.name.endsWith('.tex')) {
-      results.push(fullPath);
-    }
-  }
-
-  return results;
 }
 
 await main();
