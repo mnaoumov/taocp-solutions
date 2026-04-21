@@ -34,7 +34,10 @@ Let \( k \) be some value such as \( R(k) \)
 
 \( \log_b{a_{k}} = \sum_{S(j)} \log_b{a_{j}} \)
 
-\( \log_{b}\prod_{R(j)} a_{j} = \sum_{S(j)} \log_b{a_{j}} + \sum_{T(j)} \log_b{a_{j}} = \sum_{S(j) \lor T(j)} \log_b{a_{j}} + \sum_{S(j) \land T(j)} \log_b{a_{j}} = \sum_{R(j)} \log_b{a_{j}} + 0 = \sum_{R(j)} \log_b{a_{j}} \)
+\begin{multline*}
+\log_{b}\prod_{R(j)} a_{j} = \sum_{S(j)} \log_b{a_{j}} + \sum_{T(j)} \log_b{a_{j}} = \sum_{S(j) \lor T(j)} \log_b{a_{j}} + \sum_{S(j) \land T(j)} \log_b{a_{j}} = \\
+\sum_{R(j)} \log_b{a_{j}} + 0 = \sum_{R(j)} \log_b{a_{j}}
+\end{multline*}
 
 
 \end{document}

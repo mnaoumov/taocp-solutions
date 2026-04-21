@@ -8,7 +8,10 @@
 
 \( V = V(x_{1}, x_{2}, \ldots x_{n}) = \left(\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ x_{1}^{2} & x_{2}^{2} & \cdots & x_{n}^{2} \\ \vdots & \vdots & \ddots & \vdots \\ x_{1}^{n} & x_{2}^{n} & \cdots & x_{n}^{n} \end{matrix}\right) \)
 
-\( \forall v: vV = (v_{1}x_{1}+v_{2}x_{1}^{2}+\cdots+v_{n}x_{1}^{n},\ldots, v_{1}x_{n}+v_{2}x_{n}^{2}+\cdots+v_{n}x_{n}^{n}) = (p_{v}(x_{1}),p_{v}(x_{2}),\ldots,p_{v}(x_{n})) \)
+\begin{multline*}
+\forall v: vV = (v_{1}x_{1}+v_{2}x_{1}^{2}+\cdots+v_{n}x_{1}^{n},\ldots, v_{1}x_{n}+v_{2}x_{n}^{2}+\cdots+v_{n}x_{n}^{n}) = \\
+(p_{v}(x_{1}),p_{v}(x_{2}),\ldots,p_{v}(x_{n}))
+\end{multline*}
 
 Where \( p_{v}(t) = v_{1}t + v_{2}t^{2} + \cdots + v_{n}t^{n} \)
 
@@ -54,7 +57,10 @@ Observe that \( p_{v}(0) = 0 \)
 
 \( l_{i}(t) = \frac{1}{q_{j}(x_{j})} (t-x_{0})(t-x_{1}) \cdot\ \cdots\ \cdot \widehat{(x-x_{j})} \cdot\ \cdots\ \cdot (x-x_{n}) = \frac{t}{q_{j}(x_{j})} (t-x_{1}) \cdot\ \cdots\ \cdot \widehat{(x-x_{j})} \cdot\ \cdots\ \cdot (x-x_{n}) = \)
 
-\( = \frac{t}{q_{j}(x_{j})} (t^{n} - e_{1}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-1} + e_{2}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-2} + \cdots + {(-1)}^{n} e_{n}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})) \)
+\begin{multline*}
+= \frac{t}{q_{j}(x_{j})} (t^{n} - e_{1}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-1} + e_{2}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-2} + \\
+\cdots + {(-1)}^{n} e_{n}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n}))
+\end{multline*}
 
 \( {(V^{-1})}_{ij} = [t^{j}] l_{i}(t) = \frac{{(-1)}^{n+1-j}e_{n+1-j}(x_{1},\ldots,\widehat{x_{i}},\ldots, x_{n})}{q_{j}(x_{j})} \)
 

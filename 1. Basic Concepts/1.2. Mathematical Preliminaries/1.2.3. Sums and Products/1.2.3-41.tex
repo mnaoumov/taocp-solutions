@@ -18,13 +18,26 @@
 
 \( (y'_{1},y'_{2},\ldots,y'_{n-1}) = (y_{1},y_{2},\ldots,\widehat{y_{i}},\ldots,y_{n}) \)
 
-\( \hat{C}_{ji} = \prod_{1 \leq k',l' \leq n-1}\frac{1}{x'_{k'}+y'_{l'}} \prod_{1 \leq k' < l' \leq n-1} (x'_{l'}-x'_{k'})(y'_{l'}-y'_{k'}) = \prod_{\substack{1 \leq k,l \leq n \\ k \neq j, l \neq i}}\frac{1}{x_{k}+y_{l}} \prod_{\substack{1 \leq k < l \leq n \\ k \neq j \\ l \neq j}} (x_{l}-x_{k}) \prod_{\substack{1 \leq k < l \leq n \\ k \neq i \\ l \neq i}} (y_{l}-y_{k}) \)
+\begin{multline*}
+\hat{C}_{ji} = \prod_{1 \leq k',l' \leq n-1}\frac{1}{x'_{k'}+y'_{l'}} \prod_{1 \leq k' < l' \leq n-1} (x'_{l'}-x'_{k'})(y'_{l'}-y'_{k'}) = \\
+\prod_{\substack{1 \leq k,l \leq n \\ k \neq j, l \neq i}}\frac{1}{x_{k}+y_{l}} \prod_{\substack{1 \leq k < l \leq n \\ k \neq j \\ l \neq j}} (x_{l}-x_{k}) \prod_{\substack{1 \leq k < l \leq n \\ k \neq i \\ l \neq i}} (y_{l}-y_{k})
+\end{multline*}
 
-\( {(C^{-1})}_{ij} = {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot \prod_{\substack{1 \leq k = j < l \leq n}} \frac{1}{x_{l}-x_{j}} \cdot \prod_{\substack{1 \leq k < l = j \leq n}} \frac{1}{x_{j}-x_{k}} \cdot \prod_{\substack{1 \leq k = i < l \leq n}} \frac{1}{y_{l}-y_{i}} \cdot \prod_{\substack{1 \leq k < l = i \leq n}} \frac{1}{y_{i}-y_{k}} = \)
+\begin{multline*}
+{(C^{-1})}_{ij} = {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot \\
+\prod_{\substack{1 \leq k = j < l \leq n}} \frac{1}{x_{l}-x_{j}} \cdot \prod_{\substack{1 \leq k < l = j \leq n}} \frac{1}{x_{j}-x_{k}} \cdot \\
+\prod_{\substack{1 \leq k = i < l \leq n}} \frac{1}{y_{l}-y_{i}} \cdot \prod_{\substack{1 \leq k < l = i \leq n}} \frac{1}{y_{i}-y_{k}} =
+\end{multline*}
 
-\( = {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot \prod_{\substack{j < r \leq n}} (-\frac{1}{x_{j}-x_{r}}) \cdot \prod_{\substack{1 \leq r < j}} \frac{1}{x_{j}-x_{r}} \cdot \prod_{\substack{i < r \leq n}} (-\frac{1}{y_{i}-y_{r}}) \cdot \prod_{\substack{1 \leq r < i \leq n}} \frac{1}{y_{i}-y_{r}} = \)
+\begin{multline*}
+= {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot \prod_{\substack{j < r \leq n}} (-\frac{1}{x_{j}-x_{r}}) \cdot \prod_{\substack{1 \leq r < j}} \frac{1}{x_{j}-x_{r}} \cdot \\
+\prod_{\substack{i < r \leq n}} (-\frac{1}{y_{i}-y_{r}}) \cdot \prod_{\substack{1 \leq r < i \leq n}} \frac{1}{y_{i}-y_{r}} =
+\end{multline*}
 
-\( = {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot {(-1)}^{n-j} \prod_{\substack{1 \leq r \leq n\\ r \neq j}} \frac{1}{x_{j}-x_{r}} \cdot {(-1)}^{n-i} \prod_{\substack{1 \leq r \leq n\\ r \neq i}} \frac{1}{y_{i}-y_{r}} = \)
+\begin{multline*}
+= {(-1)}^{i+j} \prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k}) \cdot \frac{1}{x_{j}+y_{i}} \cdot {(-1)}^{n-j} \prod_{\substack{1 \leq r \leq n\\ r \neq j}} \frac{1}{x_{j}-x_{r}} \cdot \\
+{(-1)}^{n-i} \prod_{\substack{1 \leq r \leq n\\ r \neq i}} \frac{1}{y_{i}-y_{r}} =
+\end{multline*}
 
 \( = \prod_{r=1}^{n}(x_{r} + y_{i})(x_{j}+y_{r}) \cdot \frac{1}{x_{j}+y_{i}} \prod_{\substack{1 \leq r \leq n\\ r \neq j}} \frac{1}{x_{j}-x_{r}} \prod_{\substack{1 \leq r \leq n\\ r \neq i}} \frac{1}{y_{i}-y_{r}} \)
 

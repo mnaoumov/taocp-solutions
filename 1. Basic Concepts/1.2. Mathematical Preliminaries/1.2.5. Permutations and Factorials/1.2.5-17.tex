@@ -6,17 +6,40 @@
 \begin{document}
 \maketitle
 
-\( \prod_{n \geq 1}\prod_{j=1}^{k} \frac{n + \alpha_{j}}{n + \beta_{j}} = \lim_{N\to\infty}\prod_{n=1}^{N}\prod_{j=1}^{k} \frac{n + \alpha_{j}}{n + \beta_{j}} = \lim_{N\to\infty}\prod_{j=1}^{k}\frac{(\alpha_{j} + 1)(\alpha_{j} + 2) \cdot\ \cdots\ \cdot (\alpha_{j} + N)}{(\beta_{j} + 1)(\beta_{j} + 2) \cdot\ \cdots\ \cdot (\beta_{j} + N)} = \)
+\begin{multline*}
+\prod_{n \geq 1}\prod_{j=1}^{k} \frac{n + \alpha_{j}}{n + \beta_{j}} = \lim_{N\to\infty}\prod_{n=1}^{N}\prod_{j=1}^{k} \frac{n + \alpha_{j}}{n + \beta_{j}} = \\
+\lim_{N\to\infty}\prod_{j=1}^{k}\frac{(\alpha_{j} + 1)(\alpha_{j} + 2) \cdot\ \cdots\ \cdot (\alpha_{j} + N)}{(\beta_{j} + 1)(\beta_{j} + 2) \cdot\ \cdots\ \cdot (\beta_{j} + N)} =
+\end{multline*}
 
-\( = \lim_{N\to\infty}\prod_{j=1}^{k}(\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!} \cdot {(N-1)}^{\alpha_{j}-\beta_{j}}) = \)
+\begin{multline*}
+= \lim_{N\to\infty}\prod_{j=1}^{k}( \\
+\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \\
+\frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!} \cdot {(N-1)}^{\alpha_{j}-\beta_{j}}) =
+\end{multline*}
 
-\( = \lim_{N\to\infty} \cdot {(N-1)}^{\sum_{j=1}^k{(\alpha_{j}-\beta_{j})}} \prod_{j=1}^{k}(\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) = \)
+\begin{multline*}
+= \lim_{N\to\infty} \cdot {(N-1)}^{\sum_{j=1}^k{(\alpha_{j}-\beta_{j})}} \prod_{j=1}^{k}( \\
+\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \\
+\frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) =
+\end{multline*}
 
-\( = \lim_{N\to\infty} \cdot {(N-1)}^{\sum_{j=1}^k{\alpha_{j}}-\sum_{j=1}^k{\beta_{j}}} \prod_{j=1}^{k}(\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) = \)
+\begin{multline*}
+= \lim_{N\to\infty} \cdot {(N-1)}^{\sum_{j=1}^k{\alpha_{j}}-\sum_{j=1}^k{\beta_{j}}} \prod_{j=1}^{k}( \\
+\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \\
+\frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) =
+\end{multline*}
 
-\( \overset{\sum_{j=1}^k{\alpha_{j}}-\sum_{j=1}^k{\beta_{j}} = 0}{=} \lim_{N\to\infty} \prod_{j=1}^{k}(\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) = \)
+\begin{multline*}
+\overset{\sum_{j=1}^k{\alpha_{j}}-\sum_{j=1}^k{\beta_{j}} = 0}{=} \lim_{N\to\infty} \prod_{j=1}^{k}( \\
+\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \\
+\frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) =
+\end{multline*}
 
-\( = \prod_{j=1}^{k} \lim_{N\to\infty} (\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) = \)
+\begin{multline*}
+= \prod_{j=1}^{k} \lim_{N\to\infty} ( \\
+\frac{{(N-1)}^{\beta_{j}+1}(N-1)!}{(\beta_{j} + 1)((\beta_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\beta_{j} + 1) + (N-1))} \cdot \\
+\frac{(\alpha_{j} + 1)((\alpha_{j} + 1) + 1) \cdot\ \cdots\ \cdot ((\alpha_{j} + 1) + (N-1))}{{(N-1)}^{\alpha_{j}+1}(N-1)!}) =
+\end{multline*}
 
 \( = \prod_{j=1}^{k} \frac{\Gamma(\beta_{j} + 1)}{\Gamma(\alpha_{j} + 1)} \)
 

@@ -10,9 +10,11 @@
 
 \( = x + x \sum_{1 \leq j \leq n - 1} jx^{j} + \sum_{1 \leq j \leq n - 1}x^{j+1} = x + xf_{n-1}(x) + \sum_{0 \leq j - 1 \leq n - 2}x^{j-1+2} = x + xf_{n-1}(x) + x^{2}(\frac{x^{n-1} - 1}{x - 1}) = x + x(f_{n}(x)-nx^{n}) + \frac{x^{2}(x^{n-1} - 1)}{x-1} \)
 
-\( (x-1)f_{n}(x) = -x + nx^{n+1} - \frac{x^{2}(x^{n-1}-1)}{x-1} = x(-1+nx^{n} - \frac{x(x^{n-1}-1)}{x-1}) = \frac{x((x-1)(-1+nx^{n}) - x(x^{n-1} - 1))}{x-1} = \)
-
-\( = \frac{x}{x-1} (-x + 1 + nx^{n+1} - nx^{n} - x^{n} + x) = \frac{x(nx^{n+1}-(n+1)x^{n}+1)}{x-1} \)
+\begin{multline*}
+(x-1)f_{n}(x) = -x + nx^{n+1} - \frac{x^{2}(x^{n-1}-1)}{x-1} = x(-1+nx^{n} - \frac{x(x^{n-1}-1)}{x-1}) = \\
+\frac{x((x-1)(-1+nx^{n}) - x(x^{n-1} - 1))}{x-1} = \\
+= \frac{x}{x-1} (-x + 1 + nx^{n+1} - nx^{n} - x^{n} + x) = \frac{x(nx^{n+1}-(n+1)x^{n}+1)}{x-1}
+\end{multline*}
 
 \( f_{n}(x) = \frac{x(nx^{n+1}-(n+1)x^{n}+1)}{{(x-1)}^{2}} \)
 

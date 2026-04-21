@@ -8,7 +8,7 @@
 
 \( a_{ij} = \prod_{r=1}^{j-1}(x_{i}+p_{r}) \cdot \prod_{r=j+1}^{n}(x_{i}+q_{r}) \)
 
-\( f_{js}(t) = \prod_{r=1}^{j-s-1}(t+p_{r}) \cdot \prod_{r=j+1}^{n}(t+q_{r}), 0 \leq s \leq j - 1 \leq n - 1 \)
+\[ f_{js}(t) = \prod_{r=1}^{j-s-1}(t+p_{r}) \cdot \prod_{r=j+1}^{n}(t+q_{r}), \quad 0 \leq s \leq j - 1 \leq n - 1 \]
 
 \( |A| = \left|\begin{matrix}f_{10}(x_{1}) & f_{20}(x_{1}) & \cdots & f_{n0}(x_{1}) \\ f_{10}(x_{2}) & f_{20}(x_{2}) & \cdots & f_{n0}(x_{2}) \\ \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{20}(x_{n}) & \cdots & f_{n0}(x_{n}) \end{matrix}\right| \)
 
@@ -18,9 +18,15 @@
 
 \( |A| \overset{\substack{C_{n} \leftarrow C_{n} - C_{n-1} \\ C_{n-1} \leftarrow C_{n-1} - C_{n-2} \\ \vdots \\ C_{2} \leftarrow C_{2} - C_{1} }}{=} \left|\begin{matrix}f_{10}(x_{1}) & (p_{1} - q_{2}) f_{21}(x_{1}) & \cdots & (p_{n-1} - q_{n})f_{n1}(x_{1}) \\ f_{10}(x_{2}) & (p_{1}-q_{2})f_{21}(x_{2}) & \cdots & (p_{n-1}-q_{n})f_{n1}(x_{2}) \\ \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & (p_{1}-q_{2})f_{21}(x_{n}) & \cdots & (p_{n-1}-q_{n})f_{n1}(x_{n}) \end{matrix}\right| = \)
 
-\( \overset{\substack{C_{2} \leftarrow \frac{C_{2}}{p_{1}-q_{2}}\\ C_{3} \leftarrow \frac{C_{3}}{p_{2}-q_{3}} \\ \vdots \\ C_{n} \leftarrow \frac{C_{n}}{p_{n-1}-q_{n}} }}{=} (p_{1}-q_{2})(p_{2}-q_{3}) \cdot\ \cdots\ \cdot (p_{n-1}-q_{n}) \left|\begin{matrix}f_{10}(x_{1}) & f_{21}(x_{1}) & \cdots & f_{n1}(x_{1}) \\ f_{10}(x_{2}) & f_{21}(x_{2}) & \cdots & f_{n1}(x_{2}) \\ \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{21}(x_{n}) & \cdots & f_{n1}(x_{n}) \end{matrix}\right| = \)
+\begin{multline*}
+\overset{\substack{C_{2} \leftarrow \frac{C_{2}}{p_{1}-q_{2}}\\ C_{3} \leftarrow \frac{C_{3}}{p_{2}-q_{3}} \\ \vdots \\ C_{n} \leftarrow \frac{C_{n}}{p_{n-1}-q_{n}} }}{=} (p_{1}-q_{2})(p_{2}-q_{3}) \cdot\ \cdots\ \cdot (p_{n-1}-q_{n}) \\
+\cdot \left|\begin{matrix}f_{10}(x_{1}) & f_{21}(x_{1}) & \cdots & f_{n1}(x_{1}) \\ f_{10}(x_{2}) & f_{21}(x_{2}) & \cdots & f_{n1}(x_{2}) \\ \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{21}(x_{n}) & \cdots & f_{n1}(x_{n}) \end{matrix}\right| =
+\end{multline*}
 
-\( \overset{\substack{C_{n} \leftarrow C_{n} - C_{n-1} \\ C_{n-1} \leftarrow C_{n-1} - C_{n-2} \\ \vdots \\ C_{2} \leftarrow C_{3} - C_{2} }}{=} (p_{1}-q_{2})(p_{2}-q_{3}) \cdot\ \cdots\ \cdot (p_{n-1}-q_{n}) \left|\begin{matrix}f_{10}(x_{1}) & f_{21}(x_{1}) & (p_{1}-q_{3}) f_{32}(x_{1}) & \cdots & (p_{n-2} -q_{n}) f_{n2}(x_{1}) \\ f_{10}(x_{2}) & f_{21}(x_{2}) & (p_{1}-q_{3})f_{32}(x_{2}) & \cdots & (p_{n-2}-q_{n})f_{n2}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{21}(x_{n}) & (p_{1}-q_{3}) f_{32}(x_{n}) & \cdots & (p_{n-2} - q_{n})f_{n2}(x_{n}) \end{matrix}\right| = \)
+\begin{multline*}
+\overset{\substack{C_{n} \leftarrow C_{n} - C_{n-1} \\ C_{n-1} \leftarrow C_{n-1} - C_{n-2} \\ \vdots \\ C_{2} \leftarrow C_{3} - C_{2} }}{=} (p_{1}-q_{2})(p_{2}-q_{3}) \cdot\ \cdots\ \cdot (p_{n-1}-q_{n}) \\
+\cdot \left|\begin{matrix}f_{10}(x_{1}) & f_{21}(x_{1}) & (p_{1}-q_{3}) f_{32}(x_{1}) & \cdots & (p_{n-2} -q_{n}) f_{n2}(x_{1}) \\ f_{10}(x_{2}) & f_{21}(x_{2}) & (p_{1}-q_{3})f_{32}(x_{2}) & \cdots & (p_{n-2}-q_{n})f_{n2}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{21}(x_{n}) & (p_{1}-q_{3}) f_{32}(x_{n}) & \cdots & (p_{n-2} - q_{n})f_{n2}(x_{n}) \end{matrix}\right| =
+\end{multline*}
 
 \( \overset{\substack{C_{3} \leftarrow \frac{C_{3}}{p_{1}-q_{3}}\\ C_{4} \leftarrow \frac{C_{4}}{p_{2}-q_{4}} \\ \vdots \\ C_{n} \leftarrow \frac{C_{n}}{p_{n-2}-q_{n}} }}{=} (p_{1}-q_{2})(p_{2}-q_{3}) \cdot\ \cdots\ \cdot (p_{n-1}-q_{n}) (p_{1}-q_{3})(p_{2}-q_{4}) \cdot\ \cdots\ \cdot (p_{n-2}-q_{n})\left|\begin{matrix}f_{10}(x_{1}) & f_{21}(x_{1}) & f_{32}(x_{1}) & \cdots & f_{n2}(x_{1}) \\ f_{10}(x_{2}) & f_{21}(x_{2}) & f_{32}(x_{2}) & \cdots & f_{n2}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ f_{10}(x_{n}) & f_{21}(x_{n}) & f_{32}(x_{n}) & \cdots & f_{n2}(x_{n}) \end{matrix}\right| = \)
 
@@ -36,21 +42,43 @@
 
 \( g_{n-j,j}(t) = t^{j} \)
 
-\( |A| \overset{\substack{C_{1} \leftarrow C_{1} - q_{2}C_{2} \\ C_{2} \leftarrow C_{2} - q_{3}C_{3} \\ \vdots \\ C_{n-1} \leftarrow C_{n-1} - q_{n}C_{n} }}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \left|\begin{matrix}g_{11}(x_{1}) & g_{21}(x_{1}) & g_{31}(x_{1}) & \cdots & g_{n0}(x_{1}) \\ g_{11}(x_{2}) & g_{21}(x_{2}) & g_{31}(x_{2}) & \cdots & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{11}(x_{n}) & g_{21}(x_{n}) & g_{31}(x_{n}) & \cdots & g_{n0}(x_{n}) \end{matrix}\right| = \)
+\begin{multline*}
+|A| \overset{\substack{C_{1} \leftarrow C_{1} - q_{2}C_{2} \\ C_{2} \leftarrow C_{2} - q_{3}C_{3} \\ \vdots \\ C_{n-1} \leftarrow C_{n-1} - q_{n}C_{n} }}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \\
+\cdot \left|\begin{matrix}g_{11}(x_{1}) & g_{21}(x_{1}) & g_{31}(x_{1}) & \cdots & g_{n0}(x_{1}) \\ g_{11}(x_{2}) & g_{21}(x_{2}) & g_{31}(x_{2}) & \cdots & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{11}(x_{n}) & g_{21}(x_{n}) & g_{31}(x_{n}) & \cdots & g_{n0}(x_{n}) \end{matrix}\right| =
+\end{multline*}
 
-\( \overset{\substack{C_{1} \leftarrow C_{1} - q_{3}C_{2} \\ C_{2} \leftarrow C_{2} - q_{4}C_{3} \\ \vdots \\ C_{n-2} \leftarrow C_{n-2} - q_{n}C_{n-1} }}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \left|\begin{matrix}g_{12}(x_{1}) & g_{22}(x_{1}) & g_{32}(x_{1}) & \cdots & g_{n-1,1}(x_{1}) & g_{n0}(x_{1}) \\ g_{12}(x_{2}) & g_{22}(x_{2}) & g_{32}(x_{2}) & \cdots & g_{n-1,1}(x_{2}) & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{11}(x_{n}) & g_{21}(x_{n}) & g_{31}(x_{n}) & \cdots & g_{n-1,1}(x_{n}) & g_{n0}(x_{n}) \end{matrix}\right| = \)
+\begin{multline*}
+\overset{\substack{C_{1} \leftarrow C_{1} - q_{3}C_{2} \\ C_{2} \leftarrow C_{2} - q_{4}C_{3} \\ \vdots \\ C_{n-2} \leftarrow C_{n-2} - q_{n}C_{n-1} }}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \\
+\cdot \left|\begin{matrix}g_{12}(x_{1}) & g_{22}(x_{1}) & g_{32}(x_{1}) & \cdots & g_{n-1,1}(x_{1}) & g_{n0}(x_{1}) \\ g_{12}(x_{2}) & g_{22}(x_{2}) & g_{32}(x_{2}) & \cdots & g_{n-1,1}(x_{2}) & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{11}(x_{n}) & g_{21}(x_{n}) & g_{31}(x_{n}) & \cdots & g_{n-1,1}(x_{n}) & g_{n0}(x_{n}) \end{matrix}\right| =
+\end{multline*}
 
-\( = \cdots = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \left|\begin{matrix}g_{1,n-1}(x_{1}) & g_{2,n-2}(x_{1}) & g_{3,n-3}(x_{1}) & \cdots & g_{n-1,1}(x_{1}) & g_{n0}(x_{1}) \\ g_{1,n-1}(x_{2}) & g_{2,n-2}(x_{2}) & g_{3,n-3}(x_{2}) & \cdots & g_{n-1,1}(x_{2}) & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{1,n-1}(x_{n}) & g_{2,n-2}(x_{n}) & g_{3,n-3}(x_{n}) & \cdots & g_{n-1,1}(x_{n}) & g_{n0}(x_{n}) \end{matrix}\right| \)
+\begin{multline*}
+= \cdots = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \\
+\cdot \left|\begin{matrix}g_{1,n-1}(x_{1}) & g_{2,n-2}(x_{1}) & g_{3,n-3}(x_{1}) & \cdots & g_{n-1,1}(x_{1}) & g_{n0}(x_{1}) \\ g_{1,n-1}(x_{2}) & g_{2,n-2}(x_{2}) & g_{3,n-3}(x_{2}) & \cdots & g_{n-1,1}(x_{2}) & g_{n0}(x_{2}) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ g_{1,n-1}(x_{n}) & g_{2,n-2}(x_{n}) & g_{3,n-3}(x_{n}) & \cdots & g_{n-1,1}(x_{n}) & g_{n0}(x_{n}) \end{matrix}\right|
+\end{multline*}
 
 \( = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \left|\begin{matrix}x_{1}^{n-1} & x_{1}^{n-2} & x_{1}^{n-3} & \cdots & x_{1} & 1 \\ x_{2}^{n-1} & x_{2}^{n-2} & x_{2}^{n-3} & \cdots & x_{2} & 1 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ x_{n}^{n-1} & x_{n}^{n-2} & x_{n}^{n-3} & \cdots & x_{n} & 1 \end{matrix}\right| \)
 
-\( \overset{\substack{R_{1} \leftarrow \frac{R_{1}}{x_{1}^{n}}\\ R_{2} \leftarrow \frac{R_{2}}{x_{2}^{n}}\\ \vdots \\ R_{n} \leftarrow \frac{R_{n}}{x_{n}^{n}} \\ \textrm{transpose}}}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot x_{1}^{n}x_{2}^{n} \cdot\ \cdots\ \cdot  x_{n}^{n}\left|\begin{matrix}\frac{1}{x_{1}} & \frac{1}{x_{2}} & \frac{1}{x_{3}} & \cdots & \frac{1}{x_{n}} \\ \frac{1}{x_{1}^{2}} & \frac{1}{x_{2}^{2}} & \frac{1}{x_{3}^{2}} & \cdots & \frac{1}{x_{n}^{2}} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \frac{1}{x_{1}^{n}} & \frac{1}{x_{2}^{n}} & \frac{1}{x_{3}^{n}} & \cdots & \frac{1}{x_{n}^{n}}\end{matrix}\right| = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot x_{1}^{n}x_{2}^{n} \cdot\ \cdots\ \cdot x_{n}^{n} \cdot |V(\frac{1}{x_{1}}, \frac{1}{x_{2}}, \ldots, \frac{1}{x_{n}})| = \)
+\begin{multline*}
+\overset{\substack{R_{1} \leftarrow \frac{R_{1}}{x_{1}^{n}}\\ R_{2} \leftarrow \frac{R_{2}}{x_{2}^{n}}\\ \vdots \\ R_{n} \leftarrow \frac{R_{n}}{x_{n}^{n}} \\ \textrm{transpose}}}{=} \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot x_{1}^{n}x_{2}^{n} \cdot\ \cdots\ \cdot  x_{n}^{n} \\
+\cdot \left|\begin{matrix}\frac{1}{x_{1}} & \frac{1}{x_{2}} & \frac{1}{x_{3}} & \cdots & \frac{1}{x_{n}} \\ \frac{1}{x_{1}^{2}} & \frac{1}{x_{2}^{2}} & \frac{1}{x_{3}^{2}} & \cdots & \frac{1}{x_{n}^{2}} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \frac{1}{x_{1}^{n}} & \frac{1}{x_{2}^{n}} & \frac{1}{x_{3}^{n}} & \cdots & \frac{1}{x_{n}^{n}}\end{matrix}\right| \\
+= \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot x_{1}^{n}x_{2}^{n} \cdot\ \cdots\ \cdot x_{n}^{n} \cdot |V(\frac{1}{x_{1}}, \frac{1}{x_{2}}, \ldots, \frac{1}{x_{n}})| =
+\end{multline*}
 
-\( = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} \frac{x_{i}-x_{j}}{x_{i}x_{j}} = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \cdot \prod_{1\leq i \leq n}\prod_{i < j \leq n} \frac{1}{x_{i}} \cdot \prod_{1\leq j \leq n}\prod_{1 \leq i < j} \frac{1}{x_{j}} = \)
+\begin{multline*}
+= \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} \frac{x_{i}-x_{j}}{x_{i}x_{j}} \\
+= \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \cdot \prod_{1\leq i \leq n}\prod_{i < j \leq n} \frac{1}{x_{i}} \cdot \prod_{1\leq j \leq n}\prod_{1 \leq i < j} \frac{1}{x_{j}} =
+\end{multline*}
 
-\( = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \cdot \prod_{1\leq i \leq n}\frac{1}{x_{i}^{n-i}} \cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{j-1}} = \)
+\begin{multline*}
+= \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \\
+\cdot \prod_{1\leq i \leq n}\frac{1}{x_{i}^{n-i}} \cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{j-1}} =
+\end{multline*}
 
-\( = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{n-j}} \cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{i-1}} = \)
+\begin{multline*}
+= \prod_{1 \leq i < j \leq n} (p_{i} - q_{j}) \cdot \prod_{j=1}^{n} x_{j}^{n-1} \cdot \prod_{1 \leq i < j \leq n} (x_{i}-x_{j}) \\
+\cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{n-j}} \cdot \prod_{1\leq j \leq n}\frac{1}{x_{j}^{i-1}} =
+\end{multline*}
 
 \( = \prod_{1 \leq i < j \leq n} (p_{i} - q_{j})(x_{i}-x_{j}) \)
 
@@ -62,7 +90,10 @@ If \( p_{j} := q_{j} := y_{j} \)
 
 \( f_{j0}(t) = \frac{h(t)}{t+y_{j}} \)
 
-\( A = \left(\begin{matrix}\frac{h(x_{1})}{x_{1}+y_{1}} & \frac{h(x_{1})}{x_{1}+y_{2}} & \cdots & \frac{h(x_{1})}{x_{1}+y_{n}} \\ \frac{h(x_{2})}{x_{2}+y_{1}} & \frac{h(x_{2})}{x_{2}+y_{2}} & \cdots & \frac{h(x_{2})}{x_{2}+y_{n}} \\ \vdots & \vdots & \ddots & \vdots \\ \frac{h(x_{n})}{x_{n}+y_{1}} & \frac{h(x_{n})}{x_{n}+y_{2}} & \cdots & \frac{h(x_{n})}{x_{n}+y_{n}} \end{matrix}\right) = \mathrm{diag}(h(x_{1}),h(x_{2}),\ldots,h(x_{n})) \cdot C(x_{1},y_{1},x_{2},y_{2},\ldots,x_{n}, y_{n}) \)
+\begin{multline*}
+A = \left(\begin{matrix}\frac{h(x_{1})}{x_{1}+y_{1}} & \frac{h(x_{1})}{x_{1}+y_{2}} & \cdots & \frac{h(x_{1})}{x_{1}+y_{n}} \\ \frac{h(x_{2})}{x_{2}+y_{1}} & \frac{h(x_{2})}{x_{2}+y_{2}} & \cdots & \frac{h(x_{2})}{x_{2}+y_{n}} \\ \vdots & \vdots & \ddots & \vdots \\ \frac{h(x_{n})}{x_{n}+y_{1}} & \frac{h(x_{n})}{x_{n}+y_{2}} & \cdots & \frac{h(x_{n})}{x_{n}+y_{n}} \end{matrix}\right) \\
+= \mathrm{diag}(h(x_{1}),h(x_{2}),\ldots,h(x_{n})) \cdot C(x_{1},y_{1},x_{2},y_{2},\ldots,x_{n}, y_{n})
+\end{multline*}
 
 \( |A| = h(x_{1})h(x_{2}) \cdot\ \cdots\ \cdot h(x_{n}) \prod_{1 \leq i,j \leq n}\frac{1}{x_{i}+y_{j}} \prod_{1 \leq i < j \leq n} (x_{j}-x_{i})(y_{j}-y_{i}) \)
 

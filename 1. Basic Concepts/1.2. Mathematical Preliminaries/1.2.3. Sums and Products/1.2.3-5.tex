@@ -12,9 +12,15 @@
 
 \( \sum_{S(j)}b_{j} = \lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}b_{j} + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}b_{j} \)
 
-\( \sum_{S(j)}a_{i}b_{j} = \lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}a_{i}b_{j} + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}a_{i}b_{j} = a_{i} (\lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}b_{j} + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}b_{j}) = a_{i} \sum_{S(j)}b_{j} \)
+\begin{multline*}
+\sum_{S(j)}a_{i}b_{j} = \lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}a_{i}b_{j} + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}a_{i}b_{j} = \\
+a_{i} (\lim_{m\to\infty}\sum_{\substack{S(j)\\0 \leq j < m}}b_{j} + \lim_{m\to\infty}\sum_{\substack{S(j)\\-m \leq i < 0}}b_{j}) = a_{i} \sum_{S(j)}b_{j}
+\end{multline*}
 
-\( \sum_{R(i)}(\sum_{S(j)}{a_{i}b_{j}}) = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(\sum_{S(j)}{a_{i}b_{j}}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(\sum_{S(j)}{a_{i}b_{j}}) = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(a_{i}\sum_{S(j)}{b_{j}}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(a_{i}\sum_{S(j)}{b_{j}}) {} = \)
+\begin{multline*}
+\sum_{R(i)}(\sum_{S(j)}{a_{i}b_{j}}) = \lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(\sum_{S(j)}{a_{i}b_{j}}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(\sum_{S(j)}{a_{i}b_{j}}) = \\
+\lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}(a_{i}\sum_{S(j)}{b_{j}}) + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}(a_{i}\sum_{S(j)}{b_{j}}) {} =
+\end{multline*}
 
 \( = (\lim_{n\to\infty}\sum_{\substack{R(i)\\0 \leq i < n}}a_{i} + \lim_{n\to\infty}\sum_{\substack{R(i)\\-n \leq i < 0}}a_{i})\sum_{S(j)}{b_{j}} = (\sum_{R(i)}a_{i})(\sum_{S(j)}b_{j}) \)
 

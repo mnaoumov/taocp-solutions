@@ -26,21 +26,37 @@ Induction by \( n \)
 
 \( (n \implies n + 1) \)
 
-\( f_{n+1,r}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \sum_{j=1}^{n+1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n + 1, k \neq j}(x_{j}-x_{k})} = \sum_{j=1}^{n+1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot \prod_{n \leq k \leq n + 1, k \neq j}(x_{j}-x_{k}) } = \sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n})(x_{j}-x_{n+1}) } + \frac{x_{n}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n}-x_{k})\cdot(x_{n}-x_{n+1})} + \frac{x_{n+1}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n+1}-x_{k})\cdot(x_{n+1}-x_{n})} =: A \)
+\begin{multline*}
+f_{n+1,r}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \sum_{j=1}^{n+1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n + 1, k \neq j}(x_{j}-x_{k})} = \\
+\sum_{j=1}^{n+1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot \prod_{n \leq k \leq n + 1, k \neq j}(x_{j}-x_{k}) } = \\
+\sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n})(x_{j}-x_{n+1}) } + \\
+\frac{x_{n}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n}-x_{k})\cdot(x_{n}-x_{n+1})} + \\
+\frac{x_{n+1}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n+1}-x_{k})\cdot(x_{n+1}-x_{n})} =: A
+\end{multline*}
 
 \( \frac{1}{(x_{j}-x_{n})(x_{j}-x_{n+1})} = \frac{1}{x_{n}-x_{n+1}} (\frac{1}{x_{j}-x_{n}} - \frac{1}{x_{j}-x_{n+1}}) \)
 
-\( A = \frac{1}{x_{n}-x_{n+1}}(\sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n})} - \sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n+1})} + \frac{x_{n}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n}-x_{k})} - \frac{x_{n+1}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n+1}-x_{k})}) =: B \)
+\begin{multline*}
+A = \frac{1}{x_{n}-x_{n+1}}(\sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n})} - \\
+\sum_{j=1}^{n-1}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n - 1, k \neq j}(x_{j}-x_{k}) \cdot (x_{j}-x_{n+1})} + \\
+\frac{x_{n}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n}-x_{k})} - \frac{x_{n+1}^{r}}{\prod_{1 \leq k \leq n - 1}(x_{n+1}-x_{k})}) =: B
+\end{multline*}
 
 \( x'_{1} := x_{1}, x'_{2} := x_{2}, \ldots, x'_{n-1} := x_{n-1}, x'_{n} := x_{n+1} \)
 
-\( B = \frac{1}{x_{n}-x_{n+1}}(\sum_{j=1}^{n}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x_{j}-x_{k})} - \sum_{j=1}^{n}\frac{{(x'_{j})}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x'_{j}-x'_{k})}) = \frac{f_{nr}(x_{1},x_{2},\ldots,x_{n-1},x_{n}) - f_{nr}(x'_{1},x'_{2},\ldots,x'_{n-1},x'_{n})}{x_{n}-x_{n+1}} \)
+\begin{multline*}
+B = \frac{1}{x_{n}-x_{n+1}}(\sum_{j=1}^{n}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x_{j}-x_{k})} - \sum_{j=1}^{n}\frac{{(x'_{j})}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x'_{j}-x'_{k})}) = \\
+\frac{f_{nr}(x_{1},x_{2},\ldots,x_{n-1},x_{n}) - f_{nr}(x'_{1},x'_{2},\ldots,x'_{n-1},x'_{n})}{x_{n}-x_{n+1}}
+\end{multline*}
 
 \( 0 \leq r \leq n - 2: f_{n+1,r}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \frac{0 - 0}{x_{n}-x_{n+1}} = 0 \)
 
 \( r = n - 1 = (n + 1) - 2: f_{n+1,n - 1}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \frac{1 - 1}{x_{n}-x_{n+1}} = 0 \)
 
-\( r = n = (n + 1) - 1: f_{n+1,n}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \frac{(x_{1} + x_{2} + \cdots x_{n-1} + x_{n}) - (x'_{1} + x'_{2} + \cdots x'_{n-1} + x'_{n})}{x_{n}-x_{n+1}} = \frac{x_{n}-x_{n+1}}{x_{n}-x_{n+1}} = 1 \)
+\begin{multline*}
+r = n = (n + 1) - 1: f_{n+1,n}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \\
+\frac{(x_{1} + x_{2} + \cdots x_{n-1} + x_{n}) - (x'_{1} + x'_{2} + \cdots x'_{n-1} + x'_{n})}{x_{n}-x_{n+1}} = \frac{x_{n}-x_{n+1}}{x_{n}-x_{n+1}} = 1
+\end{multline*}
 
 \( r = n + 1 \)
 
@@ -66,11 +82,19 @@ Induction by \( n \)
 
 \( r(t) = \sum_{i=0}^{n-1}r_{i}t^{i} \)
 
-\( f_{n+1,n+1}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \sum_{j=1}^{n+1} \left.\frac{t^{n+1}}{p'(t)}\right|_{t = x_{j}} = \sum_{j=1}^{n+1} \left.(at + b + \sum_{i=0}^{n-1}\frac{r_{i} t^{i}}{p'(t)})\right|_{t = x_{j}} = a \sum_{j=1}^{n+1} x_{j} + b \sum_{j=1}^{n+1} 1 + \sum_{i=0}^{n-1} r_{i} f_{n+1,i}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = aS + (n+1)b + 0 = aS + (n+1)b \)
+\begin{multline*}
+f_{n+1,n+1}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \sum_{j=1}^{n+1} \left.\frac{t^{n+1}}{p'(t)}\right|_{t = x_{j}} = \\
+\sum_{j=1}^{n+1} \left.(at + b + \sum_{i=0}^{n-1}\frac{r_{i} t^{i}}{p'(t)})\right|_{t = x_{j}} = \\
+a \sum_{j=1}^{n+1} x_{j} + b \sum_{j=1}^{n+1} 1 + \sum_{i=0}^{n-1} r_{i} f_{n+1,i}(x_{1},x_{2},\ldots,x_{n},x_{n+1}) = \\
+aS + (n+1)b + 0 = aS + (n+1)b
+\end{multline*}
 
-\( t^{n+1} = (at+b)p'(t) + r(t) = (at+b)((n+1)t^{n} - nSt^{n-1} + u'(t)) + r(t) = (n+1)at^{n+1} - naSt^{n} + atu'(t) + b(n+1)t^{n} - bnSt^{n-1} + bu'(t) + r(t) = \)
-
-\( = (n+1)at^{n+1} + t^{n}(-naS+b(n+1)) + \overbrace{(atu'(t)-bnSt^{n-1} + bu'(t) + r(t))}^{v(t)}, \deg v \leq n - 1 \)
+\begin{multline*}
+t^{n+1} = (at+b)p'(t) + r(t) = (at+b)((n+1)t^{n} - nSt^{n-1} + u'(t)) + r(t) = \\
+(n+1)at^{n+1} - naSt^{n} + atu'(t) + b(n+1)t^{n} - bnSt^{n-1} + bu'(t) + r(t) = \\
+= (n+1)at^{n+1} + t^{n}(-naS+b(n+1)) + \\
+\overbrace{(atu'(t)-bnSt^{n-1} + bu'(t) + r(t))}^{v(t)}, \deg v \leq n - 1
+\end{multline*}
 
 \( \implies 1 = (n+1)a, 0 = -naS + b(n+1) \)
 
@@ -86,7 +110,11 @@ Induction by \( n \)
 
 \( \mathrm{res}_{x_{j}}g_{r}(z) = \lim_{z\to x_{j}} g_{r}(z)(z-x_{j}) \)
 
-\( f_{nr} (x_{1},x_{2},\ldots,x_{n}) := \sum_{j=1}^{n}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x_{j}-x_{k})} = \sum_{j=1}^{n} (\mathrm{res}_{x_{j}}g_{r}(z)) = \frac{1}{2\pi i}\oint_{|z|<R}g_{r}(z)dz \), where \( R > \max\{|x_{1}|,|x_{2}|,\ldots,|x_{n}|\} \)
+\begin{multline*}
+f_{nr} (x_{1},x_{2},\ldots,x_{n}) := \sum_{j=1}^{n}\frac{x_{j}^{r}}{\prod_{1 \leq k \leq n, k \neq j}(x_{j}-x_{k})} = \\
+\sum_{j=1}^{n} (\mathrm{res}_{x_{j}}g_{r}(z)) = \frac{1}{2\pi i}\oint_{|z|<R}g_{r}(z)dz
+\end{multline*}
+where \( R > \max\{|x_{1}|,|x_{2}|,\ldots,|x_{n}|\} \)
 
 \( g_{r}(z) = \frac{z^{r-n}}{(1-\frac{x_{1}}{z})(1-\frac{x_{2}}{z}) \cdot\ \cdots\ \cdot (1-\frac{x_{n}}{z})} = z^{r-n} (\sum_{k_{1}=0}^\infty{(\frac{x_{1}}{z})}^{k_{1}}) \cdot\ \cdots\ \cdot (\sum_{k_{n}=0}^\infty{(\frac{x_{n}}{z})}^{k_{n}}) = z^{r-n} \sum_{k_{1}, k_{2}, \ldots, k_{n} \geq 0} z^{-(k_{1} + k_{2} + \cdots + k_{n})}x_{1}^{k_{1}} \cdot\ \cdots\ \cdot x_{n}^{k_{n}} \)
 

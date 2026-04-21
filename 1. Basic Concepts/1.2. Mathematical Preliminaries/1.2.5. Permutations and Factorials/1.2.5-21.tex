@@ -12,7 +12,8 @@
 
 \( D_{x} w = w_{1} u_{1} \)
 
-We need to prove \( D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{k_{1} + k_{2} + \cdots + k_{n} = j\\ k_{1} + 2k_{2} + \cdots + nk_{n} = n\\k_{1}, k2_, \ldots, k_{n} \geq 0}} w_{j} \frac{n!}{k_{1}!{(1!)}^{k_{1}}\ldots k_{n}! {(n!)}^{k_{n}}} u_{1}^{k_{1}}\ldots u_{n}^{k_{n}} \)
+We need to prove
+\[ D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{k_{1} + k_{2} + \cdots + k_{n} = j\\ k_{1} + 2k_{2} + \cdots + nk_{n} = n\\k_{1}, k2_, \ldots, k_{n} \geq 0}} w_{j} \frac{n!}{k_{1}!{(1!)}^{k_{1}}\ldots k_{n}! {(n!)}^{k_{n}}} u_{1}^{k_{1}}\ldots u_{n}^{k_{n}} \]
 
 Let \( \bar{k}=(k_{1},k_{2},\ldots): k_{i} \in \mathbb{N}_{0}, i \geq 0, \exists I \geq 1 \forall i \geq I: k_{i} = 0 \)
 
@@ -32,7 +33,7 @@ Let \( \bar{k}=(k_{1},k_{2},\ldots): k_{i} \in \mathbb{N}_{0}, i \geq 0, \exists
 
 With this notation, we need to prove
 
-\( D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{\bar{k}\\ s(\bar{k}) = j\\ t(\bar{k}) = n}} w_{j} c(\bar{k})u(\bar{k}) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} w_{s(\bar{k})} c(\bar{k})u(\bar{k}) =: A_{n}(w) \)
+\[ D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{\bar{k}\\ s(\bar{k}) = j\\ t(\bar{k}) = n}} w_{j} c(\bar{k})u(\bar{k}) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} w_{s(\bar{k})} c(\bar{k})u(\bar{k}) =: A_{n}(w) \]
 
 Prove by induction
 
@@ -44,7 +45,10 @@ Prove by induction
 
 \( (n \implies n + 1) \)
 
-\( D_{x}^{n+1} w = D_{x}^{1} (D_{x}^{n} w) = D_{x}^{1}(A_{n}(w)) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) D_{x}^{1}(w_{s(\bar{k})} u(\bar{k})) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k})(D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) + w_{s(\bar{k})} \cdot D_{x}^{1} u(\bar{k})) \)
+\begin{multline*}
+D_{x}^{n+1} w = D_{x}^{1} (D_{x}^{n} w) = D_{x}^{1}(A_{n}(w)) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) D_{x}^{1}(w_{s(\bar{k})} u(\bar{k})) = \\
+\sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k})(D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) + w_{s(\bar{k})} \cdot D_{x}^{1} u(\bar{k}))
+\end{multline*}
 
 \( D_{x}^{1}w_{s(\bar{k})} = D_{u}^{1}w_{s(\bar{k})} \cdot D_{x}^{1} u = w_{s(\bar{k}) + 1} u_{1} = w_{s(\bar{k} + \bar{e}_{1})} u(\bar{e}_{1}) \)
 
@@ -54,11 +58,17 @@ Prove by induction
 
 \( D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) = k_{0} w_{s(\bar{k} + \bar{e}_{1} - \bar{e}_{0})} u(\bar{k} + \bar{e}_{1} - \bar{e}_{0}) \)
 
-\( D_{x}^{1} u(\bar{k}) = D_{x}^{1} \left(\prod_{i \geq 1}u_{i}^{k_{i}}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_{i}^{k_{i}} \cdot D_{x}^{1}(u_{r}^{k_{r}})\right) = \sum_{r \geq 1} \left( u(\bar{k} - k_{r} \bar{e}_{r}) \cdot D_{x}^{1}(u_{r}^{k_{r}}) \right) \)
+\begin{multline*}
+D_{x}^{1} u(\bar{k}) = D_{x}^{1} \left(\prod_{i \geq 1}u_{i}^{k_{i}}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_{i}^{k_{i}} \cdot D_{x}^{1}(u_{r}^{k_{r}})\right) = \\
+\sum_{r \geq 1} \left( u(\bar{k} - k_{r} \bar{e}_{r}) \cdot D_{x}^{1}(u_{r}^{k_{r}}) \right)
+\end{multline*}
 
 \( D_{x}^{1}(u_{r}^{k_{r}}) = k_{r} u_{r}^{k_{r}-1} D_{x}^{1}(u_{r}) = k_{r} u_{r}^{k_{r} - 1} u_{r+1} = k_{r} u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \)
 
-\( D_{x}^{1} u(\bar{k}) = \sum_{r \geq 1} k_{r} \left( u\bigl(\bar{k} - k_{r} \bar{e}_{r}\bigr) \cdot u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \right) = \sum_{r \geq 1} k_{r} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) \)
+\begin{multline*}
+D_{x}^{1} u(\bar{k}) = \sum_{r \geq 1} k_{r} \left( u\bigl(\bar{k} - k_{r} \bar{e}_{r}\bigr) \cdot u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \right) = \\
+\sum_{r \geq 1} k_{r} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1})
+\end{multline*}
 
 \( s(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) = s(\bar{k}) - s(\bar{e}_{r}) + s(\bar{e}_{r+1}) = s(\bar{k}) \)
 
@@ -74,9 +84,16 @@ If \( l_{r+1} = 0 \implies k_{r+1} = -1 < 0 \implies \) such \( \bar{k} \) does 
 
 If \( l_{r+1} > 0 \implies \bar{k} = \bar{l} + \bar{e}_{r} - \bar{e}_{r + 1} \implies k_{r} = l_{r} + 1, r \geq 1 \)
 
-\( d(\bar{l}) = k_{0} c(\bar{l} + \bar{e}_{0} - \bar{e}_{1})[l_{1} > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) c(\bar{l} + \bar{e}_{r} - \bar{e}_{r + 1}) = \frac{n!}{\prod_{j \geq 2} l_{j}!{(j!)}^{l_{j}} \cdot (l_{1}-1)!}[l_{1} > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) \frac{n!}{\prod_{\substack{j \geq 1 \\ j \neq r, r+1}} l_{j}!{(j!)}^{l_{j}} \cdot (l_{r}+1)!{(r!)}^{l_{r}+1} (l_{r+1}-1)!{((r+1)!)}^{l_{r+1}-1}} = \)
+\begin{multline*}
+d(\bar{l}) = k_{0} c(\bar{l} + \bar{e}_{0} - \bar{e}_{1})[l_{1} > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) c(\bar{l} + \bar{e}_{r} - \bar{e}_{r + 1}) = \\
+\frac{n!}{\prod_{j \geq 2} l_{j}!{(j!)}^{l_{j}} \cdot (l_{1}-1)!}[l_{1} > 0] + \\
+\sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) \frac{n!}{\prod_{\substack{j \geq 1 \\ j \neq r, r+1}} l_{j}!{(j!)}^{l_{j}} \cdot (l_{r}+1)!{(r!)}^{l_{r}+1} (l_{r+1}-1)!{((r+1)!)}^{l_{r+1}-1}} =
+\end{multline*}
 
-\( = \frac{c(\bar{l})}{n+1} (l_{1} [l_{1} > 0] + \sum_{\substack{r \geq 1 \\ l_{r+1} > 0}} (l_{r} + 1)) \frac{l_{r+1} (r+1)!}{(l_{r} + 1)r!} = \frac{c(\bar{l})}{n+1}(l_{1} + \sum_{r \geq 1} l_{r+1}(r+1)) = \frac{c(\bar{l})}{n+1} t(\bar{l}) = c(\bar{l}) \)
+\begin{multline*}
+= \frac{c(\bar{l})}{n+1} (l_{1} [l_{1} > 0] + \sum_{\substack{r \geq 1 \\ l_{r+1} > 0}} (l_{r} + 1)) \frac{l_{r+1} (r+1)!}{(l_{r} + 1)r!} = \\
+\frac{c(\bar{l})}{n+1}(l_{1} + \sum_{r \geq 1} l_{r+1}(r+1)) = \frac{c(\bar{l})}{n+1} t(\bar{l}) = c(\bar{l})
+\end{multline*}
 
 
 \end{document}

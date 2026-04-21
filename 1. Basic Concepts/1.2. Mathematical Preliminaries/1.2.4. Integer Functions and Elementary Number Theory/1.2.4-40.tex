@@ -46,11 +46,17 @@ Take \( \lim_{n \to \infty} \)
 
 \( c_{0} = \int_{0}^{1} g(x) dx = 0 \)
 
-\( \forall n \in \mathbb{Z} \setminus \{ 0 \}: c_{n} = \int_{0}^{1} e^{2\pi i n x} g(x) dx = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} e^{2\pi i n x} g(x) dx \overset{t = x - \frac{k}{n}}{=} \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n (t + \frac{k}{n})} g(t + \frac{k}{n}) dt = \)
+\begin{multline*}
+\forall n \in \mathbb{Z} \setminus \{ 0 \}: c_{n} = \int_{0}^{1} e^{2\pi i n x} g(x) dx = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} e^{2\pi i n x} g(x) dx \overset{t = x - \frac{k}{n}}{=} \\
+\sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n (t + \frac{k}{n})} g(t + \frac{k}{n}) dt =
+\end{multline*}
 
-\( = \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} e^{2\pi i k} g(t + \frac{k}{n}) dt = \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} g(t + \frac{k}{n}) dt = \int_{0}^{\frac{1}{n}}e^{2\pi i n t}\sum_{k=0}^{n-1} g(t + \frac{k}{n}) dt = \)
+\begin{multline*}
+= \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} e^{2\pi i k} g(t + \frac{k}{n}) dt = \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} g(t + \frac{k}{n}) dt = \\
+\int_{0}^{\frac{1}{n}}e^{2\pi i n t}\sum_{k=0}^{n-1} g(t + \frac{k}{n}) dt =
+\end{multline*}
 
-\( = \int_{0}^{\frac{1}{n}}e^{2\pi i n t} g(nt) dt \overset{x=nt}{=} \int_{0}^{1}e^{2\pi i x} g(x) \frac{1}{n}dx = \frac{1}{n} \int_{0}^{1}e^{2\pi i x} g(x) dx = \frac{c_{1}}{n} \)
+\[ = \int_{0}^{\frac{1}{n}}e^{2\pi i n t} g(nt) dt \overset{x=nt}{=} \int_{0}^{1}e^{2\pi i x} g(x) \frac{1}{n}dx = \frac{1}{n} \int_{0}^{1}e^{2\pi i x} g(x) dx = \frac{c_{1}}{n} \]
 
 \( g(x) = \sum_{n \in \mathbb{Z} \setminus \{ 0 \}} \frac{c_{1}}{n} e^{-2\pi n i x} = a(x-\frac{1}{2}) \)
 

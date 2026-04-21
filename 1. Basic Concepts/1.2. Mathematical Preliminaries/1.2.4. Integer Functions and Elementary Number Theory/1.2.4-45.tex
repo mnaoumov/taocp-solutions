@@ -6,33 +6,55 @@
 \begin{document}
 \maketitle
 
-\( \sum_{0 \leq j < n}{f(\lfloor{\frac{mj}{n}}\rfloor)} = \sum_{0 \leq j \leq n}{f(\lfloor{\frac{mj}{n}}\rfloor)} - f(\lfloor{\frac{mn}{n}}\rfloor) = \sum_{0 \leq j \leq n}{f(\lfloor{\frac{mj}{n}}\rfloor)} - f(m) = \sum_{\substack{0 \leq j \leq n \\ r = \lfloor{\frac{mj}{n}} \rfloor}} {f(r)} - f(m) =: A \)
+\begin{multline*}
+\sum_{0 \leq j < n}{f(\lfloor{\frac{mj}{n}}\rfloor)} = \sum_{0 \leq j \leq n}{f(\lfloor{\frac{mj}{n}}\rfloor)} - f(\lfloor{\frac{mn}{n}}\rfloor) = \\
+\sum_{0 \leq j \leq n}{f(\lfloor{\frac{mj}{n}}\rfloor)} - f(m) = \sum_{\substack{0 \leq j \leq n \\ r = \lfloor{\frac{mj}{n}} \rfloor}} {f(r)} - f(m) =: A
+\end{multline*}
 
-\( r = \lfloor{\frac{mj}{n}}\rfloor \iff r \leq \frac{mj}{n} < r + 1 \iff \frac{nr}{m} \leq j < \frac{n(r+1)}{m} \iff \lceil{\frac{nr}{m}}\rceil \leq j < \lceil{\frac{n(r+1)}{m}}\rceil \)
+\begin{multline*}
+r = \lfloor{\frac{mj}{n}}\rfloor \iff r \leq \frac{mj}{n} < r + 1 \iff \frac{nr}{m} \leq j < \frac{n(r+1)}{m} \iff \\
+\lceil{\frac{nr}{m}}\rceil \leq j < \lceil{\frac{n(r+1)}{m}}\rceil
+\end{multline*}
 
 \( 0 \leq j < \lceil{\frac{n(r+1)}{m}}\rceil \iff 0 < \frac{n(r+1)}{m} \iff r > -1 \iff r \geq 0 \)
 
 \( \lceil{\frac{nr}{m}}\rceil \leq j \leq n \iff \frac{nr}{m} \leq n \iff r \leq m \)
 
-\( A = \sum_{0 \leq r \leq m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) - f(m) = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m) (\lceil{\frac{n(m+1)}{m}}\rceil - \lceil{\frac{nm}{m}}\rceil) - f(m) = \)
+\begin{multline*}
+A = \sum_{0 \leq r \leq m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) - f(m) = \\
+\sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m) (\lceil{\frac{n(m+1)}{m}}\rceil - \lceil{\frac{nm}{m}}\rceil) - f(m) =
+\end{multline*}
 
-\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(\lceil{n+\frac{1}{m}}\rceil - \lceil{n}\rceil - 1) = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(n+1 - n - 1) = \)
+\begin{multline*}
+= \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(\lceil{n+\frac{1}{m}}\rceil - \lceil{n}\rceil - 1) = \\
+\sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(n+1 - n - 1) =
+\end{multline*}
 
-\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) = \sum_{0 \leq r < m} f(r) \lceil{\frac{n(r+1)}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = \)
+\begin{multline*}
+= \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) = \\
+\sum_{0 \leq r < m} f(r) \lceil{\frac{n(r+1)}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil =
+\end{multline*}
 
-\( = \sum_{1 \leq r < m+1} f(r-1) \lceil{\frac{nr}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = \sum_{0 \leq r < m} f(r-1) \lceil{\frac{nr}{m}}\rceil - f(0-1)\lceil{\frac{n \cdot 0}{m}}\rceil + f(m-1)\lceil{\frac{n \cdot m}{m}}\rceil - \)
+\begin{multline*}
+= \sum_{1 \leq r < m+1} f(r-1) \lceil{\frac{nr}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = \\
+\sum_{0 \leq r < m} f(r-1) \lceil{\frac{nr}{m}}\rceil - f(0-1)\lceil{\frac{n \cdot 0}{m}}\rceil + f(m-1)\lceil{\frac{n \cdot m}{m}}\rceil -
+\end{multline*}
 
-\( - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = f(m-1)n + \sum_{0 \leq r < m} (f(r-1)-f(r)) \lceil{\frac{nr}{m}}\rceil \)
+\[ - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = f(m-1)n + \sum_{0 \leq r < m} (f(r-1)-f(r)) \lceil{\frac{nr}{m}}\rceil \]
 
 \bigskip\hrule\bigskip
 
 \( f(t) := \binom{t + 1}{k} \)
 
-\( A := \sum_{0 \leq j < n} \binom{\lfloor\frac{mj}{n}\rfloor + 1}{k} = \sum_{0 \leq j < n} f(\lfloor{\frac{mj}{n}}\rfloor) = n \binom{(m-1)+1}{k} + \sum_{0 \leq r < m} (\binom{(r-1)+1}{k}-\binom{r+1}{k}) \lceil{\frac{nr}{m}}\rceil = n \binom{m}{k} + \sum_{0 \leq r < m} (\binom{r}{k}-\binom{r+1}{k}) \lceil{\frac{nr}{m}}\rceil = \)
+\begin{multline*}
+A := \sum_{0 \leq j < n} \binom{\lfloor\frac{mj}{n}\rfloor + 1}{k} = \sum_{0 \leq j < n} f(\lfloor{\frac{mj}{n}}\rfloor) = \\
+n \binom{(m-1)+1}{k} + \sum_{0 \leq r < m} (\binom{(r-1)+1}{k}-\binom{r+1}{k}) \lceil{\frac{nr}{m}}\rceil = \\
+n \binom{m}{k} + \sum_{0 \leq r < m} (\binom{r}{k}-\binom{r+1}{k}) \lceil{\frac{nr}{m}}\rceil =
+\end{multline*}
 
 \( = n \binom{m}{k} - \sum_{0 \leq r < m} \binom{r}{k-1}\lceil{\frac{nr}{m}}\rceil \)
 
-\( \implies \sum_{0 \leq j < n} \binom{\lfloor\frac{mj}{n}\rfloor + 1}{k} + \sum_{0 \leq r < m} \binom{r}{k-1}\lceil{\frac{nr}{m}}\rceil = n \binom{m}{k} \)
+\[ \implies \sum_{0 \leq j < n} \binom{\lfloor\frac{mj}{n}\rfloor + 1}{k} + \sum_{0 \leq r < m} \binom{r}{k-1}\lceil{\frac{nr}{m}}\rceil = n \binom{m}{k} \]
 
 
 \end{document}

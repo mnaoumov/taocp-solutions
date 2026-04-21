@@ -54,7 +54,10 @@ In total you have to make \( n-j \) row swaps and \( n-i+1 \) column swaps
 
 \( \hat{C}_{ij} = {(-1)}^{n-j+n-i+1} D(n-1, x, y) \)
 
-\( D(n-1,x,y) \overset{R_{1} \leftarrow R_{1} - R_{n-1}}{=} \left|\begin{matrix}x  & 0 & 0 & \cdots & 0 & 0 \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \overset{\text{Expand by}\ R_{1}}{=} xD(n-2,x,y) \)
+\begin{multline*}
+D(n-1,x,y) \overset{R_{1} \leftarrow R_{1} - R_{n-1}}{=} \left|\begin{matrix}x  & 0 & 0 & \cdots & 0 & 0 \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \\
+\overset{\text{Expand by}\ R_{1}}{=} xD(n-2,x,y)
+\end{multline*}
 
 \( D(1,x,y) = |y| = y \)
 

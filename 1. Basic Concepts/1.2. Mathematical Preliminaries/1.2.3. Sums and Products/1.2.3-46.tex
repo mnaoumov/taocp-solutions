@@ -10,17 +10,26 @@
 
 \( c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} \)
 
-\( \det C = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\  c_{1\pi_{1}}c_{2\pi_{2}} \cdot \cdots \cdot c_{m\pi_{m}} = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{k_{1}=1}^{n} a_{1k_{1}}b_{k_{1}\pi_{1}})\cdot (\sum_{k_{2}=1}^{n} a_{2k_{2}}b_{k_{2}\pi_{2}}) \cdot \cdots \cdot (\sum_{k_{m}=1}^{n} a_{mk_{m}}b_{k_{m}\pi_{m}}) = \)
+\begin{multline*}
+\det C = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\  c_{1\pi_{1}}c_{2\pi_{2}} \cdot \cdots \cdot c_{m\pi_{m}} = \\
+\sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{k_{1}=1}^{n} a_{1k_{1}}b_{k_{1}\pi_{1}})\cdot (\sum_{k_{2}=1}^{n} a_{2k_{2}}b_{k_{2}\pi_{2}}) \cdot \cdots \cdot (\sum_{k_{m}=1}^{n} a_{mk_{m}}b_{k_{m}\pi_{m}}) =
+\end{multline*}
 
-\( = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}b_{k_{1}\pi_{1}}a_{2k_{2}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot a_{mk_{m}}b_{k_{m}\pi_{m}}) = \)
+\[ = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}b_{k_{1}\pi_{1}}a_{2k_{2}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot a_{mk_{m}}b_{k_{m}\pi_{m}}) = \]
 
-\( = \sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} (\sum_{\pi\in S_{m}} \mathrm{sign} \pi\ b_{k_{1}\pi_{1}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot b_{k_{m}\pi_{m}}) = \sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} \)
+\begin{multline*}
+= \sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} (\sum_{\pi\in S_{m}} \mathrm{sign} \pi\ b_{k_{1}\pi_{1}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot b_{k_{m}\pi_{m}}) = \\
+\sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}}
+\end{multline*}
 
 If \( k_{s} = k_{t}, s \neq t \implies \det B_{k_{1}k_{2}\cdots k_{m}} = 0 \)
 
 \( \implies \det C = \sum_{\substack{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n\\k_{s} \neq k_{t}, 1 \leq s < t \leq m}} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} = \)
 
-\( = \sum_{\substack{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n\\k_{s} \neq k_{t}, 1 \leq s < t \leq m }} \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \sum_{\substack{\tau \in S_{m}\\ k_{i} = j_{\tau_{i}}, 1 \leq i \leq m }} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} = \)
+\begin{multline*}
+= \sum_{\substack{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n\\k_{s} \neq k_{t}, 1 \leq s < t \leq m }} \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \sum_{\substack{\tau \in S_{m}\\ k_{i} = j_{\tau_{i}}, 1 \leq i \leq m }} \\
+a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} =
+\end{multline*}
 
 \( = \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \sum_{\tau \in S_{m}} a_{1j_{\tau_{1}}}a_{2j_{\tau_{2}}} \cdot \cdots \cdot a_{mj_{\tau_{m}}} \det B_{j_{\tau_{1}}j_{\tau_{2}}\ldots j_{\tau_{m}}} \)
 
@@ -82,9 +91,12 @@ If \( k_{s} = k_{t}, s \neq t \implies \det B_{k_{1}k_{2}\cdots k_{m}} = 0 \)
 
 \( c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} \)
 
-\( \det C = c_{11}c_{22} - c_{12}c_{21} = \sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2}) \)
+\[ \det C = c_{11}c_{22} - c_{12}c_{21} = \sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2}) \]
 
-\( (\sum_{k=1}^{n} a_{1k} b_{k1})(\sum_{k=1}^{n} a_{2k} b_{k2}) - (\sum_{k=1}^{n} a_{1k} b_{k2})(\sum_{k=1}^{n} a_{2k} b_{k1}) = \sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2}) \)
+\begin{multline*}
+(\sum_{k=1}^{n} a_{1k} b_{k1})(\sum_{k=1}^{n} a_{2k} b_{k2}) - (\sum_{k=1}^{n} a_{1k} b_{k2})(\sum_{k=1}^{n} a_{2k} b_{k1}) = \\
+\sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2})
+\end{multline*}
 
 \( a_{1k} := a_{k} \)
 
@@ -94,7 +106,10 @@ If \( k_{s} = k_{t}, s \neq t \implies \det B_{k_{1}k_{2}\cdots k_{m}} = 0 \)
 
 \( b_{2k} := d_{k} \)
 
-\( (\sum_{k=1}^{n} a_{k} b_{k})(\sum_{k=1}^{n} c_{k} d_{k}) - (\sum_{k=1}^{n} a_{k} d_{k})(\sum_{k=1}^{n} c_{k} b_{k}) = \sum_{1\leq s < t \leq n} (a_{s}c_{t}-a_{t}c_{s})(b_{s}d_{t}-b_{t}d_{s}) \)
+\begin{multline*}
+(\sum_{k=1}^{n} a_{k} b_{k})(\sum_{k=1}^{n} c_{k} d_{k}) - (\sum_{k=1}^{n} a_{k} d_{k})(\sum_{k=1}^{n} c_{k} b_{k}) = \\
+\sum_{1\leq s < t \leq n} (a_{s}c_{t}-a_{t}c_{s})(b_{s}d_{t}-b_{t}d_{s})
+\end{multline*}
 
 Binet formula (\href{./1.2.3-30.pdf}{1.2.3\mbox{-}30}):
 

@@ -8,9 +8,13 @@
 
 \( V = V(x_{1}, x_{2}, \ldots x_{n}) = \left(\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ x_{1}^{2} & x_{2}^{2} & \cdots & x_{n}^{2} \\ \vdots & \vdots & \ddots & \vdots \\ x_{1}^{n} & x_{2}^{n} & \cdots & x_{n}^{n} \end{matrix}\right) \)
 
-\( |V| \overset{\substack{R_{n} \leftarrow R_{n} - x_{1} R_{n-1}\\ R_{n-1} \leftarrow R_{n-1} - x_{1} R_{n-2}\\ \vdots\\ R_{2} \leftarrow R_{2} - x_{1} R_{1}}}{=} \left|\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ 0 & x_{2}^{2} - x_{1}x_{2} & \cdots & x_{n}^{2}-x_{1}x_{n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & x_{2}^{n} - x_{1}x_{2}^{n-1} & \cdots & x_{n}^{n}-x_{1} x_{2}^{n-1} \end{matrix}\right| = \left|\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ 0 & (x_{2}-x_{1})x_{2} & \cdots & (x_{n}-x_{1})x_{n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & (x_{2}-x_{1})x_{2}^{n-1} & \cdots & (x_{n}-x_{1})x_{n}^{n-1} x_{2}^{n-1} \end{matrix}\right| \overset{\text{Expand by}\ C_{1}}{=} \)
-
-\( = x_{1} \left|\begin{matrix} (x_{2}-x_{1})x_{2} & \cdots & (x_{n}-x_{1})x_{n} \\ \vdots & \ddots & \vdots \\ (x_{2} - x_{1})x_{2}^{n-1} & \cdots & (x_{n}-x_{1})x_{n}^{n-1} \end{matrix}\right| \overset{\substack{C_{1} \leftarrow \frac{C_{1}}{x_{2}-x_{1}} \\ C_{2} \leftarrow \frac{C_{1}}{x_{3}-x_{1}} \\ \vdots \\ C_{n-1} \leftarrow \frac{C_{n-1}}{x_{n}-x_{1}}}}{=} x_{1}(x_{2}-x_{1})(x_{3}-x_{1})\cdot \cdots \cdot(x_{n}-x_{1}) \left|\begin{matrix} x_{2} & \cdots & x_{n} \\ \vdots & \ddots & \vdots \\ x_{2}^{n-1} & \cdots & x_{n}^{n-1} \end{matrix}\right| = x_{1}(x_{2}-x_{1})(x_{3}-x_{1})\cdot \cdots \cdot(x_{n}-x_{1}) |V(x_{2}, x_{3}, \ldots, x_{n})| \)
+\begin{multline*}
+|V| \overset{\substack{R_{n} \leftarrow R_{n} - x_{1} R_{n-1}\\ R_{n-1} \leftarrow R_{n-1} - x_{1} R_{n-2}\\ \vdots\\ R_{2} \leftarrow R_{2} - x_{1} R_{1}}}{=} \left|\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ 0 & x_{2}^{2} - x_{1}x_{2} & \cdots & x_{n}^{2}-x_{1}x_{n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & x_{2}^{n} - x_{1}x_{2}^{n-1} & \cdots & x_{n}^{n}-x_{1} x_{2}^{n-1} \end{matrix}\right| = \\
+\left|\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ 0 & (x_{2}-x_{1})x_{2} & \cdots & (x_{n}-x_{1})x_{n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & (x_{2}-x_{1})x_{2}^{n-1} & \cdots & (x_{n}-x_{1})x_{n}^{n-1} x_{2}^{n-1} \end{matrix}\right| \overset{\text{Expand by}\ C_{1}}{=} \\
+= x_{1} \left|\begin{matrix} (x_{2}-x_{1})x_{2} & \cdots & (x_{n}-x_{1})x_{n} \\ \vdots & \ddots & \vdots \\ (x_{2} - x_{1})x_{2}^{n-1} & \cdots & (x_{n}-x_{1})x_{n}^{n-1} \end{matrix}\right| \overset{\substack{C_{1} \leftarrow \frac{C_{1}}{x_{2}-x_{1}} \\ C_{2} \leftarrow \frac{C_{1}}{x_{3}-x_{1}} \\ \vdots \\ C_{n-1} \leftarrow \frac{C_{n-1}}{x_{n}-x_{1}}}}{=} \\
+x_{1}(x_{2}-x_{1})(x_{3}-x_{1})\cdot \cdots \cdot(x_{n}-x_{1}) \left|\begin{matrix} x_{2} & \cdots & x_{n} \\ \vdots & \ddots & \vdots \\ x_{2}^{n-1} & \cdots & x_{n}^{n-1} \end{matrix}\right| = \\
+x_{1}(x_{2}-x_{1})(x_{3}-x_{1})\cdot \cdots \cdot(x_{n}-x_{1}) |V(x_{2}, x_{3}, \ldots, x_{n})|
+\end{multline*}
 
 \( |V(x_{1})| = |(x_{1})| = x_{1} \)
 

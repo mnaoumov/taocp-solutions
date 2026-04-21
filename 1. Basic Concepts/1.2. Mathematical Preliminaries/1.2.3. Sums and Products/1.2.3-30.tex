@@ -10,7 +10,12 @@
 
 \( (\sum_{j=1}^{n} a_{j}y_{j})(\sum_{j=1}^{n} b_{j}x_{j}) = \sum_{1 \leq j,k \leq n} a_{j}b_{k}x_{k}y_{j} =: Y \)
 
-\( A := \sum_{1 \leq j, k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j}) = \overbrace{\sum_{1 \leq j < k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{B} + \overbrace{\sum_{1 \leq k < j \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{C} + \overbrace{\sum_{1 \leq j = k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{D} \)
+\begin{multline*}
+A := \sum_{1 \leq j, k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j}) = \\
+\overbrace{\sum_{1 \leq j < k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{B} + \\
+\overbrace{\sum_{1 \leq k < j \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{C} + \\
+\overbrace{\sum_{1 \leq j = k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j})}^{D}
+\end{multline*}
 
 \( C = \sum_{1 \leq j < k \leq n } (a_{k}b_{j} - a_{j}b_{k})(x_{k}y_{j} - x_{j}y_{k}) = \sum_{1 \leq j < k \leq n } (a_{j}b_{k} - a_{k}b_{j})(x_{j}y_{k} - x_{k}y_{j}) = B \)
 
@@ -18,7 +23,12 @@
 
 \( A = 2B \)
 
-\( A = \sum_{1\leq j,k \leq n} (a_{j}b_{k}x_{j}y_{k} - a_{j}b_{k}x_{k}y_{j} - a_{k}b_{j}x_{j}y_{k} + a_{k}b_{j}x_{k}y_{j}) = (\sum_{j=1}^{n} a_{j}x_{j})(\sum_{k=1}^{n} b_{k}y_{k}) - (\sum_{j=1}^{n} a_{j}y_{j})(\sum_{k=1}^{n} b_{k}x_{k}) - (\sum_{j=1}^{n} b_{j}x_{j})(\sum_{k=1}^{n} a_{k}y_{k}) + (\sum_{j=1}^{n} b_{j}y_{j})(\sum_{k=1}^{n} a_{k}x_{k}) = X - Y - Y + X = 2(X-Y) \)
+\begin{multline*}
+A = \sum_{1\leq j,k \leq n} (a_{j}b_{k}x_{j}y_{k} - a_{j}b_{k}x_{k}y_{j} - a_{k}b_{j}x_{j}y_{k} + a_{k}b_{j}x_{k}y_{j}) = \\
+(\sum_{j=1}^{n} a_{j}x_{j})(\sum_{k=1}^{n} b_{k}y_{k}) - (\sum_{j=1}^{n} a_{j}y_{j})(\sum_{k=1}^{n} b_{k}x_{k}) - \\
+(\sum_{j=1}^{n} b_{j}x_{j})(\sum_{k=1}^{n} a_{k}y_{k}) + (\sum_{j=1}^{n} b_{j}y_{j})(\sum_{k=1}^{n} a_{k}x_{k}) = \\
+X - Y - Y + X = 2(X-Y)
+\end{multline*}
 
 \( \implies 2(X-Y) = B \implies X = Y + B \)
 
