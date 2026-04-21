@@ -24,19 +24,23 @@ Namely, \( x \prec y \overset{def}{\iff} |x| < |y| \) or \( |x|=|y|, x < 0, y > 
 
 i) \( \forall x, y, z \in \mathbb{Z}, x \prec y, y \prec z \) % chktex 10
 
+\begin{itemize}
 \item \( |x|<|y|, |y|<|z| \implies |x|<|z| \implies x \prec z \)
 \item \( |x|=|y|, x < 0, y > 0, |y| < |z| \implies |x| < |z| \implies x \prec z \)
 \item \( |x|<|y|, |y| = |z|, y < 0, z > 0, \implies |x| < |z| \implies x \prec z \)
 \item \( |x|=|y|, x < 0,  y > 0, |y| = |z|, y < 0, z > 0 \implies y > 0 \) and \( y < 0 \) --- contradiction
+\end{itemize}
 
 ii) \( \forall x, y \in \mathbb{Z} \) % chktex 10
 
+\begin{itemize}
 \item \( |x|<|y| \implies x \prec y \)
 \item \( |x|>|y| \implies y \prec x \)
 \item \( |x|=|y|, x < 0, y < 0 \implies x = y \)
 \item \( |x|=|y|, x < 0, y > 0 \implies x \prec y \)
 \item \( |x|=|y|, x > 0, y < 0 \implies y \prec x \)
 \item \( |x|=|y|, x > 0, y > 0 \implies x = y \)
+\end{itemize}
 
 iii) Let \( A \subset \mathbb{Z}, B \neq \varnothing, B = \{ |n|: n \in A \} \subset \mathbb{N}, B \neq \varnothing \) % chktex 10
 
@@ -44,6 +48,7 @@ iii) Let \( A \subset \mathbb{Z}, B \neq \varnothing, B = \{ |n|: n \in A \} \su
 
 \( x \in B \implies -x \in A \) or \( x \in A \)
 
+\begin{itemize}
 \item \( z := -x \in A. \forall y \in A: |y| \in B \implies x \leq |y| \implies |-x| \leq |y| \)
 \item \( |-x| < |y| \implies -x \prec y \)
 \item \( |-x|=|y|, -x < 0, y < 0 \implies x = y \)
@@ -52,6 +57,7 @@ iii) Let \( A \subset \mathbb{Z}, B \neq \varnothing, B = \{ |n|: n \in A \} \su
 \item \( |x| < |y| \implies x \prec y \)
 \item \( |x|=|y|, x > 0, y > 0 \implies x = y \)
 \item \( |x|=|y|, x > 0, y < 0 \implies y=-x \in S \) --- contradiction.
+\end{itemize}
 
 \( \implies \exists z \in A \forall y \in A: z \preceq y \)
 
@@ -79,16 +85,20 @@ i) \( x \prec y, y \prec z \) % chktex 10
 
 \( \exists l, 1 \leq l \leq n: y_{j} = z_{j}, 1 \leq j < l, y_{l} < z_{l} \)
 
+\begin{itemize}
 \item \( k = l \implies x_{j} = y_{j} = z_{j}, 1 \leq j < k, x_{k} < y_{k} = y_{l} < z_{l} = z_{k} \implies x \prec z \)
 \item \( k < l \implies x_{j}=y_{j}=z_{j}, 1 \leq j < k, x_{k} < y_{k} = z_{k} \implies x \prec z \)
 \item \( k > l \implies x_{j} = y_{j} = z_{j}, 1 \leq j < l, x_{l}=y_{l} < z_{l} \implies x \prec z \)
+\end{itemize}
 
 ii) \( \forall x, y \in T_{n} \) % chktex 10
 
+\begin{itemize}
 \item \( \forall j, 1 \leq j \leq n: x_{j}=y_{j} \implies x=y \)
 \item \( \exists k, 1 \leq k \leq n \forall j, 1 \leq j < k: x_{j} = y_{j}, x_{k} \neq y_{k} \)
 \item \( x_{k} < y_{k} \implies x \prec y \)
 \item \( x_{k} > y_{k} \implies y \prec x \)
+\end{itemize}
 
 iii) \( A \subset T_{n}, A \neq \varnothing \) % chktex 10
 
@@ -158,7 +168,7 @@ Take \( y = x^{(n+1)} = (a,a,\ldots,a,a,b) \in T_{n+1} \)
 
 \subsubsection*{f)} % chktex 9 % chktex 10
 
-\( (\implies) \) \( S \) satisfies (i)-(iii) % chktex 36
+\( (\implies) \) \( S \) satisfies (i) -- (iii).
 
 Assume exists sequence: \( \cdots \prec x_{3} \prec x_{2} \prec x_{1} \)
 
@@ -175,7 +185,7 @@ By definition: \( x_{n+1} \prec x_{n} \implies y \prec x \) --- contradicts to~\
 
 \( \implies \) such sequence doesn't exist
 
-\( (\Longleftarrow) \) \( S \) satisfies (i)-(ii) and doesn't exist sequence: \( \cdots \prec x_{3} \prec x_{2} \prec x_{1} \) % chktex 36
+\( (\Longleftarrow) \) \( S \) satisfies (i) -- (ii) and doesn't exist sequence: \( \cdots \prec x_{3} \prec x_{2} \prec x_{1} \)
 
 Assume (iii) doesn't hold \( \implies \) for some \( A \subset S, A \neq \varnothing, \nexists x \in A \forall y \in A: x \prec y \)
 

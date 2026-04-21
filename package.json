@@ -4,6 +4,7 @@
   "private": true,
   "description": "My solutions to exercises from The Art of Computer Programming by Donald E. Knuth.",
   "scripts": {
+    "build:latex": "jiti scripts/build-latex.ts",
     "format": "dprint fmt",
     "format:check": "dprint check",
     "lint:latex": "jiti scripts/lint-latex.ts",

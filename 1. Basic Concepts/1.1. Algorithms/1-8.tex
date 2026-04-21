@@ -14,9 +14,11 @@ The idea is to \( (m, n) \to (|m - n|, \min(m, n)) \).
 
 To find \( | m - n | \) we can remove middle \( ab \) until they all gone. We will be left with
 
+\begin{itemize}
 \item \( a^{m-n} \), if \( m > n \).
 \item \( \varepsilon \), empty word, if \( m = n \).
 \item \( b^{n-m} \), if \( m < n \).
+\end{itemize}
 
 \subsubsection*{1.2.}
 
@@ -40,9 +42,11 @@ Then we need to move \( c \) to the end. Via repeating replacement \( cb \to bc 
 
 Then we go to 2 and repeat. We will get
 
+\begin{itemize}
 \item \( a^{m-n}c^{n} \), if \( m > n \)
 \item \( c^{n} \), if \( m = n \)
 \item \( b^{n-m}c^{m} \), if \( m < n \)
+\end{itemize}
 
 \subsubsection*{2.3.}
 
