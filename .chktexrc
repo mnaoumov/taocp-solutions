@@ -17,10 +17,13 @@
 #  35  You should use \gcd, \min, \max, etc.
 #  36  You should put a space in front of parenthesis
 #
-# Only Warning 15 is globally suppressed here because it cannot be
-# suppressed with inline % chktex comments. All other suppressions
-# must use inline comments: % chktex N
+# Warning 15 is globally suppressed because it cannot be suppressed inline.
+# Warning 16 only appears in batch mode (multi-file) due to template resolution
+# and is suppressed to allow batch validation.
+#
+# IMPORTANT: Run chktex from each file's directory (or use the provided script)
+# so that \input{../../../template} resolves correctly with -I.
 CmdLine
 {
-    -n15
+    -n15 -n16 -I
 }

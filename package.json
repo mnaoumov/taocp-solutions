@@ -6,6 +6,7 @@
   "scripts": {
     "format": "dprint fmt",
     "format:check": "dprint check",
+    "lint:latex": "jiti scripts/lint-latex.ts",
     "lint:markdown": "markdownlint-cli2 \"**/*.md\" \"!node_modules\"",
     "lint:spelling": "cspell --no-progress \"**\""
   },
