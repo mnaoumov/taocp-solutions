@@ -31,11 +31,11 @@ function main(): void {
     let before: string[];
     if (exercisesHeaderIdx === -1) {
       before = lines.filter((l) => l.trim() !== '' || lines.indexOf(l) < lines.length - 1);
-      while (before.length > 0 && before[before.length - 1]?.trim() === '') {
-        before.pop();
-      }
     } else {
       before = lines.slice(0, exercisesHeaderIdx);
+    }
+    while (before.length > 0 && before[before.length - 1]?.trim() === '') {
+      before.pop();
     }
 
     const exerciseLinks = texFiles.map((f) => {
