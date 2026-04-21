@@ -16,9 +16,9 @@
 
 \( A = \sum_{0 \leq r \leq m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) - f(m) = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m) (\lceil{\frac{n(m+1)}{m}}\rceil - \lceil{\frac{nm}{m}}\rceil) - f(m) = \)
 
-\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)( (\lceil{n+\frac{1}{m}}\rceil - \lceil{n}\rceil - 1) = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(n+1 - n - 1) = \)
+\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(\lceil{n+\frac{1}{m}}\rceil - \lceil{n}\rceil - 1) = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) + f(m)(n+1 - n - 1) = \)
 
-\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) = \sum_{0 \leq r < m} f(r) \lceil{\frac{n(r+1)}{m}}\rceil - \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r)}{m}}\rceil = \)
+\( = \sum_{0 \leq r < m} f(r) (\lceil{\frac{n(r+1)}{m}}\rceil - \lceil{\frac{nr}{m}}\rceil) = \sum_{0 \leq r < m} f(r) \lceil{\frac{n(r+1)}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = \)
 
 \( = \sum_{1 \leq r < m+1} f(r-1) \lceil{\frac{nr}{m}}\rceil - \sum_{0 \leq r < m} f(r) \lceil{\frac{nr}{m}}\rceil = \sum_{0 \leq r < m} f(r-1) \lceil{\frac{nr}{m}}\rceil - f(0-1)\lceil{\frac{n \cdot 0}{m}}\rceil + f(m-1)\lceil{\frac{n \cdot m}{m}}\rceil - \)
 
@@ -35,4 +35,4 @@
 \( \implies \sum_{0 \leq j < n} \binom{\lfloor\frac{mj}{n}\rfloor + 1}{k} + \sum_{0 \leq r < m} \binom{r}{k-1}\lceil{\frac{nr}{m}}\rceil = n \binom{m}{k} \)
 
 
-\end{document} % chktex 17
+\end{document}

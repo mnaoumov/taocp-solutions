@@ -40,7 +40,7 @@ Prove by induction
 
 \( t(\bar{k}) = 1 \iff \bar{k} = (1,0,0,\ldots) = \bar{e}_{1} \)
 
- \( A_{1}(w) = w_{s(\bar{e}_{1})}c(\bar{e}_{1}))u(\bar{e}_{1})) = w_{1} \cdot 1 \cdot u_{1} \) % chktex 10
+ \( A_{1}(w) = w_{s(\bar{e}_{1})}c(\bar{e}_{1})u(\bar{e}_{1}) = w_{1} \cdot 1 \cdot u_{1} \)
 
 \( (n \implies n + 1) \)
 
@@ -54,11 +54,11 @@ Prove by induction
 
 \( D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) = k_{0} w_{s(\bar{k} + \bar{e}_{1} - \bar{e}_{0})} u(\bar{k} + \bar{e}_{1} - \bar{e}_{0}) \)
 
-\( D_{x}^{1} u(\bar{k})) = D_{x}^{1} \left(\prod_{i \geq 1}u_{i}^{k_{i}}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_{i}^{k_{i}} \cdot D_{x}^{1}(u_{r}^{k_{r}})\right) = \sum_{r \geq 1} \left( u(\bar{k} - k_{r} \bar{e}_{r}) \cdot D_{x}^{1}(u_{r}^{k_{r}}) \right) \) % chktex 10
+\( D_{x}^{1} u(\bar{k}) = D_{x}^{1} \left(\prod_{i \geq 1}u_{i}^{k_{i}}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_{i}^{k_{i}} \cdot D_{x}^{1}(u_{r}^{k_{r}})\right) = \sum_{r \geq 1} \left( u(\bar{k} - k_{r} \bar{e}_{r}) \cdot D_{x}^{1}(u_{r}^{k_{r}}) \right) \)
 
 \( D_{x}^{1}(u_{r}^{k_{r}}) = k_{r} u_{r}^{k_{r}-1} D_{x}^{1}(u_{r}) = k_{r} u_{r}^{k_{r} - 1} u_{r+1} = k_{r} u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \)
 
-\( D_{x}^{1} u(\bar{k})) = \sum_{r \geq 1} k_{r} \left( u\bigl(\bar{k} - k_{r} \bar{e}_{r}\bigr) \cdot u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \right) = \sum_{r \geq 1} k_{r} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) \) % chktex 10
+\( D_{x}^{1} u(\bar{k}) = \sum_{r \geq 1} k_{r} \left( u\bigl(\bar{k} - k_{r} \bar{e}_{r}\bigr) \cdot u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \right) = \sum_{r \geq 1} k_{r} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) \)
 
 \( s(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) = s(\bar{k}) - s(\bar{e}_{r}) + s(\bar{e}_{r+1}) = s(\bar{k}) \)
 
@@ -79,4 +79,4 @@ If \( l_{r+1} > 0 \implies \bar{k} = \bar{l} + \bar{e}_{r} - \bar{e}_{r + 1} \im
 \( = \frac{c(\bar{l})}{n+1} (l_{1} [l_{1} > 0] + \sum_{\substack{r \geq 1 \\ l_{r+1} > 0}} (l_{r} + 1)) \frac{l_{r+1} (r+1)!}{(l_{r} + 1)r!} = \frac{c(\bar{l})}{n+1}(l_{1} + \sum_{r \geq 1} l_{r+1}(r+1)) = \frac{c(\bar{l})}{n+1} t(\bar{l}) = c(\bar{l}) \)
 
 
-\end{document} % chktex 17
+\end{document}

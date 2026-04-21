@@ -122,7 +122,7 @@ Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m \)
 
 \( f(x) = \log |2 \sin \pi x | \)
 
-\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} \log |2 \sin \pi (x + \frac{k}{n}| = \log |\prod_{k=0}^{n-1}(2\sin \pi (x + \frac{k}{n}))| =: A \)
+\( \sum_{k=0}^{n-1} f(x+\frac{k}{n}) = \sum_{k=0}^{n-1} \log |2 \sin \pi (x + \frac{k}{n})| = \log |\prod_{k=0}^{n-1}(2\sin \pi (x + \frac{k}{n}))| =: A \)
 
 \( \omega_{k} := e^{-\frac{2\pi i k}{n}} \)
 
@@ -130,7 +130,7 @@ Assume \( f(x+\frac{k}{n}) = 1 \implies x + \frac{k}{n} = r\pi + m \)
 
 \( A = \overbrace{e^{i \pi \sum_{k=0}^{n-1}(x+\frac{k}{n}-\frac{1}{2})}}^{B} \overbrace{\prod_{k=0}^{n-1} (1-e^{-2\pi i x}\omega_{k})}^{C} \)
 
-a) \( \implies B = e^{i \pi (nx - \frac{1}{2})} \)
+(a) \( \implies B = e^{i \pi (nx - \frac{1}{2})} \)
 
 \( g(t) := \prod_{k=0}^{n-1} (1-t\omega_{k}) \)
 
@@ -197,4 +197,4 @@ For \( k \geq n - r: \lfloor x + \frac{k}{n} \rfloor = q + 1 \)
 \( = \sum_{k=-r}^{n-r-1} f(x+\frac{k+r}{n} - q-\frac{r}{n}) = \sum_{k=0}^{n-1} f(x-q-\frac{r}{n}+\frac{k}{n}) = f(n(x-q-\frac{r}{n})) = f(nx - nq - r) = f(nx - m) = fr(nx - \lfloor nx \rfloor) = g(nx) \)
 
 
-\end{document} % chktex 17
+\end{document}
