@@ -1,21 +1,8 @@
 # chktex configuration for TAOCP solutions
 #
-# Warning reference (https://www.nongnu.org/chktex/ChkTeX.pdf):
-#   1  Command terminated with space
-#   2  Non-breaking space (~) should have been used before reference
-#   3  Enclose previous parenthesis with {}
-#   8  Wrong length of dash (may be "-" vs "--" vs "---")
-#   9  ) expected, found ...
-#  10  Solo ) found
-#  12  Interword spacing (\ ) after abbreviation period
-#  13  Intersentence spacing (\@) before punctuation
-#  15  No match for ( — cannot be suppressed inline
-#  16  Mathmode still on at end of document
-#  17  Number of ( doesn't match number of )
-#  25  You might wish to put single-char subscripts in {}
-#  27  Could not execute LaTeX command
-#  35  You should use \gcd, \min, \max, etc.
-#  36  You should put a space in front of parenthesis
+# Inline suppressions used in the project:
+#   9  `)' expected, found ... — half-open intervals [a,b) and (a,b]
+#  17  Number of ( doesn't match number of ) — cascades from chktex 9
 #
 # IMPORTANT: Run chktex from each file's directory (or use the provided script)
 # so that \input{../../../template} resolves correctly with -I.
