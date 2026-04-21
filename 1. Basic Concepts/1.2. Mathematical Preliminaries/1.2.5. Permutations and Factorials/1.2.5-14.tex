@@ -1,66 +1,66 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.5-14}
+\title{1.2.5-14} % chktex 8
 
 \begin{document}
 \maketitle
 
-Introduce the following notation: \( a = \langle{b} \rangle_p \overset{\mathrm{def}}{\iff} a \mod p = b \mod p \)
+Introduce the following notation: \( a = \langle{b} \rangle_{p} \overset{\mathrm{def}}{\iff} a \mod p = b \mod p \)
 
-\( n = \sum_{i \geq 0}{a_i p^i} \)
+\( n = \sum_{i \geq 0}{a_{i} p^{i}} \)
 
-\( a_i = 0, i > k \)
+\( a_{i} = 0, i > k \)
 
-\( n_j := \lfloor{\frac{n}{p^j}}\rfloor = \sum_{i \geq j}{a_i p^{i-j}} \)
+\( n_{j} := \lfloor{\frac{n}{p^{j}}}\rfloor = \sum_{i \geq j}{a_{i} p^{i-j}} \)
 
-\( n = n_0 = pn_1 + a_0 \)
+\( n = n_{0} = pn_{1} + a_{0} \)
 
-\( n_k = a_k \)
+\( n_{k} = a_{k} \)
 
 \( n! = \)
 
-\( = \overbrace{1 \cdot 2  \cdot\ \cdots\ \cdot (p - 1)}^A \cdot \overbrace{p}^B \cdot \)
+\( = \overbrace{1 \cdot 2  \cdot\ \cdots\ \cdot (p - 1)}^{A} \cdot \overbrace{p}^{B} \cdot \)
 
-\( \cdot \overbrace{(p+1)(p+2) \cdot\ \cdots\ \cdot (p+(p-1))}^A \cdot \overbrace{2p}^B \cdot \)
+\( \cdot \overbrace{(p+1)(p+2) \cdot\ \cdots\ \cdot (p+(p-1))}^{A} \cdot \overbrace{2p}^{B} \cdot \)
 
-\( \cdot \overbrace{(2p+1)(2p+2) \cdot\ \cdots\ \cdot (2p+(p-1))}^A \cdot \overbrace{3p}^B \cdot \)
+\( \cdot \overbrace{(2p+1)(2p+2) \cdot\ \cdots\ \cdot (2p+(p-1))}^{A} \cdot \overbrace{3p}^{B} \cdot \)
 
 \( \cdots \)
 
-\( \cdot \overbrace{((n_1-1)p+1)((n_1-1)p+2) \cdot\ \cdots\ \cdot ((n_1-1)p+(p-1))}^A \cdot \overbrace{n_1p}^B \cdot \)
+\( \cdot \overbrace{((n_{1}-1)p+1)((n_{1}-1)p+2) \cdot\ \cdots\ \cdot ((n_{1}-1)p+(p-1))}^{A} \cdot \overbrace{n_{1}p}^{B} \cdot \)
 
-\( \cdot \overbrace{(n_1p+1)(n_1p+2) \cdot\ \cdots\ \cdot (n_1p+a_0)}^C \)
+\( \cdot \overbrace{(n_{1}p+1)(n_{1}p+2) \cdot\ \cdots\ \cdot (n_{1}p+a_{0})}^{C} \)
 
-\( \forall j, 0 \leq j \leq n_1 - 1: (jp+1)(jp+2) \cdot\ \cdots\ \cdot (jp+p-1) = \langle{1 \cdot 2 \cdots (p-1)}\rangle_p = \langle{(p-1)!}\rangle_p = \langle{-1}\rangle_p \)
+\( \forall j, 0 \leq j \leq n_{1} - 1: (jp+1)(jp+2) \cdot\ \cdots\ \cdot (jp+p-1) = \langle{1 \cdot 2 \cdots (p-1)}\rangle_{p} = \langle{(p-1)!}\rangle_{p} = \langle{-1}\rangle_{p} \)
 
-\( \implies A = \langle(-1)^{n_1}\rangle_p \)
+\( \implies A = \langle{(-1)}^{n_{1}}\rangle_{p} \)
 
-\( B = n_1!p^{n_1} \)
+\( B = n_{1}!p^{n_{1}} \)
 
-\( C = \langle{a_0!}\rangle_p \)
+\( C = \langle{a_{0}!}\rangle_{p} \)
 
-\( n! = n_0! = ABC = \langle{(-1)^{n_1}}\rangle_p n_1!p^{n_1}\langle{a_0!}\rangle_p \)
+\( n! = n_{0}! = ABC = \langle{{(-1)}^{n_{1}}}\rangle_{p} n_{1}!p^{n_{1}}\langle{a_{0}!}\rangle_{p} \)
 
 Similarly
 
-\( n_1! = \langle{(-1)^{n_2}}\rangle_p n_2!p^{n_2}\langle{a_1!}\rangle_p \)
+\( n_{1}! = \langle{{(-1)}^{n_{2}}}\rangle_{p} n_{2}!p^{n_{2}}\langle{a_{1}!}\rangle_{p} \)
 
 \( \vdots \)
 
-\( n_{k-1}! = \langle{(-1)^{n_k}}\rangle_p n_k!p^{n_k}\langle{a_{k-1}!}\rangle_p \)
+\( n_{k-1}! = \langle{{(-1)}^{n_{k}}}\rangle_{p} n_{k}!p^{n_{k}}\langle{a_{k-1}!}\rangle_{p} \)
 
-\( n_k! = a_k! \)
+\( n_{k}! = a_{k}! \)
 
-\( n! = (\langle{(-1)^{n_1}}\rangle_p p^{n_1}\langle{a_0!}\rangle_p) \cdot (\langle{(-1)^{n_2}}\rangle_p p^{n_2}\langle{a_1!}\rangle_p) \cdot\ \cdots\ \cdot \cdot (\langle{(-1)^{n_k}}\rangle_p p^{n_k}\langle{a_{k-1}!}\rangle_p) \cdot a_k! = \)
+\( n! = (\langle{{(-1)}^{n_{1}}}\rangle_{p} p^{n_{1}}\langle{a_{0}!}\rangle_{p}) \cdot (\langle{{(-1)}^{n_{2}}}\rangle_{p} p^{n_{2}}\langle{a_{1}!}\rangle_{p}) \cdot\ \cdots\ \cdot \cdot (\langle{{(-1)}^{n_{k}}}\rangle_{p} p^{n_{k}}\langle{a_{k-1}!}\rangle_{p}) \cdot a_{k}! = \)
 
-\( = \langle{(-1)^{n_1+n_2+ \cdots + n_k}}\rangle_p p^{n_1+n_2+\cdots +n_k}\langle{a_0!a_1! \cdot\ \cdots\ \cdot a_k!}\rangle_p \)
+\( = \langle{{(-1)}^{n_{1}+n_{2}+ \cdots + n_{k}}}\rangle_{p} p^{n_{1}+n_{2}+\cdots +n_{k}}\langle{a_{0}!a_{1}! \cdot\ \cdots\ \cdot a_{k}!}\rangle_{p} \)
 
-\( n_1+n_2+\cdots+n_k = \mu(n,p) \)
+\( n_{1}+n_{2}+\cdots+n_{k} = \mu(n,p) \)
 
-\( \frac{n!}{p^{\mu(n,p)}} = \langle{(-1)^{\mu(n,p)}a_0!a_1! \cdot\ \cdots\ \cdot a_k!}\rangle_p \)
+\( \frac{n!}{p^{\mu(n,p)}} = \langle{{(-1)}^{\mu(n,p)}a_{0}!a_{1}! \cdot\ \cdots\ \cdot a_{k}!}\rangle_{p} \)
 
-\( \frac{n!}{p^{\mu(n,p)}} \equiv (-1)^{\mu(n,p)}a_0!a_1! \cdot\ \cdots\ \cdot a_k! \ (\mathrm{modulo}\ p) \)
+\( \frac{n!}{p^{\mu(n,p)}} \equiv {(-1)}^{\mu(n,p)}a_{0}!a_{1}! \cdot\ \cdots\ \cdot a_{k}! \ (\mathrm{modulo}\ p) \)
 
 
 \end{document}

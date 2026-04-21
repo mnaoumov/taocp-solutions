@@ -4,7 +4,7 @@
 \newcounter{stmt}
 \newcommand{\stmt}[1]{\refstepcounter{stmt}\textbf{(\thestmt)}\label{#1}}
 
-\let\originaltitle\title
+\let\originaltitle\title%
 \renewcommand{\title}[1]{\originaltitle{TAOCP #1}}
 \author{Michael Naumov}
 \date{}

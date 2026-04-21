@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.8-34}
+\title{1.2.8-34} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,28 +10,28 @@ Let's prove by induction each \( n \geq 1 \) has representation \( P(n) \).
 
 \( P(1) \)
 
-\( n = 1 = F_2, 2 \gg 0 \)
+\( n = 1 = F_{2}, 2 \gg 0 \)
 
 Assume \( P(m) \) holds for \( 1 \leq m < n \)
 
 Let
-\[k_1 \geq 2: F_{k_1} \leq n < F_{k_1+1} \tag{*}\label{eq:star}\]
+\[k_{1} \geq 2: F_{k_{1}} \leq n < F_{k_{1}+1} \tag{*}\label{eq:star}\]
 
-If \( n = F_{k_1} \) - representation
+If \( n = F_{k_{1}} \) --- representation
 
-If \( n > F_{k_1} \implies m := n - F_{k_1}, 1 \leq m < n \)
+If \( n > F_{k_{1}} \implies m := n - F_{k_{1}}, 1 \leq m < n \)
 
-\( P(m) \implies m = F_{k_2} + F_{k_3} + \cdots + F_{k_r}, k_2 \gg k_3 \gg \cdots \gg k_r \)
+\( P(m) \implies m = F_{k_{2}} + F_{k_{3}} + \cdots + F_{k_{r}}, k_{2} \gg k_{3} \gg \cdots \gg k_{r} \)
 
-\( n = F_{k_1} + F_{k_2} + F_{k_3} + \cdots + F_{k_r} \)
+\( n = F_{k_{1}} + F_{k_{2}} + F_{k_{3}} + \cdots + F_{k_{r}} \)
 
-We need to prove \( k_1 \gg k_2 \)
+We need to prove \( k_{1} \gg k_{2} \)
 
-Assume \( k_1 \not\gg k_2 \implies k_2 \geq k_1 - 1 \)
+Assume \( k_{1} \not\gg k_{2} \implies k_{2} \geq k_{1} - 1 \)
 
-\( n \geq F_{k_1} + F_{k_2} \geq F_{k_1} + F_{k_1-1} = F_{k_1 + 1} \implies \) contradicts to \eqref{eq:star} \( \implies \perp \)
+\( n \geq F_{k_{1}} + F_{k_{2}} \geq F_{k_{1}} + F_{k_{1}-1} = F_{k_{1} + 1} \implies \) contradicts to~\eqref{eq:star} \( \implies \perp \)
 
-\( \implies k_1 \gg k_2 \)
+\( \implies k_{1} \gg k_{2} \)
 
 \( P(n) \) proven.
 
@@ -39,27 +39,27 @@ Now let's prove uniqueness
 
 Let \( n \) be the smallest number with two representations.
 
-Assume \( n = F_{k_1} + F_{k_2} + \cdots + F_{k_r} = F_{l_1} + F_{l_2} + \cdots + F_{l_s} \)
+Assume \( n = F_{k_{1}} + F_{k_{2}} + \cdots + F_{k_{r}} = F_{l_{1}} + F_{l_{2}} + \cdots + F_{l_{s}} \)
 
-\( k_1 \gg k_2 \gg \cdots \gg k_r \)
+\( k_{1} \gg k_{2} \gg \cdots \gg k_{r} \)
 
-\( l_1 \gg l_2 \gg \cdots \gg l_s \)
+\( l_{1} \gg l_{2} \gg \cdots \gg l_{s} \)
 
-\( n = F_{k_1} + F_{k_2} + \cdots + F_{k-r} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + F_{k_1 - 2r + 2} \)
+\( n = F_{k_{1}} + F_{k_{2}} + \cdots + F_{k-r} \leq F_{k_{1}} + F_{k_{1} - 2} + F_{k_{1} - 4} + \cdots + F_{k_{1} - 2r + 2} \)
 
-\( n + F_{k-1-2r+1} \leq F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 2} + F_{k_1 - 2r + 1}) = \)
+\( n + F_{k-1-2r+1} \leq F_{k_{1}} + F_{k_{1} - 2} + F_{k_{1} - 4} + \cdots + (F_{k_{1} - 2r + 2} + F_{k_{1} - 2r + 1}) = \)
 
-\( = F_{k_1} + F_{k_1 - 2} + F_{k_1 - 4} + \cdots + (F_{k_1 - 2r + 4} + F_{k_1 - 2r + 3}) = \cdots = F_{k_1 + 1} \)
+\( = F_{k_{1}} + F_{k_{1} - 2} + F_{k_{1} - 4} + \cdots + (F_{k_{1} - 2r + 4} + F_{k_{1} - 2r + 3}) = \cdots = F_{k_{1} + 1} \)
 
-\( F_{k_1} \leq n < F_{k_1 + 1} \)
+\( F_{k_{1}} \leq n < F_{k_{1} + 1} \)
 
-\( F_{l_1} \leq n < F_{l_1 + 1} \)
+\( F_{l_{1}} \leq n < F_{l_{1} + 1} \)
 
-\( \implies k_1 = l_1 \)
+\( \implies k_{1} = l_{1} \)
 
-\( m = n - F_{k_1} = n - F_{l_1} \)
+\( m = n - F_{k_{1}} = n - F_{l_{1}} \)
 
-\( m = F_{k_2} + F_{k_3} + \cdots + F_{k_r} = F_{l_2} + F_{l_3} + \cdots + F_{l_s} \)
+\( m = F_{k_{2}} + F_{k_{3}} + \cdots + F_{k_{r}} = F_{l_{2}} + F_{l_{3}} + \cdots + F_{l_{s}} \)
 
 \( m = 0 \lor 1 \leq m < n \)
 

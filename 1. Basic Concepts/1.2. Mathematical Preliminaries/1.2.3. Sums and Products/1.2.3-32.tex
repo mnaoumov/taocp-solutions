@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-32}
+\title{1.2.3-32} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,11 +10,11 @@ Induction by \( n \).
 
 \( n = 1 \)
 
-\( \prod_{j=1}^n \sum_{i=1}^m a_{ij} = \sum_{i=1}^m a_{i1} = \sum_{1 \leq i_1 \leq m} a_{i_1 1} \)
+\( \prod_{j=1}^{n} \sum_{i=1}^{m} a_{ij} = \sum_{i=1}^{m} a_{i1} = \sum_{1 \leq i_{1} \leq m} a_{i_{1} 1} \)
 
 \( (n \implies n + 1) \)
 
-\( \prod_{j=1}^{n+1} \sum_{i=1}^m a_{ij} = \prod_{j=1}^{n} \sum_{i=1}^m a_{ij} \cdot \sum_{i=1}^m a_{i,n+1} = (\sum_{1 \leq i_1, i_2, \ldots, i_n \leq m} a_{i_1 1}a_{i_2 2} \cdot\ \cdots\ \cdot  a_{i_n n}) \cdot \sum_{i_{n+1}=1}^m a_{i_{n+1},n+1} = \sum_{1 \leq i_1, i_2, \ldots, i_n, i_{n+1} \leq m} a_{i_1 1}a_{i_2 2} \cdot\ \cdots\ \cdot a_{i_n n} a_{i_{n+1},n+1} \)
+\( \prod_{j=1}^{n+1} \sum_{i=1}^{m} a_{ij} = \prod_{j=1}^{n} \sum_{i=1}^{m} a_{ij} \cdot \sum_{i=1}^{m} a_{i,n+1} = (\sum_{1 \leq i_{1}, i_{2}, \ldots, i_{n} \leq m} a_{i_{1} 1}a_{i_{2} 2} \cdot\ \cdots\ \cdot  a_{i_{n} n}) \cdot \sum_{i_{n+1}=1}^{m} a_{i_{n+1},n+1} = \sum_{1 \leq i_{1}, i_{2}, \ldots, i_{n}, i_{n+1} \leq m} a_{i_{1} 1}a_{i_{2} 2} \cdot\ \cdots\ \cdot a_{i_{n} n} a_{i_{n+1},n+1} \)
 
 
 \end{document}

@@ -1,34 +1,34 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-38}
+\title{1.2.6-38} % chktex 8
 
 \begin{document}
 \maketitle
 
 \( w := e^{\frac{2 \pi i}{m}} \)
 
-\( w^m = 1 \)
+\( w^{m} = 1 \)
 
-\( (1+w^j)^n w^{-jk} = \sum_{s} \binom{n}{s} w^{j(s-k)} \)
+\( {(1+w^{j})}^{n} w^{-jk} = \sum_{s} \binom{n}{s} w^{j(s-k)} \)
 
-\( \sum_{j=0}^{m-1} (1+w^j)^n w^{-jk} = \sum_{s} \binom{n}{s} \sum_{j=0}^{m-1} w^{j(s-k)} = A \)
+\( \sum_{j=0}^{m-1} {(1+w^{j})}^{n} w^{-jk} = \sum_{s} \binom{n}{s} \sum_{j=0}^{m-1} w^{j(s-k)} = A \)
 
 \( s-k = mq + r, 0 \leq r \leq m - 1 \)
 
-\( A = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{j(mq+r)} = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} (w^m)^{jq}w^{jr} = \)
+\( A = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{j(mq+r)} = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} {(w^{m})}^{jq}w^{jr} = \)
 
 \( = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} = \sum_{q} \binom{n}{k + mq + 0} \sum_{j=0}^{m-1} w^{j \cdot 0} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} = \)
 
-\( = m \sum_{q} \binom{n}{k + mq} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \frac{w^{mr} - 1}{w^r - 1} = m \sum_{q} \binom{n}{k + mq} \)
+\( = m \sum_{q} \binom{n}{k + mq} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \frac{w^{mr} - 1}{w^{r} - 1} = m \sum_{q} \binom{n}{k + mq} \)
 
-\( \sum_q \binom{n}{k+mq} = \frac{1}{m} \sum_{j=0}^{m-1} (w^{-\frac{j}{2}}+w^{\frac{j}{2}})^n w^{\frac{j(n-2k)}{2}} =: B \)
+\( \sum_{q} \binom{n}{k+mq} = \frac{1}{m} \sum_{j=0}^{m-1} {(w^{-\frac{j}{2}}+w^{\frac{j}{2}})}^{n} w^{\frac{j(n-2k)}{2}} =: B \)
 
 \( w^{-\frac{j}{2}} + w^{-\frac{j}{2}} = e^{\frac{\pi i j}{m}} + e^{-\frac{\pi i j}{m}} = 2 \cos \frac{\pi j}{m} \)
 
-\( B = \frac{1}{m} \sum_{j=0}^{m-1} (2 \cos \frac{\pi j}{m})^n e^{\frac{\pi i j(n-2k)}{m}} \)
+\( B = \frac{1}{m} \sum_{j=0}^{m-1} {(2 \cos \frac{\pi j}{m})}^{n} e^{\frac{\pi i j(n-2k)}{m}} \)
 
-\( B \in \mathbb{R} \implies B = \Re B = \frac{1}{m} \sum_{j=0}^{m-1} (2 \cos \frac{\pi j}{m})^n \cos \frac{\pi j(n-2k)}{m} \)
+\( B \in \mathbb{R} \implies B = \Re B = \frac{1}{m} \sum_{j=0}^{m-1} {(2 \cos \frac{\pi j}{m})}^{n} \cos \frac{\pi j(n-2k)}{m} \)
 
 
 \end{document}

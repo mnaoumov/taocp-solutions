@@ -1,14 +1,14 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-44}
+\title{1.2.4-44} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \sum_{k \geq 0}\sum_{1 \leq j < b} \lfloor{\frac{n + jb^k}{b^{k+1}}}\rfloor = \sum_{k \geq 0}(\sum_{0 \leq j < b} \lfloor{\frac{n}{b^{k+1}} + \frac{j}{b}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \sum_{k \geq 0}(\lfloor{b \cdot \frac{n}{b^{k+1}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \)
+\( \sum_{k \geq 0}\sum_{1 \leq j < b} \lfloor{\frac{n + jb^{k}}{b^{k+1}}}\rfloor = \sum_{k \geq 0}(\sum_{0 \leq j < b} \lfloor{\frac{n}{b^{k+1}} + \frac{j}{b}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \sum_{k \geq 0}(\lfloor{b \cdot \frac{n}{b^{k+1}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \)
 
-\( = \sum_{k \geq 0}(\lfloor{\frac{n}{b^{k}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \lim_{K \to \infty} \sum_{k = 0}^K(\lfloor{\frac{n}{b^{k}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \lim_{K \to \infty}(\lfloor{\frac{n}{b^{0}}}\rfloor) - (\lfloor{\frac{n}{b^{K+1}}}\rfloor) = \)
+\( = \sum_{k \geq 0}(\lfloor{\frac{n}{b^{k}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \lim_{K \to \infty} \sum_{k = 0}^{K}(\lfloor{\frac{n}{b^{k}}}\rfloor - \lfloor{\frac{n}{b^{k+1}}}\rfloor) = \lim_{K \to \infty}(\lfloor{\frac{n}{b^{0}}}\rfloor) - (\lfloor{\frac{n}{b^{K+1}}}\rfloor) = \)
 
 \( = n - \lim_{K \to \infty} (\lfloor{\frac{n}{b^{K+1}}}\rfloor) =: A \)
 

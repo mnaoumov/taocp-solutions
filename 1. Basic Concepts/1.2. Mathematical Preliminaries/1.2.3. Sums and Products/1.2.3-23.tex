@@ -1,24 +1,24 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-23}
+\title{1.2.3-23} % chktex 8
 
 \begin{document}
 \maketitle
 
-(d): \( \sum_{R(j)} a_j + \sum_{S(j)} a_j = \sum_{R(j) \lor S(j)} a_j + \sum_{R(j) \land S(j)} a_j \)
+(d): \( \sum_{R(j)} a_{j} + \sum_{S(j)} a_{j} = \sum_{R(j) \lor S(j)} a_{j} + \sum_{R(j) \land S(j)} a_{j} \)
 
 If we have conditions such that \( R(j) \land S(j) \) are never satisfied
 
 \( \forall j: R(j) \lor S(j) \) precisely either \( R(j) \) or \( S(j) \), but not together
 
-\( \implies \) each summand in \( \sum_{R(j) \lor S(j)} a_j \) has exactly one corresponding from \( \sum_{R(j)} a_j \) or \( \sum_{S(j)} a_j \)
+\( \implies \) each summand in \( \sum_{R(j) \lor S(j)} a_{j} \) has exactly one corresponding from \( \sum_{R(j)} a_{j} \) or \( \sum_{S(j)} a_{j} \)
 
-\( \implies \sum_{R(j)} a_j + \sum_{S(j)} a_j = \sum_{R(j) \lor S(j)} a_j \)
+\( \implies \sum_{R(j)} a_{j} + \sum_{S(j)} a_{j} = \sum_{R(j) \lor S(j)} a_{j} \)
 
-\( \implies \sum_{R(j) \land S(j)} a_j = 0 \)
+\( \implies \sum_{R(j) \land S(j)} a_{j} = 0 \)
 
-Similarly, from [1.2.3-22](<./1.2.3-22.md>), \( \prod_{R(j) \land S(j)} a_j = 1 \)
+Similarly, from 1.2.3-22, \( \prod_{R(j) \land S(j)} a_{j} = 1 \) % chktex 8
 
 
 \end{document}

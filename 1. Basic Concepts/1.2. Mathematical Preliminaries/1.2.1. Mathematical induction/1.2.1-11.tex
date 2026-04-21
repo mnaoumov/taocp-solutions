@@ -1,14 +1,14 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.1-11}
+\title{1.2.1-11} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( n^4 + 4 = n^4 + 4 + 4n^2 - 4n^2 = (n^2 + 2)^2 - (2n)^2 = (n^2 - 2n + 2)(n^2 + 2n + 2) \)
+\( n^{4} + 4 = n^{4} + 4 + 4n^{2} - 4n^{2} = {(n^{2} + 2)}^{2} - {(2n)}^{2} = (n^{2} - 2n + 2)(n^{2} + 2n + 2) \)
 
-\( a_n := \frac{n^3}{n^4+4} = \frac{An+B}{n^2-2n+2} + \frac{Cn+D}{n^2+2n+2} = \frac{(An+B)(n^2+2n+2)+(Cn+D)(n^2-2n+2)}{n^4+4} = \frac{An^3+2An^2+2An+Bn^2+2Bn+2B+Cn^3-2Cn^2+2Cn+Dn^2-2Dn+2D}{n^4+4} = \frac{n^3(A+C) + n^2(2A+B-2C+D) + n(2A+2B+2C-2D)+(2B+2D)}{n^4+4} \)
+\( a_{n} := \frac{n^{3}}{n^{4}+4} = \frac{An+B}{n^{2}-2n+2} + \frac{Cn+D}{n^{2}+2n+2} = \frac{(An+B)(n^{2}+2n+2)+(Cn+D)(n^{2}-2n+2)}{n^{4}+4} = \frac{An^{3}+2An^{2}+2An+Bn^{2}+2Bn+2B+Cn^{3}-2Cn^{2}+2Cn+Dn^{2}-2Dn+2D}{n^{4}+4} = \frac{n^{3}(A+C) + n^{2}(2A+B-2C+D) + n(2A+2B+2C-2D)+(2B+2D)}{n^{4}+4} \)
 
 \[A+C=1 \tag{1}\label{eq:1}\]
 
@@ -18,47 +18,47 @@
 
 \[2B+2D=0 \tag{4}\label{eq:4}\]
 
-\( \eqref{eq:4} \implies B + D = 0 \)
+\(~\eqref{eq:4} \implies B + D = 0 \)
 
-\( \eqref{eq:3} \implies A + C = D - B \)
+\(~\eqref{eq:3} \implies A + C = D - B \)
 
-\( \eqref{eq:1} \implies D - B = 1 \)
+\(~\eqref{eq:1} \implies D - B = 1 \)
 
 \( \implies D = \frac{1}{2}, B = -\frac{1}{2} \)
 
-\( \eqref{eq:2} \implies 2(A-C) + (B+D) = 0 \implies A - C = 0 \implies A = C = \frac{1}{2} \)
+\(~\eqref{eq:2} \implies 2(A-C) + (B+D) = 0 \implies A - C = 0 \implies A = C = \frac{1}{2} \)
 
-\( \frac{n^3}{n^4+4} = \frac{\frac{1}{2}n-\frac{1}{2}}{n^2-2n+2} + \frac{\frac{1}{2}n+\frac{1}{2}}{n^2+2n+2} = \frac{1}{2} (\frac{n-1}{n^2-2n+2} + \frac{n+1}{n^2+2n+2}) = \frac{1}{2} (\frac{n-1}{(n-1)^2+1} + \frac{n+1}{(n+1)^2+1}) \)
+\( \frac{n^{3}}{n^{4}+4} = \frac{\frac{1}{2}n-\frac{1}{2}}{n^{2}-2n+2} + \frac{\frac{1}{2}n+\frac{1}{2}}{n^{2}+2n+2} = \frac{1}{2} (\frac{n-1}{n^{2}-2n+2} + \frac{n+1}{n^{2}+2n+2}) = \frac{1}{2} (\frac{n-1}{{(n-1)}^{2}+1} + \frac{n+1}{{(n+1)}^{2}+1}) \)
 
-\( b_k := \frac{k}{2(k^2+1)} \)
+\( b_{k} := \frac{k}{2(k^{2}+1)} \)
 
-\( a_n = b_{n-1}+b_{n+1} \)
+\( a_{n} = b_{n-1}+b_{n+1} \)
 
-\( c_n \) is the sequence in question, \( n \geq 0 \)
+\( c_{n} \) is the sequence in question, \( n \geq 0 \)
 
-\( c_0 = a_1 = b_0 + b_2 \)
+\( c_{0} = a_{1} = b_{0} + b_{2} \)
 
-\( c_1 = a_1 - a_3 = (b_0 + b_2) - (b_2 + b_4) = b_0 - b_4 \)
+\( c_{1} = a_{1} - a_{3} = (b_{0} + b_{2}) - (b_{2} + b_{4}) = b_{0} - b_{4} \)
 
-\( c_2=a_1-a_3+a_5 = c_2 + a_5 = (b_0 - b_4) + (b_4 + b_6) = b_0 + b_6 \)
+\( c_{2}=a_{1}-a_{3}+a_{5} = c_{2} + a_{5} = (b_{0} - b_{4}) + (b_{4} + b_{6}) = b_{0} + b_{6} \)
 
-\( c_3=a_1-a_3+a_5-a_7 = c_3 - a_7 = (b_0 + b_6) - (b_6 + b_8) = b_0 - b_8 \)
+\( c_{3}=a_{1}-a_{3}+a_{5}-a_{7} = c_{3} - a_{7} = (b_{0} + b_{6}) - (b_{6} + b_{8}) = b_{0} - b_{8} \)
 
 It seems
 
-\( c_n = b_0 + (-1)^nb_{2n+2} = 0 + \frac{(-1)^n(2n+2)}{2((2n+2)^2+1)} = \frac{(-1)^{n}(n+1)}{4(n+1)^2+1} \)
+\( c_{n} = b_{0} + {(-1)}^{n}b_{2n+2} = 0 + \frac{{(-1)}^{n}(2n+2)}{2({(2n+2)}^{2}+1)} = \frac{{(-1)}^{n}(n+1)}{4{(n+1)}^{2}+1} \)
 
-Now let's prove it by induction: \( P(n): c_n = \frac{(-1)^{n}(n+1)}{4(n+1)^2+1} \)
+Now let's prove it by induction: \( P(n): c_{n} = \frac{{(-1)}^{n}(n+1)}{4{(n+1)}^{2}+1} \)
 
-\( c_0 = \frac{1^3}{1^4+4} = \frac{1}{5} = \frac{(-1)^0\cdot 1}{4\cdot 1^2+1} \implies P(0) \)
+\( c_{0} = \frac{1^{3}}{1^{4}+4} = \frac{1}{5} = \frac{{(-1)}^{0}\cdot 1}{4\cdot 1^{2}+1} \implies P(0) \)
 
 Assume \( P(n) \)
 
-\( c_{n+1} = c_n + \frac{(-1)^{n+1}(2(n+1)+1)^3}{(2(n+1)+1)^4+4} = \frac{(-1)^n(n+1)}{4(n+1)^2+1} + \frac{(-1)^{n+1}(2n+3)^3}{(2n+3)^4+4} = (-1)^{n+1} (-\frac{n+1}{4(n+1)^2+1} + a_{2n+3}) \)
+\( c_{n+1} = c_{n} + \frac{{(-1)}^{n+1}{(2(n+1)+1)}^{3}}{{(2(n+1)+1)}^{4}+4} = \frac{{(-1)}^{n}(n+1)}{4{(n+1)}^{2}+1} + \frac{{(-1)}^{n+1}{(2n+3)}^{3}}{{(2n+3)}^{4}+4} = {(-1)}^{n+1} (-\frac{n+1}{4{(n+1)}^{2}+1} + a_{2n+3}) \)
 
-\( b_{2n+2} = \frac{2n+2}{2((2n+2)^2+1)} = \frac{n+1}{4(n+1)^2+1} \)
+\( b_{2n+2} = \frac{2n+2}{2({(2n+2)}^{2}+1)} = \frac{n+1}{4{(n+1)}^{2}+1} \)
 
-\( c_{n+1} = (-1)^{n+1}(-b_{2n+2} + a_{2n+3}) = (-1)^{n+1} b_{2n+4} = \frac{(-1)^{n+1}(n+2)}{4(n+2)^2+1} = \frac{(-1)^{n+1}((n+1)+1)}{4((n+1)+1)^2+1} \implies P(n+1) \)
+\( c_{n+1} = {(-1)}^{n+1}(-b_{2n+2} + a_{2n+3}) = {(-1)}^{n+1} b_{2n+4} = \frac{{(-1)}^{n+1}(n+2)}{4{(n+2)}^{2}+1} = \frac{{(-1)}^{n+1}((n+1)+1)}{4{((n+1)+1)}^{2}+1} \implies P(n+1) \)
 
 
 \end{document}

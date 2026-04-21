@@ -1,16 +1,16 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-66}
+\title{1.2.6-66} % chktex 8
 
 \begin{document}
 \maketitle
 
 Let's consider \( y, x = x(z) \)
 
-Denote \( x = x_k(z) \) is such that \( \binom{x_k(z)}{k} = \binom{y}{k} + \binom{z}{k-1} \)
+Denote \( x = x_{k}(z) \) is such that \( \binom{x_{k}(z)}{k} = \binom{y}{k} + \binom{z}{k-1} \)
 
-From now on, we will use \( x = x_n(z) \)
+From now on, we will use \( x = x_{n}(z) \)
 
 \( X := \binom{x}{n} \)
 
@@ -44,7 +44,7 @@ We need to prove
 
 \subsubsection*{Lemma 1}
 
-Let \( F \in C^1((a, +\infty)), \exists y > a: F(y) = 0, \forall z > a, F(z) = 0 \rightarrow F'(z) < 0 \)
+Let \( F \in C^{1}((a, +\infty)), \exists y > a: F(y) = 0, \forall z > a, F(z) = 0 \rightarrow F'(z) < 0 \)
 
 Then
 
@@ -52,7 +52,7 @@ Then
 
 \bigskip\hrule\bigskip
 
-\( F(y) = 0 \implies F'(y) < 0 \implies \exists \varepsilon \in (0, y - a): \forall z \in [y-\varepsilon,y): F(z) > 0, \forall z \in (y, y + \varepsilon]: F(z) < 0 \)
+\( F(y) = 0 \implies F'(y) < 0 \implies \exists \varepsilon \in (0, y - a): \forall z \in [y-\varepsilon,y): F(z) > 0, \forall z \in (y, y + \varepsilon]: F(z) < 0 \) % chktex 9
 
 Consider \( B = \{ z \in (a, y): F(z) = 0 \}, C = \{ z > y: F(z) = 0 \} \)
 
@@ -60,7 +60,7 @@ We will prove \( B = C = \varnothing \)
 
 Assume \( B \neq \varnothing, b := \sup B \implies F(b) = 0 \implies b < y - \varepsilon \)
 
-\( F(b) = 0 \implies F'(b) < 0 \implies \exists \delta \in (0, y - \varepsilon - b) \forall z \in (b, b + \delta]: F(z) < 0 \)
+\( F(b) = 0 \implies F'(b) < 0 \implies \exists \delta \in (0, y - \varepsilon - b) \forall z \in (b, b + \delta]: F(z) < 0 \) % chktex 9
 
 \( F(b+\delta) < 0, F(y - \varepsilon) > 0, b + \delta < y - \varepsilon, F \in C([b+\delta, y - \varepsilon]) \implies \exists d \in [b+\delta, y - \varepsilon]: F(d) = 0 \)
 
@@ -74,11 +74,11 @@ QED
 
 \subsubsection*{Lemma 2}
 
-\( \frac{d}{dt}\binom{t}{k} = \binom{t}{k} g_k(t) \), where \( g_k(t) := \sum_{j=0}^{k-1} \frac{1}{t-j} \)
+\( \frac{d}{dt}\binom{t}{k} = \binom{t}{k} g_{k}(t) \), where \( g_{k}(t) := \sum_{j=0}^{k-1} \frac{1}{t-j} \)
 
 \bigskip\hrule\bigskip
 
-\( \frac{d}{dt} \binom{t}{k} = \frac{d}{dt} \frac{t(t-1)\cdots(t-k+1)}{k!} = \frac{d}{dt} e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} = e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} \cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k}\cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k} g_k(t) \)
+\( \frac{d}{dt} \binom{t}{k} = \frac{d}{dt} \frac{t(t-1)\cdots(t-k+1)}{k!} = \frac{d}{dt} e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} = e^{-\ln(k!) + \sum_{j=0}^{k-1} \ln(t-j)} \cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k}\cdot \sum_{j=0}^{k-1} \frac{1}{t-j} = \binom{t}{k} g_{k}(t) \)
 
 QED
 
@@ -86,9 +86,9 @@ QED
 
 By Lemma 1, for us it's enough to prove that \( F(y) = 0, \forall z > n - 1, F(z) = 0 \rightarrow F'(z) < 0 \)
 
-\( \forall k\ \binom{y}{k} + \binom{y}{k-1} = \binom{y+1}{k} \implies x_k(y) = y + 1 \)
+\( \forall k\ \binom{y}{k} + \binom{y}{k-1} = \binom{y+1}{k} \implies x_{k}(y) = y + 1 \)
 
-\( F(y) = \binom{x_n(y)}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = \binom{y+1}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = 0 \)
+\( F(y) = \binom{x_{n}(y)}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = \binom{y+1}{n + 1} - \binom{y}{n + 1} - \binom{y}{n} = 0 \)
 
 Now we need to prove that \( F(z) = 0 \to F'(z) < 0 \)
 
@@ -100,9 +100,9 @@ Now we need to prove that \( F(z) = 0 \to F'(z) < 0 \)
 
 \( \frac{dX}{dz} = \frac{dX}{dx} \cdot \frac{dx}{dz} \)
 
-\( Z g_{n-1}(z) = X g_n(x) \frac{dx}{dz} \)
+\( Z g_{n-1}(z) = X g_{n}(x) \frac{dx}{dz} \)
 
-\( \frac{dx(z)}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_n(x)} \)
+\( \frac{dx(z)}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_{n}(x)} \)
 
 \( F(z) = 0 \implies \bar{X} = \bar{Y} + \bar{Z} \)
 
@@ -138,13 +138,13 @@ Now we need to prove that \( F(z) = 0 \to F'(z) < 0 \)
 
 \( \sum_{j=0}^{n-2}\frac{1}{x-1-j} > \frac{n}{n+1}\sum_{j=0}^{n-2}\frac{1}{z-j} \)
 
-\( g_n(x) - \frac{1}{x} > \frac{n}{n+1} g_{n-1}(z) \)
+\( g_{n}(x) - \frac{1}{x} > \frac{n}{n+1} g_{n-1}(z) \)
 
-\( g_n(x) > \frac{n}{n+1} g_{n-1}(z) \)
+\( g_{n}(x) > \frac{n}{n+1} g_{n-1}(z) \)
 
-\( \frac{dx}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_n(x)} < \frac{n+1}{n} \frac{Z}{X} \)
+\( \frac{dx}{dz} = \frac{Z}{X} \cdot \frac{g_{n-1}(z)}{g_{n}(x)} < \frac{n+1}{n} \frac{Z}{X} \)
 
-\( F'(z) = \frac{d}{dz}(\bar{X} - \bar{Y} - \bar{Z}) = \frac{d}{dz}(X\frac{x-n}{n+1}) - \frac{d}{dz}(Z\frac{z-n+1}{n}) = \frac{dX}{dz} \cdot \frac{x-n}{n+1} + \frac{X}{n+1} \cdot \frac{dx_n(z)}{dz} - \frac{dZ}{dz} \cdot \frac{z-n+1}{n} - \frac{Z}{n} \)
+\( F'(z) = \frac{d}{dz}(\bar{X} - \bar{Y} - \bar{Z}) = \frac{d}{dz}(X\frac{x-n}{n+1}) - \frac{d}{dz}(Z\frac{z-n+1}{n}) = \frac{dX}{dz} \cdot \frac{x-n}{n+1} + \frac{X}{n+1} \cdot \frac{dx_{n}(z)}{dz} - \frac{dZ}{dz} \cdot \frac{z-n+1}{n} - \frac{Z}{n} \)
 
 \( F'(z) = \frac{dZ}{dz}(\frac{x-n}{n+1} - \frac{z-n+1}{n}) + \frac{X}{n+1} \cdot \frac{dx}{dz} - \frac{Z}{n} < \frac{dZ}{dz} \cdot 0 + \frac{X}{n+1} \cdot \frac{n+1}{n} \frac{Z}{X} - \frac{Z}{n} = 0 \)
 
@@ -158,9 +158,9 @@ From case \( n + 1 \) we know
 
 \( \binom{x_{n-1}(z)}{(n - 1) + 1} \leq \binom{y}{(n - 1) + 1} + \binom{z}{n - 1} \iff y \leq z \)
 
-\( y \geq z \iff \binom{x_{n - 1}(z)}{n} \geq \binom{y}{n} + \binom{z}{n - 1} = \binom{x_n(z)}{n} \iff x_{n-1}(z) \geq x_n(z) \iff x_n(z) \leq x_{n-1}(z) \iff \binom{x_n(z)}{n - 1} \leq \binom{x_{n-1}(z)}{n - 1} = \binom{y}{n - 1} + \binom{z}{n - 2} \)
+\( y \geq z \iff \binom{x_{n - 1}(z)}{n} \geq \binom{y}{n} + \binom{z}{n - 1} = \binom{x_{n}(z)}{n} \iff x_{n-1}(z) \geq x_{n}(z) \iff x_{n}(z) \leq x_{n-1}(z) \iff \binom{x_{n}(z)}{n - 1} \leq \binom{x_{n-1}(z)}{n - 1} = \binom{y}{n - 1} + \binom{z}{n - 2} \)
 
 QED
 
 
-\end{document}
+\end{document} % chktex 17

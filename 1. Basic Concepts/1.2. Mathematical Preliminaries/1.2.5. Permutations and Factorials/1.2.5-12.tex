@@ -1,22 +1,22 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.5-12}
+\title{1.2.5-12} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( n = \sum_{i \geq 0}a_ip^i \)
+\( n = \sum_{i \geq 0}a_{i}p^{i} \)
 
-\( \mu(n,p) = \sum_{k > 0}{\lfloor{\sum_{i\geq 0} a_ip^{i-k}}\rfloor} = \sum_{k > 0}{\lfloor{\overbrace{\sum_{i\geq k} a_ip^{i-k}}^A + \overbrace{\sum_{0 \leq i < k} a_ip^{i-k}}^B }\rfloor} \)
+\( \mu(n,p) = \sum_{k > 0}{\lfloor{\sum_{i\geq 0} a_{i}p^{i-k}}\rfloor} = \sum_{k > 0}{\lfloor{\overbrace{\sum_{i\geq k} a_{i}p^{i-k}}^{A} + \overbrace{\sum_{0 \leq i < k} a_{i}p^{i-k}}^{B} }\rfloor} \)
 
 \( A \in \mathbb{Z} \)
 
 \( 0 \leq B \leq \sum_{i=0}^{k-1} (p-1)p^{i-k} = 1 - p^{-k} < 1 \)
 
-\( \mu(n,p) = \sum_{k > 0}{\lfloor{A+B}\rfloor} = \sum_{k > 0} A = \sum_{k>0} \sum_{i \geq k} a_i p^{i-k} = \)
+\( \mu(n,p) = \sum_{k > 0}{\lfloor{A+B}\rfloor} = \sum_{k > 0} A = \sum_{k>0} \sum_{i \geq k} a_{i} p^{i-k} = \)
 
-\( = \sum_{i \geq 0 }^r a_i p^{i} \sum_{k=1}^{i}{p^{-k}} = \sum_{i \geq 0}{a_ip^i \frac{1 - p^{-i}}{p-1}} = \frac{1}{p-1} \sum_{i\geq 0}(a_ip^i-a_i) = \frac{n - \sum_{i\geq 0}a_i}{p-1} \)
+\( = \sum_{i \geq 0 }^{r} a_{i} p^{i} \sum_{k=1}^{i}{p^{-k}} = \sum_{i \geq 0}{a_{i}p^{i} \frac{1 - p^{-i}}{p-1}} = \frac{1}{p-1} \sum_{i\geq 0}(a_{i}p^{i}-a_{i}) = \frac{n - \sum_{i\geq 0}a_{i}}{p-1} \)
 
 
 \end{document}

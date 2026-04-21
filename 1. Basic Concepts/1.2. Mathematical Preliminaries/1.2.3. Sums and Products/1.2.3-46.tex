@@ -1,42 +1,42 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-46}
+\title{1.2.3-46} % chktex 8
 
 \begin{document}
 \maketitle
 
 \( C := AB \)
 
-\( c_{ij} = \sum_{k=1}^n a_{ik}b_{kj} \)
+\( c_{ij} = \sum_{k=1}^{n} a_{ik}b_{kj} \)
 
-\( \det C = \sum_{\pi\in S_m} \mathrm{sign} \pi\  c_{1\pi_1}c_{2\pi_2} \cdot \cdots \cdot c_{m\pi_m} = \sum_{\pi\in S_m} \mathrm{sign} \pi\ (\sum_{k_1=1}^n a_{1k_1}b_{k_1\pi_1})\cdot (\sum_{k_2=1}^n a_{2k_2}b_{k_2\pi_2}) \cdot \cdots \cdot (\sum_{k_m=1}^n a_{mk_m}b_{k_m\pi_m}) = \)
+\( \det C = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\  c_{1\pi_{1}}c_{2\pi_{2}} \cdot \cdots \cdot c_{m\pi_{m}} = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{k_{1}=1}^{n} a_{1k_{1}}b_{k_{1}\pi_{1}})\cdot (\sum_{k_{2}=1}^{n} a_{2k_{2}}b_{k_{2}\pi_{2}}) \cdot \cdots \cdot (\sum_{k_{m}=1}^{n} a_{mk_{m}}b_{k_{m}\pi_{m}}) = \)
 
-\( = \sum_{\pi\in S_m} \mathrm{sign} \pi\ (\sum_{1\leq k_1, k_2, \ldots, k_m \leq n} a_{1k_1}b_{k_1\pi_1}a_{2k_2}b_{k_2\pi_2} \cdot \cdots \cdot a_{mk_m}b_{k_m\pi_m} = \)
+\( = \sum_{\pi\in S_{m}} \mathrm{sign} \pi\ (\sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}b_{k_{1}\pi_{1}}a_{2k_{2}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot a_{mk_{m}}b_{k_{m}\pi_{m}} = \)
 
-\( = \sum_{1\leq k_1, k_2, \ldots, k_m \leq n} a_{1k_1}a_{2k_2} \cdot \cdots \cdot a_{mk_m} (\sum_{\pi\in S_m} \mathrm{sign} \pi\ b_{k_1\pi_1}b_{k_2\pi_2} \cdot \cdots \cdot b_{k_m\pi_m}) = \sum_{1\leq k_1, k_2, \ldots, k_m \leq n} a_{1k_1}a_{2k_2} \cdot \cdots \cdot a_{mk_m} \det B_{k_1k_2\cdots k_m} \)
+\( = \sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} (\sum_{\pi\in S_{m}} \mathrm{sign} \pi\ b_{k_{1}\pi_{1}}b_{k_{2}\pi_{2}} \cdot \cdots \cdot b_{k_{m}\pi_{m}}) = \sum_{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} \)
 
-If \( k_s = k_t, s \neq t \implies \det B_{k_1k_2\cdots k_m} = 0 \)
+If \( k_{s} = k_{t}, s \neq t \implies \det B_{k_{1}k_{2}\cdots k_{m}} = 0 \)
 
-\( \implies \det C = \sum_{\substack{1\leq k_1, k_2, \ldots, k_m \leq n\\k_s \neq k_t, 1 \leq s < t \leq m}} a_{1k_1}a_{2k_2} \cdot \cdots \cdot a_{mk_m} \det B_{k_1k_2\cdots k_m} = \)
+\( \implies \det C = \sum_{\substack{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n\\k_{s} \neq k_{t}, 1 \leq s < t \leq m}} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} = \)
 
-\( = \sum_{\substack{1\leq k_1, k_2, \ldots, k_m \leq n\\k_s \neq k_t, 1 \leq s < t \leq m }} \sum_{1\leq j_1 < j_2 < \cdots < j_m \leq n} \sum_{\substack{\tau \in S_m\\ k_i = j_{\tau_i}, 1 \leq i \leq m }} a_{1k_1}a_{2k_2} \cdot \cdots \cdot a_{mk_m} \det B_{k_1k_2\cdots k_m} = \)
+\( = \sum_{\substack{1\leq k_{1}, k_{2}, \ldots, k_{m} \leq n\\k_{s} \neq k_{t}, 1 \leq s < t \leq m }} \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \sum_{\substack{\tau \in S_{m}\\ k_{i} = j_{\tau_{i}}, 1 \leq i \leq m }} a_{1k_{1}}a_{2k_{2}} \cdot \cdots \cdot a_{mk_{m}} \det B_{k_{1}k_{2}\cdots k_{m}} = \)
 
-\( = \sum_{1\leq j_1 < j_2 < \cdots < j_m \leq n} \sum_{\tau \in S_m} a_{1j_{\tau_1}}a_{2j_{\tau_2}} \cdot \cdots \cdot a_{mj_{\tau_m}} \det B_{j_{\tau_1}j_{\tau_2}\ldots j_{\tau_m}} \)
+\( = \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \sum_{\tau \in S_{m}} a_{1j_{\tau_{1}}}a_{2j_{\tau_{2}}} \cdot \cdots \cdot a_{mj_{\tau_{m}}} \det B_{j_{\tau_{1}}j_{\tau_{2}}\ldots j_{\tau_{m}}} \)
 
-\( \det B_{j_{\tau_1}j_{\tau_2}\ldots j_{\tau_m}} = \mathrm{sign}\tau\ \det B_{j_1j_2\cdots j_m} \)
+\( \det B_{j_{\tau_{1}}j_{\tau_{2}}\ldots j_{\tau_{m}}} = \mathrm{sign}\tau\ \det B_{j_{1}j_{2}\cdots j_{m}} \)
 
-\( \implies \det C = \sum_{1\leq j_1 < j_2 < \cdots < j_m \leq n} \det B_{j_1j_2\cdots j_m} \sum_{\tau \in S_m} \mathrm{sign} \tau\ a_{1j_{\tau_1}}a_{2j_{\tau_2}} \cdot \cdots \cdot a_{mj_{\tau_m}} = \)
+\( \implies \det C = \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \det B_{j_{1}j_{2}\cdots j_{m}} \sum_{\tau \in S_{m}} \mathrm{sign} \tau\ a_{1j_{\tau_{1}}}a_{2j_{\tau_{2}}} \cdot \cdots \cdot a_{mj_{\tau_{m}}} = \)
 
-\( = \sum_{1\leq j_1 < j_2 < \cdots < j_m \leq n} \det B_{j_1j_2\cdots j_m} \det A_{j_1j_2\cdots j_m} \)
+\( = \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} \det B_{j_{1}j_{2}\cdots j_{m}} \det A_{j_{1}j_{2}\cdots j_{m}} \)
 
 \section*{(i)}
 
-\( m = n \implies 1 = j_1 < 2=j_2 < \cdots < m = j_m \)
+\( m = n \implies 1 = j_{1} < 2=j_{2} < \cdots < m = j_{m} \)
 
-\( A_{j_1j_2\cdots j_m} = A \)
+\( A_{j_{1}j_{2}\cdots j_{m}} = A \)
 
-\( B_{j_1j_2\cdots j_m} = B \)
+\( B_{j_{1}j_{2}\cdots j_{m}} = B \)
 
 \( \det (AB) = \det A \det B \)
 
@@ -46,27 +46,27 @@ If \( k_s = k_t, s \neq t \implies \det B_{k_1k_2\cdots k_m} = 0 \)
 
 \( A = (a_{11}, a_{12}, \ldots, a_{1n}) \)
 
-\( B = (b_{11}, b_{21}, \ldots, b_{n1})^T \)
+\( B = {(b_{11}, b_{21}, \ldots, b_{n1})}^{T} \)
 
 \( AB = (\sum_{k=1}^{n} a_{1k}b_{k1}) \)
 
-\( A_{k_1} = (a_{1k_1}) \)
+\( A_{k_{1}} = (a_{1k_{1}}) \)
 
-\( B_{k_1} = (b_{k_11}) \)
+\( B_{k_{1}} = (b_{k_{1}1}) \)
 
 \section*{(iii)}
 
-\( B = A^T \)
+\( B = A^{T} \)
 
-\( \det B_{j_1j_2\cdots j_m} = \det A_{j_1j_2\cdots j_m} \)
+\( \det B_{j_{1}j_{2}\cdots j_{m}} = \det A_{j_{1}j_{2}\cdots j_{m}} \)
 
-\( \det(AB) = \sum_{1\leq j_1 < j_2 < \cdots < j_m \leq n} (\det A_{j_1j_2\cdots j_m})^2 \)
+\( \det(AB) = \sum_{1\leq j_{1} < j_{2} < \cdots < j_{m} \leq n} {(\det A_{j_{1}j_{2}\cdots j_{m}})}^{2} \)
 
 \section*{(iv)}
 
 \( m > n \)
 
-\( (j_1,j_2,\ldots,j_m) \) don't exist.
+\( (j_{1},j_{2},\ldots,j_{m}) \) don't exist.
 
 \( \implies \det(AB) = 0 \)
 
@@ -80,23 +80,23 @@ If \( k_s = k_t, s \neq t \implies \det B_{k_1k_2\cdots k_m} = 0 \)
 
 \( C = AB = \left(\begin{matrix}c_{11} & c_{12} \\ c_{21} & c_{22}\end{matrix}\right) \)
 
-\( c_{ij} = \sum_{k=1}^n a_{ik} b_{kj} \)
+\( c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj} \)
 
-\( \det C = c_{11}c_{22} - c_{12}c_{21} = \sum_{1\leq j_1 < j_2 \leq n} (a_{1j_1}a_{2j_2}-a_{1j_2}a_{2j_1})(b_{j_11}b_{j_22}-b_{j_21}b_{j_12}) \)
+\( \det C = c_{11}c_{22} - c_{12}c_{21} = \sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2}) \)
 
-\( (\sum_{k=1}^n a_{1k} b_{k1})(\sum_{k=1}^n a_{2k} b_{k2}) - (\sum_{k=1}^n a_{1k} b_{k2})(\sum_{k=1}^n a_{2k} b_{k1}) = \sum_{1\leq j_1 < j_2 \leq n} (a_{1j_1}a_{2j_2}-a_{1j_2}a_{2j_1})(b_{j_11}b_{j_22}-b_{j_21}b_{j_12}) \)
+\( (\sum_{k=1}^{n} a_{1k} b_{k1})(\sum_{k=1}^{n} a_{2k} b_{k2}) - (\sum_{k=1}^{n} a_{1k} b_{k2})(\sum_{k=1}^{n} a_{2k} b_{k1}) = \sum_{1\leq j_{1} < j_{2} \leq n} (a_{1j_{1}}a_{2j_{2}}-a_{1j_{2}}a_{2j_{1}})(b_{j_{1}1}b_{j_{2}2}-b_{j_{2}1}b_{j_{1}2}) \)
 
-\( a_{1k} := a_k \)
+\( a_{1k} := a_{k} \)
 
-\( b_{1k} := b_k \)
+\( b_{1k} := b_{k} \)
 
-\( a_{2k} := c_k \)
+\( a_{2k} := c_{k} \)
 
-\( b_{2k} := d_k \)
+\( b_{2k} := d_{k} \)
 
-\( (\sum_{k=1}^n a_{k} b_{k})(\sum_{k=1}^n c_{k} d_{k}) - (\sum_{k=1}^n a_{k} d_{k})(\sum_{k=1}^n c_{k} b_{k}) = \sum_{1\leq s < t \leq n} (a_{s}c_{t}-a_{t}c_{s})(b_{s}d_{t}-b_{t}d_{s}) \)
+\( (\sum_{k=1}^{n} a_{k} b_{k})(\sum_{k=1}^{n} c_{k} d_{k}) - (\sum_{k=1}^{n} a_{k} d_{k})(\sum_{k=1}^{n} c_{k} b_{k}) = \sum_{1\leq s < t \leq n} (a_{s}c_{t}-a_{t}c_{s})(b_{s}d_{t}-b_{t}d_{s}) \)
 
-Binet formula ([1.2.3-30](<./1.2.3-30.md>)):
+Binet formula (1.2.3-30): % chktex 8
 
 
-\end{document}
+\end{document} % chktex 17

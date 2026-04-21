@@ -1,16 +1,16 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.5-20}
+\title{1.2.5-20} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( |\Gamma_m(x) - \int_0^m e^{-t}t^{x-1}dt| \leq \int_0^m t^{x-1}|(1-\frac{t}{m})^m - e^{-t}|dt \leq \frac{1}{m}\int_0^m t^{x-1}t^2e^{-t}dt \leq \)
+\( |\Gamma_{m}(x) - \int_{0}^{m} e^{-t}t^{x-1}dt| \leq \int_{0}^{m} t^{x-1}|{(1-\frac{t}{m})}^{m} - e^{-t}|dt \leq \frac{1}{m}\int_{0}^{m} t^{x-1}t^{2}e^{-t}dt \leq \)
 
-\( \leq \frac{1}{m} \int_0^{\infty} t^{x+1}e^{-t}dt \to 0, m \to \infty \)
+\( \leq \frac{1}{m} \int_{0}^{\infty} t^{x+1}e^{-t}dt \to 0, m \to \infty \)
 
-\( \implies \Gamma(x) = \int_0^{\infty} e^{-t}t^{x-1}dt \)
+\( \implies \Gamma(x) = \int_{0}^{\infty} e^{-t}t^{x-1}dt \)
 
 
 \end{document}

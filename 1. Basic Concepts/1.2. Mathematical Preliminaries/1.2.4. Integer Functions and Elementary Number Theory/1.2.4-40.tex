@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-40}
+\title{1.2.4-40} % chktex 8
 
 \begin{document}
 \maketitle
@@ -20,7 +20,7 @@ Let \( c := f(2) - f(1) \)
 
 \( \forall q \in \mathbb{Q_+}: f(q+1) - f(q) = c \)
 
-\( f \) - continuous \( \implies \forall x \in \mathbb{R}_{\geq 0}: f(x+1)-f(x) = c \)
+\( f \) --- continuous \( \implies \forall x \in \mathbb{R}_{\geq 0}: f(x+1)-f(x) = c \)
 
 \( f(0) - f(-1) =: d \)
 
@@ -30,29 +30,29 @@ Let \( c := f(2) - f(1) \)
 
 \( \forall q \in \mathbb{Q_+}: f(-q+1) - f(-q) = d \)
 
-\( f \) - continuous \( \implies \forall x \in \mathbb{R}_{\geq 0}: f(-x+1)-f(-x) = d \)
+\( f \) --- continuous \( \implies \forall x \in \mathbb{R}_{\geq 0}: f(-x+1)-f(-x) = d \)
 
 For \( x = 0 \implies c = d \)
 
 \( \forall x \in \mathbb{R}: f(x+1) - f(x) = c \)
 
-\( g(x) := f(x) - c \lfloor x \rfloor \) - replicative and 1-periodic
+\( g(x) := f(x) - c \lfloor x \rfloor \) --- replicative and 1-periodic
 
 \( \sum_{k=0}^{n-1} g(\frac{k}{n})\frac{1}{n} = \frac{g(0)}{n} \)
 
 Take \( \lim_{n \to \infty} \)
 
-\( \int_0^1 g(x) dx = 0 \)
+\( \int_{0}^{1} g(x) dx = 0 \)
 
-\( c_0 = \int_0^1 g(x) dx = 0 \)
+\( c_{0} = \int_{0}^{1} g(x) dx = 0 \)
 
-\( \forall n \in \mathbb{Z} \setminus \{ 0 \}: c_n = \int_0^1 e^{2\pi i n x} g(x) dx = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} e^{2\pi i n x} g(x) dx \overset{t = x - \frac{k}{n}}{=} \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n (t + \frac{k}{n})} g(t + \frac{k}{n}) dt = \)
+\( \forall n \in \mathbb{Z} \setminus \{ 0 \}: c_{n} = \int_{0}^{1} e^{2\pi i n x} g(x) dx = \sum_{k=0}^{n-1} \int_{\frac{k}{n}}^{\frac{k+1}{n}} e^{2\pi i n x} g(x) dx \overset{t = x - \frac{k}{n}}{=} \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n (t + \frac{k}{n})} g(t + \frac{k}{n}) dt = \)
 
 \( = \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} e^{2\pi i k} g(t + \frac{k}{n}) dt = \sum_{k=0}^{n-1} \int_{0}^{\frac{1}{n}} e^{2\pi i n t} g(t + \frac{k}{n}) dt = \int_{0}^{\frac{1}{n}}e^{2\pi i n t}\sum_{k=0}^{n-1} g(t + \frac{k}{n}) dt = \)
 
-\( = \int_{0}^{\frac{1}{n}}e^{2\pi i n t} g(nt) dt \overset{x=nt}{=} \int_{0}^{1}e^{2\pi i x} g(x) \frac{1}{n}dx = \frac{1}{n} \int_{0}^{1}e^{2\pi i x} g(x) dx = \frac{c_1}{n} \)
+\( = \int_{0}^{\frac{1}{n}}e^{2\pi i n t} g(nt) dt \overset{x=nt}{=} \int_{0}^{1}e^{2\pi i x} g(x) \frac{1}{n}dx = \frac{1}{n} \int_{0}^{1}e^{2\pi i x} g(x) dx = \frac{c_{1}}{n} \)
 
-\( g(x) = \sum_{n \in \mathbb{Z} \setminus \{ 0 \}} \frac{c_1}{n} e^{-2\pi n i x} = a(x-\frac{1}{2}) \)
+\( g(x) = \sum_{n \in \mathbb{Z} \setminus \{ 0 \}} \frac{c_{1}}{n} e^{-2\pi n i x} = a(x-\frac{1}{2}) \)
 
 
-\end{document}
+\end{document} % chktex 17

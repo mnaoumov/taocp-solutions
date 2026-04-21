@@ -1,32 +1,32 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-39}
+\title{1.2.3-39} % chktex 8
 
 \begin{document}
 \maketitle
 
-[1.2.3-36](<./1.2.3-36.md>)
+1.2.3-36 % chktex 8
 
 \( C = C(n,x,y) = \left(\begin{matrix}x + y & y & y & \cdots & y \\ y & x + y & y & \cdots & y \\ y & y & x + y & \cdots & y \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ y & y & y & \cdots & x + y \end{matrix}\right) \)
 
 \( |C| = x^{n-1}(x+ny) \)
 
-\( b_{ij} = \frac{(-1)^{i+j}}{C(n,x,y)} \hat{C}_{ji} \)
+\( b_{ij} = \frac{{(-1)}^{i+j}}{C(n,x,y)} \hat{C}_{ji} \)
 
 \( \hat{C}_{ij} = \left|\begin{matrix} & & & & & (i) & & (j) \\ & x + y & y & y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & y & x + y & y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & y & y & x + y & \cdots & y & \cdots & \cancel{y} & \cdots & y \\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ (i) & \cancel{y} & \cancel{y} & \cancel{y} & \cdots & \cancel{x+y} & \cdots & \cancel{y} & \cdots & \cancel{y}\\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ (j) & y & y & y & \cdots & y & \cdots & \cancel{x+y} & \cdots & y \\ & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \ddots & \vdots \\ & y & y & y & \cdots & y & \cdots & \cancel{y} & \cdots & x + y \end{matrix}\right| \)
 
 If \( i=j, \hat{C}_{ii} = |C(n-1,x,y)| = x^{n-2}(x+(n-1)y) \)
 
-\( b_{ii} = \frac{(-1)^{2i}x^{n-2}(x+ny-y)}{x^{n-1}(x+ny)} = \frac{-y+x+ny}{x(x+ny)} \)
+\( b_{ii} = \frac{{(-1)}^{2i}x^{n-2}(x+ny-y)}{x^{n-1}(x+ny)} = \frac{-y+x+ny}{x(x+ny)} \)
 
 \( i \neq j \)
 
 \section*{\( i < j \)}
 
-Let \( r(k) \) - index of the \( k \)-th row, after removing \( i \)-th row
+Let \( r(k) \) --- index of the \( k \)-th row, after removing \( i \)-th row
 
-Let \( c(l) \) - index of the \( l \)-th row, after removing \( j \)-th column
+Let \( c(l) \) --- index of the \( l \)-th row, after removing \( j \)-th column
 
 \( r(k) = k, 1 \leq k \leq i - 1 \)
 
@@ -52,17 +52,17 @@ In total you have to make \( n-j \) row swaps and \( n-i+1 \) column swaps
 
 \( D(n-1,x,y) := \left|\begin{matrix}x + y & y & y & \cdots & y & y \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \)
 
-\( \hat{C}_{ij} = (-1)^{n-j+n-i+1} D(n-1, x, y) \)
+\( \hat{C}_{ij} = {(-1)}^{n-j+n-i+1} D(n-1, x, y) \)
 
-\( D(n-1,x,y) \overset{R_1 \leftarrow R_1 - R_{n-1}}{=} \left|\begin{matrix}x  & 0 & 0 & \cdots & 0 & 0 \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \overset{\text{Expand by}\ R_1}{=} xD(n-2,x,y) \)
+\( D(n-1,x,y) \overset{R_{1} \leftarrow R_{1} - R_{n-1}}{=} \left|\begin{matrix}x  & 0 & 0 & \cdots & 0 & 0 \\ y & x + y & y & \cdots & y & y \\ y & y & x + y & \cdots & y & y \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ y & y & y & \cdots & x+y & y \\ y & y & y & \cdots & y & y \end{matrix}\right| \overset{\text{Expand by}\ R_{1}}{=} xD(n-2,x,y) \)
 
 \( D(1,x,y) = |y| = y \)
 
 By induction \( D(n-1,x,y) = x^{n-2}y \)
 
-\( \hat{C}_{ij} = (-1)^{i+j+1}x^{n-2}y \)
+\( \hat{C}_{ij} = {(-1)}^{i+j+1}x^{n-2}y \)
 
-\( b_{ij} = \frac{(-1)^{i+j}}{x^{n-1}(x+ny)} (-1)^{i+j+1}x^{n-2}y = \frac{-y}{x(x+ny)} \)
+\( b_{ij} = \frac{{(-1)}^{i+j}}{x^{n-1}(x+ny)} {(-1)}^{i+j+1}x^{n-2}y = \frac{-y}{x(x+ny)} \)
 
 \section*{\( i > j \)}
 
@@ -76,9 +76,9 @@ By transposing
 
 \( A - \lambda I = A(x-\lambda, y) \)
 
-\( |A(x-\lambda,y)| = (x-\lambda)^{n-1}(x-\lambda + ny) = 0 \)
+\( |A(x-\lambda,y)| = {(x-\lambda)}^{n-1}(x-\lambda + ny) = 0 \)
 
-\( \lambda_1 = \lambda_2 = \cdots = \lambda_{n-1} = x, \lambda_n = x + ny \)
+\( \lambda_{1} = \lambda_{2} = \cdots = \lambda_{n-1} = x, \lambda_{n} = x + ny \)
 
 \( e := (1,1,1,\ldots,1) \)
 
@@ -90,7 +90,7 @@ By transposing
 
 \( \forall v: v = P_{<e>}v + P_{<e>^\perp} \)
 
-\( v-P_{<e>}v \perp e \implies (v_1-P_{<e>}v) + (v_2-P_{<e>}v) + \cdots + (v_2-P_{<e>}v) = 0 \implies P_{<e>}v = \frac{v_1+v_2+\cdots v_n}{n}e \)
+\( v-P_{<e>}v \perp e \implies (v_{1}-P_{<e>}v) + (v_{2}-P_{<e>}v) + \cdots + (v_{2}-P_{<e>}v) = 0 \implies P_{<e>}v = \frac{v_{1}+v_{2}+\cdots v_{n}}{n}e \)
 
 \( P_{<e>} = \frac{1}{n} J \)
 
@@ -102,7 +102,7 @@ By transposing
 
 \( = \frac{1}{(x+ny)x}(-yJ + (x+ny)I) \)
 
-\( (A^{-1})_{ij} = \frac{-y+(x+ny)\delta_{ij}}{(x+ny)x} \)
+\( {(A^{-1})}_{ij} = \frac{-y+(x+ny)\delta_{ij}}{(x+ny)x} \)
 
 
 \end{document}

@@ -1,22 +1,22 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-13}
+\title{1.2.7-13} % chktex 8
 
 \begin{document}
 \maketitle
 
 \( y := x - 1 \)
 
-\( \sum_{k=1}^n \frac{x^k}{k} = \sum_{m=1}^n \frac{x^m}{m} = \sum_{m=1}^n \frac{(1+y)^m}{m} = \sum_{m=1}^n \frac{1}{m} \sum_{k=0}^m \binom{m}{k} y^k = \sum_{k=0}^m y^k \sum_{\substack{1 \leq m \leq n\\m \geq k}} \frac{1}{m} \binom{m}{k} = \)
+\( \sum_{k=1}^{n} \frac{x^{k}}{k} = \sum_{m=1}^{n} \frac{x^{m}}{m} = \sum_{m=1}^{n} \frac{{(1+y)}^{m}}{m} = \sum_{m=1}^{n} \frac{1}{m} \sum_{k=0}^{m} \binom{m}{k} y^{k} = \sum_{k=0}^{m} y^{k} \sum_{\substack{1 \leq m \leq n\\m \geq k}} \frac{1}{m} \binom{m}{k} = \)
 
-\( = y^0 \sum_{m=1}^n \frac{1}{m}\binom{m}{0} + \sum_{k=1}^m y^k \sum_{m=k}^n \frac{1}{m} \binom{m}{k} =: A \)
+\( = y^{0} \sum_{m=1}^{n} \frac{1}{m}\binom{m}{0} + \sum_{k=1}^{m} y^{k} \sum_{m=k}^{n} \frac{1}{m} \binom{m}{k} =: A \)
 
-\( y^0 \sum_{m=1}^n \frac{1}{m}\binom{m}{0} = \sum_{m=1}^n \frac{1}{m} = H_n \)
+\( y^{0} \sum_{m=1}^{n} \frac{1}{m}\binom{m}{0} = \sum_{m=1}^{n} \frac{1}{m} = H_{n} \)
 
-\( \sum_{m=k}^n \frac{1}{m} \binom{m}{k} = \frac{1}{k} \sum_{m=k}^n \binom{m-1}{k-1} = \frac{1}{k} \sum_{m=k-1}^{n-1} \binom{m}{k-1} = \frac{1}{k} \sum_{m=0}^{n-1} \binom{m}{k-1} = \frac{1}{k} \binom{n}{k} \)
+\( \sum_{m=k}^{n} \frac{1}{m} \binom{m}{k} = \frac{1}{k} \sum_{m=k}^{n} \binom{m-1}{k-1} = \frac{1}{k} \sum_{m=k-1}^{n-1} \binom{m}{k-1} = \frac{1}{k} \sum_{m=0}^{n-1} \binom{m}{k-1} = \frac{1}{k} \binom{n}{k} \)
 
-\( A = H_n + \sum_{k=1}^m \binom{n}{k}\frac{y^k}{k} \)
+\( A = H_{n} + \sum_{k=1}^{m} \binom{n}{k}\frac{y^{k}}{k} \)
 
 QED
 

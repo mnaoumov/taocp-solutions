@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-38}
+\title{1.2.4-38} % chktex 8
 
 \begin{document}
 \maketitle
@@ -12,11 +12,11 @@
 
 We need to count summands that are \( \geq 1 \)
 
-\( \leq \{ x \} + \frac{k}{y} \geq 1 \implies \{ x \} y + k \geq y \implies k \geq y(1-\{ x\}) \iff k \geq \lceil y(1-\{ x\}) \rceil =: k_0 \)
+\( \leq \{ x \} + \frac{k}{y} \geq 1 \implies \{ x \} y + k \geq y \implies k \geq y(1-\{ x\}) \iff k \geq \lceil y(1-\{ x\}) \rceil =: k_{0} \)
 
-There are \( \lceil y \rceil - k_0 \) such \( k \).
+There are \( \lceil y \rceil - k_{0} \) such \( k \).
 
-\( A = \lfloor x \rfloor \cdot \lceil y \rceil + \lceil y \rceil - k_0 = (\lfloor x \rfloor + 1) \lceil y\rceil - k_0 = (\lfloor x \rfloor + 1) \lceil y\rceil + \lfloor -y(1-\{x\}) \rfloor = \)
+\( A = \lfloor x \rfloor \cdot \lceil y \rceil + \lceil y \rceil - k_{0} = (\lfloor x \rfloor + 1) \lceil y\rceil - k_{0} = (\lfloor x \rfloor + 1) \lceil y\rceil + \lfloor -y(1-\{x\}) \rfloor = \)
 
 \( = \lfloor (\lfloor x \rfloor + 1) \lceil y\rceil - y + y\{ x \} \rfloor = \lfloor (\lfloor x \rfloor + 1) \lceil y\rceil - y + yx - y\lfloor x \rfloor \rfloor = \)
 

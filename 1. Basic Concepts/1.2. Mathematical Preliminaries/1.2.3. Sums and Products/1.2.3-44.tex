@@ -1,28 +1,28 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-44}
+\title{1.2.3-44} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( (C^{-1})_{ij} = \frac{\prod_{k=1}^n(x_k + y_i)(x_j+y_k)}{(x_j+y_i) \cdot \prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_j-x_k) \cdot \prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_i-y_k)} \)
+\( {(C^{-1})}_{ij} = \frac{\prod_{k=1}^{n}(x_{k} + y_{i})(x_{j}+y_{k})}{(x_{j}+y_{i}) \cdot \prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_{j}-x_{k}) \cdot \prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_{i}-y_{k})} \)
 
-\( d_j := \sum_{i=1}^n (C^{-1})_{ij} = \frac{\prod_{k=1}^n (x_j+y_k)}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_j-x_k)} \underbrace{\sum_{i=1}^n\frac{\overbrace{\prod_{\substack{1 \leq k \leq n\\k \neq j}}(x_k + y_i)}^A}{\prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_i-y_k)}}_B \)
+\( d_{j} := \sum_{i=1}^{n} {(C^{-1})}_{ij} = \frac{\prod_{k=1}^{n} (x_{j}+y_{k})}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_{j}-x_{k})} \underbrace{\sum_{i=1}^{n}\frac{\overbrace{\prod_{\substack{1 \leq k \leq n\\k \neq j}}(x_{k} + y_{i})}^{A}}{\prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_{i}-y_{k})}}_{B} \)
 
-\( A = P_{n-1}(y_i) \)
+\( A = P_{n-1}(y_{i}) \)
 
-\( P_{n-1}(t) = \prod_{\substack{1 \leq k \leq n\\k \neq j}}(x_k + t) = t^{n-1} + Q_{n-2}(t) \)
+\( P_{n-1}(t) = \prod_{\substack{1 \leq k \leq n\\k \neq j}}(x_{k} + t) = t^{n-1} + Q_{n-2}(t) \)
 
-[1.2.3-33](<./1.2.3-33.md>) \( \implies B = \sum_{i=1}^n\frac{f(y_i)}{\prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_i-y_k)} = 1 \)
+1.2.3-33 \( \implies B = \sum_{i=1}^{n}\frac{f(y_{i})}{\prod_{\substack{1 \leq k \leq n\\ k \neq i}} (y_{i}-y_{k})} = 1 \) % chktex 8
 
-\( d_j = \frac{\prod_{k=1}^n (x_j+y_k)}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_j-x_k)} \)
+\( d_{j} = \frac{\prod_{k=1}^{n} (x_{j}+y_{k})}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_{j}-x_{k})} \)
 
-\( S = \sum_{j=1}^n d_j = \frac{R_n(x_j)}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_j-x_k)} \)
+\( S = \sum_{j=1}^{n} d_{j} = \frac{R_{n}(x_{j})}{\prod_{\substack{1 \leq k \leq n\\ k \neq j}} (x_{j}-x_{k})} \)
 
-\( R_n(t) = \prod_{k=1}^n (x_j+y_k) = t^n + (y_1+y_2+\cdots+y_n)t^{n-1} + T_{n-2}(t) \)
+\( R_{n}(t) = \prod_{k=1}^{n} (x_{j}+y_{k}) = t^{n} + (y_{1}+y_{2}+\cdots+y_{n})t^{n-1} + T_{n-2}(t) \)
 
-[1.2.3-33](<./1.2.3-33.md>) \( \implies S = (x_1+x_2+\cdots+x_n) + (y_1+y_2+\cdots+y_n) \)
+1.2.3-33 \( \implies S = (x_{1}+x_{2}+\cdots+x_{n}) + (y_{1}+y_{2}+\cdots+y_{n}) \) % chktex 8
 
 
 \end{document}

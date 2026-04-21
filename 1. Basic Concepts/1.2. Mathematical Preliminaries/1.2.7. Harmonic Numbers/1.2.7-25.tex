@@ -1,20 +1,20 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-25}
+\title{1.2.7-25} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( H_n^{(u,v)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^uk^v} \)
+\( H_{n}^{(u,v)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} \)
 
-\( H_n^{(0,v)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{k^v} = \sum_{1 \leq k \leq n} \frac{k}{k^v} = H_n^{(v-1)} \)
+\( H_{n}^{(0,v)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{k^{v}} = \sum_{1 \leq k \leq n} \frac{k}{k^{v}} = H_{n}^{(v-1)} \)
 
-\( H_n^{(u,0)} = H_n^{(u-1)} \)
+\( H_{n}^{(u,0)} = H_{n}^{(u-1)} \)
 
-\( H_n^{(u,v)} + H_n^{(v,u)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^uk^v} + \sum_{1 \leq j \leq k \leq n} \frac{1}{j^vk^u} \overset{j \leftrightarrow k\ \textrm{in second sum}}{=} \sum_{1 \leq j \leq k \leq n} \frac{1}{j^uk^v} + \sum_{1 \leq k \leq j \leq n} \frac{1}{j^uk^v} = \)
+\( H_{n}^{(u,v)} + H_{n}^{(v,u)} = \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{v}k^{u}} \overset{j \leftrightarrow k\ \textrm{in second sum}}{=} \sum_{1 \leq j \leq k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq k \leq j \leq n} \frac{1}{j^{u}k^{v}} = \)
 
-\( = \sum_{1 \leq j, k \leq n} \frac{1}{j^uk^v} + \sum_{1 \leq j=k \leq n} \frac{1}{j^uk^v} = \sum_{j=1}^n \frac{1}{j^u} \cdot \sum_{k=1}^n \frac{1}{k^v} + \sum_{j=1}^n \frac{1}{j^{u+v}} = H_n^{(u)} H_n^{(v)} + H_n^{(u+v)} \)
+\( = \sum_{1 \leq j, k \leq n} \frac{1}{j^{u}k^{v}} + \sum_{1 \leq j=k \leq n} \frac{1}{j^{u}k^{v}} = \sum_{j=1}^{n} \frac{1}{j^{u}} \cdot \sum_{k=1}^{n} \frac{1}{k^{v}} + \sum_{j=1}^{n} \frac{1}{j^{u+v}} = H_{n}^{(u)} H_{n}^{(v)} + H_{n}^{(u+v)} \)
 
 
 \end{document}

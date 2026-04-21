@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-46}
+\title{1.2.4-46} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,40 +10,40 @@
 
 \( M := \lceil{\alpha m }\rceil \geq 1 \)
 
-\( A := \sum_{0 \leq j < \alpha n}{f(\lfloor{\frac{mj}{n}}\rfloor)} = \sum_{r} f(r) \overbrace{\#\{ j \in \mathbb{Z}: 0 \leq j < \alpha n, r = \lfloor{\frac{mj}{n}}\rfloor \}}^{B_r} \)
+\( A := \sum_{0 \leq j < \alpha n}{f(\lfloor{\frac{mj}{n}}\rfloor)} = \sum_{r} f(r) \overbrace{\#\{ j \in \mathbb{Z}: 0 \leq j < \alpha n, r = \lfloor{\frac{mj}{n}}\rfloor \}}^{B_{r}} \)
 
 \( r = \lfloor{\frac{mj}{n}}\rfloor \} \iff r \leq \frac{mj}{n} < r + 1 \iff \frac{nr}{m} \leq j < \frac{n(r+1)}{m} \iff \lceil\frac{nr}{m}\rceil \leq j < \lceil\frac{n(r+1)}{m}\rceil \)
 
-\( c_r := \lceil\frac{nr}{m}\rceil \)
+\( c_{r} := \lceil\frac{nr}{m}\rceil \)
 
-\( B_r = \#\{ j \in \mathbb{Z}: \max(0, c_r) \leq j < \min(N, c_{r+1}) \} = \max(0, \min(N, c_{r+1}) - \max(0, c_r)) = \)
+\( B_{r} = \#\{ j \in \mathbb{Z}: \max(0, c_{r}) \leq j < \min(N, c_{r+1}) \} = \max(0, \min(N, c_{r+1}) - \max(0, c_{r})) = \)
 
-\( = \max(0, \min(N - 0, N - c_r, c_{r+1} -0, c_{r+1} - c_r)) \)
+\( = \max(0, \min(N - 0, N - c_{r}, c_{r+1} -0, c_{r+1} - c_{r})) \)
 
-Let's leave only \( B_r > 0 \)
+Let's leave only \( B_{r} > 0 \)
 
-\( N - 0 > 0, c_{r+1} - c_r \geq 0 \)
+\( N - 0 > 0, c_{r+1} - c_{r} \geq 0 \)
 
 \( c_{r+1} > 0 \iff \frac{n(r+1)}{m} > 0 \iff r > -1 \iff r \geq 0 \)
 
-\( N - c_r > 0 \iff c_r < N \iff c_r < \alpha n \overset{!!!}{\implies} \frac{nr}{m} < \alpha n \iff r < \alpha m \iff r < M \)
+\( N - c_{r} > 0 \iff c_{r} < N \iff c_{r} < \alpha n \overset{!!!}{\implies} \frac{nr}{m} < \alpha n \iff r < \alpha m \iff r < M \)
 
 But this is valid only one way.
 
 Let check in reverse
 
-\( r < M \iff r < \alpha m \iff \frac{nr}{m} < \alpha n \overset{!!!}{\implies} \frac{nr}{m} < N \iff \frac{nr}{m} \leq N \iff c_r \leq N \)
+\( r < M \iff r < \alpha m \iff \frac{nr}{m} < \alpha n \overset{!!!}{\implies} \frac{nr}{m} < N \iff \frac{nr}{m} \leq N \iff c_{r} \leq N \)
 
-So for \( r < M \) we can only claim \( c_r \leq N \), so maybe \( B_r = 0 \) for some of those \( r \).
+So for \( r < M \) we can only claim \( c_{r} \leq N \), so maybe \( B_{r} = 0 \) for some of those \( r \).
 
-\( B_r = \min(N, c_{r+1}) - c_r = \left\{{\begin{matrix}c_{r+1} - c_r, & 0 \leq r \leq M - 2\\N - c_{M-1}, & r = M-1\\0,& r<0 \lor r \geq M\end{matrix}}\right. = (c_{r+1}-c_r)[0 \leq r \leq M - 1] + (N-c_M)[r = M - 1] \)
+\( B_{r} = \min(N, c_{r+1}) - c_{r} = \left\{{\begin{matrix}c_{r+1} - c_{r}, & 0 \leq r \leq M - 2\\N - c_{M-1}, & r = M-1\\0,& r<0 \lor r \geq M\end{matrix}}\right. = (c_{r+1}-c_{r})[0 \leq r \leq M - 1] + (N-c_{M})[r = M - 1] \)
 
-\( A = \sum_{0 \leq r < M} f(r)B_r = \sum_{0 \leq r < M} f(r)(c_{r+1}-c_r) + f(M-1)(N-c_M) = \)
-\( = \sum_{1 \leq r < M + 1} f(r-1)c_r - \sum_{0 \leq r < M} f(r)c_r + f(M-1)(N-c_M) = \)
+\( A = \sum_{0 \leq r < M} f(r)B_{r} = \sum_{0 \leq r < M} f(r)(c_{r+1}-c_{r}) + f(M-1)(N-c_{M}) = \)
+\( = \sum_{1 \leq r < M + 1} f(r-1)c_{r} - \sum_{0 \leq r < M} f(r)c_{r} + f(M-1)(N-c_{M}) = \)
 
-\( = \sum_{0 \leq r < M} f(r-1)c_r - f(0-1)c_0 + f(M-1)c_{M} -\sum_{0 \leq r < M} f(r)c_r + f(M-1)(N-c_M) \)
+\( = \sum_{0 \leq r < M} f(r-1)c_{r} - f(0-1)c_{0} + f(M-1)c_{M} -\sum_{0 \leq r < M} f(r)c_{r} + f(M-1)(N-c_{M}) \)
 
-\( \overset{c_0 = 0}{=} \sum_{0 \leq r < M} c_r(f(r-1)-f(r)) + Nf(M-1) = \)
+\( \overset{c_{0} = 0}{=} \sum_{0 \leq r < M} c_{r}(f(r-1)-f(r)) + Nf(M-1) = \)
 
 \( = \sum_{0 \leq r < \alpha m} \lceil\frac{nr}{m}\rceil(f(r-1)-f(r)) + \lceil{\alpha n }\rceil f(\lceil{\alpha m }\rceil-1) = \)
 

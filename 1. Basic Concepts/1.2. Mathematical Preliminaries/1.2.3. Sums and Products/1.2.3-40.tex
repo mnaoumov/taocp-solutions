@@ -1,62 +1,62 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-40}
+\title{1.2.3-40} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( V = V(x_1, x_2, \ldots x_n) = \left(\begin{matrix} x_1 & x_2 & \cdots & x_n \\ x_1^2 & x_2^2 & \cdots & x_n^2 \\ \vdots & \vdots & \ddots & \vdots \\ x_1^n & x_2^n & \cdots & x_n^n \end{matrix}\right) \)
+\( V = V(x_{1}, x_{2}, \ldots x_{n}) = \left(\begin{matrix} x_{1} & x_{2} & \cdots & x_{n} \\ x_{1}^{2} & x_{2}^{2} & \cdots & x_{n}^{2} \\ \vdots & \vdots & \ddots & \vdots \\ x_{1}^{n} & x_{2}^{n} & \cdots & x_{n}^{n} \end{matrix}\right) \)
 
-\( \forall v: vV = (v_1x_1+v_2x_1^2+\cdots+v_nx_1^n,\ldots, v_1x_n+v_2x_n^2+\cdots+v_nx_n^n) = (p_v(x_1),p_v(x_2),\ldots,p_v(x_n)) \)
+\( \forall v: vV = (v_{1}x_{1}+v_{2}x_{1}^{2}+\cdots+v_{n}x_{1}^{n},\ldots, v_{1}x_{n}+v_{2}x_{n}^{2}+\cdots+v_{n}x_{n}^{n}) = (p_{v}(x_{1}),p_{v}(x_{2}),\ldots,p_{v}(x_{n})) \)
 
-Where \( p_v(t) = v_1t + v_2t^2 + \cdots + v_nt^n \)
+Where \( p_{v}(t) = v_{1}t + v_{2}t^{2} + \cdots + v_{n}t^{n} \)
 
-\( (p_v(x_1),p_v(x_2),\ldots,p_v(x_n))V^{-1} = v^T \)
+\( (p_{v}(x_{1}),p_{v}(x_{2}),\ldots,p_{v}(x_{n}))V^{-1} = v^{T} \)
 
-\( \forall w \), let's find \( v: (p_v(x_1),p_v(x_2),\ldots,p_v(x_n)) = w^T \)
+\( \forall w \), let's find \( v: (p_{v}(x_{1}),p_{v}(x_{2}),\ldots,p_{v}(x_{n})) = w^{T} \)
 
-Observe that \( p_v(0) = 0 \)
+Observe that \( p_{v}(0) = 0 \)
 
-\( x_0 := 0, w_0 := 0 \)
+\( x_{0} := 0, w_{0} := 0 \)
 
-\( p_v(x_i) = w_i, 0 \leq i \leq n \)
+\( p_{v}(x_{i}) = w_{i}, 0 \leq i \leq n \)
 
-\( q(t) := (t-x_0)(t-x_1)\cdots(t-x_n) \)
+\( q(t) := (t-x_{0})(t-x_{1})\cdots(t-x_{n}) \)
 
-\( q_j(t) = \frac{q(t)}{t-x_j} \)
+\( q_{j}(t) = \frac{q(t)}{t-x_{j}} \)
 
-\( q_j(x_k) = 0, j \neq k \)
+\( q_{j}(x_{k}) = 0, j \neq k \)
 
-\( q_j(x_j) = q'(x_j) \neq 0 \)
+\( q_{j}(x_{j}) = q'(x_{j}) \neq 0 \)
 
-\( l_j(t) = \frac{q_j(t)}{q_j(x_j)} \)
+\( l_{j}(t) = \frac{q_{j}(t)}{q_{j}(x_{j})} \)
 
-\( l_j(x_j) = 1, l_j(x_k) = 0, k \neq j \)
+\( l_{j}(x_{j}) = 1, l_{j}(x_{k}) = 0, k \neq j \)
 
-\( l_j(t) = \sum_{i=0}^n l_{ij}t^i \)
+\( l_{j}(t) = \sum_{i=0}^{n} l_{ij}t^{i} \)
 
-\( p_v(t) = \sum_{j=0}^n w_j l_j(t) \) - satisfies the conditions
+\( p_{v}(t) = \sum_{j=0}^{n} w_{j} l_{j}(t) \) --- satisfies the conditions
 
-\( p_v(t) = \sum_{j=0}^n\sum_{i=0}^n w_j l_{ij}t^i = \sum_{i=0}^n t^i \sum_{j=0}^n(l_{ij} w_j) \)
+\( p_{v}(t) = \sum_{j=0}^{n}\sum_{i=0}^{n} w_{j} l_{ij}t^{i} = \sum_{i=0}^{n} t^{i} \sum_{j=0}^{n}(l_{ij} w_{j}) \)
 
 \( L := (l_{ij}) \)
 
-\( p_v(t) = \sum_{i=0}^n t^i (Lw)_i \)
+\( p_{v}(t) = \sum_{i=0}^{n} t^{i} {(Lw)}_{i} \)
 
-\( \implies p_v = p_{Lw} \)
+\( \implies p_{v} = p_{Lw} \)
 
 \( \implies v = Lw \)
 
-\( w^T L^T = v^T \implies V^{-1} = L^T \)
+\( w^{T} L^{T} = v^{T} \implies V^{-1} = L^{T} \)
 
-\( (V^{-1})_{ij} = (L^T)_{ij} = (L){ji} = l_{ji} = [t^j] l_i(t) \)
+\( {(V^{-1})}_{ij} = {(L^{T})}_{ij} = (L){ji} = l_{ji} = [t^{j}] l_{i}(t) \)
 
-\( l_i(t) = \frac{1}{q_j(x_j)} (t-x_0)(t-x_1) \cdot\ \cdots\ \cdot \widehat{(x-x_j)} \cdot\ \cdots\ \cdot (x-x_n) = \frac{t}{q_j(x_j)} (t-x_1) \cdot\ \cdots\ \cdot \widehat{(x-x_j)} \cdot\ \cdots\ \cdot (x-x_n) = \)
+\( l_{i}(t) = \frac{1}{q_{j}(x_{j})} (t-x_{0})(t-x_{1}) \cdot\ \cdots\ \cdot \widehat{(x-x_{j})} \cdot\ \cdots\ \cdot (x-x_{n}) = \frac{t}{q_{j}(x_{j})} (t-x_{1}) \cdot\ \cdots\ \cdot \widehat{(x-x_{j})} \cdot\ \cdots\ \cdot (x-x_{n}) = \)
 
-\( = \frac{t}{q_j(x_j)} (t^n - e_1(x_1,\ldots,\widehat{x_j},\ldots, x_n)t^{n-1} + e_2(x_1,\ldots,\widehat{x_j},\ldots, x_n)t^{n-2} + \cdots + (-1)^n e_n(x_1,\ldots,\widehat{x_j},\ldots, x_n)) \)
+\( = \frac{t}{q_{j}(x_{j})} (t^{n} - e_{1}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-1} + e_{2}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})t^{n-2} + \cdots + {(-1)}^{n} e_{n}(x_{1},\ldots,\widehat{x_{j}},\ldots, x_{n})) \)
 
-\( (V^{-1})_{ij} = [t^j] l_i(t) = \frac{(-1)^{n+1-j}e_{n+1-j}(x_1,\ldots,\widehat{x_i},\ldots, x_n)}{q_j(x_j)} \)
+\( {(V^{-1})}_{ij} = [t^{j}] l_{i}(t) = \frac{{(-1)}^{n+1-j}e_{n+1-j}(x_{1},\ldots,\widehat{x_{i}},\ldots, x_{n})}{q_{j}(x_{j})} \)
 
 
 \end{document}

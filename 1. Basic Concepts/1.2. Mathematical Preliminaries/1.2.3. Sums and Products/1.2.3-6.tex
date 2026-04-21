@@ -1,32 +1,32 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.3-6}
+\title{1.2.3-6} % chktex 8
 
 \begin{document}
 \maketitle
 
 Let \( \{ A(j), B(j), C(j), D(j) \} = \{ R(j), S(j), R(j)\ \textrm{or}\ S(j), R(j)\ \textrm{and}\ S(j) \} \)
 
-Series with \( A(j), B(j), C(j) \) - converge
+Series with \( A(j), B(j), C(j) \) --- converge
 
-\( \sum_{A(j)} a_j = \lim_{n\to\infty} \sum_{A(j,n)} a_j + \lim_{n\to\infty} \sum_{A(j,-n)} a_j \)
+\( \sum_{A(j)} a_{j} = \lim_{n\to\infty} \sum_{A(j,n)} a_{j} + \lim_{n\to\infty} \sum_{A(j,-n)} a_{j} \)
 
-\( \sum_{B(j)} a_j = \lim_{n\to\infty} \sum_{B(j,n)} a_j + \lim_{n\to\infty} \sum_{B(j,-n)} a_j \)
+\( \sum_{B(j)} a_{j} = \lim_{n\to\infty} \sum_{B(j,n)} a_{j} + \lim_{n\to\infty} \sum_{B(j,-n)} a_{j} \)
 
-\( \sum_{C(j)} a_j = \lim_{n\to\infty} \sum_{C(j,n)} a_j + \lim_{n\to\infty} \sum_{C(j,-n)} a_j \)
+\( \sum_{C(j)} a_{j} = \lim_{n\to\infty} \sum_{C(j,n)} a_{j} + \lim_{n\to\infty} \sum_{C(j,-n)} a_{j} \)
 
 We choose the order, such that
 
-\( \sum_{A(j,n)} a_j + \sum_{B(j,n)} a_j = \sum_{C(j,n)} a_j + \sum_{D(j,n)} a_j \)
+\( \sum_{A(j,n)} a_{j} + \sum_{B(j,n)} a_{j} = \sum_{C(j,n)} a_{j} + \sum_{D(j,n)} a_{j} \)
 
-\( \sum_{A(j,-n)} a_j + \sum_{B(j,-n)} a_j = \sum_{C(j,-n)} a_j + \sum_{D(j,-n)} a_j \)
+\( \sum_{A(j,-n)} a_{j} + \sum_{B(j,-n)} a_{j} = \sum_{C(j,-n)} a_{j} + \sum_{D(j,-n)} a_{j} \)
 
-\( \implies \exists \lim_{n\to\infty} \sum_{D(j,n)} a_j = \lim_{n\to\infty}(\sum_{A(j,n)} a_j + \sum_{B(j,n)} a_j - \sum_{C(j,n)} a_j) \)
+\( \implies \exists \lim_{n\to\infty} \sum_{D(j,n)} a_{j} = \lim_{n\to\infty}(\sum_{A(j,n)} a_{j} + \sum_{B(j,n)} a_{j} - \sum_{C(j,n)} a_{j}) \)
 
-\( \exists \lim_{n\to\infty} \sum_{D(j,-n)} a_j = \lim_{n\to\infty}(\sum_{A(j,-n)} a_j + \sum_{B(j,-n)} a_j - \sum_{C(j,-n)} a_j) \)
+\( \exists \lim_{n\to\infty} \sum_{D(j,-n)} a_{j} = \lim_{n\to\infty}(\sum_{A(j,-n)} a_{j} + \sum_{B(j,-n)} a_{j} - \sum_{C(j,-n)} a_{j}) \)
 
-\( \implies \exists \sum_{D(j)} a_j = \sum_{A(j)} a_j + \sum_{B(j)} a_j - \sum_{C(j)} a_j \)
+\( \implies \exists \sum_{D(j)} a_{j} = \sum_{A(j)} a_{j} + \sum_{B(j)} a_{j} - \sum_{C(j)} a_{j} \)
 
 
 \end{document}

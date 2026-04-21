@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-54}
+\title{1.2.6-54} % chktex 8
 
 \begin{document}
 \maketitle
@@ -26,27 +26,27 @@
 
 \( = \delta_{3j} - 3(\delta_{2j} - 2\delta_{1j} + \delta_{0j}) - 3(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{3j} - 3 \delta_{2j} + 3 \delta_{1j} - \delta_{0j} \)
 
-\( \implies q_{ij} = (-1)^{i-j} \binom{i}{j} \)
+\( \implies q_{ij} = {(-1)}^{i-j} \binom{i}{j} \)
 
 Prove by induction
 
 \( i = 0 \)
 
-\( q_{0j} = \delta_{0j} = (-1)^{0-j} \binom{0}{j}, j \geq 0 \)
+\( q_{0j} = \delta_{0j} = {(-1)}^{0-j} \binom{0}{j}, j \geq 0 \)
 
 \( (i \implies i + 1) \)
 
-\( \sum_k p_{i+1,k}q_{kj} = \delta_{i+1,j} \)
+\( \sum_{k} p_{i+1,k}q_{kj} = \delta_{i+1,j} \)
 
-\( \sum_{k=0}^i p_{i+1,k}q_{kj} + p_{i+1,i+1}q_{i+1,j} = \delta_{i+1,j} \)
+\( \sum_{k=0}^{i} p_{i+1,k}q_{kj} + p_{i+1,i+1}q_{i+1,j} = \delta_{i+1,j} \)
 
-\( \sum_{k=0}^i \binom{i+1}{k}(-1)^{k-j} \binom{k}{j} + q_{i+1,j} = \delta_{i+1,j} \)
+\( \sum_{k=0}^{i} \binom{i+1}{k}{(-1)}^{k-j} \binom{k}{j} + q_{i+1,j} = \delta_{i+1,j} \)
 
-\( q_{i+1,j} = \delta_{i+1,j} - \sum_{k=0}^i \binom{i+1}{k}(-1)^{k-j} \binom{k}{j} = \delta_{i+1,j} - \sum_{k=0}^i \binom{i+1}{j}\binom{i+1-j}{k-j}(-1)^{k-j} = \)
+\( q_{i+1,j} = \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{k}{(-1)}^{k-j} \binom{k}{j} = \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{j}\binom{i+1-j}{k-j}{(-1)}^{k-j} = \)
 
-\( = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=-j}^{i-j} \binom{i+1-j}{k}(-1)^{k} = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=0}^{i+1-j} \binom{i+1-j}{k}(-1)^{k} + \binom{i+1}{j} \binom{i+1-j}{i+1-j}(-1)^{i+1-j} = \)
+\( = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=-j}^{i-j} \binom{i+1-j}{k}{(-1)}^{k} = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=0}^{i+1-j} \binom{i+1-j}{k}{(-1)}^{k} + \binom{i+1}{j} \binom{i+1-j}{i+1-j}{(-1)}^{i+1-j} = \)
 
-\( = \delta_{i+1,j} - \binom{i+1}{j}(1-1)^{i+1-j} + \binom{i+1}{j}(-1)^{(i+1)-j} = \delta_{i+1,j} - \delta_{i+1,j} + \binom{i+1}{j}(-1)^{(i+1)-j} = \binom{i+1}{j}(-1)^{(i+1)-j} \)
+\( = \delta_{i+1,j} - \binom{i+1}{j}{(1-1)}^{i+1-j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} = \delta_{i+1,j} - \delta_{i+1,j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} = \binom{i+1}{j}{(-1)}^{(i+1)-j} \)
 
 
 \end{document}

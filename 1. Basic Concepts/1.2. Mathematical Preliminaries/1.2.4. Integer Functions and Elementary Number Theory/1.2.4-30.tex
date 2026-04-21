@@ -1,34 +1,34 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-30}
+\title{1.2.4-30} % chktex 8
 
 \begin{document}
 \maketitle
 
 Let \( r \perp s \)
 
-\( 0 \leq x_1 < x_2 < \cdots < x_{\varphi(r)} \leq r - 1 \)
+\( 0 \leq x_{1} < x_{2} < \cdots < x_{\varphi(r)} \leq r - 1 \)
 
-\( 0 \leq y_1 < y_2 < \cdots < y_{\varphi(s)} \leq s - 1 \)
+\( 0 \leq y_{1} < y_{2} < \cdots < y_{\varphi(s)} \leq s - 1 \)
 
-\( 0 \leq z_1 < z_2 < \cdots < z_{\varphi(rs)} \leq rs - 1 \)
+\( 0 \leq z_{1} < z_{2} < \cdots < z_{\varphi(rs)} \leq rs - 1 \)
 
-\( Z := \{ z_1, z_2, \ldots, z_{\varphi(rs)} \} \)
+\( Z := \{ z_{1}, z_{2}, \ldots, z_{\varphi(rs)} \} \)
 
-\( x_i \perp r, 1 \leq i \leq \varphi(r) \)
+\( x_{i} \perp r, 1 \leq i \leq \varphi(r) \)
 
-\( y_j \perp s, 1 \leq j \leq \varphi(s) \)
+\( y_{j} \perp s, 1 \leq j \leq \varphi(s) \)
 
-\( z_k \perp (rs), 1 \leq k \leq \varphi(rs) \)
+\( z_{k} \perp (rs), 1 \leq k \leq \varphi(rs) \)
 
 \( r \perp s \implies \exists r',s': rr' \equiv 1 \ (\mathrm{modulo}\ s), ss' \equiv 1 \ (\mathrm{modulo}\ r), \)
 
-\( u_{ij} := (x_iss' + y_jrr') \mod rs, 1 \leq i \leq \varphi(r) - 1, 1 \leq j \leq \varphi(s) - 1 \)
+\( u_{ij} := (x_{i}ss' + y_{j}rr') \mod rs, 1 \leq i \leq \varphi(r) - 1, 1 \leq j \leq \varphi(s) - 1 \)
 
-\( u_{ij} \equiv x_i(ss') + 0 \equiv x_i\ (\mathrm{modulo}\ r) \)
+\( u_{ij} \equiv x_{i}(ss') + 0 \equiv x_{i}\ (\mathrm{modulo}\ r) \)
 
-\( u_{ij} \equiv 0 + y_j(rr') \equiv y_j\ (\mathrm{modulo}\ s) \)
+\( u_{ij} \equiv 0 + y_{j}(rr') \equiv y_{j}\ (\mathrm{modulo}\ s) \)
 
 \( U := \{ u_{ij}: 1 \leq i \leq \varphi(r) - 1, 1 \leq j \leq \varphi(s) - 1 \} \)
 
@@ -38,33 +38,33 @@ Let \( r \perp s \)
 
 Let's prove \( u_{ij} \perp (rs) \)
 
-Assume \( u_{ij} \not\perp (rs) \implies \exists p \) - prime, \( p \backslash u_{ij}, p \backslash (rs) \)
+Assume \( u_{ij} \not\perp (rs) \implies \exists p \) --- prime, \( p \backslash u_{ij}, p \backslash (rs) \)
 
 \( p \backslash (rs) \implies (p \backslash r) \lor (p \backslash s) \)
 
 If \( p \backslash r \)
 
-\( x_i ss' = u_{ij} - y_j rr' \implies p \backslash (x_i ss') \)
+\( x_{i} ss' = u_{ij} - y_{j} rr' \implies p \backslash (x_{i} ss') \)
 
-\( x_i ss' \equiv 0\ (\mathrm{modulo}\ p) \)
+\( x_{i} ss' \equiv 0\ (\mathrm{modulo}\ p) \)
 
-\( x_i \perp r \implies x_i \perp p \)
+\( x_{i} \perp r \implies x_{i} \perp p \)
 
-\( \implies ss' \equiv 0\ (\mathrm{modulo}\ p) \implies ss' \equiv 0\ (\mathrm{modulo}\ r) \) - contradiction.
+\( \implies ss' \equiv 0\ (\mathrm{modulo}\ p) \implies ss' \equiv 0\ (\mathrm{modulo}\ r) \) --- contradiction.
 
 Similarly, if \( p \backslash s \) getting another contradiction.
 
 \( \implies u_{ij} \perp (rs) \implies u_{ij} \in Z \)
 
-\( \forall z_k \in Z \)
+\( \forall z_{k} \in Z \)
 
-\( x := z_k \mod r, y := z_k \mod s \)
+\( x := z_{k} \mod r, y := z_{k} \mod s \)
 
-\( z_k \perp (rs) \implies z_k \perp r, z_k \perp s \implies x \perp r, y \perp s \)
+\( z_{k} \perp (rs) \implies z_{k} \perp r, z_{k} \perp s \implies x \perp r, y \perp s \)
 
-\( \exists i,j: x = x_i, y = y_j \)
+\( \exists i,j: x = x_{i}, y = y_{j} \)
 
-\( v := |z_k-u_{i,j}| \)
+\( v := |z_{k}-u_{i,j}| \)
 
 \( 0 \leq v \leq rs - 1 \)
 
@@ -74,19 +74,19 @@ Similarly, if \( p \backslash s \) getting another contradiction.
 
 \( \implies v \equiv 0\ (\mathrm{modulo}\ rs) \implies v = 0 \)
 
-\( \implies z_k = u_{ij} \in U \)
+\( \implies z_{k} = u_{ij} \in U \)
 
 \( \implies Z = U \implies \#Z = \#U \implies \varphi(rs) = \varphi(r)\varphi(s) \)
 
 \bigskip\hrule\bigskip
 
-\( \varphi(1000000) = \varphi(10^6) = \varphi(2^6\cdot 5^6) = \varphi(2^6)\varphi(5^6) = (2^6-2^5)(5^6-5^5) = 2^5(2-1)\cdot 5^5(5-1) = 4 \cdot 10^5 = 400000 \)
+\( \varphi(1000000) = \varphi(10^{6}) = \varphi(2^{6}\cdot 5^{6}) = \varphi(2^{6})\varphi(5^{6}) = (2^{6}-2^{5})(5^{6}-5^{5}) = 2^{5}(2-1)\cdot 5^{5}(5-1) = 4 \cdot 10^{5} = 400000 \)
 
 \bigskip\hrule\bigskip
 
-\( n = p_1^{a_1}p_2^{a_2} \cdot\ \cdots\ \cdot p_k^{a_k} \)
+\( n = p_{1}^{a_{1}}p_{2}^{a_{2}} \cdot\ \cdots\ \cdot p_{k}^{a_{k}} \)
 
-\( \varphi(n) = \varphi(p_1^{a_1})\varphi(p_2^{a_2}) \cdot\ \cdots\ \cdot \varphi(p_k^{a_k})=(p_1^{a_1} - p_1^{a_1 - 1})(p_2^{a_2} - p_2^{a_2 - 1}) \cdot\ \cdots\ \cdot (p_k^{a_k} - p_k^{a_k - 1}) = n(1-\frac{1}{p_1})(1-\frac{1}{p_2}) \cdot\ \cdots\ \cdot (1-\frac{1}{p_k}) \)
+\( \varphi(n) = \varphi(p_{1}^{a_{1}})\varphi(p_{2}^{a_{2}}) \cdot\ \cdots\ \cdot \varphi(p_{k}^{a_{k}})=(p_{1}^{a_{1}} - p_{1}^{a_{1} - 1})(p_{2}^{a_{2}} - p_{2}^{a_{2} - 1}) \cdot\ \cdots\ \cdot (p_{k}^{a_{k}} - p_{k}^{a_{k} - 1}) = n(1-\frac{1}{p_{1}})(1-\frac{1}{p_{2}}) \cdot\ \cdots\ \cdot (1-\frac{1}{p_{k}}) \)
 
 
 \end{document}

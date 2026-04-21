@@ -1,46 +1,46 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.2-25}
+\title{1.2.2-25} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( c_k := \frac{2^{k}}{2^{k}-1} \)
+\( c_{k} := \frac{2^{k}}{2^{k}-1} \)
 
-A1 (after L1): \( x_0 = x, y = 0, z = \frac{x}{2}, k = 1, x - 2z < 1, x_0 = b^y \cdot x, z > 0 \)
+A1 (after L1): \( x_{0} = x, y = 0, z = \frac{x}{2}, k = 1, x - 2z < 1, x_{0} = b^{y} \cdot x, z > 0 \)
 
-A2 (before L2) \( : x \geq 1, z = \frac{x}{2^k}, x - 2z < 1, x_0 = b^y \cdot x, z > 0 \)
+A2 (before L2) \( : x \geq 1, z = \frac{x}{2^{k}}, x - 2z < 1, x_{0} = b^{y} \cdot x, z > 0 \)
 
-A3 (if L2 succeeds): \( x = 1, y = \log_b{x_0} \)
+A3 (if L2 succeeds): \( x = 1, y = \log_b{x_{0}} \)
 
-A4 (before L3): \( x > 1, z = \frac{x}{2^k}, x - 2z < 1, z > 0 \)
+A4 (before L3): \( x > 1, z = \frac{x}{2^{k}}, x - 2z < 1, z > 0 \)
 
-A5 (before L4): \( x - z \geq 1, z = \frac{x}{2^k}, x - 2z < 1, z > 0 \)
+A5 (before L4): \( x - z \geq 1, z = \frac{x}{2^{k}}, x - 2z < 1, z > 0 \)
 
 Proof:
 
-A1: \( x-2z = x - 2\cdot\frac{x}{2} = 0 < 1, x_0 = b^0 \cdot x_0 \)
+A1: \( x-2z = x - 2\cdot\frac{x}{2} = 0 < 1, x_{0} = b^{0} \cdot x_{0} \)
 
-A2 (after L1): \( z = \frac{x}{2^1} \)
+A2 (after L1): \( z = \frac{x}{2^{1}} \)
 
-A2 (after L4): Let's use indices with prime (\texttt{'}) for values after transform \( x'=x-z, z'=\frac{x'}{2^k}, y'=y + \log_b{c_k} \)
+A2 (after L4): Let's use indices with prime (\texttt{'}) for values after transform \( x'=x-z, z'=\frac{x'}{2^{k}}, y'=y + \log_b{c_{k}} \)
 
-A5 \( \implies x' = x - z \geq 1, z' = \frac{x'}{2^k} \)
+A5 \( \implies x' = x - z \geq 1, z' = \frac{x'}{2^{k}} \)
 
-\( x' - 2z'=x-z-2\cdot\frac{x-z}{2^k} = (x-z)(1 - \frac{2}{2^k}) =: B \)
+\( x' - 2z'=x-z-2\cdot\frac{x-z}{2^{k}} = (x-z)(1 - \frac{2}{2^{k}}) =: B \)
 
-A5 \( \implies 2^k = \frac{x}{z} \)
+A5 \( \implies 2^{k} = \frac{x}{z} \)
 
 \( B = (x-z)(1-\frac{2z}{x}) = \frac{x-z}{x}\cdot(x-2z) < 1 \)
 
-\( b^{y'}\cdot x' = b^{y + \log_b{c_k}} \cdot (x-z) = b^y \cdot c_k \cdot (x-z) = \frac{x_0}{x} \cdot c_k \cdot (x-z) =: C \)
+\( b^{y'}\cdot x' = b^{y + \log_b{c_{k}}} \cdot (x-z) = b^{y} \cdot c_{k} \cdot (x-z) = \frac{x_{0}}{x} \cdot c_{k} \cdot (x-z) =: C \)
 
-\( x - z = x - \frac{x}{2^k} = x(1 - \frac{1}{2^k}) = x \cdot \frac{2^k - 1}{2^k} = \frac{x}{c_k} \)
+\( x - z = x - \frac{x}{2^{k}} = x(1 - \frac{1}{2^{k}}) = x \cdot \frac{2^{k} - 1}{2^{k}} = \frac{x}{c_{k}} \)
 
-\( C = \frac{x_0}{x} \cdot c_k \cdot \frac{x}{c_k} = x_0 \)
+\( C = \frac{x_{0}}{x} \cdot c_{k} \cdot \frac{x}{c_{k}} = x_{0} \)
 
-A3: \( x_0 = b^y\cdot 1 \implies y = \log_{b}{x_0} \)
+A3: \( x_{0} = b^{y}\cdot 1 \implies y = \log_{b}{x_{0}} \)
 
 A4 (after L2): obvious
 
@@ -52,97 +52,97 @@ A5: obvious
 
 \subsubsection*{v2}
 
-Let binary computer's precision be \( p \implies x = \frac{a}{2^p}, y = \frac{c}{2^p}, z = \frac{d}{2^p}, a,c,d \in \mathbb{Z} \)
+Let binary computer's precision be \( p \implies x = \frac{a}{2^{p}}, y = \frac{c}{2^{p}}, z = \frac{d}{2^{p}}, a,c,d \in \mathbb{Z} \)
 
-Let \( C_{L4} \) - count of how many times step L4 was executed.
+Let \( C_{L4} \) --- count of how many times step L4 was executed.
 
 L1: \( c \leftarrow 0, d \leftarrow \lfloor \frac{a}{2} \rfloor, k \leftarrow 1 \)
 
-L2: If \( a = 2^p \), stop.
+L2: If \( a = 2^{p} \), stop.
 
-L3: If \( a - d < 2^p, d \leftarrow \lfloor\frac{d}{2}\rfloor, k \leftarrow k + 1 \)
+L3: If \( a - d < 2^{p}, d \leftarrow \lfloor\frac{d}{2}\rfloor, k \leftarrow k + 1 \)
 
-L4: \( a \leftarrow a - d, d \leftarrow \lfloor\frac{a}{2^k}\rfloor, c \leftarrow c + \lfloor2^p\log_b\frac{2^k}{2^k-1}\rfloor, C_{L4} \leftarrow C_{L4} + 1 \)
+L4: \( a \leftarrow a - d, d \leftarrow \lfloor\frac{a}{2^{k}}\rfloor, c \leftarrow c + \lfloor2^{p}\log_{b}\frac{2^{k}}{2^{k}-1}\rfloor, C_{L4} \leftarrow C_{L4} + 1 \)
 
-\( e_k := \frac{2^{k}}{2^{k}-1}, f_k := \lfloor2^p\log_be_k\rfloor \)
+\( e_{k} := \frac{2^{k}}{2^{k}-1}, f_{k} := \lfloor2^{p}\log_{b}e_{k}\rfloor \)
 
-\( g := \frac{1}{2^p}(1 + \frac{1}{|\ln b|}) \)
+\( g := \frac{1}{2^{p}}(1 + \frac{1}{|\ln b|}) \)
 
-A1 (after L1): \( a_0 = a, c = 0, d = \lfloor\frac{a}{2}\rfloor, k = 1, a - 2d < 2^p, C_{L4} = 0, h = |\log_b\frac{a_0}{a}-\frac{c}{2^p}| \leq C_{L4} \cdot g \)
+A1 (after L1): \( a_{0} = a, c = 0, d = \lfloor\frac{a}{2}\rfloor, k = 1, a - 2d < 2^{p}, C_{L4} = 0, h = |\log_{b}\frac{a_{0}}{a}-\frac{c}{2^{p}}| \leq C_{L4} \cdot g \)
 
-A2 (before L2) \( : a \geq 2^p, d = \lfloor\frac{a}{2^k}\rfloor, a - 2d < 2^p, h \leq C_{L4} \cdot g \)
+A2 (before L2) \( : a \geq 2^{p}, d = \lfloor\frac{a}{2^{k}}\rfloor, a - 2d < 2^{p}, h \leq C_{L4} \cdot g \)
 
-A3 (if L2 succeeds): \( a = 2^p, |\log_b{x_0} - y| \leq C_{L4} \cdot g \)
+A3 (if L2 succeeds): \( a = 2^{p}, |\log_b{x_{0}} - y| \leq C_{L4} \cdot g \)
 
-A4 (before L3): \( a > 2^p, d = \lfloor\frac{a}{2^k}\rfloor, a - 2d < 2^p \)
+A4 (before L3): \( a > 2^{p}, d = \lfloor\frac{a}{2^{k}}\rfloor, a - 2d < 2^{p} \)
 
-A5 (before L4): \( a - d \geq 2^p, d = \lfloor\frac{a}{2^k}\rfloor, a - 2d < 2^p \)
+A5 (before L4): \( a - d \geq 2^{p}, d = \lfloor\frac{a}{2^{k}}\rfloor, a - 2d < 2^{p} \)
 
 Proof:
 
-A1: \( a-2d=a-2\lfloor\frac{a}{2}\rfloor = 2 \{\frac{a}{2}\} < 2 \leq 2^p \)
+A1: \( a-2d=a-2\lfloor\frac{a}{2}\rfloor = 2 \{\frac{a}{2}\} < 2 \leq 2^{p} \)
 
-A2 (after L1): \( d = \lfloor\frac{a}{2^1}\rfloor \)
+A2 (after L1): \( d = \lfloor\frac{a}{2^{1}}\rfloor \)
 
-A2 (after L4): Let's use indices with prime (\texttt{'}) for values after transform \( a'=a-d, d'=\lfloor\frac{a'}{2^k}\rfloor, c'=c + f_k \)
+A2 (after L4): Let's use indices with prime (\texttt{'}) for values after transform \( a'=a-d, d'=\lfloor\frac{a'}{2^{k}}\rfloor, c'=c + f_{k} \)
 
-\( a'=a-d \geq 2^p \)
+\( a'=a-d \geq 2^{p} \)
 
-\( d'=\lfloor\frac{a'}{2^k}\rfloor \)
+\( d'=\lfloor\frac{a'}{2^{k}}\rfloor \)
 
-\( a-2d'=a-2\lfloor\frac{a}{2^{k'}}\rfloor = a-2(\frac{a}{2^{k'}} - \{\frac{a}{2^{k'}}\}) = a-\frac{a}{2^{k'-1}} - 2\{\frac{a}{2^{k'}}\} = a-\frac{a}{2^k} - 2\{\frac{a}{2^{k'}}\} = a - \lfloor\frac{a}{2^k}\rfloor + \{\frac{a}{2^k}\} - 2\{\frac{a}{2^{k+1}}\} = \)
+\( a-2d'=a-2\lfloor\frac{a}{2^{k'}}\rfloor = a-2(\frac{a}{2^{k'}} - \{\frac{a}{2^{k'}}\}) = a-\frac{a}{2^{k'-1}} - 2\{\frac{a}{2^{k'}}\} = a-\frac{a}{2^{k}} - 2\{\frac{a}{2^{k'}}\} = a - \lfloor\frac{a}{2^{k}}\rfloor + \{\frac{a}{2^{k}}\} - 2\{\frac{a}{2^{k+1}}\} = \)
 
-\( = a - d + \{\frac{a}{2^k}\} - 2\{\frac{a}{2^{k+1}}\} = a - d + \lfloor\{\frac{a}{2^k}\} - 2\{\frac{a}{2^{k+1}}\}\rfloor \leq a - d < 2^p \)
+\( = a - d + \{\frac{a}{2^{k}}\} - 2\{\frac{a}{2^{k+1}}\} = a - d + \lfloor\{\frac{a}{2^{k}}\} - 2\{\frac{a}{2^{k+1}}\}\rfloor \leq a - d < 2^{p} \)
 
-A5 \( \implies a' = a - d \geq 2^p, d' = \frac{a'}{2^k} \)
+A5 \( \implies a' = a - d \geq 2^{p}, d' = \frac{a'}{2^{k}} \)
 
-\( a' - 2d'=a-d-2\cdot\frac{a-d}{2^k} = (a-d)(1 - \frac{2}{2^k}) =: B \)
+\( a' - 2d'=a-d-2\cdot\frac{a-d}{2^{k}} = (a-d)(1 - \frac{2}{2^{k}}) =: B \)
 
-A5 \( \implies 2^k \leq \frac{a}{d} \)
+A5 \( \implies 2^{k} \leq \frac{a}{d} \)
 
-\( B \leq (a-d)(1-\frac{2d}{a}) = \frac{a-d}{a}\cdot(a-2d) < 1 \cdot 2^p = 2^p \)
+\( B \leq (a-d)(1-\frac{2d}{a}) = \frac{a-d}{a}\cdot(a-2d) < 1 \cdot 2^{p} = 2^{p} \)
 
-\( h' = |\log_b\frac{a_0}{a'}-\frac{c'}{2^p}| = |\log_b\frac{a_0}{a}-\log_b\frac{a'}{a}-\frac{c}{2^p} - \frac{f_k}{2^p}| \leq h + |\log_b\frac{a'}{a} + \frac{f_k}{2^p} | \)
+\( h' = |\log_{b}\frac{a_{0}}{a'}-\frac{c'}{2^{p}}| = |\log_{b}\frac{a_{0}}{a}-\log_{b}\frac{a'}{a}-\frac{c}{2^{p}} - \frac{f_{k}}{2^{p}}| \leq h + |\log_{b}\frac{a'}{a} + \frac{f_{k}}{2^{p}} | \)
 
-\( a'=a-\lfloor\frac{a}{2^k}\rfloor = a - \frac{a}{2^k} + \{ \frac{a}{2^k} \} = \frac{a}{e_k} + \{ \frac{a}{2^k} \} = \frac{a}{e_k}(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \}) \)
+\( a'=a-\lfloor\frac{a}{2^{k}}\rfloor = a - \frac{a}{2^{k}} + \{ \frac{a}{2^{k}} \} = \frac{a}{e_{k}} + \{ \frac{a}{2^{k}} \} = \frac{a}{e_{k}}(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \}) \)
 
-\( \log_b\frac{a'}{a} = -\log_b{e_k} + \log_b{(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \})} \)
+\( \log_{b}\frac{a'}{a} = -\log_b{e_{k}} + \log_b{(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \})} \)
 
-\( \frac{f_k}{2^p} = \frac{\lfloor2^p\log_b{e_k}\rfloor}{2^p} = \frac{2^p\log_b{e_k} - \{2^p\log_b{e_k}\}}{2^p} = \log_b{e_k} - \frac{\{2^p\log_b{e_k}\}}{2^p} \)
+\( \frac{f_{k}}{2^{p}} = \frac{\lfloor2^{p}\log_b{e_{k}}\rfloor}{2^{p}} = \frac{2^{p}\log_b{e_{k}} - \{2^{p}\log_b{e_{k}}\}}{2^{p}} = \log_b{e_{k}} - \frac{\{2^{p}\log_b{e_{k}}\}}{2^{p}} \)
 
-\( \log_b\frac{a'}{a} + \frac{f_k}{2^p} = \log_b{(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \})} - \frac{\{2^p\log_b{e_k}\}}{2^p} \)
+\( \log_{b}\frac{a'}{a} + \frac{f_{k}}{2^{p}} = \log_b{(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \})} - \frac{\{2^{p}\log_b{e_{k}}\}}{2^{p}} \)
 
-\( h' \leq h + |\log_b{(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \})}| + \frac{\{2^p\log_b{e_k}\}}{2^p} \)
+\( h' \leq h + |\log_b{(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \})}| + \frac{\{2^{p}\log_b{e_{k}}\}}{2^{p}} \)
 
-\( |\log_b{(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \})}| = \frac{|\ln{(1 + \frac{e_k}{a}\cdot \{ \frac{a}{2^k} \})}|}{|\ln{b}|} \leq \frac{\frac{e_k}{a}\cdot \{ \frac{a}{2^k} \}}{|\ln{b}|} =: A \)
+\( |\log_b{(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \})}| = \frac{|\ln{(1 + \frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \})}|}{|\ln{b}|} \leq \frac{\frac{e_{k}}{a}\cdot \{ \frac{a}{2^{k}} \}}{|\ln{b}|} =: A \)
 
-Let \( a = 2^k\cdot q + r, 0 \leq r \leq 2^k - 1 \implies \frac{a}{2^k} = q + \frac{r}{2^k} \implies \{ \frac{a}{2^k} \} \leq \frac{2^k-1}{2^k} = \frac{1}{e_k} \)
+Let \( a = 2^{k}\cdot q + r, 0 \leq r \leq 2^{k} - 1 \implies \frac{a}{2^{k}} = q + \frac{r}{2^{k}} \implies \{ \frac{a}{2^{k}} \} \leq \frac{2^{k}-1}{2^{k}} = \frac{1}{e_{k}} \)
 
-\( a \geq 2^p \)
+\( a \geq 2^{p} \)
 
-\( A \leq \frac{1}{2^p |\ln b| } \)
+\( A \leq \frac{1}{2^{p} |\ln b| } \)
 
-\( \frac{\{2^p\log_b{e_k}\}}{2^p} \leq \frac{1}{2^p} \)
+\( \frac{\{2^{p}\log_b{e_{k}}\}}{2^{p}} \leq \frac{1}{2^{p}} \)
 
-\( h' \leq h + \frac{1}{2^p} (1 + \frac{1}{|\ln b|}) \leq (C_{L4} + 1) \cdot g = C'_{L4} \cdot g \)
+\( h' \leq h + \frac{1}{2^{p}} (1 + \frac{1}{|\ln b|}) \leq (C_{L4} + 1) \cdot g = C'_{L4} \cdot g \)
 
-A3: \( h = |\log_b\frac{x_0\cdot2^p}{2^p} - y| = |\log_b{x_0} - y| \leq C_{L4} \cdot g \)
+A3: \( h = |\log_{b}\frac{x_{0}\cdot2^{p}}{2^{p}} - y| = |\log_b{x_{0}} - y| \leq C_{L4} \cdot g \)
 
 A4 (after L2): obvious
 
-A4 (after L3): \( d' = \lfloor\frac{d}{2}\rfloor = \lfloor\frac{\lfloor\frac{a}{2^k}\rfloor}{2}\rfloor = \lfloor\frac{\frac{a}{2^k} - \{\frac{a}{2^k}\}}{2}\rfloor = \lfloor\frac{a}{2^{k+1}} - \frac{\{\frac{a}{2^k}\}}{2}\rfloor = \lfloor\lfloor\frac{a}{2^{k+1}}\rfloor + \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^k}\}}{2}\rfloor = \lfloor\frac{a}{2^{k+1}}\rfloor + \lfloor \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^k}\}}{2}\rfloor \)
+A4 (after L3): \( d' = \lfloor\frac{d}{2}\rfloor = \lfloor\frac{\lfloor\frac{a}{2^{k}}\rfloor}{2}\rfloor = \lfloor\frac{\frac{a}{2^{k}} - \{\frac{a}{2^{k}}\}}{2}\rfloor = \lfloor\frac{a}{2^{k+1}} - \frac{\{\frac{a}{2^{k}}\}}{2}\rfloor = \lfloor\lfloor\frac{a}{2^{k+1}}\rfloor + \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^{k}}\}}{2}\rfloor = \lfloor\frac{a}{2^{k+1}}\rfloor + \lfloor \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^{k}}\}}{2}\rfloor \)
 
 Let \( \frac{a}{2^{k+1}} = n + \varepsilon, n \in \mathbb{Z}, 0 \leq \varepsilon < 1 \)
 
 \( \implies \{\frac{a}{2^{k+1}}\} = \varepsilon \)
 
-\( \frac{a}{2^k} = 2n + 2\varepsilon \)
+\( \frac{a}{2^{k}} = 2n + 2\varepsilon \)
 
-\( \{\frac{a}{2^k}\} = \{ 2\varepsilon \} = 2\varepsilon - \lfloor2\varepsilon\rfloor \)
+\( \{\frac{a}{2^{k}}\} = \{ 2\varepsilon \} = 2\varepsilon - \lfloor2\varepsilon\rfloor \)
 
-\( \frac{\{\frac{a}{2^k}\}}{2} = \varepsilon - \frac{\lfloor2 \varepsilon\rfloor}{2} \)
+\( \frac{\{\frac{a}{2^{k}}\}}{2} = \varepsilon - \frac{\lfloor2 \varepsilon\rfloor}{2} \)
 
-\( \lfloor \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^k}\}}{2}\rfloor = \lfloor\frac{\lfloor2\varepsilon\rfloor}{2}\rfloor \)
+\( \lfloor \{\frac{a}{2^{k+1}}\} - \frac{\{\frac{a}{2^{k}}\}}{2}\rfloor = \lfloor\frac{\lfloor2\varepsilon\rfloor}{2}\rfloor \)
 
 \( 0 \leq 2\varepsilon < 2 \implies 0 \leq \lfloor2\varepsilon\rfloor \leq 1 \implies 0 \leq \frac{\lfloor2\varepsilon\rfloor}{2} \leq \frac{1}{2} \implies \lfloor\frac{\lfloor2\varepsilon\rfloor}{2}\rfloor = 0 \)
 
@@ -154,13 +154,13 @@ A5: obvious
 
 Now let's prove the algorithm eventually stops
 
-\( 1 \leq x < 2 \implies 2^p \leq a < 2^{p+1} \)
+\( 1 \leq x < 2 \implies 2^{p} \leq a < 2^{p+1} \)
 
-If \( a = 2^p \implies \) algorithm stops.
+If \( a = 2^{p} \implies \) algorithm stops.
 
-\( a > 2^p \implies a \geq 2^p + 1 \)
+\( a > 2^{p} \implies a \geq 2^{p} + 1 \)
 
-\( 1 \leq \frac{a}{2^p} < 2 \implies \lfloor\frac{a}{2^p}\rfloor = 1 \implies a - \lfloor\frac{a}{2^p}\rfloor \geq 2^p \)
+\( 1 \leq \frac{a}{2^{p}} < 2 \implies \lfloor\frac{a}{2^{p}}\rfloor = 1 \implies a - \lfloor\frac{a}{2^{p}}\rfloor \geq 2^{p} \)
 
 This means that step L3 cannot continue indefinitely, and after at most \( p \) iterations of L3, we will get to L4.
 

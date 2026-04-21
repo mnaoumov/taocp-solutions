@@ -1,16 +1,16 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-24}
+\title{1.2.7-24} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \prod_{k \geq 1} (1+\frac{x}{k})e^{-\frac{x}{k}} = \lim_{K \to \infty} \prod_{k = 1}^K (1+\frac{x}{k})e^{-\frac{x}{k}} =: A \)
+\( \prod_{k \geq 1} (1+\frac{x}{k})e^{-\frac{x}{k}} = \lim_{K \to \infty} \prod_{k = 1}^{K} (1+\frac{x}{k})e^{-\frac{x}{k}} =: A \)
 
-\( \prod_{k = 1}^K (1+\frac{x}{k})e^{-\frac{x}{k}} = \prod_{k = 1}^K \frac{x+k}{k}e^{-\frac{x}{k}} = \frac{(x+1)(x+2)\cdots(x+K)}{K!}e^{-xH_K} = \frac{(x+1)(x+2)\cdots(x+K)}{K!}e^{-x(\ln{K} + \gamma + (o(K)))} = \)
+\( \prod_{k = 1}^{K} (1+\frac{x}{k})e^{-\frac{x}{k}} = \prod_{k = 1}^{K} \frac{x+k}{k}e^{-\frac{x}{k}} = \frac{(x+1)(x+2)\cdots(x+K)}{K!}e^{-xH_{K}} = \frac{(x+1)(x+2)\cdots(x+K)}{K!}e^{-x(\ln{K} + \gamma + (o(K)))} = \)
 
-\( = \frac{1}{x}e^{-\gamma x} \frac{x(x+1)(x+2)\cdots(x+K)}{K^x K!} (1 + o(K)) = \frac{1}{x} e^{-\gamma x} \frac{1}{\Gamma(x)} (1 + o(K)), K \to \infty \)
+\( = \frac{1}{x}e^{-\gamma x} \frac{x(x+1)(x+2)\cdots(x+K)}{K^{x} K!} (1 + o(K)) = \frac{1}{x} e^{-\gamma x} \frac{1}{\Gamma(x)} (1 + o(K)), K \to \infty \)
 
 \( xe^{\gamma x} \prod_{k \geq 1} (1+\frac{x}{k})e^{-\frac{x}{k}} = \frac{1}{\Gamma(x)} \)
 

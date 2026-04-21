@@ -1,32 +1,32 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-25}
+\title{1.2.6-25} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \sum_j (-1)^j \binom{k}{j} \binom{r-jt}{k}\frac{r}{r-jt} = \delta_{k0} \)
+\( \sum_{j} {(-1)}^{j} \binom{k}{j} \binom{r-jt}{k}\frac{r}{r-jt} = \delta_{k0} \)
 
-\( 1 = \sum_{k} \delta_{k0} w^k = \sum_{j,k} (-1)^j \binom{k}{j}\binom{r-jt}{k}\frac{r}{r-jt} w^k = \sum_{j,k} (-1)^j \binom{r-jt}{j}\binom{r-jt-j}{k-j} \frac{r}{r-jt} w^k = \)
+\( 1 = \sum_{k} \delta_{k0} w^{k} = \sum_{j,k} {(-1)}^{j} \binom{k}{j}\binom{r-jt}{k}\frac{r}{r-jt} w^{k} = \sum_{j,k} {(-1)}^{j} \binom{r-jt}{j}\binom{r-jt-j}{k-j} \frac{r}{r-jt} w^{k} = \)
 
-\( = \sum_{j} (-1)^j \binom{r-jt}{j} \frac{r}{r-jt} \sum_k \binom{r-j(t+1)}{k-j} w^k \overset{k-j \to k}{=} \sum_{j} (-1)^j \binom{r-jt}{j} \frac{r}{r-jt} \sum_k \binom{r-j(t+1)}{k} w^{k+j} = \)
+\( = \sum_{j} {(-1)}^{j} \binom{r-jt}{j} \frac{r}{r-jt} \sum_{k} \binom{r-j(t+1)}{k-j} w^{k} \overset{k-j \to k}{=} \sum_{j} {(-1)}^{j} \binom{r-jt}{j} \frac{r}{r-jt} \sum_{k} \binom{r-j(t+1)}{k} w^{k+j} = \)
 
-\( = \sum_{j} (-w)^j \binom{r-jt}{j} \frac{r}{r-jt} \sum_k \binom{r-j(t+1)}{k} w^{k} = \sum_{j} (-w)^j \binom{r-jt}{j} \frac{r}{r-jt} (1+w)^{r-j(t+1)} = (1+w)^r \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} (\frac{-w}{(1+w)^{t+1}})^j \)
+\( = \sum_{j} {(-w)}^{j} \binom{r-jt}{j} \frac{r}{r-jt} \sum_{k} \binom{r-j(t+1)}{k} w^{k} = \sum_{j} {(-w)}^{j} \binom{r-jt}{j} \frac{r}{r-jt} {(1+w)}^{r-j(t+1)} = {(1+w)}^{r} \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} {(\frac{-w}{{(1+w)}^{t+1}})}^{j} \)
 
-\( \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} (\frac{-w}{(1+w)^{t+1}})^j = (1+w)^{-r} \)
+\( \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} {(\frac{-w}{{(1+w)}^{t+1}})}^{j} = {(1+w)}^{-r} \)
 
-Let's solve \( \frac{-w}{(1+w)^{t+1}} = z \)
+Let's solve \( \frac{-w}{{(1+w)}^{t+1}} = z \)
 
-\( \frac{-w}{(1+w)^{t+1}} = \frac{1-(1+w)}{(1+w)^{t+1}} = (\frac{1}{1+w})^{t+1} - (\frac{1}{1+w})^{t} \)
+\( \frac{-w}{{(1+w)}^{t+1}} = \frac{1-(1+w)}{{(1+w)}^{t+1}} = {(\frac{1}{1+w})}^{t+1} - {(\frac{1}{1+w})}^{t} \)
 
-\( z = x^{t+1} - x^t \)
+\( z = x^{t+1} - x^{t} \)
 
-Let \( \frac{1}{1+w} = x \implies \frac{-w}{(1+w)^{t+1}} = z \)
+Let \( \frac{1}{1+w} = x \implies \frac{-w}{{(1+w)}^{t+1}} = z \)
 
-\( \implies \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} z^j = x^r \)
+\( \implies \sum_{j} \binom{r-jt}{j} \frac{r}{r-jt} z^{j} = x^{r} \)
 
-\( \sum_k A_k(r,t)z^k = x^r \)
+\( \sum_{k} A_{k}(r,t)z^{k} = x^{r} \)
 
 
 \end{document}

@@ -1,42 +1,42 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-41}
+\title{1.2.6-41} % chktex 8
 
 \begin{document}
 \maketitle
 
-\section*{a)}
+\section*{a)} % chktex 9 % chktex 10
 
 \( B(x,y) = \frac{x+y}{y} B(x, y+1) = \frac{(x+y)(x+y+1)}{y(y+1)} B(x, y + 2) = \frac{(x+y)(x+y+1)(x+y+2)}{y(y+1)(y+2)} B(x, y + 3) = \cdots = \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{y(y+1)(y+2)\cdots(y+m)} B(x, y + m + 1) = \)
 
-\( = \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{m^{x+y}m!} \cdot \frac{m^{y}m!}{y(y+1)(y+2)\cdots(y+m)} m^xB(x,y + m + 1) = \frac{\Gamma_m(y)m^x}{\Gamma_m(x+y)} B(x,y + m + 1) \)
+\( = \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{m^{x+y}m!} \cdot \frac{m^{y}m!}{y(y+1)(y+2)\cdots(y+m)} m^{x}B(x,y + m + 1) = \frac{\Gamma_{m}(y)m^{x}}{\Gamma_{m}(x+y)} B(x,y + m + 1) \)
 
-\section*{b)}
+\section*{b)} % chktex 9 % chktex 10
 
-\( m^x B(x, m + 1) = \Gamma_m(x) \to \Gamma(x), m \to \infty \)
+\( m^{x} B(x, m + 1) = \Gamma_{m}(x) \to \Gamma(x), m \to \infty \)
 
-Let's prove \( m^z B(x, z + 1) \to \Gamma(x), m \to \infty\quad (*) \)
+Let's prove \( m^{z} B(x, z + 1) \to \Gamma(x), m \to \infty\quad (*) \)
 
 \( m := \lfloor z \rfloor \)
 
 \( m \leq z < m + 1 \)
 
-\( m^x \leq z^x < (m+1)^x \)
+\( m^{x} \leq z^{x} < {(m+1)}^{x} \)
 
 \( B(x, m + 2) < B(x, z + 1) < B(x, m + 1) \)
 
-\( m^x B(x, m + 2) < z^x B(x, z+ 1) < (m+1)^x B(x, m + 1) \)
+\( m^{x} B(x, m + 2) < z^{x} B(x, z+ 1) < {(m+1)}^{x} B(x, m + 1) \)
 
-\( (\frac{m}{m+1})^x (m+1)^x B(x, (m+1) + 1) < z^x B(x, z+ 1) < (\frac{m+1}{m})^x m^x B(x, m + 1) \)
+\( {(\frac{m}{m+1})}^{x} {(m+1)}^{x} B(x, (m+1) + 1) < z^{x} B(x, z+ 1) < {(\frac{m+1}{m})}^{x} m^{x} B(x, m + 1) \)
 
 When \( z \to \infty, m \to \infty \)
 
-\( \Gamma(x) \leq \lim_{z \to \infty} z^x B(x, z+ 1) \leq \Gamma(x) \)
+\( \Gamma(x) \leq \lim_{z \to \infty} z^{x} B(x, z+ 1) \leq \Gamma(x) \)
 
 \( \implies (*) \)
 
-[a)](<#a>)) \( \implies B(x,y) = \frac{\Gamma_m(y)}{\Gamma_m(x+y)} (\frac{m}{y+m})^x (y+m)^x B(x, y + m +1) \to \frac{\Gamma(y)\Gamma(x)}{\Gamma(x+y)}, m \to \infty \)
+a)) \( \implies B(x,y) = \frac{\Gamma_{m}(y)}{\Gamma_{m}(x+y)} {(\frac{m}{y+m})}^{x} {(y+m)}^{x} B(x, y + m +1) \to \frac{\Gamma(y)\Gamma(x)}{\Gamma(x+y)}, m \to \infty \) % chktex 10
 
 
-\end{document}
+\end{document} % chktex 17

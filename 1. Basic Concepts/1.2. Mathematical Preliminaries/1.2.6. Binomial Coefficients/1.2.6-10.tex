@@ -1,32 +1,32 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-10}
+\title{1.2.6-10} % chktex 8
 
 \begin{document}
 \maketitle
 
-\subsubsection*{a)}
+\subsubsection*{a)} % chktex 9 % chktex 10
 
 \( n = pq + r \)
 
-\( \binom{n}{p} = \frac{(pq+r)(pq+r-1)\cdots(pq+1)pq(pq-1)\cdots(pq-(p-r-1)}{p!} = \langle\frac{q(pq+r)(pq+r-1)\cdots(pq+1)(pq-1)\cdots(pq-(p-r-1)}{(p-1)!}\rangle_p = \)
+\( \binom{n}{p} = \frac{(pq+r)(pq+r-1)\cdots(pq+1)pq(pq-1)\cdots(pq-(p-r-1))}{p!} = \langle\frac{q(pq+r)(pq+r-1)\cdots(pq+1)(pq-1)\cdots(pq-(p-r-1))}{(p-1)!}\rangle_{p} = \)
 
-\( = \langle q \rangle_p \cdot \langle(p-1)!\rangle_p \cdot \langle((p-1)!)^{-1}\rangle_p = \langle q \rangle_p = \langle \lfloor\frac{n}{p}\rfloor \rangle_p \)
+\( = \langle q \rangle_{p} \cdot \langle(p-1)!\rangle_{p} \cdot \langle{((p-1)!)}^{-1}\rangle_{p} = \langle q \rangle_{p} = \langle \lfloor\frac{n}{p}\rfloor \rangle_{p} \)
 
-\subsubsection*{b)}
+\subsubsection*{b)} % chktex 9 % chktex 10
 
-\( \binom{p}{k} = \frac{p(p-1)(p-2)\cdots(p-k+1)}{k!} = p\langle(p-1)(p-2)\cdots(p-k+1)\rangle_p \cdot \langle(k!)^{-1}\rangle_p = \langle 0 \rangle_p \)
+\( \binom{p}{k} = \frac{p(p-1)(p-2)\cdots(p-k+1)}{k!} = p\langle(p-1)(p-2)\cdots(p-k+1)\rangle_{p} \cdot \langle{(k!)}^{-1}\rangle_{p} = \langle 0 \rangle_{p} \)
 
-\subsubsection*{c)}
+\subsubsection*{c)} % chktex 9 % chktex 10
 
-\( \binom{p-1}{k} = \frac{(p-1)(p-2)\cdots(p-k)}{k!} = \langle(-1)^k k!\rangle_p \cdot \langle(k!)^{-1}\rangle_p = \langle(-1)^k \rangle_p \)
+\( \binom{p-1}{k} = \frac{(p-1)(p-2)\cdots(p-k)}{k!} = \langle{(-1)}^{k} k!\rangle_{p} \cdot \langle{(k!)}^{-1}\rangle_{p} = \langle{(-1)}^{k} \rangle_{p} \)
 
-\subsubsection*{d)}
+\subsubsection*{d)} % chktex 9 % chktex 10
 
-\( \binom{p+1}{k} = \frac{(p+1)p(p-1)\cdots(p-k+2)}{k!} = p\langle(-1)^{k-2}(k-2)!\rangle_p \cdot \langle(k!)^{-1}\rangle_p = \langle 0 \rangle_p \)
+\( \binom{p+1}{k} = \frac{(p+1)p(p-1)\cdots(p-k+2)}{k!} = p\langle{(-1)}^{k-2}(k-2)!\rangle_{p} \cdot \langle{(k!)}^{-1}\rangle_{p} = \langle 0 \rangle_{p} \)
 
-\subsubsection*{e)}
+\subsubsection*{e)} % chktex 9 % chktex 10
 
 \( n = pq + r \)
 
@@ -44,29 +44,29 @@
 
 \( \cdot (ps+1) \cdot (ps+2) \cdot \cdots \cdot (ps + t) = \)
 
-\( = (\langle(p-1)!\rangle_p)^s \cdot p^s s! \cdot \langle t!\rangle_p = (\langle-1\rangle_p)^s \cdot p^s s! \cdot \langle t!\rangle_p \)
+\( = {(\langle(p-1)!\rangle_{p})}^{s} \cdot p^{s} s! \cdot \langle t!\rangle_{p} = {(\langle-1\rangle_{p})}^{s} \cdot p^{s} s! \cdot \langle t!\rangle_{p} \)
 
-Similarly, \( n! = (\langle-1\rangle_p)^q \cdot p^q q! \cdot \langle r!\rangle_p \)
+Similarly, \( n! = {(\langle-1\rangle_{p})}^{q} \cdot p^{q} q! \cdot \langle r!\rangle_{p} \)
 
 \( n - k = p(q-s) + (r - t) \)
 
-\paragraph*{1. \$\{\} r - t \textbackslash\{\}geq 0 \{\}\$}
+\paragraph*{1. \$\{\} r - t \textbackslash\{\}geq 0 \{\}\$} % chktex 8
 
-\( (n-k)! = (\langle-1\rangle_p)^{q-s} \cdot p^{q-s} (q-s)! \cdot \langle (r-t)!\rangle_p \)
+\( (n-k)! = {(\langle-1\rangle_{p})}^{q-s} \cdot p^{q-s} (q-s)! \cdot \langle (r-t)!\rangle_{p} \)
 
-\( \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{(\langle-1\rangle_p)^q \cdot p^q q! \cdot \langle r!\rangle_p}{(\langle-1\rangle_p)^s \cdot p^s s! \cdot \langle t!\rangle_p \cdot (\langle-1\rangle_p)^{q-s} \cdot p^{q-s} (q-s)! \cdot \langle (r-t)!\rangle_p} = \langle\binom{q}{s}\binom{r}{t}\rangle_p = \langle\binom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{k}{p}\rfloor}\binom{n \mod p}{k \mod p}\rangle_p \)
+\( \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{{(\langle-1\rangle_{p})}^{q} \cdot p^{q} q! \cdot \langle r!\rangle_{p}}{{(\langle-1\rangle_{p})}^{s} \cdot p^{s} s! \cdot \langle t!\rangle_{p} \cdot {(\langle-1\rangle_{p})}^{q-s} \cdot p^{q-s} (q-s)! \cdot \langle (r-t)!\rangle_{p}} = \langle\binom{q}{s}\binom{r}{t}\rangle_{p} = \langle\binom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{k}{p}\rfloor}\binom{n \mod p}{k \mod p}\rangle_{p} \)
 
-\paragraph*{2. \$\{\} r - t < 0 \{\}\$}
+\paragraph*{2. \$\{\} r - t < 0 \{\}\$} % chktex 8
 
 \( \binom{r}{t} = 0 \)
 
 \( n - k = p(q-s-1) + (p + r -t) \)
 
-\( \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{(\langle-1\rangle_p)^q \cdot p^q q! \cdot \langle r!\rangle_p}{(\langle-1\rangle_p)^s \cdot p^s s! \cdot \langle t!\rangle_p \cdot (\langle-1\rangle_p)^{q-s-1} \cdot p^{q-s-1} (q-s-1)! \cdot \langle (p+r-t)!\rangle_p} = \langle 0 \rangle_p = \langle\binom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{k}{p}\rfloor}\binom{n \mod p}{k \mod p}\rangle_p \)
+\( \binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{{(\langle-1\rangle_{p})}^{q} \cdot p^{q} q! \cdot \langle r!\rangle_{p}}{{(\langle-1\rangle_{p})}^{s} \cdot p^{s} s! \cdot \langle t!\rangle_{p} \cdot {(\langle-1\rangle_{p})}^{q-s-1} \cdot p^{q-s-1} (q-s-1)! \cdot \langle (p+r-t)!\rangle_{p}} = \langle 0 \rangle_{p} = \langle\binom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{k}{p}\rfloor}\binom{n \mod p}{k \mod p}\rangle_{p} \)
 
-\subsubsection*{f)}
+\subsubsection*{f)} % chktex 9 % chktex 10
 
-\( \binom{n}{k} \overset{e)}{\equiv} \binom{a_rp^{r-1} + a_{r-1} p^{r-2} + \cdots + a_1}{b_rp^{r-1} + b_{r-1} p^{r-2} + \cdots + b_1} \cdot \binom{a_0}{b_0} \equiv \binom{a_rp^{r-2} + a_{r-1} p^{r-3} + \cdots + a_2}{b_rp^{r-2} + b_{r-1} p^{r-3} + \cdots + b_2} \cdot \binom{a_1}{b_1} \cdot \binom{a_0}{b_0} \equiv \cdots \equiv \binom{a_r}{b_r} \cdots \binom{a_0}{b_0}\ (\mathrm{modulo}\ p) \)
+\( \binom{n}{k} \overset{e)}{\equiv} \binom{a_{r}p^{r-1} + a_{r-1} p^{r-2} + \cdots + a_{1}}{b_{r}p^{r-1} + b_{r-1} p^{r-2} + \cdots + b_{1}} \cdot \binom{a_{0}}{b_{0}} \equiv \binom{a_{r}p^{r-2} + a_{r-1} p^{r-3} + \cdots + a_{2}}{b_{r}p^{r-2} + b_{r-1} p^{r-3} + \cdots + b_{2}} \cdot \binom{a_{1}}{b_{1}} \cdot \binom{a_{0}}{b_{0}} \equiv \cdots \equiv \binom{a_{r}}{b_{r}} \cdots \binom{a_{0}}{b_{0}}\ (\mathrm{modulo}\ p) \) % chktex 9 % chktex 10
 
 
-\end{document}
+\end{document} % chktex 17

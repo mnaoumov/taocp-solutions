@@ -1,36 +1,36 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-60}
+\title{1.2.6-60} % chktex 8
 
 \begin{document}
 \maketitle
 
 To choose \( k \) elements out of \( n \) without repetitions.
 
-Let \( X = \{ x_1, x_2, \ldots, x_n \} \)
+Let \( X = \{ x_{1}, x_{2}, \ldots, x_{n} \} \)
 
-To choose \( k \) distinct elements from \( X \), we need to get \( x_{a_1}, x_{a_2}, \ldots, x_{a_k} \)
+To choose \( k \) distinct elements from \( X \), we need to get \( x_{a_{1}}, x_{a_{2}}, \ldots, x_{a_{k}} \)
 
-\( 1 \leq a_1 < a_2 < \cdots < a_k \leq n \)
+\( 1 \leq a_{1} < a_{2} < \cdots < a_{k} \leq n \)
 
 As we know amount of solutions for that inequalities is: \( \binom{n}{k} \)
 
 Now to consider choosing with repetitions.
 
-\( 1 \leq b_1 \leq b_2 \leq \cdots \leq b_k \leq n \)
+\( 1 \leq b_{1} \leq b_{2} \leq \cdots \leq b_{k} \leq n \)
 
-\( a_i := b_i + i - 1 \iff b_i = a_i - i + 1 \)
+\( a_{i} := b_{i} + i - 1 \iff b_{i} = a_{i} - i + 1 \)
 
-\( b_i \leq b_{i+1} \iff a_i - i + 1 \leq a_{i+1} - (i+1) + 1 \iff a_{i} + 1 \leq a_{i+1} \iff a_i < a_{i+1} \)
+\( b_{i} \leq b_{i+1} \iff a_{i} - i + 1 \leq a_{i+1} - (i+1) + 1 \iff a_{i} + 1 \leq a_{i+1} \iff a_{i} < a_{i+1} \)
 
-\( 1 \leq b_1 \iff 1 \leq a_i \)
+\( 1 \leq b_{1} \iff 1 \leq a_{i} \)
 
-\( b_k \leq n \iff a_k - k + 1 \leq n \iff a_k \leq n + k - 1 \)
+\( b_{k} \leq n \iff a_{k} - k + 1 \leq n \iff a_{k} \leq n + k - 1 \)
 
 We converted our inequalities into
 
-\( 1 \leq a_1 < a_2 < \cdots < a_k \leq n - k + 1 \)
+\( 1 \leq a_{1} < a_{2} < \cdots < a_{k} \leq n - k + 1 \)
 
 So there are \( \binom{n-k+1}{k} \) ways to do so.
 

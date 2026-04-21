@@ -1,18 +1,18 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-10}
+\title{1.2.7-10} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = a_nb_n - a_1b_1 \)
+\( \sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = a_{n}b_{n} - a_{1}b_{1} \)
 
-\( a_{k+1}b_{k+1} - a_{k}b_{k} = a_{k+1}b_{k+1} - a_{k+1}b_k + a_{k+1}b_k - a_{k}b_{k} = a_{k+1}(b_{k+1}-b_k) + (a_{k+1}-a_k)b_{k} \)
+\( a_{k+1}b_{k+1} - a_{k}b_{k} = a_{k+1}b_{k+1} - a_{k+1}b_{k} + a_{k+1}b_{k} - a_{k}b_{k} = a_{k+1}(b_{k+1}-b_{k}) + (a_{k+1}-a_{k})b_{k} \)
 
-\( a_nb_n - a_1b_1 = \sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = \sum_{1\leq k < n} (a_{k+1}(b_{k+1}-b_k) + (a_{k+1}-a_k)b_{k}) \)
+\( a_{n}b_{n} - a_{1}b_{1} = \sum_{1\leq k < n} (a_{k+1}b_{k+1} - a_{k}b_{k}) = \sum_{1\leq k < n} (a_{k+1}(b_{k+1}-b_{k}) + (a_{k+1}-a_{k})b_{k}) \)
 
-\( \sum_{1\leq k < n}(a_{k+1}-a_k)b_k = a_nb_n - a_1b_1 - \sum_{1\leq k < n} a_{k+1}(b_{k+1}-b_k) \)
+\( \sum_{1\leq k < n}(a_{k+1}-a_{k})b_{k} = a_{n}b_{n} - a_{1}b_{1} - \sum_{1\leq k < n} a_{k+1}(b_{k+1}-b_{k}) \)
 
 
 \end{document}

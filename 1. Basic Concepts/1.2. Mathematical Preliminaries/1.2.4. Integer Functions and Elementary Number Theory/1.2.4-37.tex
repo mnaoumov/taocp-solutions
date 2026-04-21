@@ -1,14 +1,14 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-37}
+\title{1.2.4-37} % chktex 8
 
 \begin{document}
 \maketitle
 
 Let \( d = \gcd(m,n), m = ds, n = dt, s \perp t \)
 
-\( A := \sum_{0 \leq k < n} \lfloor \frac{mk+x}{n} \rfloor = \overbrace{\sum_{0 \leq k < n} \frac{mk+x}{n}}^B - \overbrace{\sum_{0 \leq k < n} \{ \frac{mk+x}{n} \}}^C \)
+\( A := \sum_{0 \leq k < n} \lfloor \frac{mk+x}{n} \rfloor = \overbrace{\sum_{0 \leq k < n} \frac{mk+x}{n}}^{B} - \overbrace{\sum_{0 \leq k < n} \{ \frac{mk+x}{n} \}}^{C} \)
 
 \( B = \frac{m}{n} \sum_{0\leq k < n} k + \frac{x}{n} \sum_{0\leq k < n} 1 = \frac{m}{n}\cdot \frac{(n-1)n}{2} + \frac{x}{n}\cdot n = \frac{m(n-1)}{2} + x \)
 
@@ -42,7 +42,7 @@ For each \( r, 0 \leq r \leq t - 1, \exists k_{0r}, k_{1r}, \ldots k_{d-1,r}: sk
 
 \( 0 \leq v \leq t - 1, 0 \leq y < 1 \implies 0 \leq v + y < t \implies 0 \leq \frac{v+y}{t} < 1 \implies \lfloor \frac{v + y} {t} \rfloor = \frac{v + y}{t} \)
 
-\( C = d\sum_{v=0}^t \frac{v+y}{t} = d(\frac{t(t-1)}{2t} + y) = \frac{d(t-1)}{2} + dy = \frac{dt-d}{2} + dy = \frac{n-d}{2} + dy \)
+\( C = d\sum_{v=0}^{t} \frac{v+y}{t} = d(\frac{t(t-1)}{2t} + y) = \frac{d(t-1)}{2} + dy = \frac{dt-d}{2} + dy = \frac{n-d}{2} + dy \)
 
 \( A = B - C = \frac{m(n-1)}{2} + x - \frac{n-d}{2} - dy = \frac{(m-1)(n-1)}{2} + \frac{n-1}{2} + x - \frac{n-d}{2} - dy = \)
 

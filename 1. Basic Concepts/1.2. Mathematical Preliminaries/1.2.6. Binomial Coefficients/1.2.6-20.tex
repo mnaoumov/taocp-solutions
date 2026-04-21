@@ -1,16 +1,16 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-20}
+\title{1.2.6-20} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \sum_{k=0}^r \binom{r-k}{m}\binom{s}{k-t}(-1)^{k-t} = \sum_{k=0}^r (-1)^{r-k-m} \binom{-(m+1)}{r-k-m}\binom{s}{k-t}(-1)^{k-t} = (-1)^{r-m-t} \sum_k \binom{-(m+1)}{r-k-m}\binom{s}{k-t} = (-1)^{r-m-t} \sum_k \binom{s}{k} \binom{-(m+1)}{r-k-t-m} = \)
+\( \sum_{k=0}^{r} \binom{r-k}{m}\binom{s}{k-t}{(-1)}^{k-t} = \sum_{k=0}^{r} {(-1)}^{r-k-m} \binom{-(m+1)}{r-k-m}\binom{s}{k-t}{(-1)}^{k-t} = {(-1)}^{r-m-t} \sum_{k} \binom{-(m+1)}{r-k-m}\binom{s}{k-t} = {(-1)}^{r-m-t} \sum_{k} \binom{s}{k} \binom{-(m+1)}{r-k-t-m} = \)
 
-\( = (-1)^{r-m-t} \binom{s-m-1}{r-t-m} = \binom{r-s-t}{r-t-m} \implies (24) \)
+\( = {(-1)}^{r-m-t} \binom{s-m-1}{r-t-m} = \binom{r-s-t}{r-t-m} \implies (24) \)
 
-\( \sum_{k=0}^r \binom{r-k}{m}\binom{s+k}{n} = \sum_{k=0}^r \binom{r-k}{m}(-1)^{s+k-n}\binom{-(n+1)}{s+k-n} = \sum_{k=0}^r \binom{r-k}{m}\binom{-(n+1)}{k-(n-s)}(-1)^{k-(n-s)} = \binom{r+n+1-n+s}{r-n+s-m} = \binom{r+s+1}{r+s-n-m} = \binom{r+s+1}{m+n+1} \implies (25) \)
+\( \sum_{k=0}^{r} \binom{r-k}{m}\binom{s+k}{n} = \sum_{k=0}^{r} \binom{r-k}{m}{(-1)}^{s+k-n}\binom{-(n+1)}{s+k-n} = \sum_{k=0}^{r} \binom{r-k}{m}\binom{-(n+1)}{k-(n-s)}{(-1)}^{k-(n-s)} = \binom{r+n+1-n+s}{r-n+s-m} = \binom{r+s+1}{r+s-n-m} = \binom{r+s+1}{m+n+1} \implies (25) \)
 
 
 \end{document}

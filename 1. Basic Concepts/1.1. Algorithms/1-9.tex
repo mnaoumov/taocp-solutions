@@ -1,26 +1,26 @@
 \documentclass{article}
-\input{../../template}
+\input{../../template} % chktex 27
 
-\title{1-9}
+\title{1-9} % chktex 8
 
 \begin{document}
 \maketitle
 
 \section*{v1}
 
-Let \( Q_1' = \{ x_1 \in Q_1 | \exists y_1 \in I_1, \exists n_1 \geq 0: f^{(n_1)}(y_1) = x_1 \} \) - all reachable states.
+Let \( Q_{1}' = \{ x_{1} \in Q_{1} | \exists y_{1} \in I_{1}, \exists n_{1} \geq 0: f^{(n_{1})}(y_{1}) = x_{1} \} \) --- all reachable states.
 
-\( C_2 \) simulates \( C_1 \) \( \overset{def}{\iff} \exists \phi: Q_1' \to Q_2, \phi(I_1) \subset I_2, \exists n_2: I_1 \times \mathbb{N}_0 \to \mathbb{N}_0, \forall x_1 \in I_1 \forall n_1 \geq 0: \phi(f_1^{(n_1)}(x_1)) = f_2^{(n_2)}(\phi(x_1)), \forall x_1 \in I_1 \forall n_1, n_1' \in \mathbb{N}_0, n_1 \leq n_1': n_2(x, n_1) \leq n_2(x, n_1') \)
+\( C_{2} \) simulates \( C_{1} \) \( \overset{def}{\iff} \exists \phi: Q_{1}' \to Q_{2}, \phi(I_{1}) \subset I_{2}, \exists n_{2}: I_{1} \times \mathbb{N}_{0} \to \mathbb{N}_{0}, \forall x_{1} \in I_{1} \forall n_{1} \geq 0: \phi(f_{1}^{(n_{1})}(x_{1})) = f_{2}^{(n_{2})}(\phi(x_{1})), \forall x_{1} \in I_{1} \forall n_{1}, n_{1}' \in \mathbb{N}_{0}, n_{1} \leq n_{1}': n_{2}(x, n_{1}) \leq n_{2}(x, n_{1}') \)
 
-Wrong, because it doesn't maintain the possible additional state in \( C_2 \)
+Wrong, because it doesn't maintain the possible additional state in \( C_{2} \)
 
 \section*{v2}
 
-\( \exists g_1: I_1 \to I_2, h_2: Q_2 \to Q_1, n_2 : Q_2 \to \mathbb{N}_0 \)
+\( \exists g_{1}: I_{1} \to I_{2}, h_{2}: Q_{2} \to Q_{1}, n_{2} : Q_{2} \to \mathbb{N}_{0} \)
 
-\item \( \forall x_1 \in I_1: h_2(g_1(x_1)) = x_1 \)
-\item \( \forall q_2 \in Q_2: f_1(h_2(q_2)) = h_2(f_2^{(n_2(q_2))} (q_2)) \)
-\item \( \forall q_2 \in Q_2: h_2(q_2) \in \Omega_1 \iff q_2 \in \Omega_2 \)
+\item \( \forall x_{1} \in I_{1}: h_{2}(g_{1}(x_{1})) = x_{1} \)
+\item \( \forall q_{2} \in Q_{2}: f_{1}(h_{2}(q_{2})) = h_{2}(f_{2}^{(n_{2}(q_{2}))} (q_{2})) \)
+\item \( \forall q_{2} \in Q_{2}: h_{2}(q_{2}) \in \Omega_{1} \iff q_{2} \in \Omega_{2} \)
 
 
 \end{document}

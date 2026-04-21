@@ -1,22 +1,26 @@
 # chktex configuration for TAOCP solutions
-# Suppress warnings that are false positives for math-heavy LaTeX documents
-
-# Warning 2: Non-breaking space before references
-# Warning 3: Enclose previous parenthesis with {} — false positive in math
-# Warning 8: Wrong dash length — false positive in titles like 1.2.1-10
-# Warning 9: ) expected — false positive in math mode
-# Warning 10: Solo ) found — false positive in math mode
-# Warning 12: Interword spacing — stylistic preference
-# Warning 13: Intersentence spacing — stylistic preference
-# Warning 15: No match for ( — false positive in math mode
-# Warning 16: Mathmode still on — false positive due to template not resolved
-# Warning 17: Mismatched parentheses count — false positive in multi-line math
-# Warning 25: Put subscript between {} — stylistic, F_n is fine
-# Warning 27: Could not execute LaTeX command — template path not resolved
-# Warning 35: Use \gcd/\min/\max — false positives for variable names
-# Warning 36: Space before parenthesis — false positive in math mode
-
+#
+# Warning reference (https://www.nongnu.org/chktex/ChkTeX.pdf):
+#   1  Command terminated with space
+#   2  Non-breaking space (~) should have been used before reference
+#   3  Enclose previous parenthesis with {}
+#   8  Wrong length of dash (may be "-" vs "--" vs "---")
+#   9  ) expected, found ...
+#  10  Solo ) found
+#  12  Interword spacing (\ ) after abbreviation period
+#  13  Intersentence spacing (\@) before punctuation
+#  15  No match for ( — cannot be suppressed inline
+#  16  Mathmode still on at end of document
+#  17  Number of ( doesn't match number of )
+#  25  You might wish to put single-char subscripts in {}
+#  27  Could not execute LaTeX command
+#  35  You should use \gcd, \min, \max, etc.
+#  36  You should put a space in front of parenthesis
+#
+# Only Warning 15 is globally suppressed here because it cannot be
+# suppressed with inline % chktex comments. All other suppressions
+# must use inline comments: % chktex N
 CmdLine
 {
-    -n2 -n3 -n8 -n9 -n10 -n12 -n13 -n15 -n16 -n17 -n25 -n27 -n35 -n36
+    -n15
 }

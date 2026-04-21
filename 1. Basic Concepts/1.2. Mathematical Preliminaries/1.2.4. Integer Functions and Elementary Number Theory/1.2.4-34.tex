@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-34}
+\title{1.2.4-34} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,21 +10,21 @@ Let \( n = \lfloor \log_b{\lfloor x \rfloor}\rfloor \)
 
 \( n \leq \log_b{\lfloor x \rfloor} < n + 1 \)
 
-\( b^n \leq \lfloor x \rfloor < b^{n+1} \)
+\( b^{n} \leq \lfloor x \rfloor < b^{n+1} \)
 
-\( \lfloor b^n \rfloor \leq \lfloor x \rfloor < \lceil b^{n+1} \rceil \)
+\( \lfloor b^{n} \rfloor \leq \lfloor x \rfloor < \lceil b^{n+1} \rceil \)
 
-\( \lfloor b^n \rfloor \leq x < \lceil b^{n+1} \rceil \)
+\( \lfloor b^{n} \rfloor \leq x < \lceil b^{n+1} \rceil \)
 
-\( \log_b \lfloor b^n \rfloor \leq \log_b{x} < \log_b\lceil b^{n+1} \rceil \)
+\( \log_{b} \lfloor b^{n} \rfloor \leq \log_b{x} < \log_{b}\lceil b^{n+1} \rceil \)
 
-\( \lfloor \log_b \lfloor b^n \rfloor \rfloor \leq \log_b{x} < \lceil \log_b\lceil b^{n+1} \rceil \rceil \)
+\( \lfloor \log_{b} \lfloor b^{n} \rfloor \rfloor \leq \log_b{x} < \lceil \log_{b}\lceil b^{n+1} \rceil \rceil \)
 
-\( \lfloor \log_b \lfloor b^n \rfloor \rfloor \leq \lfloor \log_b{x} \rfloor < \lceil \log_b\lceil b^{n+1} \rceil \rceil \)
+\( \lfloor \log_{b} \lfloor b^{n} \rfloor \rfloor \leq \lfloor \log_b{x} \rfloor < \lceil \log_{b}\lceil b^{n+1} \rceil \rceil \)
 
-\( \lfloor \log_b \lfloor b^n \rfloor \rfloor \leq \lfloor \log_b  b^n \rfloor = n < n + 1 = \lceil \log_b b^{n+1} \rceil \leq \lceil \log_b\lceil b^{n+1} \rceil \rceil \)
+\( \lfloor \log_{b} \lfloor b^{n} \rfloor \rfloor \leq \lfloor \log_{b}  b^{n} \rfloor = n < n + 1 = \lceil \log_{b} b^{n+1} \rceil \leq \lceil \log_{b}\lceil b^{n+1} \rceil \rceil \)
 
-\( n = \lfloor \log_b{x} \rfloor \iff \lceil \log_b\lceil b^{n+1} \rceil \rceil -\lfloor \log_b \lfloor b^n \rfloor \rfloor = 1 \)
+\( n = \lfloor \log_b{x} \rfloor \iff \lceil \log_{b}\lceil b^{n+1} \rceil \rceil -\lfloor \log_{b} \lfloor b^{n} \rfloor \rfloor = 1 \)
 
 Consider \( n = 1 \)
 
@@ -38,7 +38,7 @@ If \( b \notin \mathbb{N} \)
 
 \( \lfloor\log_b{\lfloor b \rfloor}\rfloor < 1 \implies \lfloor\log_b{\lfloor b \rfloor}\rfloor = 0 \)
 
-\( \lfloor \log_b b \rfloor = 1 \)
+\( \lfloor \log_{b} b \rfloor = 1 \)
 
 \( \implies \) only for \( b \geq 2, b \in \mathbb{N} \)
 

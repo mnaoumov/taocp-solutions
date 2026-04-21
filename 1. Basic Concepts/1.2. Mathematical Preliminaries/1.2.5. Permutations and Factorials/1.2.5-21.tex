@@ -1,28 +1,28 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.5-21}
+\title{1.2.5-21} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( u_k := D_x^k u \)
+\( u_{k} := D_{x}^{k} u \)
 
-\( w_k := D_u^k w \)
+\( w_{k} := D_{u}^{k} w \)
 
-\( D_x w = w_1 u_1 \)
+\( D_{x} w = w_{1} u_{1} \)
 
-We need to prove \( D_x^n w = \sum_{j=0}^n \sum_{\substack{k_1 + k_2 + \cdots + k_n = j\\ k_1 + 2k_2 + \cdots + nk_n = n\\k_1, k2_, \ldots, k_n \geq 0}} w_j \frac{n!}{k_1!(1!)^{k_1}\ldots k_n! (n!)^{k_n}} u_1^{k_1}\ldots u_n^{k_n} \)
+We need to prove \( D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{k_{1} + k_{2} + \cdots + k_{n} = j\\ k_{1} + 2k_{2} + \cdots + nk_{n} = n\\k_{1}, k2_, \ldots, k_{n} \geq 0}} w_{j} \frac{n!}{k_{1}!{(1!)}^{k_{1}}\ldots k_{n}! {(n!)}^{k_{n}}} u_{1}^{k_{1}}\ldots u_{n}^{k_{n}} \)
 
-Let \( \bar{k}=(k_1,k_2,\ldots): k_i \in \mathbb{N}_0, i \geq 0, \exists I \geq 1 \forall i \geq I: k_i = 0 \)
+Let \( \bar{k}=(k_{1},k_{2},\ldots): k_{i} \in \mathbb{N}_{0}, i \geq 0, \exists I \geq 1 \forall i \geq I: k_{i} = 0 \)
 
-\( s(\bar{k}) := k_1 + k_2 + \cdots \)
+\( s(\bar{k}) := k_{1} + k_{2} + \cdots \)
 
-\( t(\bar{k}) := 1k_1 + 2k_2 + \cdots \)
+\( t(\bar{k}) := 1k_{1} + 2k_{2} + \cdots \)
 
-\( c(\bar{k}) := \frac{t(\bar{k})!}{k_1!(1!)^{k_1}\ldots k_n! (n!)^{k_n}\ldots} \)
+\( c(\bar{k}) := \frac{t(\bar{k})!}{k_{1}!{(1!)}^{k_{1}}\ldots k_{n}! {(n!)}^{k_{n}}\ldots} \)
 
-\( u(\bar{k}) = u_1^{k_1}u_2^{k_2}\ldots \)
+\( u(\bar{k}) = u_{1}^{k_{1}}u_{2}^{k_{2}}\ldots \)
 
 \( s(\bar{k} + \bar{l}) = s(\bar{k}) + s(\bar{l}) \)
 
@@ -32,51 +32,51 @@ Let \( \bar{k}=(k_1,k_2,\ldots): k_i \in \mathbb{N}_0, i \geq 0, \exists I \geq 
 
 With this notation, we need to prove
 
-\( D_x^n w = \sum_{j=0}^n \sum_{\substack{\bar{k}\\ s(\bar{k}) = j\\ t(\bar{k}) = n}} w_j c(\bar{k})u(\bar{k}) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} w_{s(\bar{k})} c(\bar{k})u(\bar{k}) =: A_n(w) \)
+\( D_{x}^{n} w = \sum_{j=0}^{n} \sum_{\substack{\bar{k}\\ s(\bar{k}) = j\\ t(\bar{k}) = n}} w_{j} c(\bar{k})u(\bar{k}) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} w_{s(\bar{k})} c(\bar{k})u(\bar{k}) =: A_{n}(w) \)
 
 Prove by induction
 
-\( n = 1: D_x^n w = w_1u_1 \)
+\( n = 1: D_{x}^{n} w = w_{1}u_{1} \)
 
-\( t(\bar{k}) = 1 \iff \bar{k} = (1,0,0,\ldots) = \bar{e}_1 \)
+\( t(\bar{k}) = 1 \iff \bar{k} = (1,0,0,\ldots) = \bar{e}_{1} \)
 
- \( A_1(w) = w_{s(\bar{e}_1)}c(\bar{e}_1))u(\bar{e}_1)) = w_1 \cdot 1 \cdot u_1 \)
+ \( A_{1}(w) = w_{s(\bar{e}_{1})}c(\bar{e}_{1}))u(\bar{e}_{1})) = w_{1} \cdot 1 \cdot u_{1} \) % chktex 10
 
 \( (n \implies n + 1) \)
 
-\( D_x^{n+1} w = D_x^1 (D_x^{n} w) = D_x^1(A_n(w)) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) D_x^1(w_{s(\bar{k})} u(\bar{k})) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k})(D_x^1w_{s(\bar{k})} \cdot u(\bar{k}) + w_{s(\bar{k})} \cdot D_x^1 u(\bar{k})) \)
+\( D_{x}^{n+1} w = D_{x}^{1} (D_{x}^{n} w) = D_{x}^{1}(A_{n}(w)) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) D_{x}^{1}(w_{s(\bar{k})} u(\bar{k})) = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k})(D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) + w_{s(\bar{k})} \cdot D_{x}^{1} u(\bar{k})) \)
 
-\( D_x^1w_{s(\bar{k})} = D_u^1w_{s(\bar{k})} \cdot D_x^1 u = w_{s(\bar{k}) + 1} u_1 = w_{s(\bar{k} + \bar{e}_1)} u(\bar{e}_1) \)
+\( D_{x}^{1}w_{s(\bar{k})} = D_{u}^{1}w_{s(\bar{k})} \cdot D_{x}^{1} u = w_{s(\bar{k}) + 1} u_{1} = w_{s(\bar{k} + \bar{e}_{1})} u(\bar{e}_{1}) \)
 
-\( D_x^1w_{s(\bar{k})} \cdot u(\bar{k}) = w_{s(\bar{k} + \bar{e}_1)} u(\bar{k} + \bar{e}_1) \)
+\( D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) = w_{s(\bar{k} + \bar{e}_{1})} u(\bar{k} + \bar{e}_{1}) \)
 
-\( \bar{e}_0 := (0,0,\ldots), k_0 := 1 \)
+\( \bar{e}_{0} := (0,0,\ldots), k_{0} := 1 \)
 
-\( D_x^1w_{s(\bar{k})} \cdot u(\bar{k}) = k_0 w_{s(\bar{k} + \bar{e}_1 - \bar{e}_0)} u(\bar{k} + \bar{e}_1 - \bar{e}_0) \)
+\( D_{x}^{1}w_{s(\bar{k})} \cdot u(\bar{k}) = k_{0} w_{s(\bar{k} + \bar{e}_{1} - \bar{e}_{0})} u(\bar{k} + \bar{e}_{1} - \bar{e}_{0}) \)
 
-\( D_x^1 u(\bar{k})) = D_x^1 \left(\prod_{i \geq 1}u_i^{k_i}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_i^{k_i} \cdot D_x^1(u_r^{k_r})\right) = \sum_{r \geq 1} \left( u(\bar{k} - k_r \bar{e}_r) \cdot D_x^1(u_r^{k_r}) \right) \)
+\( D_{x}^{1} u(\bar{k})) = D_{x}^{1} \left(\prod_{i \geq 1}u_{i}^{k_{i}}\right) = \sum_{r \geq 1} \left(\prod_{\substack{i \geq 1\\ i \neq r}}u_{i}^{k_{i}} \cdot D_{x}^{1}(u_{r}^{k_{r}})\right) = \sum_{r \geq 1} \left( u(\bar{k} - k_{r} \bar{e}_{r}) \cdot D_{x}^{1}(u_{r}^{k_{r}}) \right) \) % chktex 10
 
-\( D_x^1(u_r^{k_r}) = k_r u_r^{k_r-1} D_x^1(u_r) = k_r u_r^{k_r - 1} u_{r+1} = k_r u\bigl((k_r-1)\bar{e}_r + \bar{e}_{r+1}\bigr) \)
+\( D_{x}^{1}(u_{r}^{k_{r}}) = k_{r} u_{r}^{k_{r}-1} D_{x}^{1}(u_{r}) = k_{r} u_{r}^{k_{r} - 1} u_{r+1} = k_{r} u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \)
 
-\( D_x^1 u(\bar{k})) = \sum_{r \geq 1} k_r \left( u\bigl(\bar{k} - k_r \bar{e}_r\bigr) \cdot u\bigl((k_r-1)\bar{e}_r + \bar{e}_{r+1}\bigr) \right) = \sum_{r \geq 1} k_r u(\bar{k} - \bar{e}_r + \bar{e}_{r+1}) \)
+\( D_{x}^{1} u(\bar{k})) = \sum_{r \geq 1} k_{r} \left( u\bigl(\bar{k} - k_{r} \bar{e}_{r}\bigr) \cdot u\bigl((k_{r}-1)\bar{e}_{r} + \bar{e}_{r+1}\bigr) \right) = \sum_{r \geq 1} k_{r} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) \) % chktex 10
 
-\( s(\bar{k} - \bar{e}_r + \bar{e}_{r+1}) = s(\bar{k}) - s(\bar{e}_r) + s(\bar{e}_{r+1}) = s(\bar{k}) \)
+\( s(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) = s(\bar{k}) - s(\bar{e}_{r}) + s(\bar{e}_{r+1}) = s(\bar{k}) \)
 
-\( D_x^{n+1}w = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) \sum_{r\geq 0} k_r w_{s(\bar{k} - \bar{e}_r + \bar{e}_{r+1})} u(\bar{k} - \bar{e}_r + \bar{e}_{r+1}) \)
+\( D_{x}^{n+1}w = \sum_{\substack{\bar{k}\\ t(\bar{k}) = n}} c(\bar{k}) \sum_{r\geq 0} k_{r} w_{s(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1})} u(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) \)
 
-\( t(\bar{k} - \bar{e}_r + \bar{e}_{r+1}) = t(\bar{k}) - t(\bar{e}_r) + t(\bar{e}_{r+1}) = n - r + (r+1) = n + 1 \)
+\( t(\bar{k} - \bar{e}_{r} + \bar{e}_{r+1}) = t(\bar{k}) - t(\bar{e}_{r}) + t(\bar{e}_{r+1}) = n - r + (r+1) = n + 1 \)
 
-\( D_x^{n+1} w = \sum_{\substack{\bar{l}\\ t(\bar{l}) = n + 1 \\ }} w_{s(\bar{l})} u(\bar{l}) \sum_{r \geq 0} \sum_{\substack{\bar{k}\\ t(\bar{k}) = n \\ \bar{l} = \bar{k} - \bar{e}_r + \bar{e}_{r+1}}} k_r c(\bar{k}) \)
+\( D_{x}^{n+1} w = \sum_{\substack{\bar{l}\\ t(\bar{l}) = n + 1 \\ }} w_{s(\bar{l})} u(\bar{l}) \sum_{r \geq 0} \sum_{\substack{\bar{k}\\ t(\bar{k}) = n \\ \bar{l} = \bar{k} - \bar{e}_{r} + \bar{e}_{r+1}}} k_{r} c(\bar{k}) \)
 
-We need to prove \( c(\bar{l}) = \sum_{r \geq 0} \sum_{\substack{\bar{k}\\ t(\bar{k}) = n \\ \bar{l} = \bar{k} - \bar{e}_r + \bar{e}_{r+1}}} k_r c(\bar{k}) =: d(\bar{l}) \)
+We need to prove \( c(\bar{l}) = \sum_{r \geq 0} \sum_{\substack{\bar{k}\\ t(\bar{k}) = n \\ \bar{l} = \bar{k} - \bar{e}_{r} + \bar{e}_{r+1}}} k_{r} c(\bar{k}) =: d(\bar{l}) \)
 
 If \( l_{r+1} = 0 \implies k_{r+1} = -1 < 0 \implies \) such \( \bar{k} \) does not exist.
 
-If \( l_{r+1} > 0 \implies \bar{k} = \bar{l} + \bar{e}_{r} - \bar{e}_{r + 1} \implies k_r = l_r + 1, r \geq 1 \)
+If \( l_{r+1} > 0 \implies \bar{k} = \bar{l} + \bar{e}_{r} - \bar{e}_{r + 1} \implies k_{r} = l_{r} + 1, r \geq 1 \)
 
-\( d(\bar{l}) = k_0 c(\bar{l} + \bar{e}_0 - \bar{e}_1)[l_1 > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_r + 1) c(\bar{l} + \bar{e}_{r} - \bar{e}_{r + 1}) = \frac{n!}{\prod_{j \geq 2} l_j!(j!)^{l_j} \cdot (l_1-1)!}[l_1 > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_r + 1) \frac{n!}{\prod_{\substack{j \geq 1 \\ j \neq r, r+1}} l_j!(j!)^{l_j} \cdot (l_r+1)!(r!)^{l_r+1} (l_{r+1}-1)!((r+1)!)^{l_{r+1}-1}} = \)
+\( d(\bar{l}) = k_{0} c(\bar{l} + \bar{e}_{0} - \bar{e}_{1})[l_{1} > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) c(\bar{l} + \bar{e}_{r} - \bar{e}_{r + 1}) = \frac{n!}{\prod_{j \geq 2} l_{j}!{(j!)}^{l_{j}} \cdot (l_{1}-1)!}[l_{1} > 0] + \sum_{\substack{r \geq 1\\ l_{r+1} > 0}} (l_{r} + 1) \frac{n!}{\prod_{\substack{j \geq 1 \\ j \neq r, r+1}} l_{j}!{(j!)}^{l_{j}} \cdot (l_{r}+1)!{(r!)}^{l_{r}+1} (l_{r+1}-1)!{((r+1)!)}^{l_{r+1}-1}} = \)
 
-\( = \frac{c(\bar{l})}{n+1} (l_1 [l_1 > 0] + \sum_{\substack{r \geq 1 \\ l_{r+1} > 0}} (l_r + 1)) \frac{l_{r+1} (r+1)!}{(l_r + 1)r!} = \frac{c(\bar{l})}{n+1}(l_1 + \sum_{r \geq 1} l_{r+1}(r+1)) = \frac{c(\bar{l})}{n+1} t(\bar{l}) = c(\bar{l}) \)
+\( = \frac{c(\bar{l})}{n+1} (l_{1} [l_{1} > 0] + \sum_{\substack{r \geq 1 \\ l_{r+1} > 0}} (l_{r} + 1)) \frac{l_{r+1} (r+1)!}{(l_{r} + 1)r!} = \frac{c(\bar{l})}{n+1}(l_{1} + \sum_{r \geq 1} l_{r+1}(r+1)) = \frac{c(\bar{l})}{n+1} t(\bar{l}) = c(\bar{l}) \)
 
 
-\end{document}
+\end{document} % chktex 17

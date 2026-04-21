@@ -1,28 +1,28 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-57}
+\title{1.2.6-57} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( a_k := 0, k \leq 0 \)
+\( a_{k} := 0, k \leq 0 \)
 
-\( \ln r! = \sum_{k \geq 1} a_k m(m-1)\cdots(m-k+1) = \sum_{k \geq 1} a_k k! \binom{r}{k} = \sum_{k} a_k k! \binom{r}{k} \)
+\( \ln r! = \sum_{k \geq 1} a_{k} m(m-1)\cdots(m-k+1) = \sum_{k \geq 1} a_{k} k! \binom{r}{k} = \sum_{k} a_{k} k! \binom{r}{k} \)
 
-\( \sum_{r} \binom{m}{r}\binom{r}{k}(-1)^{m-r} = \delta_{mk} \)
+\( \sum_{r} \binom{m}{r}\binom{r}{k}{(-1)}^{m-r} = \delta_{mk} \)
 
-\( \sum_r (\ln r!)\binom{m}{r}(-1)^{m-r} = \sum_{k,r} a_kk! \binom{r}{k}\binom{m}{r}(-1)^{m-r} = \sum_k a_k k! \sum_r \binom{m}{r}\binom{r}{k}(-1)^{m-r} = \sum_k a_k k! \delta_{mk} = a_m m! \)
+\( \sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \sum_{k,r} a_{k}k! \binom{r}{k}\binom{m}{r}{(-1)}^{m-r} = \sum_{k} a_{k} k! \sum_{r} \binom{m}{r}\binom{r}{k}{(-1)}^{m-r} = \sum_{k} a_{k} k! \delta_{mk} = a_{m} m! \)
 
-\( a_m = \frac{1}{m!} \sum_r (\ln r!)\binom{m}{r}(-1)^{m-r} = \frac{(-1)^m}{m!} \sum_r \binom{m}{r}(-1)^{r} \sum_{k = 1}^r \ln k = \frac{(-1)^m}{m!} \sum_{k \geq 1} \ln k \sum_{r \geq k} \binom{m}{r}(-1)^r = \)
+\( a_{m} = \frac{1}{m!} \sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \frac{{(-1)}^{m}}{m!} \sum_{r} \binom{m}{r}{(-1)}^{r} \sum_{k = 1}^{r} \ln k = \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k \sum_{r \geq k} \binom{m}{r}{(-1)}^{r} = \)
 
-\( = \frac{(-1)^m}{m!} \sum_{k \geq 1} \ln k (\sum_{r} \binom{m}{r}(-1)^{r} - \sum_{r < k} \binom{m}{r}(-1)^{r}) = \frac{1}{m!} \sum_{k \geq 1} \ln k ((1-1)^m - \sum_{r < k} \binom{m}{r}(-1)^{r}) = \)
+\( = \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k (\sum_{r} \binom{m}{r}{(-1)}^{r} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) = \frac{1}{m!} \sum_{k \geq 1} \ln k ({(1-1)}^{m} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) = \)
 
-\( = \frac{(-1)^{m-1}}{m!} \sum_{k \geq 1} \ln k \sum_{r < k} \binom{m}{r}(-1)^{r} \)
+\( = \frac{{(-1)}^{m-1}}{m!} \sum_{k \geq 1} \ln k \sum_{r < k} \binom{m}{r}{(-1)}^{r} \)
 
-\( \sum_{r < k} \binom{m}{r}(-1)^{r} = \sum_{r=0}^{k-1} \binom{m}{r}(-1)^{r} =: A \)
+\( \sum_{r < k} \binom{m}{r}{(-1)}^{r} = \sum_{r=0}^{k-1} \binom{m}{r}{(-1)}^{r} =: A \)
 
-\( (24) \quad \sum_{k=0}^r \binom{r-k}{m}\binom{s}{k-t} (-1)^{k-t} = \binom{r-t-s}{r-t-m} \)
+\( (24) \quad \sum_{k=0}^{r} \binom{r-k}{m}\binom{s}{k-t} {(-1)}^{k-t} = \binom{r-t-s}{r-t-m} \)
 
 \( r \leftarrow k-1 \)
 
@@ -34,9 +34,9 @@
 
 \( t \leftarrow 0 \)
 
-\( A = \binom{k-1-0-m}{k-1-0-0} = \binom{k-1-m}{k-1} = (-1)^{k-1} \binom{m-1}{k-1} \)
+\( A = \binom{k-1-0-m}{k-1-0-0} = \binom{k-1-m}{k-1} = {(-1)}^{k-1} \binom{m-1}{k-1} \)
 
-\( a_m = \frac{(-1)^{m-1}}{m!} \sum_{k \geq 1} \ln k (-1)^{k-1} \binom{m-1}{k-1} = \frac{(-1)^{m}}{m!} \sum_{k \geq 1} \ln k (-1)^{k} \binom{m-1}{k-1} \)
+\( a_{m} = \frac{{(-1)}^{m-1}}{m!} \sum_{k \geq 1} \ln k {(-1)}^{k-1} \binom{m-1}{k-1} = \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k {(-1)}^{k} \binom{m-1}{k-1} \)
 
 
 \end{document}

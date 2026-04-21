@@ -1,22 +1,22 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-14}
+\title{1.2.7-14} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( A := \sum_{k=1}^n \frac{H_k}{k} = \sum_{1\leq k \leq n+1} (H_k - H_{k-1}) H_k = H_{k-1}H_k\mid_{1}^{n+1} - \sum_{1 \leq k \leq n+1} H_k (H_{k+1}-H_k) = H_n H_{n+1} - H_0 H_1 - \sum_{1 \leq k < n+1} \frac{H_{k}}{k+1} = \)
+\( A := \sum_{k=1}^{n} \frac{H_{k}}{k} = \sum_{1\leq k \leq n+1} (H_{k} - H_{k-1}) H_{k} = H_{k-1}H_{k}\mid_{1}^{n+1} - \sum_{1 \leq k \leq n+1} H_{k} (H_{k+1}-H_{k}) = H_{n} H_{n+1} - H_{0} H_{1} - \sum_{1 \leq k < n+1} \frac{H_{k}}{k+1} = \)
 
-\( = H_n(H_n + \frac{1}{n+1}) - \sum_{l=2}^{n+1} \frac{H_{l-1}}{l} = (H_n)^2 + \frac{H_n}{n+1} - \sum_{l=1}^n \frac{H_{l-1}}{l} - \frac{H_n}{n+1} = (H_n)^2 - \sum_{l=1}^n \frac{H_l - \frac{1}{l}}{l} = \)
+\( = H_{n}(H_{n} + \frac{1}{n+1}) - \sum_{l=2}^{n+1} \frac{H_{l-1}}{l} = {(H_{n})}^{2} + \frac{H_{n}}{n+1} - \sum_{l=1}^{n} \frac{H_{l-1}}{l} - \frac{H_{n}}{n+1} = {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l} - \frac{1}{l}}{l} = \)
 
-\( = (H_n)^2 - \sum_{l=1}^n \frac{H_l}{l} + \sum{l=1}{n}\frac{1}{l^2} = (H_n)^2 + H_n^{(2)} - A \)
+\( = {(H_{n})}^{2} - \sum_{l=1}^{n} \frac{H_{l}}{l} + \sum{l=1}{n}\frac{1}{l^{2}} = {(H_{n})}^{2} + H_{n}^{(2)} - A \)
 
-\( A = \frac{1}{2}((H_n)^2 + H_n^{(2)}) \)
+\( A = \frac{1}{2}({(H_{n})}^{2} + H_{n}^{(2)}) \)
 
 \(  \)
 
-\( B := \sum_{k=1}^n \frac{H_k}{k+1} = \sum_{k=2}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k} - \frac{1}{k}}{k} = \sum_{k=1}^{n+1} \frac{H_k}{k} - \sum_{k=1}^{n+1} \frac{1}{k^2} = \frac{1}{2}((H_{n+1})^2 + H_{n+1}^{(2)}) - H_{n+1}^{(2)} = \frac{1}{2}((H_{n+1})^2 - H_{n+1}^{(2)}) \)
+\( B := \sum_{k=1}^{n} \frac{H_{k}}{k+1} = \sum_{k=2}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k-1}}{k} = \sum_{k=1}^{n+1} \frac{H_{k} - \frac{1}{k}}{k} = \sum_{k=1}^{n+1} \frac{H_{k}}{k} - \sum_{k=1}^{n+1} \frac{1}{k^{2}} = \frac{1}{2}({(H_{n+1})}^{2} + H_{n+1}^{(2)}) - H_{n+1}^{(2)} = \frac{1}{2}({(H_{n+1})}^{2} - H_{n+1}^{(2)}) \)
 
 
 \end{document}

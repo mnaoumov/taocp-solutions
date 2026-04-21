@@ -1,26 +1,26 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-65}
+\title{1.2.6-65} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( x^{\overline{k}} = \sum_{m=0}^k [{k \atop m}]x^m \)
+\( x^{\overline{k}} = \sum_{m=0}^{k} [{k \atop m}]x^{m} \)
 
-\( \sum_{k \geq 0} \frac{x^{\overline{k}}t^k}{k!} = \sum_{k \geq 0} \sum_{m=0}^k [{k \atop m}]x^m = \sum_{m\geq 0}x^m \sum_{k \geq m} [{k \atop m}] \frac{t^k}{k!} = \sum_{m\geq 0}x^m \sum_{k \geq 0} [{{k + m} \atop m}] \frac{t^{k+m}}{(k+m)!} = \)
+\( \sum_{k \geq 0} \frac{x^{\overline{k}}t^{k}}{k!} = \sum_{k \geq 0} \sum_{m=0}^{k} [{k \atop m}]x^{m} = \sum_{m\geq 0}x^{m} \sum_{k \geq m} [{k \atop m}] \frac{t^{k}}{k!} = \sum_{m\geq 0}x^{m} \sum_{k \geq 0} [{{k + m} \atop m}] \frac{t^{k+m}}{(k+m)!} = \)
 
-\( = \sum_{m\geq 0}x^mt^m \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{t^{k}}{(k+m)!} \)
+\( = \sum_{m\geq 0}x^{m}t^{m} \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{t^{k}}{(k+m)!} \)
 
-\( \sum_{k \geq 0} \frac{x^{\overline{k}}t^k}{k!} = \sum_{k \geq 0} \frac{(-1)^k(-x)^{\underline{k}}t^k}{k!} = \sum_{k \geq 0} \binom{-x}{k}(-t)^k = (1-t)^{-x} = e^{-x \ln(1-t) = e^{x\ln\frac{1}{1-t}}} = \)
+\( \sum_{k \geq 0} \frac{x^{\overline{k}}t^{k}}{k!} = \sum_{k \geq 0} \frac{{(-1)}^{k}{(-x)}^{\underline{k}}t^{k}}{k!} = \sum_{k \geq 0} \binom{-x}{k}{(-t)}^{k} = {(1-t)}^{-x} = e^{-x \ln(1-t) = e^{x\ln\frac{1}{1-t}}} = \)
 
-\( = \sum_{m \geq 0}\frac{x^m(\ln\frac{1}{1-t})^m}{m!} \)
+\( = \sum_{m \geq 0}\frac{x^{m}{(\ln\frac{1}{1-t})}^{m}}{m!} \)
 
-\( \implies \frac{(\ln\frac{1}{1-t})^m}{m!} = t^m \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{t^{k}}{(k+m)!} \)
+\( \implies \frac{{(\ln\frac{1}{1-t})}^{m}}{m!} = t^{m} \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{t^{k}}{(k+m)!} \)
 
-\( (\frac{1}{t}\ln\frac{1}{1-t})^m = \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{m!}{(k+m)!} t^{k} = \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{\Gamma(1+m)}{\Gamma(k+1+m)} t^{k} \)
+\( {(\frac{1}{t}\ln\frac{1}{1-t})}^{m} = \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{m!}{(k+m)!} t^{k} = \sum_{k \geq 0} \{{{-m} \atop {-m-k}}\} \frac{\Gamma(1+m)}{\Gamma(k+1+m)} t^{k} \)
 
-\( (\frac{1}{t}\ln\frac{1}{1-t})^{-r} = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} t^{k}\quad (1) \)
+\( {(\frac{1}{t}\ln\frac{1}{1-t})}^{-r} = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} t^{k}\quad (1) \)
 
 (1) works for \( r = -m, m \geq 1 \)
 
@@ -28,23 +28,23 @@ Analytically we can extend it to all \( r \), that makes sense, namely for \( \R
 
 For \( z, \Re z > 0 \)
 
-\( \Gamma(1-r) = \int_0^\infty t^{-r} e^{-t} dt \overset{t=zu}{=} \int_0^\infty (zu)^{-r} e^{-zu} z du \overset{t=zu}{=} z^{1-r} \int_0^\infty u^{-r}e^{-zu}du = \)
+\( \Gamma(1-r) = \int_{0}^\infty t^{-r} e^{-t} dt \overset{t=zu}{=} \int_{0}^\infty {(zu)}^{-r} e^{-zu} z du \overset{t=zu}{=} z^{1-r} \int_{0}^\infty u^{-r}e^{-zu}du = \)
 
-\( \overset{\substack{t = 1 - e^{-u}\\u = \ln{\frac{1}{1-t}}}}{=} z^{1-r} \int_0^1 (\ln{\frac{1}{1-t}})^{-r} (1-t)^z \frac{dt}{1-t} = z^{1-r} \int_0^1 (\frac{1}{t}\ln{\frac{1}{1-t}})^{-r} t^{-r}(1-t)^{z-1} dt = \)
+\( \overset{\substack{t = 1 - e^{-u}\\u = \ln{\frac{1}{1-t}}}}{=} z^{1-r} \int_{0}^{1} {(\ln{\frac{1}{1-t}})}^{-r} {(1-t)}^{z} \frac{dt}{1-t} = z^{1-r} \int_{0}^{1} {(\frac{1}{t}\ln{\frac{1}{1-t}})}^{-r} t^{-r}{(1-t)}^{z-1} dt = \)
 
-\( = z^{1-r} \int_0^1 \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} t^{k} t^{-r} (1-t)^{z-1} dt = z^{1-r} \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} B(k-r+1,z) = \)
+\( = z^{1-r} \int_{0}^{1} \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} t^{k} t^{-r} {(1-t)}^{z-1} dt = z^{1-r} \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} B(k-r+1,z) = \)
 
 \( = z^{1-r} \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1-r)}{\Gamma(k+1-r)} \frac{\Gamma(k-r+1)\Gamma(z)}{\Gamma(k-r+1+z)} = z^{1-r} \Gamma(1-r) \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(z)}{\Gamma(k-r+1+z)} \)
 
 \( z^{r-1} = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(z)}{\Gamma(k-r+1+z)} \)
 
-\( z^r = z^{r-1}z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1+z)}{\Gamma(k-r+1+z)} = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} z^{\underline{r-k}}\quad (2) \)
+\( z^{r} = z^{r-1}z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(1+z)}{\Gamma(k-r+1+z)} = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} z^{\underline{r-k}}\quad (2) \)
 
 (2) proven for \( \Re r < 1 \)
 
 Let's prove that if it holds for \( r \), it also holds for \( r + 1 \)
 
-\( z^{r+1} = z^r \cdot z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} z^{\underline{r-k}} \cdot z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(z+1)}{\Gamma(z+1-r+k)} \cdot ((z-r+k) + (r-k)) = \)
+\( z^{r+1} = z^{r} \cdot z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} z^{\underline{r-k}} \cdot z = \sum_{k \geq 0} \{{{r} \atop {r-k}}\} \frac{\Gamma(z+1)}{\Gamma(z+1-r+k)} \cdot ((z-r+k) + (r-k)) = \)
 
 \( = \sum_{k \geq 0} \{{{r} \atop {r-k}}\}( \frac{\Gamma(z+1)}{\Gamma(z-r+k)} + (r-k) \frac{\Gamma(z+1)}{\Gamma(z+1-r+k)}) = \sum_{k \geq 0} \{{{r} \atop {r-k}}\}z^{\underline{r-k+1}} + \sum_{k \geq 0} \{{{r} \atop {r-k}}\}(r-k)z^{\underline{r-k}} = \)
 
@@ -58,27 +58,27 @@ Let's prove that if it holds for \( r \), it also holds for \( r + 1 \)
 
 \bigskip\hrule\bigskip
 
-\( z^{\underline{n}} = \sum_{k=0}^n [{n \atop k}](-1)^{n-k}z^k = \sum_{k=0}^n [{n \atop {n-k}}](-1)^{k}z^{n-k} = \sum_{k=0}^m [{n \atop {n-k}}](-1)^{k}z^{n-k} + O(z^{n-m-1}), z \to \infty\quad(3) \)
+\( z^{\underline{n}} = \sum_{k=0}^{n} [{n \atop k}]{(-1)}^{n-k}z^{k} = \sum_{k=0}^{n} [{n \atop {n-k}}]{(-1)}^{k}z^{n-k} = \sum_{k=0}^{m} [{n \atop {n-k}}]{(-1)}^{k}z^{n-k} + O(z^{n-m-1}), z \to \infty\quad(3) \)
 
 \( z^{\underline{r}} = \frac{\Gamma(z+1)}{\Gamma(z-r+1)} \)
 
 \( \psi(z) := \frac{\Gamma'(z)}{\Gamma(z)} = \frac{d}{dz} \ln \Gamma(z) \)
 
-\( \ln z^{\underline{r}} = \ln \Gamma(z+1) - \ln \Gamma(z-r+1) = - \ln\Gamma(z+1-t) \Big|_0^r = \int_0^r \psi(z+1-t) dt \)
+\( \ln z^{\underline{r}} = \ln \Gamma(z+1) - \ln \Gamma(z-r+1) = - \ln\Gamma(z+1-t) \Big|_{0}^{r} = \int_{0}^{r} \psi(z+1-t) dt \)
 
 Stirling's formula:
 
-\( \ln \Gamma(z) = (z-\frac{1}{2})\ln{z} - z + \sum_{k=0}^m \frac{c_k}{k! z^k} + O(\frac{1}{z^{m+1}}), z \to \infty \)
+\( \ln \Gamma(z) = (z-\frac{1}{2})\ln{z} - z + \sum_{k=0}^{m} \frac{c_{k}}{k! z^{k}} + O(\frac{1}{z^{m+1}}), z \to \infty \)
 
-\( \psi(z) = \ln{z} + \sum_{k=1}^m \frac{d_k}{k! z^k} + O(\frac{1}{z^{m+1}}) \)
+\( \psi(z) = \ln{z} + \sum_{k=1}^{m} \frac{d_{k}}{k! z^{k}} + O(\frac{1}{z^{m+1}}) \)
 
-\( \ln z^{\underline{r}} = \int_0^r \psi(z+1-t)dt = r \ln z + \sum_{k=1}^m \frac{p_k(r)}{z^k} + O(\frac{1}{z^{m+1}}) \)
+\( \ln z^{\underline{r}} = \int_{0}^{r} \psi(z+1-t)dt = r \ln z + \sum_{k=1}^{m} \frac{p_{k}(r)}{z^{k}} + O(\frac{1}{z^{m+1}}) \)
 
-\( z^{\underline{r}} = e^{r \ln z + O(\frac{1}{z})} = z^r (\sum_{k=1}^m \frac{q_k(r)}{z^k} + O(\frac{1}{z^{m+1}}) \)
+\( z^{\underline{r}} = e^{r \ln z + O(\frac{1}{z})} = z^{r} (\sum_{k=1}^{m} \frac{q_{k}(r)}{z^{k}} + O(\frac{1}{z^{m+1}}) \)
 
-By continuation we deduce \( q_{k}(r) = [{r \atop {r-k}}](-1)^k \)
+By continuation we deduce \( q_{k}(r) = [{r \atop {r-k}}]{(-1)}^{k} \)
 
-\( z^{\underline{r}} = \sum_{k=0}^m [{r \atop {r-k}}](-1)^k z^{r-k} + O(z^{r-m-1}) \)
+\( z^{\underline{r}} = \sum_{k=0}^{m} [{r \atop {r-k}}]{(-1)}^{k} z^{r-k} + O(z^{r-m-1}) \)
 
 
-\end{document}
+\end{document} % chktex 17

@@ -1,34 +1,34 @@
 \documentclass{article}
-\input{../../template}
+\input{../../template} % chktex 27
 
 \title{Notes}
 
 \begin{document}
 \maketitle
 
-\textbf{Lemma}. \( \{ a_n: n \geq 1 \} \) - sequence
+\textbf{Lemma}. \( \{ a_{n}: n \geq 1 \} \) --- sequence
 
-\( \forall n \geq 1: a_{n + T} = a_n \)
+\( \forall n \geq 1: a_{n + T} = a_{n} \)
 
-\( \implies \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^N a_n = \frac{1}{T} \sum_{n=1}^T a_n \)
+\( \implies \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} a_{n} = \frac{1}{T} \sum_{n=1}^{T} a_{n} \)
 
 \textbf{Proof}
 
-\( S_N := \sum_{n=1}^N a_n, S_0 := 0 \)
+\( S_{N} := \sum_{n=1}^{N} a_{n}, S_{0} := 0 \)
 
 \( N = TQ(N) + R(N), 0 \leq R(N) < T \)
 
-\( S_N = \sum_{n=1}^T a_n + \sum_{n = T + 1}^N a_n = S_T + \sum_{n = 1}^{N-T} a_{n+T} = S_T + \sum_{n=1}^{N-T} a_n = S_T + S_{N-T} = S_T + S_T + S_{N-2T} = 2S_N + S_{N-2T} = \cdots = Q(N)S_T + S_{N - TQ(N)} = Q(N)S_T + S_{R(N)} \)
+\( S_{N} = \sum_{n=1}^{T} a_{n} + \sum_{n = T + 1}^{N} a_{n} = S_{T} + \sum_{n = 1}^{N-T} a_{n+T} = S_{T} + \sum_{n=1}^{N-T} a_{n} = S_{T} + S_{N-T} = S_{T} + S_{T} + S_{N-2T} = 2S_{N} + S_{N-2T} = \cdots = Q(N)S_{T} + S_{N - TQ(N)} = Q(N)S_{T} + S_{R(N)} \)
 
-\( \frac{1}{N}S_N = \frac{Q(N)}{N}S_T + \frac{1}{N} S_{R(N)} = \frac{\frac{N-R(N)}{T}}{N} S_T + \frac{1}N S_{R(N)} = \frac{S_T}{T}(1-\frac{R(N)}{N}) + \frac{1}{N} S_{R(N)} \)
+\( \frac{1}{N}S_{N} = \frac{Q(N)}{N}S_{T} + \frac{1}{N} S_{R(N)} = \frac{\frac{N-R(N)}{T}}{N} S_{T} + \frac{1}N S_{R(N)} = \frac{S_{T}}{T}(1-\frac{R(N)}{N}) + \frac{1}{N} S_{R(N)} \)
 
-\( \left|\frac{1}{N}S_N - \frac{S_T}{T}\right| \leq \frac{|S_T|}{T}\frac{R(N)}{N} + \frac{1}{N}S_{R(N)} \leq \frac{|S_T|}{T}\frac{T - 1}{N} + \frac{1}{N}|S_{R(N)}| \leq \frac{1}{N}S_{R(N)} \leq \frac{|S_T|}{T}\frac{T - 1}{N} + \frac{1}{N}\max_{0 \leq R < T}|S_R| \to 0, N \to \infty \)
+\( \left|\frac{1}{N}S_{N} - \frac{S_{T}}{T}\right| \leq \frac{|S_{T}|}{T}\frac{R(N)}{N} + \frac{1}{N}S_{R(N)} \leq \frac{|S_{T}|}{T}\frac{T - 1}{N} + \frac{1}{N}|S_{R(N)}| \leq \frac{1}{N}S_{R(N)} \leq \frac{|S_{T}|}{T}\frac{T - 1}{N} + \frac{1}{N}\max_{0 \leq R < T}|S_{R}| \to 0, N \to \infty \)
 
 \textbf{Q.E.D.}
 
-\( E_{mn} \) - amount of steps \( E1 \) for algorithm with input \( (m, n) \)
+\( E_{mn} \) --- amount of steps \( E1 \) for algorithm with input \( (m, n) \)
 
-\( T_n = \lim_{M \to \infty}\frac{1}{M}\sum_{m=1}^M E_{mn} \)
+\( T_{n} = \lim_{M \to \infty}\frac{1}{M}\sum_{m=1}^{M} E_{mn} \)
 
 \( m = qn + r \)
 
@@ -40,7 +40,7 @@
 
 \( m + n = (q + 1)n + r \implies E_{m+n,n} = 1 + E_{nr} = E_{mn} \)
 
-From Lemma \( \implies T_n = \frac{1}{n} \sum_{m=1}^{n} E_{mn} \)
+From Lemma \( \implies T_{n} = \frac{1}{n} \sum_{m=1}^{n} E_{mn} \)
 
 
 \end{document}

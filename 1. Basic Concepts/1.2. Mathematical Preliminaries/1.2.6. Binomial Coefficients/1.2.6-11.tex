@@ -1,52 +1,52 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-11}
+\title{1.2.6-11} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \mu(x,p) = \sum_{k > 0}{\lfloor{\frac{x}{p^k}}\rfloor} \)
+\( \mu(x,p) = \sum_{k > 0}{\lfloor{\frac{x}{p^{k}}}\rfloor} \)
 
 \( \binom{a+b}{a} = \frac{(a+b)!}{a!b!} \)
 
 \( n = \mu(a+b,p) - \mu(a,p) - \mu(b, p) \)
 
-Let \( a = \sum_{k \geq 0} a_k p^k \)
+Let \( a = \sum_{k \geq 0} a_{k} p^{k} \)
 
-\( b = \sum_{k \geq 0} b_k p^k \)
+\( b = \sum_{k \geq 0} b_{k} p^{k} \)
 
-\( a + b = \sum_{k \geq 0} c_k p^k \)
+\( a + b = \sum_{k \geq 0} c_{k} p^{k} \)
 
-[1.2.5-12](<../1.2.5. Permutations and Factorials/1.2.5-12.md>)
+1.2.5-12 % chktex 8
 
-\( \mu(a, p) = \frac{a - \sum_{k \geq 0} a_k}{p-1} \)
+\( \mu(a, p) = \frac{a - \sum_{k \geq 0} a_{k}}{p-1} \)
 
-\( \mu(b, p) = \frac{b - \sum_{k \geq 0} b_k}{p-1} \)
+\( \mu(b, p) = \frac{b - \sum_{k \geq 0} b_{k}}{p-1} \)
 
-\( \mu(a+b, p) = \frac{a+b - \sum_{k \geq 0} c_k}{p-1} \)
+\( \mu(a+b, p) = \frac{a+b - \sum_{k \geq 0} c_{k}}{p-1} \)
 
-\( n = \mu(a+b,p) - \mu(a,p) - \mu(b, p) = \frac{\sum_{k \geq 0}(a_k + b_k - c_k)}{p-1} \)
+\( n = \mu(a+b,p) - \mu(a,p) - \mu(b, p) = \frac{\sum_{k \geq 0}(a_{k} + b_{k} - c_{k})}{p-1} \)
 
-\( d_0 := 0 \)
+\( d_{0} := 0 \)
 
-\( c_0 = a_0 + b_0 + d_0, d_1 = 0 \), if \( d_0 + a_0 + b_0 < p \)
+\( c_{0} = a_{0} + b_{0} + d_{0}, d_{1} = 0 \), if \( d_{0} + a_{0} + b_{0} < p \)
 
-\( c_0 = a_0 + b_0 + d_0 - p, d_1 = 1 \), if \( a_0 + b_0 + d_0 \geq p \)
+\( c_{0} = a_{0} + b_{0} + d_{0} - p, d_{1} = 1 \), if \( a_{0} + b_{0} + d_{0} \geq p \)
 
-\( a_0 + b_0 - c_0 = pd_1 - d_0 \)
+\( a_{0} + b_{0} - c_{0} = pd_{1} - d_{0} \)
 
-\( c_1 = a_1 + b_1 + d_1, d_2 = 0 \), if \( a_1 + b_1 + d_1 < p \)
+\( c_{1} = a_{1} + b_{1} + d_{1}, d_{2} = 0 \), if \( a_{1} + b_{1} + d_{1} < p \)
 
-\( c_1 = a_1 + b_1 + d_1 - p, d_2 = 1 \), if \( a_1 + b_1 + d_1 \geq p \)
+\( c_{1} = a_{1} + b_{1} + d_{1} - p, d_{2} = 1 \), if \( a_{1} + b_{1} + d_{1} \geq p \)
 
-\( a_1 + b_1 - c_1 = pd_2 - d_1 \)
+\( a_{1} + b_{1} - c_{1} = pd_{2} - d_{1} \)
 
 \( \vdots \)
 
-\( a_k + b_k - c_k = pd_{k+1} - d_k \)
+\( a_{k} + b_{k} - c_{k} = pd_{k+1} - d_{k} \)
 
-\( n = \frac{\sum_{k \geq 0}(pd_{k+1} - d_k)}{p-1} = \frac{p \sum_{k \geq 1}d_k - \sum_{k \geq 0}d_k}{p - 1} = \frac{p \sum_{k \geq 0}d_k - \sum_{k \geq 0}d_k}{p - 1} = \sum_{k \geq 0}d_k = \# \{ \textrm{carries for adding}\ a+b \} \)
+\( n = \frac{\sum_{k \geq 0}(pd_{k+1} - d_{k})}{p-1} = \frac{p \sum_{k \geq 1}d_{k} - \sum_{k \geq 0}d_{k}}{p - 1} = \frac{p \sum_{k \geq 0}d_{k} - \sum_{k \geq 0}d_{k}}{p - 1} = \sum_{k \geq 0}d_{k} = \# \{ \textrm{carries for adding}\ a+b \} \)
 
 
 \end{document}

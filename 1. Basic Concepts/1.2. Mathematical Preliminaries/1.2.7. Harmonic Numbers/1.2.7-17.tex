@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-17}
+\title{1.2.7-17} % chktex 8
 
 \begin{document}
 \maketitle
@@ -22,15 +22,15 @@ We need to prove \( p \mid b \)
 
 \( p \nmid d \implies p \mid b \iff p \mid a \)
 
-\( a_k := \frac{(p-1)!}{k} \pmod p \)
+\( a_{k} := \frac{(p-1)!}{k} \pmod p \)
 
-\( k a_k \equiv (p-1)! \equiv -1 \pmod p \)
+\( k a_{k} \equiv (p-1)! \equiv -1 \pmod p \)
 
-\( a_k \neq a_l, k,l=\overline{0,p-1}, k \neq l \)
+\( a_{k} \neq a_{l}, k,l=\overline{0,p-1}, k \neq l \)
 
-\( \{ a_1, a_2, \ldots, a_{p-1} \} = \{ 1,2,\ldots, p - 1\} \)
+\( \{ a_{1}, a_{2}, \ldots, a_{p-1} \} = \{ 1,2,\ldots, p - 1\} \)
 
-\( a \equiv \sum_{k=1}^{p-1} a_k \equiv \sum_{k=1}^{p-1} k = \frac{p(p-1)}{2} = p \cdot \frac{p-1}{2} \equiv 0 \pmod p \)
+\( a \equiv \sum_{k=1}^{p-1} a_{k} \equiv \sum_{k=1}^{p-1} k = \frac{p(p-1)}{2} = p \cdot \frac{p-1}{2} \equiv 0 \pmod p \)
 
 
 \end{document}

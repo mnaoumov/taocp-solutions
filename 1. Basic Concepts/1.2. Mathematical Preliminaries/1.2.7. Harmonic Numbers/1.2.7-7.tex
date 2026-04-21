@@ -1,16 +1,16 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.7-7}
+\title{1.2.7-7} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( T(m, n) = H_m + H_n − H_{mn} \)
+\( T(m, n) = H_{m} + H_{n} − H_{mn} \)
 
 \section*{a}
 
-\( T(m+1,n) - T(m,n) = H_{m+1} + H_n - H_{(m+1)n} - H_m - H_n + H_{mn} = (H_{m+1} - H_m) - (H_{mn+n} + H_{mn}) = \)
+\( T(m+1,n) - T(m,n) = H_{m+1} + H_{n} - H_{(m+1)n} - H_{m} - H_{n} + H_{mn} = (H_{m+1} - H_{m}) - (H_{mn+n} + H_{mn}) = \)
 
 \( = \frac{1}{m+1} - (\frac{1}{mn+1} + \frac{1}{mn+2} + \cdots + \frac{1}{mn+n}) \leq \frac{1}{m+1} - n \cdot \frac{1}{mn+n} = 0 \)
 

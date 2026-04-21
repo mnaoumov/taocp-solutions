@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.8-6}
+\title{1.2.8-6} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,15 +10,15 @@ Prove \( (5) \) by induction:
 
 \( n = 1 \)
 
-\( F_0=0, F_1=1, F_2=1 \)
+\( F_{0}=0, F_{1}=1, F_{2}=1 \)
 
-\( \left(\begin{matrix}F_2 & F_1 \\ F_1 & F_0 \end{matrix}\right) = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)^1 \)
+\( \left(\begin{matrix}F_{2} & F_{1} \\ F_{1} & F_{0} \end{matrix}\right) = {\left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)}^{1} \)
 
 \( (n \implies n+1) \)
 
-\( \left(\begin{matrix}F_{n+2} & F_{n+1} \\ F_{n+1} & F_n \end{matrix}\right) = \left(\begin{matrix}F_{n+1} + F_n & F_{n} + F_{n-1} \\ F_{n+1} & F_n \end{matrix}\right) = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right) \left(\begin{matrix}F_{n+1} & F_{n} \\ F_{n} & F_{n-1} \end{matrix}\right) = \)
+\( \left(\begin{matrix}F_{n+2} & F_{n+1} \\ F_{n+1} & F_{n} \end{matrix}\right) = \left(\begin{matrix}F_{n+1} + F_{n} & F_{n} + F_{n-1} \\ F_{n+1} & F_{n} \end{matrix}\right) = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right) \left(\begin{matrix}F_{n+1} & F_{n} \\ F_{n} & F_{n-1} \end{matrix}\right) = \)
 
-\( = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)\left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)^n = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)^{n+1} \)
+\( = \left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right){\left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)}^{n} = {\left(\begin{matrix}1 & 1 \\ 1 & 0 \end{matrix}\right)}^{n+1} \)
 
 
 \end{document}

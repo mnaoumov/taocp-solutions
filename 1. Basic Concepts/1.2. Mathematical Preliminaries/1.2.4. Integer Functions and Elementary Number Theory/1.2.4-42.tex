@@ -1,24 +1,24 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-42}
+\title{1.2.4-42} % chktex 8
 
 \begin{document}
 \maketitle
 
 \subsubsection*{(a)}
 
-\( \sum_{k=1}^n a_k = \sum_{k=1}^n a_k(k - (k-1)) = \sum_{k=1}^n ka_k - \sum_{k=1}^n (k-1) a_k = \sum_{k=1}^n ka_k - \sum_{k=0}^{n-1} ka_{k+1} = na_n - \sum_{k=1}^{n-1} k(a_{k+1} - a_{k}) \)
+\( \sum_{k=1}^{n} a_{k} = \sum_{k=1}^{n} a_{k}(k - (k-1)) = \sum_{k=1}^{n} ka_{k} - \sum_{k=1}^{n} (k-1) a_{k} = \sum_{k=1}^{n} ka_{k} - \sum_{k=0}^{n-1} ka_{k+1} = na_{n} - \sum_{k=1}^{n-1} k(a_{k+1} - a_{k}) \)
 
 \subsubsection*{(b)}
 
-\( \sum_{k=1}^n \lfloor \log_b k \rfloor = n \lfloor \log_b n \rfloor - \sum_{k=1}^{n-1} k (\lfloor \log_b (k+1) \rfloor - \lfloor \log_b k \rfloor) = n \lfloor \log_b n \rfloor - \sum_{0 \leq k \leq n - 1, k + 1 = b^m}k (\lfloor \log_b (k+1) \rfloor - \lfloor \log_b k \rfloor)  = \)
+\( \sum_{k=1}^{n} \lfloor \log_{b} k \rfloor = n \lfloor \log_{b} n \rfloor - \sum_{k=1}^{n-1} k (\lfloor \log_{b} (k+1) \rfloor - \lfloor \log_{b} k \rfloor) = n \lfloor \log_{b} n \rfloor - \sum_{0 \leq k \leq n - 1, k + 1 = b^{m}}k (\lfloor \log_{b} (k+1) \rfloor - \lfloor \log_{b} k \rfloor)  = \)
 
-\( = n \lfloor \log_b n \rfloor - \sum_{0 \leq k \leq n - 1, k + 1 = b^m} k (\lfloor \log_b (k+1) \rfloor - \lfloor \log_b k \rfloor) =: A \)
+\( = n \lfloor \log_{b} n \rfloor - \sum_{0 \leq k \leq n - 1, k + 1 = b^{m}} k (\lfloor \log_{b} (k+1) \rfloor - \lfloor \log_{b} k \rfloor) =: A \)
 
-\( 0 \leq b^m - 1 \leq n - 1 \implies b^m \leq n \implies m \leq \log_b n \implies m \leq \lfloor \log_b n \rfloor \)
+\( 0 \leq b^{m} - 1 \leq n - 1 \implies b^{m} \leq n \implies m \leq \log_{b} n \implies m \leq \lfloor \log_{b} n \rfloor \)
 
-\( A = n \lfloor \log_b n \rfloor - \sum_{m=1}^{\lfloor \log_b n \rfloor} (b^m-1) = n \lfloor \log_b n \rfloor - \frac{b^{\lfloor \log_b n \rfloor + 1}-1}{b-b} + \lfloor \log_b n \rfloor = (n+1) \lfloor \log_b n \rfloor - \frac{b^{\lfloor \log_b n \rfloor + 1}-b}{b-1} \)
+\( A = n \lfloor \log_{b} n \rfloor - \sum_{m=1}^{\lfloor \log_{b} n \rfloor} (b^{m}-1) = n \lfloor \log_{b} n \rfloor - \frac{b^{\lfloor \log_{b} n \rfloor + 1}-1}{b-b} + \lfloor \log_{b} n \rfloor = (n+1) \lfloor \log_{b} n \rfloor - \frac{b^{\lfloor \log_{b} n \rfloor + 1}-b}{b-1} \)
 
 
 \end{document}

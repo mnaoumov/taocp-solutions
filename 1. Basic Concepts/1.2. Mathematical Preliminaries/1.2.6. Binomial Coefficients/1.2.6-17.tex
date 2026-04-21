@@ -1,20 +1,20 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.6-17}
+\title{1.2.6-17} % chktex 8
 
 \begin{document}
 \maketitle
 
-\( \sum_k \binom{r}{k}x^k = (1+x)^r \)
+\( \sum_{k} \binom{r}{k}x^{k} = {(1+x)}^{r} \)
 
-\( \sum_l \binom{s}{l}x^l = (1+x)^s \)
+\( \sum_{l} \binom{s}{l}x^{l} = {(1+x)}^{s} \)
 
-\( (1+x)^{r+s} = \sum_k \binom{r}{k}x^k \cdot \sum_l \binom{s}{l}x^l = \sum_{k,l} \binom{r}{k} \binom{s}{l} x^{k+l} = \sum_n x^n \sum_{\substack{k,l\\k + l = n}} \binom{r}{k} \binom{s}{l} = \sum_n x^n \sum_k \binom{r}{k} \binom{s}{n-l} \)
+\( {(1+x)}^{r+s} = \sum_{k} \binom{r}{k}x^{k} \cdot \sum_{l} \binom{s}{l}x^{l} = \sum_{k,l} \binom{r}{k} \binom{s}{l} x^{k+l} = \sum_{n} x^{n} \sum_{\substack{k,l\\k + l = n}} \binom{r}{k} \binom{s}{l} = \sum_{n} x^{n} \sum_{k} \binom{r}{k} \binom{s}{n-l} \)
 
-\( (1+x)^{r+s} = \sum_n x^n \binom{r+s}{n} \)
+\( {(1+x)}^{r+s} = \sum_{n} x^{n} \binom{r+s}{n} \)
 
-\( \implies \binom{r+s}{n} = \sum_k \binom{r}{k} \binom{s}{n-l} \)
+\( \implies \binom{r+s}{n} = \sum_{k} \binom{r}{k} \binom{s}{n-l} \)
 
 
 \end{document}

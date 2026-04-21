@@ -1,7 +1,7 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.4-28}
+\title{1.2.4-28} % chktex 8
 
 \begin{document}
 \maketitle
@@ -10,31 +10,31 @@
 
 Let \( d = \gcd(ab, n) \)
 
-Assume \( d > 1 \implies \exists p \) - prime, \( p \backslash d \implies p \backslash (ab), p \backslash n \)
+Assume \( d > 1 \implies \exists p \) --- prime, \( p \backslash d \implies p \backslash (ab), p \backslash n \)
 
 \( a \perp n = 1 \implies a \perp p = 1 \)
 
 \( ab \equiv 0\ (\mathrm{modulo}\ p) \)
 
-\( \implies b \equiv 0\ (\mathrm{modulo}\ p) \implies p \backslash b \implies p \backslash \gcd(b,n) \implies b \not\perp n \) - Contradiction
+\( \implies b \equiv 0\ (\mathrm{modulo}\ p) \implies p \backslash b \implies p \backslash \gcd(b,n) \implies b \not\perp n \) --- Contradiction
 
 \bigskip\hrule\bigskip
 
-\( 0 \leq x_1 < x_2 < \cdots < x_{\varphi(m)} \leq m - 1, x_k \perp m, 1 \leq k \leq \varphi(m) \)
+\( 0 \leq x_{1} < x_{2} < \cdots < x_{\varphi(m)} \leq m - 1, x_{k} \perp m, 1 \leq k \leq \varphi(m) \)
 
-\( y_k := (ax_k) \mod m, 1 \leq k \leq \varphi(m) \)
+\( y_{k} := (ax_{k}) \mod m, 1 \leq k \leq \varphi(m) \)
 
-\( a \perp m, x_k \perp m \overset{\text{Lemma}}{\implies} (ax_k) \perp m \implies y_k \perp m \)
+\( a \perp m, x_{k} \perp m \overset{\text{Lemma}}{\implies} (ax_{k}) \perp m \implies y_{k} \perp m \)
 
-\( y_k = y_l \implies ax_k \equiv ax_l \ (\mathrm{modulo}\ m) \implies x_k \equiv x_l\ (\mathrm{modulo}\ p) \implies x_k = x_l \)
+\( y_{k} = y_{l} \implies ax_{k} \equiv ax_{l} \ (\mathrm{modulo}\ m) \implies x_{k} \equiv x_{l}\ (\mathrm{modulo}\ p) \implies x_{k} = x_{l} \)
 
-\( k \neq l \implies y_k \neq y_l \)
+\( k \neq l \implies y_{k} \neq y_{l} \)
 
-\( \implies \{ y_1, y_2, \ldots, y_{\varphi(m)} \} = \{ x_1, x_2, \ldots, x_{\varphi(m)} \} \)
+\( \implies \{ y_{1}, y_{2}, \ldots, y_{\varphi(m)} \} = \{ x_{1}, x_{2}, \ldots, x_{\varphi(m)} \} \)
 
-\( x_1x_2 \cdot\ \cdots\ \cdot x_m = y_1y_2\cdots y_m \equiv (ax_1)(ax_2) \cdot\ \cdots\ \cdot (ax_m) = a^{\varphi(m)}(x_1x_2 \cdot\ \cdots\ \cdot x_m)\ (\mathrm{modulo}\ m) \)
+\( x_{1}x_{2} \cdot\ \cdots\ \cdot x_{m} = y_{1}y_{2}\cdots y_{m} \equiv (ax_{1})(ax_{2}) \cdot\ \cdots\ \cdot (ax_{m}) = a^{\varphi(m)}(x_{1}x_{2} \cdot\ \cdots\ \cdot x_{m})\ (\mathrm{modulo}\ m) \)
 
-\( x_1 \perp m \implies x_2 \cdots x_m \equiv a^{\varphi(m)}(x_2\cdots x_m)\ (\mathrm{modulo}\ m) \)
+\( x_{1} \perp m \implies x_{2} \cdots x_{m} \equiv a^{\varphi(m)}(x_{2}\cdots x_{m})\ (\mathrm{modulo}\ m) \)
 
 \( \vdots \)
 

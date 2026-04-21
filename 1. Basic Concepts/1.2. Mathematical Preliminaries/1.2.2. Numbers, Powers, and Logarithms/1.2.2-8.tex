@@ -1,38 +1,38 @@
 \documentclass{article}
-\input{../../../template}
+\input{../../../template} % chktex 27
 
-\title{1.2.2-8}
+\title{1.2.2-8} % chktex 8
 
 \begin{document}
 \maketitle
 
-Choose \( s \in \mathbb{N}_0: s^{m} \leq x < (s+1)^{m} \)
+Choose \( s \in \mathbb{N}_{0}: s^{m} \leq x < {(s+1)}^{m} \)
 
-\( (s + \frac{d_1}{10})^m \leq x < (s + \frac{d_1}{10} + \frac{1}{10})^m \)
+\( {(s + \frac{d_{1}}{10})}^{m} \leq x < {(s + \frac{d_{1}}{10} + \frac{1}{10})}^{m} \)
 
-\( (s + \frac{d_1}{10} + \frac{d_2}{100})^m \leq x < (s + \frac{d_1}{10} + \frac{d_2}{100} + \frac{1}{100})^m \)
+\( {(s + \frac{d_{1}}{10} + \frac{d_{2}}{100})}^{m} \leq x < {(s + \frac{d_{1}}{10} + \frac{d_{2}}{100} + \frac{1}{100})}^{m} \)
 
 \( \cdots \)
 
-\( (s + \frac{d_1}{10} + \frac{d_2}{100} + \cdots + \frac{d_k}{10^k})^m \leq x < (s + \frac{d_1}{10} + \frac{d_2}{100} + \cdots + \frac{d_k}{10^k} + \frac {1}{10^k})^m \)
+\( {(s + \frac{d_{1}}{10} + \frac{d_{2}}{100} + \cdots + \frac{d_{k}}{10^{k}})}^{m} \leq x < {(s + \frac{d_{1}}{10} + \frac{d_{2}}{100} + \cdots + \frac{d_{k}}{10^{k}} + \frac {1}{10^{k}})}^{m} \)
 
-That's how we get the number \( y = s + \frac{d_1}{10} + \frac{d_2}{100} + \cdots + \frac{d_k}{10^k} + \cdots \)
+That's how we get the number \( y = s + \frac{d_{1}}{10} + \frac{d_{2}}{100} + \cdots + \frac{d_{k}}{10^{k}} + \cdots \)
 
-Let \( y_k := s + \frac{d_1}{10} + \frac{d_2}{100} + \cdots + \frac{d_k}{10^k} \)
+Let \( y_{k} := s + \frac{d_{1}}{10} + \frac{d_{2}}{100} + \cdots + \frac{d_{k}}{10^{k}} \)
 
-\[y_k^m \leq x < (y_k + \frac{1}{10^k})^m \tag{1}\label{eq:1}\]
+\[y_{k}^{m} \leq x < {(y_{k} + \frac{1}{10^{k}})}^{m} \tag{1}\label{eq:1}\]
 
-\( y = \lim_{k \to \infty} y_k \)
+\( y = \lim_{k \to \infty} y_{k} \)
 
-Take limit in \eqref{eq:1}
+Take limit in~\eqref{eq:1}
 
-\( y^m \leq x \leq y^m \implies y^m = x \)
+\( y^{m} \leq x \leq y^{m} \implies y^{m} = x \)
 
-\( y < z \implies x = y^m < z^m \implies z \neq x \)
+\( y < z \implies x = y^{m} < z^{m} \implies z \neq x \)
 
-\( y > z \implies x = y^m > z^m \implies z \neq x \)
+\( y > z \implies x = y^{m} > z^{m} \implies z \neq x \)
 
-\( y \) - unique, such that \( y^m = x \)
+\( y \) --- unique, such that \( y^{m} = x \)
 
 
 \end{document}
