@@ -8,16 +8,6 @@
     "*.log",
     "*.pdf",
     "*.synctex.gz",
-    "node_modules",
-    "package-lock.json"
-  ],
-  "ignorePaths": [
-    "*.aux",
-    "*.fdb_latexmk",
-    "*.fls",
-    "*.log",
-    "*.pdf",
-    "*.synctex.gz",
     ".husky",
     "node_modules",
     "package-lock.json"
@@ -29,7 +19,10 @@
     "chktexrc",
     "commitlint",
     "huskyrc",
+    "Intersentence",
+    "Interword",
     "latexmk",
+    "Mathmode",
     "nonstopmode",
     "Pdflatex",
     "Stirling",
