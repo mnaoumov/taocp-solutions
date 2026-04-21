@@ -20,11 +20,14 @@
 
 \( p_{10} q_{0j} + p_{11} q_{1j} = \delta_{1j} \implies q_{1j} = \delta_{1j} - q_{0j} = \delta_{1j} - \delta_{0j} \)
 
-\( p_{20} q_{0j} + p_{21} q_{1j} + p_{22} q_{2j} = \delta_{2j} \implies q_{2j} = \delta_{2j} - q_{0j} - 2q_{1j} = \delta_{2j} - 2(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{2j} - 2\delta_{1j} + \delta_{0j} \)
+\begin{multline*}
+p_{20} q_{0j} + p_{21} q_{1j} + p_{22} q_{2j} = \delta_{2j} \\
+\implies q_{2j} = \delta_{2j} - q_{0j} - 2q_{1j} = \delta_{2j} - 2(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{2j} - 2\delta_{1j} + \delta_{0j}
+\end{multline*}
 
 \( p_{30} q_{0j} + p_{31} q_{1j} + p_{32} q_{2j} + p_{33} q_{3j} = \delta_{3j} \implies q_{3j} = \delta_{3j} - q_{0j} - 3 q_{1j} - 3 q_{2j} = \)
 
-\( = \delta_{3j} - 3(\delta_{2j} - 2\delta_{1j} + \delta_{0j}) - 3(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{3j} - 3 \delta_{2j} + 3 \delta_{1j} - \delta_{0j} \)
+\[ = \delta_{3j} - 3(\delta_{2j} - 2\delta_{1j} + \delta_{0j}) - 3(\delta_{1j} - \delta_{0j}) - \delta_{0j} = \delta_{3j} - 3 \delta_{2j} + 3 \delta_{1j} - \delta_{0j} \]
 
 \( \implies q_{ij} = {(-1)}^{i-j} \binom{i}{j} \)
 
@@ -42,11 +45,20 @@ Prove by induction
 
 \( \sum_{k=0}^{i} \binom{i+1}{k}{(-1)}^{k-j} \binom{k}{j} + q_{i+1,j} = \delta_{i+1,j} \)
 
-\( q_{i+1,j} = \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{k}{(-1)}^{k-j} \binom{k}{j} = \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{j}\binom{i+1-j}{k-j}{(-1)}^{k-j} = \)
+\begin{multline*}
+q_{i+1,j} = \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{k}{(-1)}^{k-j} \binom{k}{j} \\
+= \delta_{i+1,j} - \sum_{k=0}^{i} \binom{i+1}{j}\binom{i+1-j}{k-j}{(-1)}^{k-j} =
+\end{multline*}
 
-\( = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=-j}^{i-j} \binom{i+1-j}{k}{(-1)}^{k} = \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=0}^{i+1-j} \binom{i+1-j}{k}{(-1)}^{k} + \binom{i+1}{j} \binom{i+1-j}{i+1-j}{(-1)}^{i+1-j} = \)
+\begin{multline*}
+= \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=-j}^{i-j} \binom{i+1-j}{k}{(-1)}^{k} \\
+= \delta_{i+1,j} - \binom{i+1}{j} \sum_{k=0}^{i+1-j} \binom{i+1-j}{k}{(-1)}^{k} + \binom{i+1}{j} \binom{i+1-j}{i+1-j}{(-1)}^{i+1-j} =
+\end{multline*}
 
-\( = \delta_{i+1,j} - \binom{i+1}{j}{(1-1)}^{i+1-j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} = \delta_{i+1,j} - \delta_{i+1,j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} = \binom{i+1}{j}{(-1)}^{(i+1)-j} \)
+\begin{multline*}
+= \delta_{i+1,j} - \binom{i+1}{j}{(1-1)}^{i+1-j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} \\
+= \delta_{i+1,j} - \delta_{i+1,j} + \binom{i+1}{j}{(-1)}^{(i+1)-j} = \binom{i+1}{j}{(-1)}^{(i+1)-j}
+\end{multline*}
 
 
 \end{document}

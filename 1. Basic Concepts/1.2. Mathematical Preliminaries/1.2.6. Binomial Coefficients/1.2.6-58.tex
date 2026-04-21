@@ -22,19 +22,35 @@
 
 \( (n \implies n + 1) \)
 
-\( LHS = (1+x)(1+qx)\cdots(1+q^{n-1}x)(1+q^{n}x) = (\sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k})(1 + q^{n} x) = \sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k} + \sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}+n} x^{k+1} = \)
+\begin{multline*}
+LHS = (1+x)(1+qx)\cdots(1+q^{n-1}x)(1+q^{n}x) = (\sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k})(1 + q^{n} x) \\
+= \sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k} + \sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}+n} x^{k+1} =
+\end{multline*}
 
-\( \sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k} + \sum_{k} \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n} x^{k} = \sum_{k} x^{k}(\binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n}) =: A \)
+\begin{multline*}
+\sum_{k} \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} x^{k} + \sum_{k} \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n} x^{k} \\
+= \sum_{k} x^{k}(\binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n}) =: A
+\end{multline*}
 
-\( \binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n} = \frac{\prod_{j=n-k+1}^{n} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} + \frac{\prod_{j=n-k+2}^{n} (1-q^{j})}{\prod_{j=1}^{k-1} (1-q^{j})} \cdot q^{\frac{(k-1)(k-2)}{2} + n} = \)
+\begin{multline*}
+\binom{n}{k}_{q} q^{\frac{k(k-1)}{2}} + \binom{n}{k-1}_{q} q^{\frac{(k-1)(k-2)}{2}+n} \\
+= \frac{\prod_{j=n-k+1}^{n} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} + \frac{\prod_{j=n-k+2}^{n} (1-q^{j})}{\prod_{j=1}^{k-1} (1-q^{j})} \cdot q^{\frac{(k-1)(k-2)}{2} + n} =
+\end{multline*}
 
-\( = \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot (\frac{1-q^{n+1-k}}{1-q^{n+1}} + \frac{1-q^{k}}{1-q^{n+1}}\cdot q^{n-k+1}) = \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot 1 = \binom{n+1}{k}_{q} \cdot q^{\frac{k(k-1)}{2}} \)
+\begin{multline*}
+= \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot (\frac{1-q^{n+1-k}}{1-q^{n+1}} + \frac{1-q^{k}}{1-q^{n+1}}\cdot q^{n-k+1}) \\
+= \frac{\prod_{j=(n+1)-k+1}^{n+1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \cdot q^{\frac{k(k-1)}{2}} \cdot 1 = \binom{n+1}{k}_{q} \cdot q^{\frac{k(k-1)}{2}}
+\end{multline*}
 
 \( A = \sum_{k} x^{k} \binom{n+1}{k}_{q} \cdot q^{\frac{k(k-1)}{2}} \)
 
 \( (17)\quad \binom{r}{k} = {(-1)}^{k} \binom{k-r-1}{k} \)
 
-\( \binom{k-r-1}{k}_{q} = \frac{\prod_{j=-r}^{k-r-1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} = \frac{\prod_{j=-r}^{k-r-1} (-q^{j})(1-q^{-j})}{\prod_{j=1}^{k} (1-q^{j})} = \frac{{(-1)}^{k}q^{\sum_{j=-r}^{k-r-1} j}\prod_{j=-r}^{k-r-1} (1-q^{-j})}{\prod_{j=1}^{k} (1-q^{j})} = \frac{{(-1)}^{k}q^{-kr + \frac{k(k-1)}{2}}\prod_{j=-k+r+1}^{r} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} = {(-1)}^{k}q^{-kr + \frac{k(k-1)}{2}} \binom{r}{k}_{q} \)
+\begin{multline*}
+\binom{k-r-1}{k}_{q} = \frac{\prod_{j=-r}^{k-r-1} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} = \frac{\prod_{j=-r}^{k-r-1} (-q^{j})(1-q^{-j})}{\prod_{j=1}^{k} (1-q^{j})} \\
+= \frac{{(-1)}^{k}q^{\sum_{j=-r}^{k-r-1} j}\prod_{j=-r}^{k-r-1} (1-q^{-j})}{\prod_{j=1}^{k} (1-q^{j})} = \frac{{(-1)}^{k}q^{-kr + \frac{k(k-1)}{2}}\prod_{j=-k+r+1}^{r} (1-q^{j})}{\prod_{j=1}^{k} (1-q^{j})} \\
+= {(-1)}^{k}q^{-kr + \frac{k(k-1)}{2}} \binom{r}{k}_{q}
+\end{multline*}
 
 \( \binom{r}{k}_{q} = {(-1)}^{k}q^{kr - \frac{k(k-1)}{2}} \binom{k-r-1}{k}_{q} \)
 
@@ -42,11 +58,17 @@
 
 \( \prod_{j=0}^{r+s-1} (1 + q^{j} x) = \sum_{n} \binom{r+s}{n}_{q} q^{\frac{n(n-1)}{2}} x^{n} \)
 
-\( \prod_{j=0}^{r+s-1} (1 + q^{j} x) = \prod_{j=0}^{r-1} (1 + q^{j} x) \cdot \prod_{j=0}^{s-1} (1 + q^{j} (q^{r} x)) = \sum_{n} \binom{r}{n}_{q} q^{\frac{n(n-1)}{2}} x^{n} \cdot \sum_{n} \binom{s}{n}_{q} q^{\frac{n(n-1)}{2}} {(q^{r}x)}^{n} = \)
+\begin{multline*}
+\prod_{j=0}^{r+s-1} (1 + q^{j} x) = \prod_{j=0}^{r-1} (1 + q^{j} x) \cdot \prod_{j=0}^{s-1} (1 + q^{j} (q^{r} x)) \\
+= \sum_{n} \binom{r}{n}_{q} q^{\frac{n(n-1)}{2}} x^{n} \cdot \sum_{n} \binom{s}{n}_{q} q^{\frac{n(n-1)}{2}} {(q^{r}x)}^{n} =
+\end{multline*}
 
 \( = \sum_{n} x^{n} \sum_{k} \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k)} \)
 
-\( \binom{r+s}{n}_{q} = \sum_{k} \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k) - \frac{n(n-1)}{2}} = \sum_{k} \binom{r}{k}\binom{s}{n-k}q^{(r-k)(n-k)} \)
+\begin{multline*}
+\binom{r+s}{n}_{q} = \sum_{k} \binom{r}{k}\binom{s}{n-k}q^{\frac{k(k-1) + (n-k)(n-k-1)}{2} + r(n-k) - \frac{n(n-1)}{2}} \\
+= \sum_{k} \binom{r}{k}\binom{s}{n-k}q^{(r-k)(n-k)}
+\end{multline*}
 
 
 \end{document}

@@ -6,9 +6,17 @@
 \begin{document}
 \maketitle
 
-\( \sum_{k} \binom{m-r+s}{k}\binom{n+r-s}{n-k}\binom{r+k}{m+n} = \sum_{k,j} \binom{m-r+s}{k}\binom{n+r-s}{n-k}\binom{r}{m+n-j}\binom{k}{j} = \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j}\sum_{k} \binom{m-r+s-j}{k-j}\binom{n+r-s}{n-k} = \)
+\begin{multline*}
+\sum_{k} \binom{m-r+s}{k}\binom{n+r-s}{n-k}\binom{r+k}{m+n} \\
+= \sum_{k,j} \binom{m-r+s}{k}\binom{n+r-s}{n-k}\binom{r}{m+n-j}\binom{k}{j} \\
+= \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j}\sum_{k} \binom{m-r+s-j}{k-j}\binom{n+r-s}{n-k} =
+\end{multline*}
 
-\( = \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j}\sum_{k} \binom{m-r+s-j}{k}\binom{n+r-s}{n-j-k} = \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j} \binom{m+n-j}{n-j} = \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j} \binom{m+n-j}{m} = \)
+\begin{multline*}
+= \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j}\sum_{k} \binom{m-r+s-j}{k}\binom{n+r-s}{n-j-k} \\
+= \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j} \binom{m+n-j}{n-j} \\
+= \sum_{j} \binom{r}{m+n-j}\binom{m-r+s}{j} \binom{m+n-j}{m} =
+\end{multline*}
 
 \( = \sum_{j} \binom{r}{m} \binom{r-m}{n-j}\binom{m-r+s}{j} = \binom{r}{m} \binom{s}{n} \)
 

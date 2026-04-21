@@ -6,17 +6,26 @@
 \begin{document}
 \maketitle
 
-\( (46): [{{n+1}\atop m}] = n[{{n}\atop m}] + [{{n}\atop{m-1}}], \{{{n+1}\atop m}\} = m\{{{n}\atop m}\} + \{{{n}\atop{m-1}}\} \)
+\[ (46): [{{n+1}\atop m}] = n[{{n}\atop m}] + [{{n}\atop{m-1}}], \{{{n+1}\atop m}\} = m\{{{n}\atop m}\} + \{{{n}\atop{m-1}}\} \]
 
 \( x^{\underline{n+1}} = \sum_{m} {(-1)}^{n+1-m} [{{n+1}\atop m}] x^{m} \)
 
-\( x^{\underline{n+1}} = x^{\underline{n}} \cdot (x-n) = \sum_{m} {(-1)}^{n-m} [{{n}\atop m}] x^{m} (x-n) = \sum_{m} {(-1)}^{n-m} [{{n}\atop m}] x^{m+1} -n \sum_{m} {(-1)}^{n-m} [{{n}\atop m}]x^{m} = \)
+\begin{multline*}
+x^{\underline{n+1}} = x^{\underline{n}} \cdot (x-n) = \sum_{m} {(-1)}^{n-m} [{{n}\atop m}] x^{m} (x-n) \\
+= \sum_{m} {(-1)}^{n-m} [{{n}\atop m}] x^{m+1} -n \sum_{m} {(-1)}^{n-m} [{{n}\atop m}]x^{m} =
+\end{multline*}
 
-\( = \sum_{m} {(-1)}^{n+1-m} [{{n}\atop {m-1}}] x^{m} -n \sum_{m} {(-1)}^{n-m} [{{n}\atop m}]x^{m} = \sum_{m} {(-1)}^{n+1-m}x^{m}(n[{{n}\atop m}] + [{{n}\atop {m-1}}]) \)
+\begin{multline*}
+= \sum_{m} {(-1)}^{n+1-m} [{{n}\atop {m-1}}] x^{m} -n \sum_{m} {(-1)}^{n-m} [{{n}\atop m}]x^{m} \\
+= \sum_{m} {(-1)}^{n+1-m}x^{m}(n[{{n}\atop m}] + [{{n}\atop {m-1}}])
+\end{multline*}
 
 \( x^{n+1} = \sum_{m} \{{{n+1}\atop m}\} x^{\underline{m}} \)
 
-\( x^{n+1} = x \cdot x^{n} = x \sum_{m} \{{{n}\atop m}\} x^{\underline{m}} = \sum_{m} \{{{n}\atop m}\} x^{\underline{m}} ((x-m)+m) = \sum_{m} \{{{n}\atop m}\} x^{\underline{m+1}} + \sum_{m} m\{{{n}\atop m}\}x^{\underline{m}} = \)
+\begin{multline*}
+x^{n+1} = x \cdot x^{n} = x \sum_{m} \{{{n}\atop m}\} x^{\underline{m}} = \sum_{m} \{{{n}\atop m}\} x^{\underline{m}} ((x-m)+m) \\
+= \sum_{m} \{{{n}\atop m}\} x^{\underline{m+1}} + \sum_{m} m\{{{n}\atop m}\}x^{\underline{m}} =
+\end{multline*}
 
 \( = \sum_{m} \{{{n}\atop {m-1}}\} x^{\underline{m}} + \sum_{m} m\{{{n}\atop m}\}x^{\underline{m}} = \sum_{m}(\{{{n}\atop {m-1}}\} + m\{{{n}\atop m}\}x^{\underline{m}}) \)
 

@@ -14,11 +14,20 @@
 
 \( (n \implies n + 1) \)
 
-\( \sum_{k} \binom{n+1}{k} \frac{{(-1)}^{k}}{k+x} = \sum_{k} \binom{n}{k} \frac{{(-1)}^{k}}{k+x} + \sum_{k} \binom{n}{k-1} \frac{{(-1)}^{k}}{k+x} = \frac{n!}{x(x+1)\cdots(x+n)} + \sum_{k} \binom{n}{k}\frac{{(-1)}^{k+1}}{k+1+x} = \)
+\begin{multline*}
+\sum_{k} \binom{n+1}{k} \frac{{(-1)}^{k}}{k+x} = \sum_{k} \binom{n}{k} \frac{{(-1)}^{k}}{k+x} + \sum_{k} \binom{n}{k-1} \frac{{(-1)}^{k}}{k+x} \\
+= \frac{n!}{x(x+1)\cdots(x+n)} + \sum_{k} \binom{n}{k}\frac{{(-1)}^{k+1}}{k+1+x} =
+\end{multline*}
 
-\( = \frac{n!}{x(x+1)\cdots(x+n)} - \sum_{k} \binom{n}{k}\frac{{(-1)}^{k}}{k+(x+1)} = \frac{n!}{x(x+1)\cdots(x+n)} - \frac{n!}{(x+1)\cdots(x+n+1)} = \)
+\begin{multline*}
+= \frac{n!}{x(x+1)\cdots(x+n)} - \sum_{k} \binom{n}{k}\frac{{(-1)}^{k}}{k+(x+1)} \\
+= \frac{n!}{x(x+1)\cdots(x+n)} - \frac{n!}{(x+1)\cdots(x+n+1)} =
+\end{multline*}
 
-\( = \frac{n!}{(x+1)(x+2)\cdots(x+n)} (\frac{1}{x} - \frac{1}{x+n+1}) = \frac{n!}{(x+1)(x+2)\cdots(x+n)} \cdot \frac{n+1}{x(x+n+1)} = \frac{(n+1)!}{x(x+1)\cdots(x+(n+1))} \)
+\begin{multline*}
+= \frac{n!}{(x+1)(x+2)\cdots(x+n)} (\frac{1}{x} - \frac{1}{x+n+1}) \\
+= \frac{n!}{(x+1)(x+2)\cdots(x+n)} \cdot \frac{n+1}{x(x+n+1)} = \frac{(n+1)!}{x(x+1)\cdots(x+(n+1))}
+\end{multline*}
 
 
 \end{document}

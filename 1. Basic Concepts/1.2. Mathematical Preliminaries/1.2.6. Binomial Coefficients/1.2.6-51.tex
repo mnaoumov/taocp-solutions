@@ -8,11 +8,14 @@
 
 \( RHS = \sum_{k} \binom{n}{k}x{(x-kz)}^{k-1}{((x+y) + (-x+kz))}^{n-k} = \)
 
-\( = \sum_{k} \binom{n}{k} x{(x-kz)}^{k-1} \sum_{j} \binom{n-k}{j}{(x+y)}^{j}{(-x+kz)}^{n-k-j} =: A \)
+\[ = \sum_{k} \binom{n}{k} x{(x-kz)}^{k-1} \sum_{j} \binom{n-k}{j}{(x+y)}^{j}{(-x+kz)}^{n-k-j} =: A \]
 
 \( \binom{n}{k}\binom{n-k}{j} = \binom{n}{n-k}\binom{n-k}{j} = \binom{n}{j}\binom{n-j}{n-k-j} = \binom{n}{j}\binom{n-j}{k} \)
 
-\( A = \sum_{j} \binom{n}{j}{(x+y)}^{j} \sum_{k} \binom{n-j}{k}x{(x-kz)}^{k-1}{(-x+kz)}^{n-j-k} = \sum_{j} \binom{n}{j}{(x+y)}^{j} \delta_{n-j,0} = \)
+\begin{multline*}
+A = \sum_{j} \binom{n}{j}{(x+y)}^{j} \sum_{k} \binom{n-j}{k}x{(x-kz)}^{k-1}{(-x+kz)}^{n-j-k} \\
+= \sum_{j} \binom{n}{j}{(x+y)}^{j} \delta_{n-j,0} =
+\end{multline*}
 
 \( = \binom{n}{n}{(x+y)}^{n} = {(x+y)}^{n} \)
 

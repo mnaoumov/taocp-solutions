@@ -24,13 +24,19 @@
 
 \subsubsection*{3. \$\{\} n > 0 \{\}\$}
 
-\( LHS = \sum_{k} \binom{r-tk}{k}\binom{n - 1 - r + tk}{n-k}\frac{r}{r-tk} \)
+\[ LHS = \sum_{k} \binom{r-tk}{k}\binom{n - 1 - r + tk}{n-k}\frac{r}{r-tk} \]
 
-\( \binom{r-tk}{k}\binom{n - 1 - r + tk}{n-k}\frac{r}{r-tk} = \frac{\prod_{j=0}^{k-1}(r-tk-j)}{k!} \cdot \frac{\prod_{j=0}^{n-k-1} (n-1-r+tk-j)}{(n-k)!} \cdot \frac{r}{r-tk} = \frac{r}{n!} \binom{n}{k} {(-1)}^{k-1} \prod_{j=1}^{k-1} (-r+tk+j) \cdot \prod_{j=0}^{n-k-1} (n-1-r+tk-j) = {(-1)}^{n-1} \binom{n}{k} {(-1)}^{n-k} P_{n-1}(k) \)
+\begin{multline*}
+\binom{r-tk}{k}\binom{n - 1 - r + tk}{n-k}\frac{r}{r-tk} \\
+= \frac{\prod_{j=0}^{k-1}(r-tk-j)}{k!} \cdot \frac{\prod_{j=0}^{n-k-1} (n-1-r+tk-j)}{(n-k)!} \cdot \frac{r}{r-tk} \\
+= \frac{r}{n!} \binom{n}{k} {(-1)}^{k-1} \prod_{j=1}^{k-1} (-r+tk+j) \\
+\cdot \prod_{j=0}^{n-k-1} (n-1-r+tk-j) \\
+= {(-1)}^{n-1} \binom{n}{k} {(-1)}^{n-k} P_{n-1}(k)
+\end{multline*}
 
-\( P_{n-1}(x) = \prod_{j=1}^{k-1}(tx - r + j) \cdot \prod_{j=0}^{n-k-1}(tx - r + (n - 1 - j)) = \prod_{j=1}^{n - 1}(tx-r + j) \)
+\[ P_{n-1}(x) = \prod_{j=1}^{k-1}(tx - r + j) \cdot \prod_{j=0}^{n-k-1}(tx - r + (n - 1 - j)) = \prod_{j=1}^{n - 1}(tx-r + j) \]
 
-\( LHS = {(-1)}^{n-1}\sum_{k} \sum_{k} \binom{n}{k}{(-1)}^{n-k} P_{n-1}(k) \overset{(34)}{=} 0 = RHS \)
+\[ LHS = {(-1)}^{n-1}\sum_{k} \sum_{k} \binom{n}{k}{(-1)}^{n-k} P_{n-1}(k) \overset{(34)}{=} 0 = RHS \]
 
 
 \end{document}

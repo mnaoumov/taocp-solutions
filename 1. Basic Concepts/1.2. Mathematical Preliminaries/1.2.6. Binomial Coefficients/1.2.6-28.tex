@@ -6,13 +6,24 @@
 \begin{document}
 \maketitle
 
-\( B(r,s,t,n) := \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k} = \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k}\frac{r + tk}{r+tk} = \sum_{k} \binom{r-(-t)k}{k}\binom{s-tn-(-t)(n-k)}{n-k}\frac{r}{r-(-t)k} + t \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k}\frac{k}{r+tk} = \)
+\begin{multline*}
+B(r,s,t,n) := \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k} = \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k}\frac{r + tk}{r+tk} \\
+= \sum_{k} \binom{r-(-t)k}{k}\binom{s-tn-(-t)(n-k)}{n-k}\frac{r}{r-(-t)k} \\
++ t \sum_{k} \binom{r+tk}{k}\binom{s-tk}{n-k}\frac{k}{r+tk} =
+\end{multline*}
 
-\( = \binom{r+s-tn-(-t)n}{n} = t \sum_{k} \binom{r+tk-1}{k-1}\binom{s-tk}{n-k} = \binom{r+s}{n} + t \sum_{k} \binom{r+t-1+tk}{k}\binom{s - t - tk}{n-1-k} = \binom{r+s}{n} + tB(r+t-1,s-t,t,n-1) = \)
+\begin{multline*}
+= \binom{r+s-tn-(-t)n}{n} = t \sum_{k} \binom{r+tk-1}{k-1}\binom{s-tk}{n-k} \\
+= \binom{r+s}{n} + t \sum_{k} \binom{r+t-1+tk}{k}\binom{s - t - tk}{n-1-k} \\
+= \binom{r+s}{n} + tB(r+t-1,s-t,t,n-1) =
+\end{multline*}
 
 \( = \binom{r+s}{n} + t\binom{r+t-1+s-t}{n-1} + t^{2}B(t+2t-2,s-2t,t,n-2) = \)
 
-\( = \binom{r+s}{n} + t \binom{r+s-1}{n-1} + t^{2} \binom{r+s-2}{n-2} + \cdots + t^{n-1} \binom{r+s-(n-1)}{1} + t^{n} B(t+nt-n,s-tn,t,0) = \sum_{k \geq 0} \binom{r+s-k}{n-k}t^{k} \)
+\begin{multline*}
+= \binom{r+s}{n} + t \binom{r+s-1}{n-1} + t^{2} \binom{r+s-2}{n-2} + \cdots + t^{n-1} \binom{r+s-(n-1)}{1} \\
++ t^{n} B(t+nt-n,s-tn,t,0) = \sum_{k \geq 0} \binom{r+s-k}{n-k}t^{k}
+\end{multline*}
 
 
 \end{document}

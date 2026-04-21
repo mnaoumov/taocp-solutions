@@ -8,9 +8,19 @@
 
 \( (26): \sum_{k} \binom{r-tk}{k}\binom{s-t(n-k)}{n-k}\frac{r}{r-tk} = \binom{r+s-tn}{n} \)
 
-\( LHS(r, s+1, t, n) = \sum_{k} \binom{r-tk}{k}\binom{s+1-t(n-k)}{n-k}\frac{r}{r-tk} = \sum_{k} \binom{r-tk}{k}\bigl(\binom{s-t(n-k)}{n-k} + \binom{s-t(n-k)}{n-k-1} \bigr)\frac{r}{r-tk} = LHS(r,s,t,n) + \sum_{k} \binom{r-tk}{k}\binom{(s - t) - t((n-1)-k)}{(n-1)-k}\frac{r}{r-tk} = LHS(r,s,t,n) + LHS(r,s-t,t,n-1) = \)
+\begin{multline*}
+LHS(r, s+1, t, n) = \sum_{k} \binom{r-tk}{k}\binom{s+1-t(n-k)}{n-k}\frac{r}{r-tk} \\
+= \sum_{k} \binom{r-tk}{k}\bigl(\binom{s-t(n-k)}{n-k} + \binom{s-t(n-k)}{n-k-1} \bigr)\frac{r}{r-tk} \\
+= LHS(r,s,t,n) + \sum_{k} \binom{r-tk}{k}\binom{(s - t) - t((n-1)-k)}{(n-1)-k}\frac{r}{r-tk} \\
+= LHS(r,s,t,n) + LHS(r,s-t,t,n-1) =
+\end{multline*}
 
-\( = RHS(r,s,t,n) + RHS(r,s-t,t,n-1) = \binom{r+s-tn}{n} + \binom{r+s-t-t(n-1)}{n-1} = \binom{r+s-tn}{n} + \binom{r+s-tn}{n-1} = \binom{r+(s+1)-tn}{n} = RHS(r,s+1,t,n) \)
+\begin{multline*}
+= RHS(r,s,t,n) + RHS(r,s-t,t,n-1) \\
+= \binom{r+s-tn}{n} + \binom{r+s-t-t(n-1)}{n-1} \\
+= \binom{r+s-tn}{n} + \binom{r+s-tn}{n-1} \\
+= \binom{r+(s+1)-tn}{n} = RHS(r,s+1,t,n)
+\end{multline*}
 
 
 \end{document}

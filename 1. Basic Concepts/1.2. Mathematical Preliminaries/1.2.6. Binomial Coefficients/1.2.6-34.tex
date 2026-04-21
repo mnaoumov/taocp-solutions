@@ -8,9 +8,16 @@
 
 \( {(x+y)}^{\overline{n}} = \sum_{k} \binom{n}{k} x{(x-kz+1)}^{\overline{k-1}}{(y+kz)}^{\overline{n-k}} \)
 
-\( \sum_{k} \binom{n}{k} x{(x-kz+1)}^{\overline{k-1}}{(y+kz)}^{\overline{n-k}} = \sum_{k} \frac{n!}{k!(n-k!)}x(k-1)!\binom{x-kz+1+k-1-1}{k-1}(n-k)!\binom{y+kz+n-k-1}{n-k} = \)
+\begin{multline*}
+\sum_{k} \binom{n}{k} x{(x-kz+1)}^{\overline{k-1}}{(y+kz)}^{\overline{n-k}} \\
+= \sum_{k} \frac{n!}{k!(n-k!)}x(k-1)! \\
+\cdot \binom{x-kz+1+k-1-1}{k-1}(n-k)!\binom{y+kz+n-k-1}{n-k} =
+\end{multline*}
 
-\( = n! \sum_{k} \binom{x-1-(z-1)k}{k-1}\frac{x}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} = n! \sum_{k} \binom{x - (z-1)k}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} \frac{x}{x - (z-1)k} = \)
+\begin{multline*}
+= n! \sum_{k} \binom{x-1-(z-1)k}{k-1}\frac{x}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} \\
+= n! \sum_{k} \binom{x - (z-1)k}{k}\binom{(y+zn-1)-(z-1)(n-k)}{n-k} \frac{x}{x - (z-1)k} =
+\end{multline*}
 
 \( = n! \cdot \binom{x+(y+zn-1)-(z-1)n}{n} = n! \binom{x+y+n-1}{n} = {(x+y)}^{\overline{n}} \)
 

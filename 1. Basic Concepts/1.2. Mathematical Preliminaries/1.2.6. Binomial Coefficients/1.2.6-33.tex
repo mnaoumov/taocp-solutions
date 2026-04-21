@@ -14,15 +14,25 @@
 
 \( (n \implies n + 1) \)
 
-\( {(x+y)}^{\underline{n+1}} = (x+y){(x+y-1)}^{\underline{n}} = x{((x-1)+y)}^{\underline{n}} + y{(x+(y-1))}^{\underline{n}} = x \sum_{k} \binom{n}{k} {(x-1)}^{\underline{k}}y^{\underline{n-k}} + y \sum_{k} \binom{n}{k} x^{\underline{k}}{(y-1)}^{\underline{n-k}} = \)
+\begin{multline*}
+{(x+y)}^{\underline{n+1}} = (x+y){(x+y-1)}^{\underline{n}} = x{((x-1)+y)}^{\underline{n}} + y{(x+(y-1))}^{\underline{n}} \\
+= x \sum_{k} \binom{n}{k} {(x-1)}^{\underline{k}}y^{\underline{n-k}} + y \sum_{k} \binom{n}{k} x^{\underline{k}}{(y-1)}^{\underline{n-k}} =
+\end{multline*}
 
-\( = \sum_{k} \binom{n}{k} x^{\underline{k+1}}y^{\underline{n-k}} + \sum_{k} \binom{n}{k} x^{\underline{k}}y^{\underline{n+1-k}} = \sum_{k} \binom{n}{k-1} x^{\underline{k}}y^{\underline{n+1-k}} + \sum_{k} \binom{n}{k} x^{\underline{k}}y^{\underline{n+1-k}} = \sum_{k} (\binom{n}{k-1} + \binom{n}{k})x^{\underline{k}}y^{\underline{n+1-k}} = \)
+\begin{multline*}
+= \sum_{k} \binom{n}{k} x^{\underline{k+1}}y^{\underline{n-k}} + \sum_{k} \binom{n}{k} x^{\underline{k}}y^{\underline{n+1-k}} \\
+= \sum_{k} \binom{n}{k-1} x^{\underline{k}}y^{\underline{n+1-k}} + \sum_{k} \binom{n}{k} x^{\underline{k}}y^{\underline{n+1-k}} \\
+= \sum_{k} (\binom{n}{k-1} + \binom{n}{k})x^{\underline{k}}y^{\underline{n+1-k}} =
+\end{multline*}
 
 \( = \sum_{k} \binom{n+1}{k}x^{\underline{k}}y^{\underline{n+1-k}} \)
 
 \bigskip\hrule\bigskip
 
-\( {(x+y)}^{\overline{n}} = {(-1)}^{n} {(-x-y)}^{\underline{n}} = {(-1)}^{n} \sum_{k} \binom{n}{k} {(-x)}^{\underline{k}}{(-y)}^{\underline{n-k}} = \sum_{k} \binom{n}{k} {(-1)}^{k}{(-x)}^{\underline{k}}{(-1)}^{n-k}{(-y)}^{\underline{n-k}} = \)
+\begin{multline*}
+{(x+y)}^{\overline{n}} = {(-1)}^{n} {(-x-y)}^{\underline{n}} = {(-1)}^{n} \sum_{k} \binom{n}{k} {(-x)}^{\underline{k}}{(-y)}^{\underline{n-k}} \\
+= \sum_{k} \binom{n}{k} {(-1)}^{k}{(-x)}^{\underline{k}}{(-1)}^{n-k}{(-y)}^{\underline{n-k}} =
+\end{multline*}
 
 \( = \sum_{k} \binom{n}{k}x^{\overline{k}}y^{\overline{n-k}} \)
 

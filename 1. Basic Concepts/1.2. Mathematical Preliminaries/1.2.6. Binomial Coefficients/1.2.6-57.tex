@@ -12,11 +12,20 @@
 
 \( \sum_{r} \binom{m}{r}\binom{r}{k}{(-1)}^{m-r} = \delta_{mk} \)
 
-\( \sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \sum_{k,r} a_{k}k! \binom{r}{k}\binom{m}{r}{(-1)}^{m-r} = \sum_{k} a_{k} k! \sum_{r} \binom{m}{r}\binom{r}{k}{(-1)}^{m-r} = \sum_{k} a_{k} k! \delta_{mk} = a_{m} m! \)
+\begin{multline*}
+\sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \sum_{k,r} a_{k}k! \binom{r}{k}\binom{m}{r}{(-1)}^{m-r} \\
+= \sum_{k} a_{k} k! \sum_{r} \binom{m}{r}\binom{r}{k}{(-1)}^{m-r} = \sum_{k} a_{k} k! \delta_{mk} = a_{m} m!
+\end{multline*}
 
-\( a_{m} = \frac{1}{m!} \sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \frac{{(-1)}^{m}}{m!} \sum_{r} \binom{m}{r}{(-1)}^{r} \sum_{k = 1}^{r} \ln k = \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k \sum_{r \geq k} \binom{m}{r}{(-1)}^{r} = \)
+\begin{multline*}
+a_{m} = \frac{1}{m!} \sum_{r} (\ln r!)\binom{m}{r}{(-1)}^{m-r} = \frac{{(-1)}^{m}}{m!} \sum_{r} \binom{m}{r}{(-1)}^{r} \sum_{k = 1}^{r} \ln k \\
+= \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k \sum_{r \geq k} \binom{m}{r}{(-1)}^{r} =
+\end{multline*}
 
-\( = \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k (\sum_{r} \binom{m}{r}{(-1)}^{r} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) = \frac{1}{m!} \sum_{k \geq 1} \ln k ({(1-1)}^{m} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) = \)
+\begin{multline*}
+= \frac{{(-1)}^{m}}{m!} \sum_{k \geq 1} \ln k (\sum_{r} \binom{m}{r}{(-1)}^{r} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) \\
+= \frac{1}{m!} \sum_{k \geq 1} \ln k ({(1-1)}^{m} - \sum_{r < k} \binom{m}{r}{(-1)}^{r}) =
+\end{multline*}
 
 \( = \frac{{(-1)}^{m-1}}{m!} \sum_{k \geq 1} \ln k \sum_{r < k} \binom{m}{r}{(-1)}^{r} \)
 

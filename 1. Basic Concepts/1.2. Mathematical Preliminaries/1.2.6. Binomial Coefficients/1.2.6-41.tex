@@ -8,9 +8,18 @@
 
 \section*{(a)}
 
-\( B(x,y) = \frac{x+y}{y} B(x, y+1) = \frac{(x+y)(x+y+1)}{y(y+1)} B(x, y + 2) = \frac{(x+y)(x+y+1)(x+y+2)}{y(y+1)(y+2)} B(x, y + 3) = \cdots = \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{y(y+1)(y+2)\cdots(y+m)} B(x, y + m + 1) = \)
+\begin{multline*}
+B(x,y) = \frac{x+y}{y} B(x, y+1) = \frac{(x+y)(x+y+1)}{y(y+1)} B(x, y + 2) \\
+= \frac{(x+y)(x+y+1)(x+y+2)}{y(y+1)(y+2)} B(x, y + 3) \\
+= \cdots \\
+= \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{y(y+1)(y+2)\cdots(y+m)} B(x, y + m + 1) =
+\end{multline*}
 
-\( = \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{m^{x+y}m!} \cdot \frac{m^{y}m!}{y(y+1)(y+2)\cdots(y+m)} m^{x}B(x,y + m + 1) = \frac{\Gamma_{m}(y)m^{x}}{\Gamma_{m}(x+y)} B(x,y + m + 1) \)
+\begin{multline*}
+= \frac{(x+y)(x+y+1)(x+y+2)\cdots(x+y+m)}{m^{x+y}m!} \\
+\cdot \frac{m^{y}m!}{y(y+1)(y+2)\cdots(y+m)} m^{x}B(x,y + m + 1) \\
+= \frac{\Gamma_{m}(y)m^{x}}{\Gamma_{m}(x+y)} B(x,y + m + 1)
+\end{multline*}
 
 \section*{(b)}
 
@@ -36,7 +45,11 @@ When \( z \to \infty, m \to \infty \)
 
 \( \implies (*) \)
 
-(a) \( \implies B(x,y) = \frac{\Gamma_{m}(y)}{\Gamma_{m}(x+y)} {\left(\frac{m}{y+m}\right)}^{x} {(y+m)}^{x} B(x, y + m +1) \to \frac{\Gamma(y)\Gamma(x)}{\Gamma(x+y)}, m \to \infty \)
+(a)
+\begin{multline*}
+\implies B(x,y) = \frac{\Gamma_{m}(y)}{\Gamma_{m}(x+y)} {\left(\frac{m}{y+m}\right)}^{x} {(y+m)}^{x} B(x, y + m +1) \\
+\to \frac{\Gamma(y)\Gamma(x)}{\Gamma(x+y)}, m \to \infty
+\end{multline*}
 
 
 \end{document}

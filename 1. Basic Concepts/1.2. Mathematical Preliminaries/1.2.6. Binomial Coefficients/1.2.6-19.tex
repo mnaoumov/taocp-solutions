@@ -14,9 +14,15 @@
 
 \( (r \implies r + 1) \)
 
-\( \sum_{k} \binom{r+1}{k}\binom{s+k}{n}{(-1)}^{r+1-k} = \sum_{k} \bigl(\binom{r}{k} + \binom{r}{k-1}\bigr)\binom{s+k}{n}{(-1)}^{r+1-k} = -\sum_{k} \binom{r}{k}\binom{s+k}{n}{(-1)}^{r-k} + \sum_{k} \binom{r}{k-1}\binom{s+k}{n}{(-1)}^{r+1-k} = \)
+\begin{multline*}
+\sum_{k} \binom{r+1}{k}\binom{s+k}{n}{(-1)}^{r+1-k} = \sum_{k} \bigl(\binom{r}{k} + \binom{r}{k-1}\bigr)\binom{s+k}{n}{(-1)}^{r+1-k} \\
+= -\sum_{k} \binom{r}{k}\binom{s+k}{n}{(-1)}^{r-k} + \sum_{k} \binom{r}{k-1}\binom{s+k}{n}{(-1)}^{r+1-k} =
+\end{multline*}
 
-\( = -\binom{s}{n - r} + \sum_{k} \binom{r}{k}\binom{s+k+1}{n}{(-1)}^{r+1-k-1} = -\binom{s}{n - r} + \binom{s+1}{n - r} = \binom{s}{n - (r+1)} \)
+\begin{multline*}
+= -\binom{s}{n - r} + \sum_{k} \binom{r}{k}\binom{s+k+1}{n}{(-1)}^{r+1-k-1} \\
+= -\binom{s}{n - r} + \binom{s+1}{n - r} = \binom{s}{n - (r+1)}
+\end{multline*}
 
 
 \end{document}

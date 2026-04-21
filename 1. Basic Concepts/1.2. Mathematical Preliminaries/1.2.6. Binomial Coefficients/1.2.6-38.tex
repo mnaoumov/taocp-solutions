@@ -16,11 +16,17 @@
 
 \( s-k = mq + r, 0 \leq r \leq m - 1 \)
 
-\( A = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{j(mq+r)} = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} {(w^{m})}^{jq}w^{jr} = \)
+\begin{multline*}
+A = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{j(mq+r)} \\
+= \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} {(w^{m})}^{jq}w^{jr} =
+\end{multline*}
 
-\( = \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} = \sum_{q} \binom{n}{k + mq + 0} \sum_{j=0}^{m-1} w^{j \cdot 0} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} = \)
+\begin{multline*}
+= \sum_{r=0}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} \\
+= \sum_{q} \binom{n}{k + mq + 0} \sum_{j=0}^{m-1} w^{j \cdot 0} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \sum_{j=0}^{m-1} w^{jr} =
+\end{multline*}
 
-\( = m \sum_{q} \binom{n}{k + mq} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \frac{w^{mr} - 1}{w^{r} - 1} = m \sum_{q} \binom{n}{k + mq} \)
+\[ = m \sum_{q} \binom{n}{k + mq} + \sum_{r=1}^{m-1} \sum_{q} \binom{n}{k + mq + r} \frac{w^{mr} - 1}{w^{r} - 1} = m \sum_{q} \binom{n}{k + mq} \]
 
 \( \sum_{q} \binom{n}{k+mq} = \frac{1}{m} \sum_{j=0}^{m-1} {(w^{-\frac{j}{2}}+w^{\frac{j}{2}})}^{n} w^{\frac{j(n-2k)}{2}} =: B \)
 
