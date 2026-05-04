@@ -1,0 +1,142 @@
+\documentclass{article}
+\input{../../../template}
+
+\title{TAOCP 1.2.8\mbox{-}38}
+
+\begin{document}
+\maketitle
+
+\begin{lstlisting}[language={[Sharp]C}]
+class Program
+{
+    private static void Main()
+    {
+        var game = new FibonacciNimGame();
+        game.Init();
+    }
+}
+
+class FibonacciNimGame
+{
+    private readonly Random _rnd = new();
+    private int _size;
+    private CurrentPlayer _currentPlayer;
+    private int _maxTurnSize;
+    private int _turnCount = 1;
+    private readonly SortedSet<int> _fibonacciNumbers = new();
+
+    public void Init()
+    {
+        Console.WriteLine("Fibonacci Nim");
+
+        while (true)
+        {
+            Console.Write("Enter original size >=2 : ");
+            var sizeStr = Console.ReadLine();
+            if (int.TryParse(sizeStr, out _size) && _size >= 2)
+            {
+                break;
+            }
+            Console.WriteLine("Wrong size. Try again...");
+        }
+
+        _fibonacciNumbers.Add(1);
+        _fibonacciNumbers.Add(2);
+        var prev = 1;
+        var current = 2;
+
+        while (current < _size)
+        {
+            (current, prev) = (current + prev, current);
+            _fibonacciNumbers.Add(current);
+        }
+
+        _maxTurnSize = _size - 1;
+
+        Console.Write("Who starts first? (Human - H / Computer - C): ");
+        var done = false;
+        while (!done)
+        {
+            var key = Console.ReadKey(true);
+            switch (char.ToUpper(key.KeyChar))
+            {
+                case 'H':
+                    _currentPlayer = CurrentPlayer.Human;
+                    done = true;
+                    break;
+                case 'C':
+                    _currentPlayer = CurrentPlayer.Computer;
+                    done = true;
+                    break;
+            }
+        }
+        Console.WriteLine();
+
+        MakeTurn();
+    }
+
+    private void MakeTurn()
+    {
+        while (true)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Turn: {_turnCount}. Player: {_currentPlayer}. Size: {_size}. Max turn size: {_maxTurnSize}");
+            int turnSize;
+            if (_currentPlayer == CurrentPlayer.Human)
+            {
+                while (true)
+                {
+                    Console.Write($"Make your turn. How many chips do you take(1..{_maxTurnSize})? ");
+                    var turnSizeStr = Console.ReadLine();
+                    if (int.TryParse(turnSizeStr, out turnSize) && 1 <= turnSize && turnSize <= _maxTurnSize)
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine("Wrong take. Try again...");
+                }
+            }
+            else
+            {
+                if (_size <= _maxTurnSize)
+                {
+                    turnSize = _size;
+                }
+                else
+                {
+                    var num = _size;
+                    var lastFibonacciNumber = 0;
+                    while (num > 0)
+                    {
+                        lastFibonacciNumber = _fibonacciNumbers.GetViewBetween(1, num).Max;
+                        num -= lastFibonacciNumber;
+                    }
+
+                    turnSize = lastFibonacciNumber <= _maxTurnSize ? lastFibonacciNumber : _rnd.Next(1, Math.Min(_maxTurnSize, _size / 3));
+                }
+            }
+
+            Console.WriteLine($"{_currentPlayer} takes {turnSize} chips");
+
+            _size -= turnSize;
+            _maxTurnSize = Math.Min(2 * turnSize, _size);
+            _turnCount++;
+            if (_size == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Winner: {_currentPlayer}");
+                return;
+            }
+            _currentPlayer = _currentPlayer == CurrentPlayer.Computer ? CurrentPlayer.Human : CurrentPlayer.Computer;
+        }
+    }
+}
+
+enum CurrentPlayer
+{
+    Human,
+    Computer
+}
+\end{lstlisting}
+
+\end{document}

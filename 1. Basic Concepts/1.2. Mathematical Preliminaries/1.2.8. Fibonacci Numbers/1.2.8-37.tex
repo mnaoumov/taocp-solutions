@@ -6,30 +6,83 @@
 \begin{document}
 \maketitle
 
-Let \( f(n, m) = [\text{Can player 1 win the game with } n \text{ chips} \)
-
-\( \text{with up to } m \text{ chips can be taken this move piles}] \).
-
-To solve the problem, we need to find \( f(n, n - 1) \).
-
-Notice that \( f(n, m) = 1, n \leq m \).
-
-\( f(n, m) = 1 - \prod_{k=1}^{m} f(n - k, 2k) \)
-
-Let \( n = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{nr_{n}}}, s_{1} \gg s_{2} \gg \cdots \gg s_{r_{n}} \gg 0 \).
-
-Let's prove by induction that \( f(n, n - 1) = [r_{n} > 1] \).
-
-\( n = 2: f(2, 1) = 1 - f(2 - 1, 2 \cdot 1) = 1 - f(1, 2) = 1 - 1 = 0 = [r_{2} > 1] \)
-
-Let \( n \geq 3 \).
-
-Assume \( r_{n} = 1 \implies n = F_{s_{n1}} \).
-
-We need to prove \( \forall k, 1 \leq k \leq n - 1: f(n - k, 2k) = 1 \)
-
-If \( k \geq \frac{n}{3} \implies n - k \leq 2k \implies f(n - k, 2k) = 1 \)
+\begin{equation*}
+  f(n, m) := \begin{cases}
+    0 & \text{if current Player loses}, \\
+    a & \text{if current Player wins by taking } a \text{ chips},\quad 1 \leq a \leq \min(m, n),
+  \end{cases}
+\end{equation*}
+where \( n \) is the number of chips remaining and \( m \) is the maximum allowed to take this move.
 
 
+For \( n \geq 1 \exists \) unique representation
+
+\( n = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{nr(n)}}, s_{n1} \gg s_{n2} \gg \cdots \gg s_{nr(n)} \gg 0 \)
+
+\( L(n) := F_{s_{nr(n)}} \)
+
+Let's prove by induction
+
+\begin{equation}\label{eq:f-induction}
+  f(n, m) := \begin{cases}
+    n & m \geq n, \\
+    L(n) & L(n) \leq m < n, \\
+    0 & 1 \leq m < L(n)
+  \end{cases}
+\end{equation}
+
+Assume \eqref{eq:f-induction} holds for all \( n' < n \)
+
+\subsection*{\( m \geq n \)}
+
+Then current Player wins by taking \( n \) chips. \( f(n, m) = n \)
+
+\subsection*{\( L(n) \leq m < n \) }
+
+Let's prove that current Player can take \( L(n) \) chips and win.
+
+For that we need to prove that \( f(n - L(n), 2L(n)) = 0 \).
+
+By inductive assumption it means we need to prove that \( 1 \leq 2L(n) < L(n - L(n)) \).
+
+\( L(n - L(n)) = L(F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{n,r(n)-1}}) = F_{s_{n,r(n)-1}} \)
+
+\( s_{n,r(n)-1} \gg s_{nr(n)} \implies L(n - L(n)) \geq F_{s_{nr(n)} + 2} = F_{s_{nr(n)} + 1} + F_{s_{nr(n)}} = 2F_{s_{nr(n)}} + \overbrace{F_{s_{nr(n)} - 1}}^{\geq 1} > 2F_{s_{nr(n)}} = 2L(n) \geq 2 \cdot 1 = 2 \geq 1 \)
+
+\subsection*{\( 1 \leq m < L(n) \) }
+
+Let's prove that current Player loses.
+
+For that we need to prove that \( \forall k, 1 \leq k \leq m: f(n - k, 2k) > 0 \).
+
+By inductive assumption it means we need to prove that \( L(n - k) \leq 2k \).
+
+\( n = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{nr(n)}} \)
+
+\( k \leq m < L(n) = F_{s_{nr(n)}} \)
+
+\( n - k = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{n,r(n)-1}} + (F_{s_{nr(n)}} - k) \)
+
+\( u := F_{s_{nr(n)}} - k \geq 1 \)
+
+\( u = F_{s_{u1}} + F_{s_{u2}} + \cdots + F_{s_{ur(u)}}, s_{u1} \gg s_{u2} \gg \cdots \gg s_{ur(u)} \gg 0 \)
+
+\( u < F_{s_{nr(n)}} \implies s_{u1} \leq s_{nr(n)} - 1 < s_{n,r(n)-1} - 2 \)
+
+\( n - k = F_{s_{n1}} + F_{s_{n2}} + \cdots + F_{s_{n,r(n)-1}} + F_{s_{u1}} + F_{s_{u2}} + \cdots + F_{s_{ur(u)}} \)
+
+\( L(n - k) = F_{s_{ur(u)}} = L(u) \)
+
+Let \( k = F_{s_{k1}} + F_{s_{k2}} + \cdots + F_{s_{kr(k)}}, s_{k1} \gg s_{k2} \gg \cdots \gg s_{kr(k)} \gg 0 \)
+
+\begin{equation}\label{eq:expansion}
+  F_{s_{nr(n)}} = u + k = F_{s_{u1}} + F_{s_{u2}} + \cdots + F_{s_{ur(u)}} + F_{s_{k1}} + F_{s_{k2}} + \cdots + F_{s_{kr(k)}}
+\end{equation}
+
+If we assume, \( s_{ur(u)} \gg s_{k1} \), then \eqref{eq:expansion} is an alternative expansion of \( F_{s_{ur(u)}} \), which contradicts to the uniqueness of the expansion.
+
+\( \implies s_{ur(u)} \not\gg s_{k1} \implies s_{ur(u)} \leq s_{k1} + 1 \)
+
+\( L(n-k) = F_{s_{ur(u)}} \leq F_{s_{k1} + 1} = F_{s_{k1}} + F_{s_{k1} - 1} \leq 2F_{s_{k1}} \leq 2k \)
 
 \end{document}

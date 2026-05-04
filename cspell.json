@@ -15,9 +15,11 @@
   "words": [
     "bijective",
     "Binet",
+    "breaklines",
     "chktex",
     "chktexrc",
     "commitlint",
+    "framesep",
     "huskyrc",
     "Intersentence",
     "Interword",
@@ -25,10 +27,14 @@
     "Mathmode",
     "nonstopmode",
     "Pdflatex",
+    "showstringspaces",
     "Stirling",
+    "stringstyle",
     "summands",
     "synctex",
     "TAOCP",
-    "TSES"
+    "TSES",
+    "xleftmargin",
+    "xrightmargin"
   ]
 }
