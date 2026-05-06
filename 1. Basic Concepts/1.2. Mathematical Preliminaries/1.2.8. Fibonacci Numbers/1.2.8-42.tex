@@ -1,0 +1,57 @@
+\documentclass{article}
+\input{../../../template}
+
+\title{TAOCP 1.2.8\mbox{-}42}
+
+\begin{document}
+\maketitle
+
+Assume expansion exists for both \( m \) and \( n \).
+
+\( m = F_{k_1} + \cdots + F_{k_r} \)
+
+\( n = F_{k_1+1} + \cdots + F_{k_r+1} \)
+
+\( mF_{N-1} + n F_N = \sum_{i=1}^{r} (F_{k_i}F_{N-1} + F_{k_i+1}F_N) = \sum_{i=1}^{r} F_{k_i+N} \)
+
+\begin{equation}\label{eq:1}
+mF_{N-1} + n F_N = \sum_{i=1}^{r} F_{k_i+N}
+\end{equation}
+
+Fibonacci expansion. Which we know is unique.
+
+\( \implies \) original expansion is unique.
+
+\( m\hat\phi^{N-1} + n\hat\phi^{N} \to 0, N \to \infty \implies \exists N: |m\hat\phi^{N-1} + n\hat\phi^{N}| < \phi^{-2} \)
+
+Consider Fibonacci expansion s := \( mF_{N-1} + n F_N = \sum_{i=1}^{r} F_{k_i+N} \)
+
+\( f(x) := \lfloor x + \phi^{-1}\rfloor \)
+
+1.2.8-41 \( \implies f(\phi s) = \sum_{i=1}^{r} F_{k_i+N+1} \)
+
+\( \phi s = m\phi F_{N-1} + n\phi F_N = m(F_{N} - \hat\phi^{N-1}) + n(F_{N+1} - \hat\phi^{N}) = mF_{N} + nF_{N+1} - (m\hat\phi^{N-1} + n\hat\phi^{N}) \)
+
+\( f(\phi s) = \lfloor mF_{N} + nF_{N+1} - (m\hat\phi^{N-1} + n\hat\phi^{N}) + \phi^{-1} \rfloor = \)
+
+\( = mF_{N} + nF_{N+1} + \lfloor \phi^{-1} - (m\hat\phi^{N-1} + n\hat\phi^{N}) \rfloor \)
+
+\( y := \phi^{-1} - (m\hat\phi^{N-1} + n\hat\phi^{N}) \)
+
+\( y \geq \phi^{-1} - |m\hat\phi^{N-1} + n\hat\phi^{N}| > \phi^{-1} - \phi^{-2} > 0 \)
+
+\( y \leq \phi^{-1} + |m\hat\phi^{N-1} + n\hat\phi^{N}| < \phi^{-1} + \phi^{-2} = 1 \)
+
+\( \implies \lfloor y \rfloor = 0 \)
+
+\( f(\phi s) = mF_{N} + nF_{N+1} \)
+
+\( mF_{N} + nF_{N+1} = \sum_{i=1}^{r} F_{k_i+N+1} \)
+
+\( \implies \eqref{eq:1} \) holds \( \forall N \in \mathbb{Z} \)
+
+Applying \( N = 0: m = mF_{-1} + nF_0 = \sum_{i=1}^{r} F_{k_i} \)
+
+Applying \( N = 1: n = mF_{0} + nF_1 = \sum_{i=1}^{r} F_{k_i+1} \)
+
+\end{document}

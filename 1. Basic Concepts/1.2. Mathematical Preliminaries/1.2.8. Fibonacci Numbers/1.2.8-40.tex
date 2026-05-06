@@ -1,0 +1,43 @@
+\documentclass{article}
+\input{../../../template}
+
+\title{TAOCP 1.2.8\mbox{-}40}
+
+\begin{document}
+\maketitle
+
+Let's prove by induction: \( f(n) = m \iff F_{m} < n \leq F_{m+1} \)
+
+\( n = 1: f(1) = 0, F_0 < 1 \leq F_1 \)
+
+\( n = 2: f(2) = \min_{k=1} \max(1+f(1),2+f(1)) = 2, F_2 < 2 \leq F_3 \)
+
+\( n \geq 3 \)
+
+\( F_{m-1} < F_m \leq F_m \implies f(F_m) = m - 1 \)
+
+\( n - F_m \leq F_{m+1} - F_m = F_{m-1} \)
+
+\( f(n - F_m) \leq m - 1 - 1\)
+
+\( f(n) \leq \max(1 + f(F_m), 2 + f(n - F_m)) \leq m \)
+
+Assume \( f(n) < m \)
+
+\( \exists k, 1 \leq k \leq n - 1: \max(1 + f(k), 2 + f(n - k)) \leq m - 1 \)
+
+\( 1 + f(k) \leq m - 1 \implies f(k) \leq m - 2 \)
+
+\( 2 + f(n - k) \leq m - 1 \implies f(n - k) \leq m - 3 \)
+
+\( k \leq F_{f(k)+1} \leq F_{m-1} \)
+
+\( n - k \leq F_{f(n-k)+1} \leq F_{m-2} \)
+
+Adding last two inequalities we get:
+
+\( n \leq F_{m-1} + F_{m-2} = F_{m} < n \implies \perp \)
+
+\( \implies f(n) = m \)
+
+\end{document}

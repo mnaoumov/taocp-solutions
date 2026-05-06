@@ -1,0 +1,41 @@
+\documentclass{article}
+\input{../../../template}
+
+\title{TAOCP 1.2.8\mbox{-}41}
+
+\begin{document}
+\maketitle
+
+Task 28 \( \implies F_{n+1} = \phi F_n + \hat\phi^n \)
+
+\( A := \hat\phi^{k_1} + \cdots + \hat\phi^{k_r} \)
+
+\( n = F_{k_1} + F_{k_2} + \cdots + F_{k_r} \)
+
+\( F_{k_1+1} + F_{k_2+1} + \cdots + F_{k_r+1} = \phi(F_{k_1} + F_{k_2} + \cdots + F_{k_r}) + \hat\phi^{k_1} + \cdot + \hat\phi^{k_r} = \)
+
+\( = \phi n + A \)
+
+\( f(\phi n) = \lfloor \phi n + \phi^{-1} \rfloor = \lfloor F_{k_1+1} + F_{k_2+1} + \cdots + F_{k_r+1} + \phi^{-1} - A = \)
+
+\( = F_{k_1+1} + F_{k_2+1} + \cdots + F_{k_r+1} + \lfloor \phi^{-1} - A \rfloor\)
+
+\( A < \hat\phi^2 + \hat\phi^4 + \cdots = \frac{\hat\phi^2}{1-\hat\phi^2} = \frac{\hat\phi^2}{-\hat\phi} =  -\hat\phi = \phi^{-1} \)
+
+\( A > \hat\phi^3 + \hat\phi^5 + \cdots = \frac{\hat\phi^3}{1-\hat\phi^2} = \frac{\hat\phi^3}{-\hat\phi} = -\hat\phi^{2} = - \phi^{-2} \)
+
+\( \phi^{-1} - A > 0 \)
+
+\( \phi^{-1} - A < \phi^{-1} + \phi^{-2} = 1 \)
+
+\( \lfloor \phi^{-1} - A\rfloor = 0 \)
+
+\( F_{n-1} = -\hat\phi F_n + \hat\phi^n \)
+
+\( F_{n-1} = \phi^{-1} F_n + \hat\phi^n \)
+
+\( F_{k_1-1} + F_{k_2-1} + \cdots + F_{k_r-1} = \phi^{-1} n + A \)
+
+\( f(\phi^{-1} n) = F_{k_1-1} + F_{k_2-1} + \cdots + F_{k_r-1} \)
+
+\end{document}

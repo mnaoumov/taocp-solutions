@@ -1,0 +1,19 @@
+\documentclass{article}
+\input{../../../template}
+
+\title{TAOCP 1.2.8\mbox{-}39}
+
+\begin{document}
+\maketitle
+
+\( A(z) = \sum_{n \geq 0} a_n z^n = z + \sum_{n \geq 0}a_{n+2}z^{n+2} = z + \sum_{n \geq 0} (a_{n+1} + 6a_{n})z^{n+2} = \)
+
+\( = z + z\sum_{n \geq 0} a_{n+1}z^{n+1} + 6z^{2}\sum_{n \geq 0} a_{n}z^{n} = z + z(A(z) - a_{0}z^{0}) + 6z^{2}A(z) = \)
+
+\( = z + z(A(z) - 0) + 6z^{2}A(z) = z + zA(z) + 6z^{2}A(z) = z + (z+6z^{2})A(z) \)
+
+\( A(z) = \frac{z}{1-z-6z^{2}} = \frac{1}{5}(\frac{1}{1-3z} - \frac{1}{1+2z}) \)
+
+\( a_{n} = [z^{n}]A(z) = \frac{1}{5}([z^{n}](\frac{1}{1-3z}) - [z^{n}](\frac{1}{1+2z})) = \frac{1}{5}(3^{n} - (-2)^{n}) \)
+
+\end{document}
