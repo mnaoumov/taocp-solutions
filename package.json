@@ -1,9 +1,9 @@
 {
   "name": "taocp-solutions",
   "version": "1.0.0",
+  "private": true,
   "description": "My solutions to exercises from The Art of Computer Programming by Donald E. Knuth.",
   "type": "module",
-  "private": true,
   "scripts": {
     "build:compile": "jiti scripts/build-compile.ts",
     "build:latex": "jiti scripts/build-latex.ts",
@@ -17,6 +17,10 @@
     "lint:md:fix": "jiti scripts/lint-md-fix.ts",
     "prepare": "jiti scripts/prepare.ts",
     "spellcheck": "jiti scripts/spellcheck.ts"
+  },
+  "overrides": {
+    "eslint-plugin-import": "npm:eslint-plugin-import-x@latest",
+    "type-fest": "latest"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -32,9 +36,8 @@
     "@types/node": "latest",
     "@typescript-eslint/utils": "latest",
     "better-typescript-lib": "latest",
-    "commitizen": "latest",
     "cspell": "latest",
-    "cz-conventional-changelog": "latest",
+    "czg": "latest",
     "dprint": "latest",
     "eslint": "latest",
     "eslint-import-resolver-typescript": "latest",
@@ -51,9 +54,5 @@
     "type-fest": "latest",
     "typescript": "latest",
     "typescript-eslint": "latest"
-  },
-  "overrides": {
-    "eslint-plugin-import": "npm:eslint-plugin-import-x@latest",
-    "type-fest": "latest"
   }
 }
