@@ -1,4 +1,4 @@
-import { execFromRoot } from './root.ts';
+import { execFromRoot } from '@mnaoumov/typescript-dev-toolkit/root';
 
 interface LintParams {
   paths?: string[] | undefined;
@@ -8,5 +8,5 @@ interface LintParams {
 export async function lint(params?: LintParams): Promise<void> {
   const { paths, shouldFix = false } = params ?? {};
   const targets = paths?.length ? paths : ['.'];
-  await execFromRoot(['npx', 'markdownlint-cli2', ...(shouldFix ? ['--fix'] : []), { batchedArgs: targets }]);
+  await execFromRoot(['npx', 'markdownlint-cli2', ...(shouldFix ? ['--fix'] : []), { batchedArguments: targets }]);
 }
