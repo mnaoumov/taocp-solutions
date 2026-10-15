@@ -1,3 +1,3 @@
-import { execFromRoot } from './helpers/root.ts';
+import { buildCompileTypeScript } from '@mnaoumov/typescript-dev-toolkit/build';
 
-await execFromRoot('tsc --build --force');
+await buildCompileTypeScript();

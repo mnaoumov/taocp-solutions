@@ -7,7 +7,6 @@
   "scripts": {
     "build:compile": "jiti scripts/build-compile.ts",
     "build:latex": "jiti scripts/build-latex.ts",
-    "check:vendored-eslint-rules": "jiti scripts/check-vendored-eslint-rules.ts",
     "commit": "jiti scripts/commit.ts",
     "format": "jiti scripts/format.ts",
     "format:check": "jiti scripts/format-check.ts",
@@ -30,6 +29,8 @@
     "@eslint-community/eslint-plugin-eslint-comments": "latest",
     "@eslint/compat": "latest",
     "@eslint/js": "latest",
+    "@mnaoumov/typescript-dev-toolkit": "latest",
+    "@mnaoumov/typescript-lib": "latest",
     "@stylistic/eslint-plugin": "latest",
     "@total-typescript/ts-reset": "latest",
     "@tsconfig/strictest": "latest",

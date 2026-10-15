@@ -3,6 +3,8 @@ import type { Linter } from 'eslint';
 import commentsConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import { includeIgnoreFile } from '@eslint/compat';
 import eslint from '@eslint/js';
+import { inHouseEslintPlugin } from '@mnaoumov/typescript-dev-toolkit/linters/eslint-rules/in-house-plugin';
+import { getRootFolder } from '@mnaoumov/typescript-dev-toolkit/root';
 // eslint-disable-next-line import-x/no-rename-default -- The default export name `plugin` is too confusing.
 import stylistic from '@stylistic/eslint-plugin';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
@@ -13,9 +15,6 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path/posix';
 // eslint-disable-next-line import-x/no-rename-default -- The default export name `_default` is too confusing.
 import tseslint from 'typescript-eslint';
-
-import { customEslintPlugin } from './helpers/eslint-rules/custom-eslint-plugin.ts';
-import { getRootFolder } from './helpers/root.ts';
 
 const rootConfigFiles = [
   'commitlint.config.ts',
@@ -43,7 +42,7 @@ function getCustomPluginConfigs(): Linter.Config[] {
     {
       files: allFiles,
       plugins: {
-        custom: customEslintPlugin
+        custom: inHouseEslintPlugin
       },
       rules: {
         'custom/no-used-underscore-variables': 'error'
@@ -363,12 +362,6 @@ function getNoRestrictedSyntaxRulesConfigs(): Linter.Config[] {
             selector: 'TSAsExpression TSTypeLiteral'
           }
         ]
-      }
-    },
-    {
-      files: ['scripts/helpers/@types/**/*.d.ts'],
-      rules: {
-        'no-restricted-syntax': 'off'
       }
     }
   ]);

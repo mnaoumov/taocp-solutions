@@ -1,11 +1,10 @@
+import { exec } from '@mnaoumov/typescript-dev-toolkit/exec';
 import { readdir } from 'node:fs/promises';
 import {
   dirname,
   join,
   resolve
 } from 'node:path';
-
-import { exec } from './helpers/exec.ts';
 
 async function findTexFiles(dir: string): Promise<string[]> {
   const results: string[] = [];
