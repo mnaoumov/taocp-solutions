@@ -9,6 +9,7 @@
     "*.pdf",
     "*.synctex.gz",
     ".husky",
+    ".obsidian/plugins",
     "node_modules",
     "package-lock.json"
   ],
