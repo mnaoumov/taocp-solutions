@@ -15,8 +15,8 @@ function main(): void {
   });
 
   for (const readme of readmes) {
-    const dir = dirname(readme);
-    const texFiles = readdirSync(dir)
+    const directory = dirname(readme);
+    const texFiles = readdirSync(directory)
       .filter((f) => f.endsWith('.tex'))
       .sort(naturalCompare);
 
@@ -27,14 +27,11 @@ function main(): void {
     const content = readFileSync(readme, 'utf-8');
     const lines = content.split('\n');
 
-    const exercisesHeaderIdx = lines.findIndex((l) => l.trim() === '## Exercises');
-    let before: string[];
-    if (exercisesHeaderIdx === -1) {
-      before = lines.filter((l) => l.trim() !== '' || lines.indexOf(l) < lines.length - 1);
-    } else {
-      before = lines.slice(0, exercisesHeaderIdx);
-    }
-    while (before.length > 0 && before[before.length - 1]?.trim() === '') {
+    const exercisesHeaderIndex = lines.findIndex((l) => l.trim() === '## Exercises');
+    const before = exercisesHeaderIndex === -1
+      ? lines.filter((l) => l.trim() !== '' || lines.indexOf(l) < lines.length - 1)
+      : lines.slice(0, exercisesHeaderIndex);
+    while (before.length > 0 && before.at(-1)?.trim() === '') {
       before.pop();
     }
 
@@ -54,13 +51,13 @@ function naturalCompare(a: string, b: string): number {
   const aParts = a.match(re) ?? [];
   const bParts = b.match(re) ?? [];
 
-  for (let i = 0; i < Math.max(aParts.length, bParts.length); i++) {
-    const ap = aParts[i] ?? '';
-    const bp = bParts[i] ?? '';
+  for (let index = 0; index < Math.max(aParts.length, bParts.length); index++) {
+    const ap = aParts[index] ?? '';
+    const bp = bParts[index] ?? '';
     const an = parseInt(ap, 10);
     const bn = parseInt(bp, 10);
 
-    if (!isNaN(an) && !isNaN(bn)) {
+    if (!Number.isNaN(an) && !Number.isNaN(bn)) {
       if (an !== bn) {
         return an - bn;
       }
