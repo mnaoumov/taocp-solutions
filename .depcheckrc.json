@@ -1,0 +1,14 @@
+{
+  "ignores": [
+    "@commitlint/cli",
+    "@commitlint/config-conventional",
+    "better-typescript-lib",
+    "cspell",
+    "czg",
+    "dprint",
+    "husky",
+    "markdownlint-cli2",
+    "nano-staged",
+    "typescript"
+  ]
+}
