@@ -10,6 +10,13 @@
     "that is actually present in the declared section; the script reports either mismatch."
   ],
   "pins": {
+    "katex": {
+      "section": "overrides",
+      "why": "Clears GHSA-238p-pmpm-9mq7 (KaTeX prototype pollution bypassing trust restrictions, >=0.11.0 <0.18.2), which also carried the advisories on micromark-extension-math, markdownlint, markdownlint-cli2 and @mnaoumov/typescript-dev-toolkit. Reached only through markdownlint -> micromark-extension-math@3.1.0 (its newest release), which declares katex ^0.16.0, so no bump reaches the fix. The 0.x minor jump is safe because nothing here ever runs KaTeX: markdownlint imports only `math` (the micromark syntax extension) from micromark-extension-math, and katex is required solely by its `mathHtml` half, which markdownlint never loads. NEVER take the `npm audit fix --force` remedy: it downgrades markdownlint to 0.36.1.",
+      "check": "node -e \"const fs=require('node:fs');process.stdout.write(JSON.parse(fs.readFileSync('node_modules/micromark-extension-math/package.json','utf8')).dependencies.katex)\"",
+      "expect": "^0.16.0",
+      "manualCheck": "The check reads the range micromark-extension-math declares. When it admits 0.18.2 or later, drop the override and this entry and re-run `npm audit`."
+    },
     "re2js": {
       "section": "overrides",
       "why": "Clears GHSA-gg6h-894w-4m9c (RE2JS quadratic-time denial of service in lookbehind matching, >=2.2.0 <2.8.7). Reached only through markdownlint, whose newest release 0.42.0 pins re2js at the exact 2.8.6, and markdownlint-cli2 0.24.0 pins that markdownlint exactly in turn, so no bump reaches the fix. 2.9.1 is the version markdownlint itself moved to upstream, so the forced minor is the one it is tested against. NEVER take the `npm audit fix --force` remedy: it downgrades the toolkit packages.",
